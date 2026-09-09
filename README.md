@@ -26,7 +26,17 @@
     <img
       src="https://img.shields.io/badge/Curso%20na%20Udemy-A435F0?style=for-the-badge&logo=udemy&logoColor=white"
       alt="Curso na Udemy"
-      width="200"
+      width="230"
+      height="40"
+    />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://chat.whatsapp.com/Lsuexbkt1oELAGX8nCH2La?mode=gi_t">
+    <img
+      src="https://img.shields.io/badge/Grupo%20CloudStudy-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"
+      alt="Grupo CloudStudy no WhatsApp"
+      width="230"
+      height="40"
     />
   </a>
 </div>
