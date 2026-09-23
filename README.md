@@ -127,6 +127,22 @@ Este material foi estruturado para um estudante de nível intermediário, que j�
 
 O repositório foi pensado para funcionar bem no GitHub. Cada módulo contém teoria, questões no estilo da prova, flashcards, cheatsheet, cenários arquiteturais, labs e curadoria de links oficiais. A ordem dos módulos acompanha os temas mais cobrados no exame e uma progressão de complexidade que faz sentido para revisão em 9 semanas.
 
+
+## 🖥️ Portal Interativo
+
+Além do GitHub Pages, o repositório inclui um portal de estudos em arquivo único (`aws-saa-portal.html`) que pode ser aberto direto no navegador — sem instalação, sem build.
+
+**O que ele faz:**
+
+- Lista os 31 módulos numa barra lateral, com busca e filtro por "Todos / Pendentes / Concluídos".
+- Carrega o conteúdo de cada módulo direto deste repositório (via GitHub raw) e renderiza como markdown formatado.
+- Marca progresso módulo a módulo — o checkmark e a barra de progresso ficam salvos no navegador (`localStorage`), sem precisar de login ou backend.
+- Mostra o progresso por domínio do exame (resiliência, performance, segurança, custo).
+- Cada módulo tem um atalho para abrir o `README.md`/`lab.md` correspondente direto no GitHub. 
+
+**Como usar:** baixe `aws-saa-portal.html` e abra localmente, ou hospede como página estática (o próprio GitHub Pages funciona).
+
+
 ## 📊 Estrutura e Domínios do Exame
 
 | Domínio | Peso | O que cai na prática | Módulos principais |
