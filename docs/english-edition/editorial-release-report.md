@@ -287,4 +287,8 @@ Desktop and tablet render evidence: [desktop](./portal-desktop.png), [tablet](./
 
 ## Publication status
 
-Local content is ready for branch-only publication. The current accuracy pass still requires its post-push live check; the live evidence file explicitly records that pending state until verification completes.
+Published and live-verified implementation commit: [`815fcf5da47b7e2a69a893c94335f269f45c8398`](https://github.com/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil/commit/815fcf5da47b7e2a69a893c94335f269f45c8398), pushed exclusively to `saa-c03-english`.
+
+All 198 original file equivalents returned HTTP 200 from the real English-branch GitHub Raw URLs and matched their committed Git blobs byte for byte. Chromium opened the local/downloaded HTML portal without request interception, loaded all 31 modules from real GitHub content, and retained progress after reload with zero page errors. The subsequent audit-only commit records this evidence without changing those 198 content files.
+
+Remote `main` remained at `d43bc6a571c668b22127b283315582ac8c413a70`; remote `gh-pages` remained at `e3c8302917591c90cec89c2e3b4c19a30ffc3a74`. No pull request was created.
