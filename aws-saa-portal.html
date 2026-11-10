@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AWS SAA-C03 – Portal de Estudos</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<title>AWS SAA-C03 – Study Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 <style>
   :root {
-    /* Sidebar – escuro */
+    /* Sidebar – dark */
     --sb-bg:      #0f1520;
     --sb-bg2:     #141c2e;
     --sb-border:  #1e2d4a;
@@ -23,14 +23,14 @@
     --purple:     #9B59B6;
     --red:        #E74C3C;
 
-    /* Content – claro */
-    --ct-bg:      #f8f6f1;       /* creme muito suave */
+    /* Content – light */
+    --ct-bg:      #f8f6f1;       /* soft cream */
     --ct-surface: #ffffff;
     --ct-border:  #e0d9ce;
-    --ct-text:    #1a1a1a;       /* quase preto — contraste óptimo */
+    --ct-text:    #1a1a1a;       /* near black for strong contrast */
     --ct-muted:   #4a4a4a;
     --ct-dim:     #7a7a7a;
-    --ct-accent:  #b35900;       /* laranja escuro — legível em fundo claro */
+    --ct-accent:  #b35900;       /* dark orange, readable on a light background */
     --ct-blue:    #1a5fa8;
     --ct-green:   #1a7a3a;
     --ct-code-bg: #eeeae2;
@@ -186,16 +186,17 @@
   .breadcrumb {
     font-family:'Space Mono',monospace; font-size:11px;
     color:var(--ct-dim); display:flex; align-items:center; gap:8px;
+    min-width:0; overflow:hidden; margin-right:12px;
   }
   .breadcrumb-sep { color:#ccc; }
-  .breadcrumb-current { color:var(--ct-muted); font-weight:700; }
-  .content-actions { display:flex; gap:8px; align-items:center; }
+  .breadcrumb-current { color:var(--ct-muted); font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .content-actions { display:flex; gap:8px; align-items:center; flex-shrink:0; }
   .action-btn {
     font-family:'Space Mono',monospace; font-size:10px;
     padding:5px 10px; border:1px solid var(--ct-border);
     background:transparent; color:var(--ct-dim);
     border-radius:4px; cursor:pointer; transition:all .15s;
-    text-decoration:none; display:inline-flex; align-items:center; gap:5px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:5px; white-space:nowrap;
   }
   .action-btn:hover { border-color:var(--ct-accent); color:var(--ct-accent); background:rgba(179,89,0,0.06); }
   .action-btn.done-btn { border-color:var(--ct-green); color:var(--ct-green); background:rgba(26,122,58,0.08); }
@@ -205,6 +206,8 @@
   .content-body::-webkit-scrollbar { width:8px; }
   .content-body::-webkit-scrollbar-track { background:var(--ct-bg); }
   .content-body::-webkit-scrollbar-thumb { background:var(--ct-border); border-radius:4px; }
+  .resource-nav { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; max-width:740px; }
+  .mod-item:focus-visible, .mod-check:focus-visible { outline:2px solid var(--orange); outline-offset:-2px; }
 
   /* ══ WELCOME ══════════════════════════════════════════════════ */
   .welcome {
@@ -248,15 +251,15 @@
 
   /* ══ MARKDOWN – READING OPTIMIZED ════════════════════════════ */
   .md-content {
-    max-width: 740px;          /* linha de leitura ideal ~70 chars */
+    max-width: 740px;          /* ideal reading line length ~70 characters */
     font-family: 'Inter', sans-serif;
-    font-size: 16px;           /* base confortável */
-    line-height: 1.85;         /* entrelinha generosa */
+    font-size: 16px;           /* comfortable base size */
+    line-height: 1.85;         /* generous line spacing */
     color: var(--ct-text);
     background: transparent;
   }
 
-  /* Hierarquia de títulos com peso visual claro */
+  /* Clear visual heading hierarchy */
   .md-content h1 {
     font-family: 'Syne', sans-serif;
     font-size: 28px; font-weight: 800;
@@ -285,13 +288,13 @@
     margin: 22px 0 8px;
   }
 
-  /* Parágrafos com espaçamento amplo */
+  /* Generous paragraph spacing */
   .md-content p {
     margin-bottom: 18px;
     color: #1a1a1a;
   }
 
-  /* Listas com recuo e espaçamento */
+  /* Indented, spaced lists */
   .md-content ul, .md-content ol {
     padding-left: 28px;
     margin-bottom: 18px;
@@ -302,7 +305,7 @@
   }
   .md-content li::marker { color: var(--ct-accent); }
 
-  /* Código inline — fundo suave, sem irritar */
+  /* Inline code with a subtle background */
   .md-content code {
     font-family: 'Space Mono', monospace;
     font-size: 13px;
@@ -310,11 +313,11 @@
     border: 1px solid #d5cfc6;
     padding: 2px 6px;
     border-radius: 4px;
-    color: #8b3000;              /* marrom-avermelhado legível */
+    color: #8b3000;              /* readable reddish brown */
     word-break: break-word;
   }
 
-  /* Bloco de código — fundo escuro (contraste perfeito para código) */
+  /* Code blocks on a dark background for contrast */
   .md-content pre {
     background: var(--ct-pre-bg);
     border-radius: 8px;
@@ -325,12 +328,12 @@
   }
   .md-content pre code {
     background: none; border: none; padding: 0;
-    color: #a8d8a0;              /* verde suave — boa leitura em escuro */
+    color: #a8d8a0;              /* soft green, readable on a dark background */
     font-size: 13.5px; line-height: 1.7;
     word-break: normal;
   }
 
-  /* Citação — destaque suave */ 
+  /* Subtle blockquote emphasis */
   .md-content blockquote {
     border-left: 4px solid var(--ct-accent);
     padding: 10px 20px;
@@ -341,7 +344,7 @@
     font-style: italic;
   }
 
-  /* Tabelas — fundo alternado para facilitar leitura */
+  /* Alternating table rows for readability */
   .md-content table {
     border-collapse: collapse;
     width: 100%;
@@ -374,7 +377,7 @@
   .md-content tr:nth-child(even) td { background: #faf7f2; }
   .md-content tr:hover td { background: #f3ede4; }
 
-  /* Links — cor que contrasta com fundo claro */
+  /* Link colors contrast with the light background */
   .md-content a {
     color: var(--ct-blue);
     text-decoration: none;
@@ -383,14 +386,14 @@
   }
   .md-content a:hover { color: #0d3e72; border-color: #0d3e72; }
 
-  /* Bold e itálico */
+  /* Bold and italic */
   .md-content strong { color: #111; font-weight: 700; }
   .md-content em { color: var(--ct-muted); font-style: italic; }
 
-  /* Linha divisória */
+  /* Divider */
   .md-content hr { border:none; border-top:2px solid var(--ct-border); margin:40px 0; }
 
-  /* Imagens */
+  /* Images */
   .md-content img { max-width:100%; border-radius:8px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
 
   /* ══ TOAST ════════════════════════════════════════════════════ */
@@ -412,6 +415,7 @@
     :root { --sidebar-w:260px; }
     .content-body { padding:24px 20px; }
     .domain-stats { display:none; }
+    .breadcrumb > span:first-child, .breadcrumb-sep { display:none; }
   }
 </style>
 </head>
@@ -421,16 +425,16 @@
 <div class="topbar">
   <div class="topbar-left">
     <span class="logo">AWS <em>SAA-C03</em></span>
-    <span class="pill">PT-BR</span>
+    <span class="pill">EN-US</span>
   </div>
   <div class="topbar-right">
-    <a href="https://github.com/cleytonsilva/aws-solutions-architect-brasil" target="_blank" class="gh-link">GitHub ↗</a>
+    <a href="#" id="repositoryLink" target="_blank" rel="noopener noreferrer" class="gh-link">GitHub ↗</a>
   </div>
 </div>
 
 <!-- PROGRESS -->
 <div class="progress-bar-wrap">
-  <span class="prog-label">PROGRESSO: <strong id="progressCount">0/31</strong></span>
+  <span class="prog-label">PROGRESS: <strong id="progressCount">0/31</strong></span>
   <div class="prog-track"><div class="prog-fill" id="progressFill" style="width:0%"></div></div>
   <span class="prog-pct" id="progressPct">0%</span>
   <div class="domain-stats" id="domainStats"></div>
@@ -442,11 +446,11 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="sidebar-top">
-      <input class="search-input" type="text" placeholder="Buscar módulo..." id="searchInput" oninput="filterModules()">
+      <input class="search-input" type="text" placeholder="Search modules..." aria-label="Search modules by name or number" id="searchInput" oninput="filterModules()">
       <div class="filter-row">
-        <button class="filter-btn active" id="f-all"       onclick="setFilter('all')">Todos</button>
-        <button class="filter-btn"        id="f-pending"   onclick="setFilter('pending')">Pendentes</button>
-        <button class="filter-btn"        id="f-completed" onclick="setFilter('completed')">Concluídos</button>
+        <button class="filter-btn active" id="f-all"       onclick="setFilter('all')">All</button>
+        <button class="filter-btn"        id="f-pending"   onclick="setFilter('pending')">Pending</button>
+        <button class="filter-btn"        id="f-completed" onclick="setFilter('completed')">Completed</button>
       </div>
     </div>
     <div class="sidebar-list" id="sidebarList"></div>
@@ -458,15 +462,15 @@
       <div class="breadcrumb">
         <span>aws-saa-c03</span>
         <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current" id="breadcrumbCurrent">Selecione um módulo</span>
+        <span class="breadcrumb-current" id="breadcrumbCurrent">Select a module</span>
       </div>
       <div class="content-actions" id="contentActions"></div>
     </div>
-    <div class="content-body" id="contentBody">
+    <div class="content-body" id="contentBody" aria-live="polite" aria-busy="false">
       <div class="welcome">
         <div class="welcome-icon">📚</div>
-        <h2>Portal SAA-C03</h2>
-        <p>Clique num módulo para ler o conteúdo aqui.<br>Marque ✓ para registar progresso — guardado automaticamente no browser.</p>
+        <h2>SAA-C03 Study Portal</h2>
+        <p>Select a module to read its content here.<br>Use ✓ to track your progress, saved automatically in this browser.</p>
         <div class="domain-grid" id="welcomeDomainGrid"></div>
       </div>
     </div>
@@ -474,71 +478,530 @@
 </div>
 
 <!-- TOAST -->
-<div class="toast" id="toast">
+<div class="toast" id="toast" role="status" aria-live="polite">
   <div class="toast-dot" id="toastDot"></div>
   <span id="toastMsg"></span>
 </div>
 
 <script>
-const BASE = 'https://raw.githubusercontent.com/cleytonsilva/aws-solutions-architect-brasil/main';
-const GH   = 'https://github.com/cleytonsilva/aws-solutions-architect-brasil/blob/main';
+const REPOSITORY = Object.freeze({
+  owner: 'Thiago-code-lab',
+  name: 'aws-certified-solutions-architect-associate-brasil',
+  branch: 'saa-c03-english',
+});
+const REPO_URL = `https://github.com/${REPOSITORY.owner}/${REPOSITORY.name}`;
+const BASE = `https://raw.githubusercontent.com/${REPOSITORY.owner}/${REPOSITORY.name}/${REPOSITORY.branch}`;
+const GH = `${REPO_URL}/blob/${REPOSITORY.branch}`;
+document.getElementById('repositoryLink').href = `${REPO_URL}/tree/${REPOSITORY.branch}`;
 const STORAGE_KEY = 'aws-saa-progress-v1';
 
 const MODULES = [
-  { num:'01', name:'Introdução ao SAA-C03',                    domain:'base',        week:1, file:'01-Introduction-SAA-C03/README.md',                         cs:true,  q:true,  lab:false },
-  { num:'02', name:'IAM e Segurança',                          domain:'security',    week:1, file:'02-IAM-and-Security/README.md',                            cs:true,  q:true,  lab:false },
-  { num:'03', name:'IAM e Segurança – Labs',                   domain:'lab',         week:1, file:'03-IAM-and-Security-Labs/lab.md',                          cs:false, q:false, lab:true  },
-  { num:'04', name:'Computação EC2',                           domain:'performance', week:2, file:'04-EC2-Compute/README.md',                              cs:true,  q:true,  lab:false },
-  { num:'05', name:'Alta Disponibilidade e Escalabilidade',    domain:'resilient',   week:2, file:'05-High-Availability-and-Scalability/README.md',       cs:true,  q:true,  lab:false },
-  { num:'06', name:'Amazon S3 e Armazenamento',                domain:'resilient',   week:3, file:'06-Amazon-S3-and-Storage/README.md',                   cs:true,  q:true,  lab:false },
-  { num:'07', name:'S3 Avançado – Labs',                       domain:'lab',         week:3, file:'07-Advanced-S3-Labs/lab.md',                              cs:false, q:false, lab:true  },
-  { num:'08', name:'VPC e Redes',                              domain:'security',    week:3, file:'08-VPC-and-Networking/README.md',                                cs:true,  q:true,  lab:false },
-  { num:'09', name:'VPC e Redes – Labs',                       domain:'lab',         week:3, file:'09-VPC-and-Networking-Labs/lab.md',                              cs:false, q:false, lab:true  },
-  { num:'10', name:'Banco de Dados',                           domain:'performance', week:4, file:'10-Databases/README.md',                             cs:true,  q:true,  lab:false },
-  { num:'11', name:'RDS e Bancos Relacionais – Labs',          domain:'lab',         week:4, file:'11-RDS-and-Relational-Databases-Labs/lab.md',                 cs:false, q:false, lab:true  },
+  { num:'01', name:'Introduction to SAA-C03',                    domain:'base',        week:1, file:'01-Introduction-SAA-C03/README.md',                         cs:true,  q:true,  lab:false },
+  { num:'02', name:'IAM and Security',                          domain:'security',    week:1, file:'02-IAM-and-Security/README.md',                            cs:true,  q:true,  lab:false },
+  { num:'03', name:'IAM and Security – Labs',                   domain:'lab',         week:1, file:'03-IAM-and-Security-Labs/lab.md',                          cs:false, q:false, lab:true  },
+  { num:'04', name:'EC2 Compute',                           domain:'performance', week:2, file:'04-EC2-Compute/README.md',                              cs:true,  q:true,  lab:false },
+  { num:'05', name:'High Availability and Scalability',    domain:'resilient',   week:2, file:'05-High-Availability-and-Scalability/README.md',       cs:true,  q:true,  lab:false },
+  { num:'06', name:'Amazon S3 and Storage',                domain:'resilient',   week:3, file:'06-Amazon-S3-and-Storage/README.md',                   cs:true,  q:true,  lab:false },
+  { num:'07', name:'Advanced S3 – Labs',                       domain:'lab',         week:3, file:'07-Advanced-S3-Labs/lab.md',                              cs:false, q:false, lab:true  },
+  { num:'08', name:'VPC and Networking',                              domain:'security',    week:3, file:'08-VPC-and-Networking/README.md',                                cs:true,  q:true,  lab:false },
+  { num:'09', name:'VPC and Networking – Labs',                       domain:'lab',         week:3, file:'09-VPC-and-Networking-Labs/lab.md',                              cs:false, q:false, lab:true  },
+  { num:'10', name:'Databases',                           domain:'performance', week:4, file:'10-Databases/README.md',                             cs:true,  q:true,  lab:false },
+  { num:'11', name:'RDS and Relational Databases – Labs',          domain:'lab',         week:4, file:'11-RDS-and-Relational-Databases-Labs/lab.md',                 cs:false, q:false, lab:true  },
   { num:'12', name:'DynamoDB – Labs',                          domain:'lab',         week:4, file:'12-DynamoDB/lab.md',                                      cs:false, q:false, lab:true  },
-  { num:'13', name:'DNS, Route 53 e CloudFront',               domain:'resilient',   week:4, file:'13-DNS-Route53-and-CloudFront/README.md',                   cs:true,  q:true,  lab:false },
-  { num:'14', name:'Desacoplamento: SQS, SNS, EventBridge',    domain:'resilient',   week:5, file:'14-Decoupling-SQS-SNS-EventBridge/README.md',          cs:true,  q:true,  lab:false },
-  { num:'15', name:'SQS e SNS – Labs',                         domain:'lab',         week:5, file:'15-SQS-SNS-Messaging-Labs/lab.md',                       cs:false, q:false, lab:true  },
-  { num:'16', name:'Containers: ECS, EKS, Fargate',            domain:'performance', week:5, file:'16-Containers-ECS-EKS-Fargate/README.md',                 cs:true,  q:true,  lab:false },
-  { num:'17', name:'Serverless: Lambda e API Gateway',         domain:'cost',        week:6, file:'17-Serverless-Lambda-API-Gateway/README.md',              cs:true,  q:true,  lab:false },
-  { num:'18', name:'Dados e Analytics',                        domain:'performance', week:6, file:'18-Data-and-Analytics/README.md',                          cs:true,  q:true,  lab:false },
-  { num:'19', name:'Machine Learning e IA',                    domain:'base',        week:7, file:'19-Machine-Learning-and-AI/README.md',                      cs:true,  q:true,  lab:false },
-  { num:'20', name:'Monitoramento: CloudWatch e CloudTrail',   domain:'security',    week:7, file:'20-Monitoring-CloudWatch-CloudTrail/README.md',         cs:true,  q:true,  lab:false },
-  { num:'21', name:'Migração e Transferência',                 domain:'resilient',   week:7, file:'21-Migration-and-Transfer/README.md',                   cs:true,  q:true,  lab:false },
-  { num:'22', name:'Recuperação de Desastres e Continuidade',  domain:'resilient',   week:8, file:'22-Disaster-Recovery-and-Business-Continuity/README.md',     cs:true,  q:true,  lab:false },
-  { num:'23', name:'Organizations, Governança e Custos',       domain:'cost',        week:8, file:'23-AWS-Organizations-Governance-and-Costs/README.md',       cs:true,  q:true,  lab:false },
-  { num:'24', name:'Redes Avançadas e Conectividade Híbrida',  domain:'security',    week:8, file:'24-Advanced-Networking-and-Hybrid-Connectivity/README.md',     cs:true,  q:true,  lab:false },
-  { num:'25', name:'Criptografia, KMS e Gestão de Segredos',   domain:'security',    week:8, file:'25-Encryption-KMS-and-Secrets-Management/README.md',       cs:true,  q:true,  lab:false },
+  { num:'13', name:'DNS, Route 53, and CloudFront',               domain:'resilient',   week:4, file:'13-DNS-Route53-and-CloudFront/README.md',                   cs:true,  q:true,  lab:false },
+  { num:'14', name:'Decoupling: SQS, SNS, and EventBridge',    domain:'resilient',   week:5, file:'14-Decoupling-SQS-SNS-EventBridge/README.md',          cs:true,  q:true,  lab:false },
+  { num:'15', name:'SQS and SNS – Labs',                         domain:'lab',         week:5, file:'15-SQS-SNS-Messaging-Labs/lab.md',                       cs:false, q:false, lab:true  },
+  { num:'16', name:'Containers: ECS, EKS, and Fargate',            domain:'performance', week:5, file:'16-Containers-ECS-EKS-Fargate/README.md',                 cs:true,  q:true,  lab:false },
+  { num:'17', name:'Serverless: Lambda and API Gateway',         domain:'cost',        week:6, file:'17-Serverless-Lambda-API-Gateway/README.md',              cs:true,  q:true,  lab:false },
+  { num:'18', name:'Data and Analytics',                        domain:'performance', week:6, file:'18-Data-and-Analytics/README.md',                          cs:true,  q:true,  lab:false },
+  { num:'19', name:'Machine Learning and AI',                    domain:'base',        week:7, file:'19-Machine-Learning-and-AI/README.md',                      cs:true,  q:true,  lab:false },
+  { num:'20', name:'Monitoring: CloudWatch and CloudTrail',   domain:'security',    week:7, file:'20-Monitoring-CloudWatch-CloudTrail/README.md',         cs:true,  q:true,  lab:false },
+  { num:'21', name:'Migration and Transfer',                 domain:'resilient',   week:7, file:'21-Migration-and-Transfer/README.md',                   cs:true,  q:true,  lab:false },
+  { num:'22', name:'Disaster Recovery and Business Continuity',  domain:'resilient',   week:8, file:'22-Disaster-Recovery-and-Business-Continuity/README.md',     cs:true,  q:true,  lab:false },
+  { num:'23', name:'Organizations, Governance, and Costs',       domain:'cost',        week:8, file:'23-AWS-Organizations-Governance-and-Costs/README.md',       cs:true,  q:true,  lab:false },
+  { num:'24', name:'Advanced Networking and Hybrid Connectivity',  domain:'security',    week:8, file:'24-Advanced-Networking-and-Hybrid-Connectivity/README.md',     cs:true,  q:true,  lab:false },
+  { num:'25', name:'Encryption, KMS, and Secrets Management',   domain:'security',    week:8, file:'25-Encryption-KMS-and-Secrets-Management/README.md',       cs:true,  q:true,  lab:false },
   { num:'26', name:'Well-Architected Framework',               domain:'base',        week:9, file:'26-Well-Architected-Framework/README.md',                 cs:true,  q:true,  lab:false },
-  { num:'27', name:'Casos de Uso Reais',                       domain:'base',        week:9, file:'27-Real-World-Use-Cases/README.md',                         cs:false, q:true,  lab:false },
-  { num:'28', name:'Labs Práticos End-to-End',                 domain:'lab',         week:9, file:'28-Hands-on-Labs/README.md',                              cs:false, q:false, lab:true  },
-  { num:'29', name:'Simulados, Questões e Reta Final',         domain:'cost',        week:9, file:'29-Practice-Exams-and-Questions/README.md',                       cs:false, q:true,  lab:false },
-  { num:'30', name:'Glossário',                                domain:'base',        week:9, file:'30-Glossary/README.md',                                  cs:false, q:false, lab:false },
-  { num:'31', name:'Recursos e Links Oficiais',                domain:'base',        week:9, file:'31-Resources-and-Links/README.md',                           cs:false, q:false, lab:false },
+  { num:'27', name:'Real-World Use Cases',                       domain:'base',        week:9, file:'27-Real-World-Use-Cases/README.md',                         cs:false, q:true,  lab:false },
+  { num:'28', name:'End-to-End Hands-on Labs',                 domain:'lab',         week:9, file:'28-Hands-on-Labs/README.md',                              cs:false, q:false, lab:true  },
+  { num:'29', name:'Practice Exams, Questions, and Final Review',         domain:'cost',        week:9, file:'29-Practice-Exams-and-Questions/README.md',                       cs:false, q:true,  lab:false },
+  { num:'30', name:'Glossary',                                domain:'base',        week:9, file:'30-Glossary/README.md',                                  cs:false, q:false, lab:false },
+  { num:'31', name:'Resources and Official Links',                domain:'base',        week:9, file:'31-Resources-and-Links/README.md',                           cs:false, q:false, lab:false },
 ];
 
+const MODULE_FILES = {
+  "01": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "02": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "03": [
+    "lab.md",
+    "links.md"
+  ],
+  "04": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "05": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "06": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "questions.md"
+  ],
+  "07": [
+    "lab.md",
+    "links.md"
+  ],
+  "08": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "questions.md"
+  ],
+  "09": [
+    "lab.md",
+    "links.md"
+  ],
+  "10": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "questions.md"
+  ],
+  "11": [
+    "lab.md",
+    "links.md"
+  ],
+  "12": [
+    "lab.md",
+    "links.md"
+  ],
+  "13": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "questions.md"
+  ],
+  "14": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "questions.md"
+  ],
+  "15": [
+    "lab.md",
+    "links.md"
+  ],
+  "16": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "questions.md"
+  ],
+  "17": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "18": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "19": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "20": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "21": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "22": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "23": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "24": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "25": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "26": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "27": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "28": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "29": [
+    "README.md",
+    "error-log.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "mini-practice-exams-by-domain.md",
+    "questions.md",
+    "final-review-saa-c03.md"
+  ],
+  "30": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ],
+  "31": [
+    "README.md",
+    "use-cases.md",
+    "cheatsheet.md",
+    "flashcards.md",
+    "lab.md",
+    "links.md",
+    "questions.md"
+  ]
+};
+const DOCUMENT_PATHS = new Set([
+  ".github/ISSUE_TEMPLATE/aws_update.md",
+  ".github/ISSUE_TEMPLATE/bug_report.md",
+  ".github/ISSUE_TEMPLATE/pedagogy_suggestion.md",
+  "01-Introduction-SAA-C03/README.md",
+  "01-Introduction-SAA-C03/use-cases.md",
+  "01-Introduction-SAA-C03/cheatsheet.md",
+  "01-Introduction-SAA-C03/flashcards.md",
+  "01-Introduction-SAA-C03/lab.md",
+  "01-Introduction-SAA-C03/links.md",
+  "01-Introduction-SAA-C03/questions.md",
+  "02-IAM-and-Security/README.md",
+  "02-IAM-and-Security/use-cases.md",
+  "02-IAM-and-Security/cheatsheet.md",
+  "02-IAM-and-Security/flashcards.md",
+  "02-IAM-and-Security/lab.md",
+  "02-IAM-and-Security/links.md",
+  "02-IAM-and-Security/questions.md",
+  "03-IAM-and-Security-Labs/lab.md",
+  "03-IAM-and-Security-Labs/links.md",
+  "04-EC2-Compute/README.md",
+  "04-EC2-Compute/use-cases.md",
+  "04-EC2-Compute/cheatsheet.md",
+  "04-EC2-Compute/flashcards.md",
+  "04-EC2-Compute/lab.md",
+  "04-EC2-Compute/links.md",
+  "04-EC2-Compute/questions.md",
+  "05-High-Availability-and-Scalability/README.md",
+  "05-High-Availability-and-Scalability/use-cases.md",
+  "05-High-Availability-and-Scalability/cheatsheet.md",
+  "05-High-Availability-and-Scalability/flashcards.md",
+  "05-High-Availability-and-Scalability/lab.md",
+  "05-High-Availability-and-Scalability/links.md",
+  "05-High-Availability-and-Scalability/questions.md",
+  "06-Amazon-S3-and-Storage/README.md",
+  "06-Amazon-S3-and-Storage/use-cases.md",
+  "06-Amazon-S3-and-Storage/cheatsheet.md",
+  "06-Amazon-S3-and-Storage/flashcards.md",
+  "06-Amazon-S3-and-Storage/questions.md",
+  "07-Advanced-S3-Labs/lab.md",
+  "07-Advanced-S3-Labs/links.md",
+  "08-VPC-and-Networking/README.md",
+  "08-VPC-and-Networking/use-cases.md",
+  "08-VPC-and-Networking/cheatsheet.md",
+  "08-VPC-and-Networking/flashcards.md",
+  "08-VPC-and-Networking/questions.md",
+  "09-VPC-and-Networking-Labs/lab.md",
+  "09-VPC-and-Networking-Labs/links.md",
+  "10-Databases/README.md",
+  "10-Databases/use-cases.md",
+  "10-Databases/cheatsheet.md",
+  "10-Databases/flashcards.md",
+  "10-Databases/questions.md",
+  "11-RDS-and-Relational-Databases-Labs/lab.md",
+  "11-RDS-and-Relational-Databases-Labs/links.md",
+  "12-DynamoDB/lab.md",
+  "12-DynamoDB/links.md",
+  "13-DNS-Route53-and-CloudFront/README.md",
+  "13-DNS-Route53-and-CloudFront/use-cases.md",
+  "13-DNS-Route53-and-CloudFront/cheatsheet.md",
+  "13-DNS-Route53-and-CloudFront/flashcards.md",
+  "13-DNS-Route53-and-CloudFront/questions.md",
+  "14-Decoupling-SQS-SNS-EventBridge/README.md",
+  "14-Decoupling-SQS-SNS-EventBridge/use-cases.md",
+  "14-Decoupling-SQS-SNS-EventBridge/cheatsheet.md",
+  "14-Decoupling-SQS-SNS-EventBridge/flashcards.md",
+  "14-Decoupling-SQS-SNS-EventBridge/questions.md",
+  "15-SQS-SNS-Messaging-Labs/lab.md",
+  "15-SQS-SNS-Messaging-Labs/links.md",
+  "16-Containers-ECS-EKS-Fargate/README.md",
+  "16-Containers-ECS-EKS-Fargate/use-cases.md",
+  "16-Containers-ECS-EKS-Fargate/cheatsheet.md",
+  "16-Containers-ECS-EKS-Fargate/flashcards.md",
+  "16-Containers-ECS-EKS-Fargate/questions.md",
+  "17-Serverless-Lambda-API-Gateway/README.md",
+  "17-Serverless-Lambda-API-Gateway/use-cases.md",
+  "17-Serverless-Lambda-API-Gateway/cheatsheet.md",
+  "17-Serverless-Lambda-API-Gateway/flashcards.md",
+  "17-Serverless-Lambda-API-Gateway/lab.md",
+  "17-Serverless-Lambda-API-Gateway/links.md",
+  "17-Serverless-Lambda-API-Gateway/questions.md",
+  "18-Data-and-Analytics/README.md",
+  "18-Data-and-Analytics/use-cases.md",
+  "18-Data-and-Analytics/cheatsheet.md",
+  "18-Data-and-Analytics/flashcards.md",
+  "18-Data-and-Analytics/lab.md",
+  "18-Data-and-Analytics/links.md",
+  "18-Data-and-Analytics/questions.md",
+  "19-Machine-Learning-and-AI/README.md",
+  "19-Machine-Learning-and-AI/use-cases.md",
+  "19-Machine-Learning-and-AI/cheatsheet.md",
+  "19-Machine-Learning-and-AI/flashcards.md",
+  "19-Machine-Learning-and-AI/lab.md",
+  "19-Machine-Learning-and-AI/links.md",
+  "19-Machine-Learning-and-AI/questions.md",
+  "20-Monitoring-CloudWatch-CloudTrail/README.md",
+  "20-Monitoring-CloudWatch-CloudTrail/use-cases.md",
+  "20-Monitoring-CloudWatch-CloudTrail/cheatsheet.md",
+  "20-Monitoring-CloudWatch-CloudTrail/flashcards.md",
+  "20-Monitoring-CloudWatch-CloudTrail/lab.md",
+  "20-Monitoring-CloudWatch-CloudTrail/links.md",
+  "20-Monitoring-CloudWatch-CloudTrail/questions.md",
+  "21-Migration-and-Transfer/README.md",
+  "21-Migration-and-Transfer/use-cases.md",
+  "21-Migration-and-Transfer/cheatsheet.md",
+  "21-Migration-and-Transfer/flashcards.md",
+  "21-Migration-and-Transfer/lab.md",
+  "21-Migration-and-Transfer/links.md",
+  "21-Migration-and-Transfer/questions.md",
+  "22-Disaster-Recovery-and-Business-Continuity/README.md",
+  "22-Disaster-Recovery-and-Business-Continuity/use-cases.md",
+  "22-Disaster-Recovery-and-Business-Continuity/cheatsheet.md",
+  "22-Disaster-Recovery-and-Business-Continuity/flashcards.md",
+  "22-Disaster-Recovery-and-Business-Continuity/lab.md",
+  "22-Disaster-Recovery-and-Business-Continuity/links.md",
+  "22-Disaster-Recovery-and-Business-Continuity/questions.md",
+  "23-AWS-Organizations-Governance-and-Costs/README.md",
+  "23-AWS-Organizations-Governance-and-Costs/use-cases.md",
+  "23-AWS-Organizations-Governance-and-Costs/cheatsheet.md",
+  "23-AWS-Organizations-Governance-and-Costs/flashcards.md",
+  "23-AWS-Organizations-Governance-and-Costs/lab.md",
+  "23-AWS-Organizations-Governance-and-Costs/links.md",
+  "23-AWS-Organizations-Governance-and-Costs/questions.md",
+  "24-Advanced-Networking-and-Hybrid-Connectivity/README.md",
+  "24-Advanced-Networking-and-Hybrid-Connectivity/use-cases.md",
+  "24-Advanced-Networking-and-Hybrid-Connectivity/cheatsheet.md",
+  "24-Advanced-Networking-and-Hybrid-Connectivity/flashcards.md",
+  "24-Advanced-Networking-and-Hybrid-Connectivity/lab.md",
+  "24-Advanced-Networking-and-Hybrid-Connectivity/links.md",
+  "24-Advanced-Networking-and-Hybrid-Connectivity/questions.md",
+  "25-Encryption-KMS-and-Secrets-Management/README.md",
+  "25-Encryption-KMS-and-Secrets-Management/use-cases.md",
+  "25-Encryption-KMS-and-Secrets-Management/cheatsheet.md",
+  "25-Encryption-KMS-and-Secrets-Management/flashcards.md",
+  "25-Encryption-KMS-and-Secrets-Management/lab.md",
+  "25-Encryption-KMS-and-Secrets-Management/links.md",
+  "25-Encryption-KMS-and-Secrets-Management/questions.md",
+  "26-Well-Architected-Framework/README.md",
+  "26-Well-Architected-Framework/use-cases.md",
+  "26-Well-Architected-Framework/cheatsheet.md",
+  "26-Well-Architected-Framework/flashcards.md",
+  "26-Well-Architected-Framework/lab.md",
+  "26-Well-Architected-Framework/links.md",
+  "26-Well-Architected-Framework/questions.md",
+  "27-Real-World-Use-Cases/README.md",
+  "27-Real-World-Use-Cases/use-cases.md",
+  "27-Real-World-Use-Cases/cheatsheet.md",
+  "27-Real-World-Use-Cases/flashcards.md",
+  "27-Real-World-Use-Cases/lab.md",
+  "27-Real-World-Use-Cases/links.md",
+  "27-Real-World-Use-Cases/questions.md",
+  "28-Hands-on-Labs/README.md",
+  "28-Hands-on-Labs/use-cases.md",
+  "28-Hands-on-Labs/cheatsheet.md",
+  "28-Hands-on-Labs/flashcards.md",
+  "28-Hands-on-Labs/lab.md",
+  "28-Hands-on-Labs/links.md",
+  "28-Hands-on-Labs/questions.md",
+  "29-Practice-Exams-and-Questions/README.md",
+  "29-Practice-Exams-and-Questions/error-log.md",
+  "29-Practice-Exams-and-Questions/use-cases.md",
+  "29-Practice-Exams-and-Questions/cheatsheet.md",
+  "29-Practice-Exams-and-Questions/flashcards.md",
+  "29-Practice-Exams-and-Questions/lab.md",
+  "29-Practice-Exams-and-Questions/links.md",
+  "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+  "29-Practice-Exams-and-Questions/questions.md",
+  "29-Practice-Exams-and-Questions/final-review-saa-c03.md",
+  "30-Glossary/README.md",
+  "30-Glossary/use-cases.md",
+  "30-Glossary/cheatsheet.md",
+  "30-Glossary/flashcards.md",
+  "30-Glossary/lab.md",
+  "30-Glossary/links.md",
+  "30-Glossary/questions.md",
+  "31-Resources-and-Links/README.md",
+  "31-Resources-and-Links/use-cases.md",
+  "31-Resources-and-Links/cheatsheet.md",
+  "31-Resources-and-Links/flashcards.md",
+  "31-Resources-and-Links/lab.md",
+  "31-Resources-and-Links/links.md",
+  "31-Resources-and-Links/questions.md",
+  "CHANGELOG.md",
+  "CONTRIBUTING.md",
+  "README.md",
+  "SECURITY.md",
+  "MODULE_TEMPLATE.md",
+  "DOMAIN_STUDY_PATHS.md"
+]);
+
 const DC = { base:'#6b7fa3', security:'#9B59B6', resilient:'#4A9EFF', performance:'#2ECC71', cost:'#FF9900', lab:'#E74C3C' };
-const WL = { 1:'SEMANA 01', 2:'SEMANA 02', 3:'SEMANA 03', 4:'SEMANA 04', 5:'SEMANA 05', 6:'SEMANA 06', 7:'SEMANA 07', 8:'SEMANA 08', 9:'SEMANA 09 · RETA FINAL' };
+const WL = { 1:'WEEK 01', 2:'WEEK 02', 3:'WEEK 03', 4:'WEEK 04', 5:'WEEK 05', 6:'WEEK 06', 7:'WEEK 07', 8:'WEEK 08', 9:'WEEK 09 · FINAL REVIEW' };
 const DOMAIN_CARDS = [
-  { cls:'dm1', pct:'30%', name:'Arquiteturas Resilientes', domain:'resilient' },
-  { cls:'dm2', pct:'28%', name:'Alta Performance',         domain:'performance' },
-  { cls:'dm3', pct:'24%', name:'Segurança',                domain:'security' },
-  { cls:'dm4', pct:'18%', name:'Otimização de Custos',     domain:'cost' },
+  { cls:'dm1', pct:'30%', name:'Resilient Architectures', domain:'resilient' },
+  { cls:'dm2', pct:'28%', name:'High Performance',         domain:'performance' },
+  { cls:'dm3', pct:'24%', name:'Security',                domain:'security' },
+  { cls:'dm4', pct:'18%', name:'Cost Optimization',     domain:'cost' },
 ];
 
 let progress = {}, activeNum = null, searchTerm = '', filterMode = 'all', activeModule = null;
+let activePath = null, requestController = null, requestVersion = 0;
 
-function loadProgress() { try { progress = JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}'); } catch { progress={}; } }
-function saveProgress() { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }
+function loadProgress() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    if (!saved || typeof saved !== 'object' || Array.isArray(saved)) throw new Error('Invalid saved progress');
+    progress = Object.fromEntries(MODULES.filter(m => saved[m.num] === true).map(m => [m.num, true]));
+  } catch {
+    progress = {};
+    showToast('Saved progress could not be read. You can continue studying in this session.', false);
+  }
+}
+function saveProgress() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    return true;
+  } catch {
+    return false;
+  }
+}
 function isCompleted(n) { return !!progress[n]; }
 
 function toggleProgress(num, e) {
   if (e) e.stopPropagation();
   if (progress[num]) delete progress[num]; else progress[num] = true;
-  saveProgress(); updateProgressBar(); buildSidebar(getCurrentFiltered());
+  const saved = saveProgress();
+  updateProgressBar(); buildSidebar(getCurrentFiltered());
   updateContentHeader(); updateWelcomeDomains();
-  showToast(progress[num] ? `Módulo ${num} concluído ✓` : `Módulo ${num} desmarcado`, !!progress[num]);
+  updateCompletionBanner();
+  const message = progress[num] ? `Module ${num} completed ✓` : `Module ${num} marked as incomplete`;
+  showToast(saved ? message : 'Progress updated for this session only; browser storage is unavailable.', saved && !!progress[num]);
 }
 
 function updateProgressBar() {
@@ -581,7 +1044,7 @@ function buildSidebar(modules) {
   const list = document.getElementById('sidebarList');
   list.innerHTML = '';
   if (!modules.length) {
-    list.innerHTML = `<div style="padding:20px 16px;font-family:'Space Mono',monospace;font-size:11px;color:var(--sb-dim);text-align:center;">Nenhum módulo encontrado</div>`;
+    list.innerHTML = `<div style="padding:20px 16px;font-family:'Space Mono',monospace;font-size:11px;color:var(--sb-dim);text-align:center;">No modules found</div>`;
     return;
   }
   const wp = {};
@@ -602,9 +1065,17 @@ function buildSidebar(modules) {
     const item = document.createElement('div');
     item.className = 'mod-item' + (m.num===activeNum?' active':'') + (done?' completed':'');
     item.onclick = () => loadModule(m);
+    item.tabIndex = 0;
+    item.setAttribute('role', 'button');
+    item.setAttribute('aria-label', `Open module ${m.num}: ${m.name}`);
+    item.onkeydown = event => {
+      if (event.target === item && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault(); loadModule(m);
+      }
+    };
     const badges = [m.lab?'<span class="mbadge mb-lab">LAB</span>':'', m.cs?'<span class="mbadge mb-cs">CS</span>':'', m.q?'<span class="mbadge mb-q">Q</span>':''].join('');
     item.innerHTML = `
-      <div class="mod-check ${done?'checked':''}" onclick="toggleProgress('${m.num}',event)" title="${done?'Desmarcar':'Marcar concluído'}"></div>
+      <div class="mod-check ${done?'checked':''}" role="checkbox" tabindex="0" aria-checked="${done}" aria-label="${done?'Mark as incomplete':'Mark as completed'}: module ${m.num}" onclick="toggleProgress('${m.num}',event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProgress('${m.num}',event)}" title="${done?'Mark as incomplete':'Mark as completed'}"></div>
       <span class="mod-dot" style="background:${DC[m.domain]}"></span>
       <span class="mod-num">${m.num}</span>
       <span class="mod-name">${m.name}</span>
@@ -627,26 +1098,143 @@ function updateContentHeader() {
   if (!activeModule) return;
   const m = activeModule, done = isCompleted(m.num);
   document.getElementById('contentActions').innerHTML = `
-    <button class="action-btn ${done?'done-btn':''}" onclick="toggleProgress('${m.num}',event)">${done?'✓ Concluído':'○ Marcar Concluído'}</button>
-    <a href="${GH}/${m.file}" target="_blank" class="action-btn">GitHub ↗</a>`;
+    <button class="action-btn ${done?'done-btn':''}" onclick="toggleProgress('${m.num}',event)">${done?'✓ Completed':'○ Mark as Completed'}</button>
+    <a href="${GH}/${activePath || m.file}" target="_blank" rel="noopener noreferrer" class="action-btn">GitHub ↗</a>`;
 }
 
-async function loadModule(mod) {
-  activeNum = mod.num; activeModule = mod;
-  buildSidebar(getCurrentFiltered());
-  document.getElementById('breadcrumbCurrent').textContent = `${mod.num} · ${mod.name}`;
-  updateContentHeader();
-  document.getElementById('contentBody').innerHTML = `<div class="loading"><div class="spinner"></div><div class="loading-text">Carregando módulo ${mod.num}…</div></div>`;
-  try {
-    const res = await fetch(`${BASE}/${mod.file}`);
-    if (!res.ok) throw new Error(res.status);
-    const html = marked.parse(await res.text());
-    const banner = isCompleted(mod.num) ? `<div class="complete-banner">✅ &nbsp;Módulo marcado como concluído. Bom trabalho!</div>` : '';
-    document.getElementById('contentBody').innerHTML = banner + `<div class="md-content">${html}</div>`;
-    document.getElementById('contentBody').scrollTop = 0;
-  } catch {
-    document.getElementById('contentBody').innerHTML = `<div class="error-state"><div class="err-code">:(</div><div>Não foi possível carregar o conteúdo.</div><div style="margin-top:12px"><a href="${GH}/${mod.file}" target="_blank" class="action-btn">Abrir no GitHub ↗</a></div></div>`;
+const RESOURCE_LABELS = Object.freeze({
+  'README.md': 'Overview', 'lab.md': 'Hands-on Lab', 'questions.md': 'Practice Questions',
+  'flashcards.md': 'Flashcards', 'cheatsheet.md': 'Cheatsheet', 'use-cases.md': 'Use Cases',
+  'links.md': 'Official Links', 'error-log.md': 'Error Log',
+  'mini-practice-exams-by-domain.md': 'Mini Practice Exams',
+  'final-review-saa-c03.md': '14-Day Final Review',
+});
+const ALLOWED_TAGS = new Set('A BLOCKQUOTE BR CODE DEL DETAILS DIV EM H1 H2 H3 H4 H5 H6 HR IMG LI OL P PRE SPAN STRONG SUB SUMMARY SUP TABLE TBODY TD TH THEAD TR UL'.split(' '));
+const ALLOWED_ATTRIBUTES = new Set(['id', 'title', 'alt', 'href', 'src', 'width', 'height', 'align', 'start']);
+
+function resourceNavigation(mod, path) {
+  const directory = mod.file.slice(0, mod.file.lastIndexOf('/') + 1);
+  const links = MODULE_FILES[mod.num].map(file => {
+    const target = directory + file;
+    return `<a class="action-btn${target === path ? ' done-btn' : ''}" href="${GH}/${target}" data-document="${target}"${target === path ? ' aria-current="page"' : ''}>${RESOURCE_LABELS[file] || file}</a>`;
+  }).join('');
+  return `<nav class="resource-nav" aria-label="Module study resources">${links}</nav>`;
+}
+
+function resolveResource(value, path, image) {
+  let url;
+  try { url = new URL(value, `${GH}/${path}`); }
+  catch { return null; }
+  if (!['https:', 'http:'].includes(url.protocol)) return null;
+  const prefix = `${GH}/`;
+  if (image && url.href.startsWith(prefix)) return new URL(url.href.slice(prefix.length), `${BASE}/`).href;
+  return url.href;
+}
+
+function cleanElement(element, path) {
+  if (!ALLOWED_TAGS.has(element.tagName)) { element.remove(); return; }
+  for (const attribute of [...element.attributes]) {
+    if (!ALLOWED_ATTRIBUTES.has(attribute.name)) element.removeAttribute(attribute.name);
   }
+  for (const name of ['href', 'src']) {
+    if (!element.hasAttribute(name)) continue;
+    const value = element.getAttribute(name);
+    const resolved = resolveResource(value, path, name === 'src');
+    if (!resolved) { element.removeAttribute(name); continue; }
+    element.setAttribute(name, value.startsWith('#') && name === 'href' ? value : resolved);
+    if (name === 'href' && !value.startsWith('#') && resolved.startsWith(`${GH}/`)) {
+      const target = decodeURIComponent(resolved.slice(GH.length + 1).split('#')[0]);
+      if (DOCUMENT_PATHS.has(target)) element.dataset.document = target;
+    }
+  }
+  if (element.tagName === 'A' && element.href && !element.getAttribute('href').startsWith('#')) {
+    element.target = '_blank'; element.rel = 'noopener noreferrer';
+  }
+}
+
+function renderMarkdown(markdown, path) {
+  const template = document.createElement('template');
+  template.innerHTML = marked.parse(markdown);
+  template.content.querySelectorAll('*').forEach(element => cleanElement(element, path));
+  const used = new Map();
+  template.content.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(heading => {
+    const slug = heading.textContent.toLowerCase().replace(/[^\p{L}\p{N}_ -]/gu, '').replace(/ /g, '-');
+    const count = used.get(slug) || 0;
+    used.set(slug, count + 1);
+    if (!heading.id) heading.id = slug + (count ? `-${count}` : '');
+  });
+  const wrapper = document.createElement('div');
+  wrapper.className = 'md-content'; wrapper.append(template.content);
+  return wrapper;
+}
+
+function updateCompletionBanner() {
+  const body = document.getElementById('contentBody');
+  body.querySelector('.complete-banner')?.remove();
+  if (!activeModule || !isCompleted(activeModule.num) || !body.querySelector('.md-content')) return;
+  const banner = document.createElement('div');
+  banner.className = 'complete-banner';
+  banner.textContent = '✅ Module marked as completed. Great work!';
+  body.prepend(banner);
+}
+
+function renderDocument(mod, path, markdown) {
+  const body = document.getElementById('contentBody');
+  body.innerHTML = resourceNavigation(mod, path);
+  body.append(renderMarkdown(markdown, path));
+  body.scrollTop = 0;
+  updateCompletionBanner();
+}
+
+function renderLoadError(path) {
+  document.getElementById('contentBody').innerHTML = `<div class="error-state"><div class="err-code">:(</div><div>Unable to load this document. Check your connection and try again.</div><button class="action-btn" id="retryDocument">Try again</button><a href="${GH}/${path}" target="_blank" rel="noopener noreferrer" class="action-btn">Open on GitHub ↗</a></div>`;
+  document.getElementById('retryDocument').onclick = () => loadDocument(activeModule, path);
+}
+
+function loadModule(mod) { return loadDocument(mod, mod.file); }
+
+async function loadDocument(mod, path) {
+  if (!DOCUMENT_PATHS.has(path)) { showToast('This document is not part of the study repository.', false); return; }
+  requestController?.abort();
+  const controller = new AbortController(), version = ++requestVersion;
+  requestController = controller;
+  activeNum = mod.num; activeModule = mod; activePath = path;
+  buildSidebar(getCurrentFiltered()); updateContentHeader();
+  document.getElementById('breadcrumbCurrent').textContent = `${mod.num} · ${mod.name}`;
+  const body = document.getElementById('contentBody');
+  body.setAttribute('aria-busy', 'true');
+  body.innerHTML = `<div class="loading"><div class="spinner"></div><div class="loading-text">Loading module ${mod.num}…</div></div>`;
+  const timeout = setTimeout(() => controller.abort(), 15000);
+  try {
+    const response = await fetch(`${BASE}/${path}`, { signal: controller.signal });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const markdown = await response.text();
+    if (version === requestVersion) renderDocument(mod, path, markdown);
+  } catch {
+    if (version === requestVersion) renderLoadError(path);
+  } finally {
+    clearTimeout(timeout);
+    if (version === requestVersion) body.setAttribute('aria-busy', 'false');
+  }
+}
+
+document.getElementById('contentBody').addEventListener('click', event => {
+  const link = event.target.closest('a');
+  if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  if (link.dataset.document) {
+    event.preventDefault();
+    const path = link.dataset.document;
+    const mod = MODULES.find(m => m.file.split('/')[0] === path.split('/')[0]) || activeModule;
+    loadDocument(mod, path).then(() => scrollToAnchor(link.hash));
+  } else if (link.getAttribute('href')?.startsWith('#')) {
+    event.preventDefault(); scrollToAnchor(link.hash);
+  }
+});
+
+function scrollToAnchor(hash) {
+  if (!hash) return;
+  const heading = document.getElementById(decodeURIComponent(hash.slice(1)));
+  if (heading && document.getElementById('contentBody').contains(heading)) heading.scrollIntoView();
 }
 
 let toastTimer;
