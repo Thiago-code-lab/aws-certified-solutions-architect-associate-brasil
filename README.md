@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="./assets/Banner-SolutionsArchitect.png" alt="CloudStudy AWS Solutions Architect Associate banner; original artwork contains Portuguese captions translated below" width="100%" />
-</p>
+<img width="1672" height="941" alt="Image" src="https://github.com/user-attachments/assets/0c267031-e19d-483e-9306-786e9625d953" />
 
 <p align="center"><em>AWS architecture, scalability, and practical certification preparation. Real-world AWS architectures; security best practices; high availability and resilience; performance and scalability; cost optimization; lessons, labs, study maps, flashcards, and more. 100% free open repository.</em></p>
 
