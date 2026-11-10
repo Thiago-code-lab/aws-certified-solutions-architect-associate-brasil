@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="./assets/Banner-SolutionsArchitect.png" alt="Banner AWS Solutions Architect Associate" width="100%" />
-</p>
+<img width="1672" height="941" alt="Image" src="https://github.com/user-attachments/assets/0c267031-e19d-483e-9306-786e9625d953" />
 
 <p align="center">
   <a href="https://www.cloudstudy.com.br/">
