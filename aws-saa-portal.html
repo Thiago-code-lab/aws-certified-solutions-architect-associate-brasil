@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS SAA-C03 – Portal de Estudos</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<style>
+  :root {
+    /* Sidebar – escuro */
+    --sb-bg:      #0f1520;
+    --sb-bg2:     #141c2e;
+    --sb-border:  #1e2d4a;
+    --sb-text:    #e8edf5;
+    --sb-muted:   #6b7fa3;
+    --sb-dim:     #3d5070;
+    --orange:     #FF9900;
+    --orange-dim: rgba(255,153,0,0.12);
+    --blue:       #4A9EFF;
+    --green:      #22a85a;
+    --green-dim:  rgba(34,168,90,0.12);
+    --purple:     #9B59B6;
+    --red:        #E74C3C;
+
+    /* Content – claro */
+    --ct-bg:      #f8f6f1;       /* creme muito suave */
+    --ct-surface: #ffffff;
+    --ct-border:  #e0d9ce;
+    --ct-text:    #1a1a1a;       /* quase preto — contraste óptimo */
+    --ct-muted:   #4a4a4a;
+    --ct-dim:     #7a7a7a;
+    --ct-accent:  #b35900;       /* laranja escuro — legível em fundo claro */
+    --ct-blue:    #1a5fa8;
+    --ct-green:   #1a7a3a;
+    --ct-code-bg: #eeeae2;
+    --ct-pre-bg:  #1e2433;
+
+    --sidebar-w:  340px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--sb-bg);
+    color: var(--sb-text);
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ══ TOP BAR ══════════════════════════════════════════════════ */
+  .topbar {
+    background: #0a0e14;
+    border-bottom: 1px solid var(--sb-border);
+    padding: 0 20px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .topbar-left { display:flex; align-items:center; gap:12px; }
+  .logo { font-family:'Syne',sans-serif; font-size:15px; font-weight:800; color:var(--sb-text); }
+  .logo em { font-style:normal; color:var(--orange); }
+  .pill {
+    font-family:'Space Mono',monospace; font-size:10px;
+    padding:3px 8px; background:var(--orange-dim);
+    border:1px solid rgba(255,153,0,0.35); color:var(--orange);
+    border-radius:3px; letter-spacing:1.5px;
+  }
+  .topbar-right { display:flex; align-items:center; gap:12px; }
+  .gh-link {
+    font-family:'Space Mono',monospace; font-size:11px;
+    color:var(--orange); text-decoration:none;
+    border:1px solid rgba(255,153,0,0.3); padding:5px 12px;
+    border-radius:4px; transition:all .15s;
+  }
+  .gh-link:hover { background:var(--orange-dim); }
+
+  /* ══ PROGRESS BAR ═════════════════════════════════════════════ */
+  .progress-bar-wrap {
+    flex-shrink:0; background:#0a0e14;
+    border-bottom:1px solid var(--sb-border);
+    padding:9px 20px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .prog-label { font-family:'Space Mono',monospace; font-size:10px; color:var(--sb-muted); white-space:nowrap; }
+  .prog-label strong { color:var(--orange); }
+  .prog-track { flex:1; height:5px; background:var(--sb-border); border-radius:3px; overflow:hidden; }
+  .prog-fill { height:100%; background:linear-gradient(90deg,#22a85a,var(--orange)); border-radius:3px; transition:width .4s ease; }
+  .prog-pct { font-family:'Space Mono',monospace; font-size:11px; color:#22a85a; font-weight:700; min-width:34px; text-align:right; }
+  .domain-stats { display:flex; gap:10px; flex-shrink:0; }
+  .ds { display:flex; align-items:center; gap:4px; font-family:'Space Mono',monospace; font-size:10px; color:var(--sb-muted); }
+  .ds-dot { width:6px; height:6px; border-radius:50%; }
+
+  /* ══ LAYOUT ═══════════════════════════════════════════════════ */
+  .layout { display:flex; flex:1; overflow:hidden; }
+
+  /* ══ SIDEBAR ══════════════════════════════════════════════════ */
+  .sidebar {
+    width:var(--sidebar-w); min-width:var(--sidebar-w);
+    background:var(--sb-bg); border-right:1px solid var(--sb-border);
+    display:flex; flex-direction:column; overflow:hidden;
+  }
+  .sidebar-top {
+    padding:12px 14px; border-bottom:1px solid var(--sb-border);
+    flex-shrink:0; display:flex; flex-direction:column; gap:8px;
+  }
+  .search-input {
+    width:100%; background:var(--sb-bg2); border:1px solid var(--sb-border);
+    border-radius:5px; padding:8px 12px;
+    font-family:'Space Mono',monospace; font-size:11px;
+    color:var(--sb-text); outline:none; transition:border-color .2s;
+  }
+  .search-input::placeholder { color:var(--sb-dim); }
+  .search-input:focus { border-color:rgba(255,153,0,0.45); }
+  .filter-row { display:flex; gap:6px; }
+  .filter-btn {
+    font-family:'Space Mono',monospace; font-size:9px;
+    padding:4px 8px; border:1px solid var(--sb-border);
+    background:transparent; color:var(--sb-dim);
+    border-radius:3px; cursor:pointer; transition:all .15s;
+  }
+  .filter-btn:hover { border-color:var(--orange); color:var(--orange); }
+  .filter-btn.active { background:var(--orange-dim); border-color:rgba(255,153,0,0.5); color:var(--orange); }
+  .sidebar-list { overflow-y:auto; flex:1; padding:8px 0; }
+  .sidebar-list::-webkit-scrollbar { width:4px; }
+  .sidebar-list::-webkit-scrollbar-thumb { background:var(--sb-border); border-radius:2px; }
+
+  .week-header-row {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 14px 4px;
+  }
+  .week-label {
+    font-family:'Space Mono',monospace; font-size:9px;
+    letter-spacing:2px; color:var(--sb-dim); text-transform:uppercase;
+  }
+  .week-prog { font-family:'Space Mono',monospace; font-size:9px; color:var(--sb-dim); }
+  .week-prog.done { color:#22a85a; }
+
+  .mod-item {
+    display:flex; align-items:center; gap:8px;
+    padding:8px 14px; cursor:pointer;
+    transition:background .15s; border-left:3px solid transparent;
+    user-select:none;
+  }
+  .mod-item:hover { background:var(--sb-bg2); }
+  .mod-item.active { background:var(--sb-bg2); border-left-color:var(--orange); }
+  .mod-item.active .mod-num { color:var(--orange); }
+  .mod-item.completed .mod-name { color:var(--sb-dim); text-decoration:line-through; text-decoration-color:var(--sb-dim); }
+
+  .mod-check {
+    width:16px; height:16px; flex-shrink:0;
+    border:1.5px solid var(--sb-border); border-radius:3px;
+    display:flex; align-items:center; justify-content:center;
+    transition:all .15s; cursor:pointer;
+  }
+  .mod-check:hover { border-color:#22a85a; }
+  .mod-check.checked { background:#22a85a; border-color:#22a85a; }
+  .mod-check.checked::after { content:'✓'; color:#fff; font-size:10px; font-weight:700; line-height:1; }
+
+  .mod-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+  .mod-num { font-family:'Space Mono',monospace; font-size:10px; color:var(--sb-dim); width:24px; flex-shrink:0; }
+  .mod-name { font-size:12px; font-weight:500; color:var(--sb-muted); line-height:1.3; flex:1; transition:color .15s; }
+  .mod-item:hover .mod-name, .mod-item.active .mod-name { color:var(--sb-text); }
+  .mod-badges { display:flex; gap:3px; flex-shrink:0; }
+  .mbadge { font-size:8px; padding:1px 4px; border-radius:2px; font-family:'Space Mono',monospace; font-weight:700; }
+  .mb-lab { background:rgba(231,76,60,0.2); color:var(--red); }
+  .mb-cs  { background:rgba(34,168,90,0.15); color:#22a85a; }
+  .mb-q   { background:var(--orange-dim); color:var(--orange); }
+
+  /* ══ CONTENT PANEL ════════════════════════════════════════════ */
+  .content-panel {
+    flex:1; display:flex; flex-direction:column;
+    overflow:hidden; background:var(--ct-bg);
+  }
+  .content-header {
+    padding:0 28px; border-bottom:1px solid var(--ct-border);
+    display:flex; align-items:center; justify-content:space-between;
+    flex-shrink:0; height:52px;
+    background:var(--ct-surface);
+    box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  }
+  .breadcrumb {
+    font-family:'Space Mono',monospace; font-size:11px;
+    color:var(--ct-dim); display:flex; align-items:center; gap:8px;
+  }
+  .breadcrumb-sep { color:#ccc; }
+  .breadcrumb-current { color:var(--ct-muted); font-weight:700; }
+  .content-actions { display:flex; gap:8px; align-items:center; }
+  .action-btn {
+    font-family:'Space Mono',monospace; font-size:10px;
+    padding:5px 10px; border:1px solid var(--ct-border);
+    background:transparent; color:var(--ct-dim);
+    border-radius:4px; cursor:pointer; transition:all .15s;
+    text-decoration:none; display:inline-flex; align-items:center; gap:5px;
+  }
+  .action-btn:hover { border-color:var(--ct-accent); color:var(--ct-accent); background:rgba(179,89,0,0.06); }
+  .action-btn.done-btn { border-color:var(--ct-green); color:var(--ct-green); background:rgba(26,122,58,0.08); }
+  .action-btn.done-btn:hover { background:rgba(26,122,58,0.14); }
+
+  .content-body { flex:1; overflow-y:auto; padding:48px 64px; background:var(--ct-bg); }
+  .content-body::-webkit-scrollbar { width:8px; }
+  .content-body::-webkit-scrollbar-track { background:var(--ct-bg); }
+  .content-body::-webkit-scrollbar-thumb { background:var(--ct-border); border-radius:4px; }
+
+  /* ══ WELCOME ══════════════════════════════════════════════════ */
+  .welcome {
+    display:flex; flex-direction:column; align-items:center;
+    justify-content:center; height:100%; text-align:center;
+    gap:20px; padding:40px;
+  }
+  .welcome-icon { font-size:48px; opacity:.3; }
+  .welcome h2 { font-family:'Syne',sans-serif; font-size:22px; font-weight:800; color:var(--ct-muted); }
+  .welcome p { font-size:14px; line-height:1.9; color:var(--ct-dim); max-width:380px; }
+  .domain-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; max-width:440px; width:100%; }
+  .domain-mini { background:var(--ct-surface); border:1px solid var(--ct-border); border-radius:8px; padding:16px; text-align:left; box-shadow:0 1px 4px rgba(0,0,0,0.04); }
+  .dm-top { display:flex; justify-content:space-between; align-items:flex-start; }
+  .dm-pct { font-family:'Space Mono',monospace; font-size:22px; font-weight:700; }
+  .dm-prog { font-family:'Space Mono',monospace; font-size:10px; color:var(--ct-dim); }
+  .dm-name { font-size:12px; color:var(--ct-muted); margin-top:6px; font-weight:500; }
+  .dm-bar { height:3px; background:var(--ct-border); border-radius:2px; margin-top:10px; overflow:hidden; }
+  .dm-fill { height:100%; border-radius:2px; transition:width .5s; }
+  .dm1 .dm-pct { color:var(--ct-blue); } .dm1 .dm-fill { background:var(--ct-blue); }
+  .dm2 .dm-pct { color:var(--ct-green); } .dm2 .dm-fill { background:var(--ct-green); }
+  .dm3 .dm-pct { color:var(--purple); }   .dm3 .dm-fill { background:var(--purple); }
+  .dm4 .dm-pct { color:var(--ct-accent); } .dm4 .dm-fill { background:var(--ct-accent); }
+
+  /* ══ LOADING ══════════════════════════════════════════════════ */
+  .loading { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:16px; }
+  .spinner { width:30px; height:30px; border:2px solid var(--ct-border); border-top-color:var(--ct-accent); border-radius:50%; animation:spin .7s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .loading-text { font-family:'Space Mono',monospace; font-size:11px; color:var(--ct-dim); }
+
+  /* ══ ERROR ════════════════════════════════════════════════════ */
+  .error-state { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:12px; font-family:'Space Mono',monospace; font-size:12px; color:var(--ct-dim); text-align:center; }
+  .error-state .err-code { font-size:32px; color:var(--red); font-weight:700; }
+
+  /* ══ COMPLETE BANNER ══════════════════════════════════════════ */
+  .complete-banner {
+    background:#f0faf4; border:1px solid #a8dbb9; border-radius:8px;
+    padding:12px 18px; margin-bottom:28px;
+    display:flex; align-items:center; gap:12px;
+    font-size:14px; font-weight:500; color:var(--ct-green);
+  }
+
+  /* ══ MARKDOWN – READING OPTIMIZED ════════════════════════════ */
+  .md-content {
+    max-width: 740px;          /* linha de leitura ideal ~70 chars */
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;           /* base confortável */
+    line-height: 1.85;         /* entrelinha generosa */
+    color: var(--ct-text);
+    background: transparent;
+  }
+
+  /* Hierarquia de títulos com peso visual claro */
+  .md-content h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px; font-weight: 800;
+    color: #111;
+    margin: 0 0 20px;
+    line-height: 1.2;
+    padding-bottom: 14px;
+    border-bottom: 3px solid var(--ct-accent);
+  }
+  .md-content h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 21px; font-weight: 700;
+    color: #1a1a1a;
+    margin: 44px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--ct-border);
+  }
+  .md-content h3 {
+    font-size: 17px; font-weight: 700;
+    color: var(--ct-accent);
+    margin: 32px 0 10px;
+  }
+  .md-content h4 {
+    font-size: 15px; font-weight: 600;
+    color: var(--ct-blue);
+    margin: 22px 0 8px;
+  }
+
+  /* Parágrafos com espaçamento amplo */
+  .md-content p {
+    margin-bottom: 18px;
+    color: #1a1a1a;
+  }
+
+  /* Listas com recuo e espaçamento */
+  .md-content ul, .md-content ol {
+    padding-left: 28px;
+    margin-bottom: 18px;
+  }
+  .md-content li {
+    margin-bottom: 7px;
+    color: #1a1a1a;
+  }
+  .md-content li::marker { color: var(--ct-accent); }
+
+  /* Código inline — fundo suave, sem irritar */
+  .md-content code {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    background: var(--ct-code-bg);
+    border: 1px solid #d5cfc6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #8b3000;              /* marrom-avermelhado legível */
+    word-break: break-word;
+  }
+
+  /* Bloco de código — fundo escuro (contraste perfeito para código) */
+  .md-content pre {
+    background: var(--ct-pre-bg);
+    border-radius: 8px;
+    padding: 22px 24px;
+    overflow-x: auto;
+    margin: 20px 0 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+  .md-content pre code {
+    background: none; border: none; padding: 0;
+    color: #a8d8a0;              /* verde suave — boa leitura em escuro */
+    font-size: 13.5px; line-height: 1.7;
+    word-break: normal;
+  }
+
+  /* Citação — destaque suave */ 
+  .md-content blockquote {
+    border-left: 4px solid var(--ct-accent);
+    padding: 10px 20px;
+    margin: 20px 0;
+    background: #fdf5ec;
+    border-radius: 0 6px 6px 0;
+    color: var(--ct-muted);
+    font-style: italic;
+  }
+
+  /* Tabelas — fundo alternado para facilitar leitura */
+  .md-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0 28px;
+    font-size: 14px;
+    background: var(--ct-surface);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .md-content th {
+    background: #f0ebe3;
+    color: #2a2a2a;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 12px 16px;
+    border-bottom: 2px solid var(--ct-border);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .md-content td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--ct-border);
+    color: var(--ct-muted);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .md-content tr:last-child td { border-bottom: none; }
+  .md-content tr:nth-child(even) td { background: #faf7f2; }
+  .md-content tr:hover td { background: #f3ede4; }
+
+  /* Links — cor que contrasta com fundo claro */
+  .md-content a {
+    color: var(--ct-blue);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(26,95,168,0.35);
+    transition: border-color .15s, color .15s;
+  }
+  .md-content a:hover { color: #0d3e72; border-color: #0d3e72; }
+
+  /* Bold e itálico */
+  .md-content strong { color: #111; font-weight: 700; }
+  .md-content em { color: var(--ct-muted); font-style: italic; }
+
+  /* Linha divisória */
+  .md-content hr { border:none; border-top:2px solid var(--ct-border); margin:40px 0; }
+
+  /* Imagens */
+  .md-content img { max-width:100%; border-radius:8px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+
+  /* ══ TOAST ════════════════════════════════════════════════════ */
+  .toast {
+    position:fixed; bottom:24px; right:24px;
+    background:#1e2433; border:1px solid #2e3d56;
+    border-radius:6px; padding:12px 18px;
+    font-family:'Space Mono',monospace; font-size:12px; color:#aab;
+    z-index:999; display:flex; align-items:center; gap:10px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+    transform:translateY(80px); opacity:0;
+    transition:all .3s ease; pointer-events:none;
+  }
+  .toast.show { transform:translateY(0); opacity:1; }
+  .toast-dot { width:8px; height:8px; border-radius:50%; background:#22a85a; flex-shrink:0; }
+  .toast-dot.undo { background:#4a5a7a; }
+
+  @media (max-width:768px) {
+    :root { --sidebar-w:260px; }
+    .content-body { padding:24px 20px; }
+    .domain-stats { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="logo">AWS <em>SAA-C03</em></span>
+    <span class="pill">PT-BR</span>
+  </div>
+  <div class="topbar-right">
+    <a href="https://github.com/cleytonsilva/aws-solutions-architect-brasil" target="_blank" class="gh-link">GitHub ↗</a>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-bar-wrap">
+  <span class="prog-label">PROGRESSO: <strong id="progressCount">0/31</strong></span>
+  <div class="prog-track"><div class="prog-fill" id="progressFill" style="width:0%"></div></div>
+  <span class="prog-pct" id="progressPct">0%</span>
+  <div class="domain-stats" id="domainStats"></div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <input class="search-input" type="text" placeholder="Buscar módulo..." id="searchInput" oninput="filterModules()">
+      <div class="filter-row">
+        <button class="filter-btn active" id="f-all"       onclick="setFilter('all')">Todos</button>
+        <button class="filter-btn"        id="f-pending"   onclick="setFilter('pending')">Pendentes</button>
+        <button class="filter-btn"        id="f-completed" onclick="setFilter('completed')">Concluídos</button>
+      </div>
+    </div>
+    <div class="sidebar-list" id="sidebarList"></div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content-panel">
+    <div class="content-header">
+      <div class="breadcrumb">
+        <span>aws-saa-c03</span>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current" id="breadcrumbCurrent">Selecione um módulo</span>
+      </div>
+      <div class="content-actions" id="contentActions"></div>
+    </div>
+    <div class="content-body" id="contentBody">
+      <div class="welcome">
+        <div class="welcome-icon">📚</div>
+        <h2>Portal SAA-C03</h2>
+        <p>Clique num módulo para ler o conteúdo aqui.<br>Marque ✓ para registar progresso — guardado automaticamente no browser.</p>
+        <div class="domain-grid" id="welcomeDomainGrid"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-dot" id="toastDot"></div>
+  <span id="toastMsg"></span>
+</div>
+
+<script>
+const BASE = 'https://raw.githubusercontent.com/cleytonsilva/aws-solutions-architect-brasil/main';
+const GH   = 'https://github.com/cleytonsilva/aws-solutions-architect-brasil/blob/main';
+const STORAGE_KEY = 'aws-saa-progress-v1';
+
+const MODULES = [
+  { num:'01', name:'Introdução ao SAA-C03',                    domain:'base',        week:1, file:'01-Introducao-SAA-C03/README.md',                         cs:true,  q:true,  lab:false },
+  { num:'02', name:'IAM e Segurança',                          domain:'security',    week:1, file:'02-IAM-e-Seguranca/README.md',                            cs:true,  q:true,  lab:false },
+  { num:'03', name:'IAM e Segurança – Labs',                   domain:'lab',         week:1, file:'03-IAM-e-Seguranca-Labs/lab.md',                          cs:false, q:false, lab:true  },
+  { num:'04', name:'Computação EC2',                           domain:'performance', week:2, file:'04-Computacao-EC2/README.md',                              cs:true,  q:true,  lab:false },
+  { num:'05', name:'Alta Disponibilidade e Escalabilidade',    domain:'resilient',   week:2, file:'05-Alta-Disponibilidade-e-Escalabilidade/README.md',       cs:true,  q:true,  lab:false },
+  { num:'06', name:'Amazon S3 e Armazenamento',                domain:'resilient',   week:3, file:'06-Amazon-S3-e-Armazenamento/README.md',                   cs:true,  q:true,  lab:false },
+  { num:'07', name:'S3 Avançado – Labs',                       domain:'lab',         week:3, file:'07-S3-Avancado-Labs/lab.md',                              cs:false, q:false, lab:true  },
+  { num:'08', name:'VPC e Redes',                              domain:'security',    week:3, file:'08-VPC-e-Redes/README.md',                                cs:true,  q:true,  lab:false },
+  { num:'09', name:'VPC e Redes – Labs',                       domain:'lab',         week:3, file:'09-VPC-e-Redes-Labs/lab.md',                              cs:false, q:false, lab:true  },
+  { num:'10', name:'Banco de Dados',                           domain:'performance', week:4, file:'10-Banco-de-Dados/README.md',                             cs:true,  q:true,  lab:false },
+  { num:'11', name:'RDS e Bancos Relacionais – Labs',          domain:'lab',         week:4, file:'11-RDS-e-Bancos-Relacionais-Labs/lab.md',                 cs:false, q:false, lab:true  },
+  { num:'12', name:'DynamoDB – Labs',                          domain:'lab',         week:4, file:'12-DynamoDB/lab.md',                                      cs:false, q:false, lab:true  },
+  { num:'13', name:'DNS, Route 53 e CloudFront',               domain:'resilient',   week:4, file:'13-DNS-Route53-e-CloudFront/README.md',                   cs:true,  q:true,  lab:false },
+  { num:'14', name:'Desacoplamento: SQS, SNS, EventBridge',    domain:'resilient',   week:5, file:'14-Desacoplamento-SQS-SNS-EventBridge/README.md',          cs:true,  q:true,  lab:false },
+  { num:'15', name:'SQS e SNS – Labs',                         domain:'lab',         week:5, file:'15-SQS-SNS-Mensageria-Labs/lab.md',                       cs:false, q:false, lab:true  },
+  { num:'16', name:'Containers: ECS, EKS, Fargate',            domain:'performance', week:5, file:'16-Containers-ECS-EKS-Fargate/README.md',                 cs:true,  q:true,  lab:false },
+  { num:'17', name:'Serverless: Lambda e API Gateway',         domain:'cost',        week:6, file:'17-Serverless-Lambda-API-Gateway/README.md',              cs:true,  q:true,  lab:false },
+  { num:'18', name:'Dados e Analytics',                        domain:'performance', week:6, file:'18-Dados-e-Analytics/README.md',                          cs:true,  q:true,  lab:false },
+  { num:'19', name:'Machine Learning e IA',                    domain:'base',        week:7, file:'19-Machine-Learning-e-IA/README.md',                      cs:true,  q:true,  lab:false },
+  { num:'20', name:'Monitoramento: CloudWatch e CloudTrail',   domain:'security',    week:7, file:'20-Monitoramento-CloudWatch-CloudTrail/README.md',         cs:true,  q:true,  lab:false },
+  { num:'21', name:'Migração e Transferência',                 domain:'resilient',   week:7, file:'21-Migracao-e-Transferencia/README.md',                   cs:true,  q:true,  lab:false },
+  { num:'22', name:'Recuperação de Desastres e Continuidade',  domain:'resilient',   week:8, file:'22-Recuperacao-de-Desastres-e-Continuidade/README.md',     cs:true,  q:true,  lab:false },
+  { num:'23', name:'Organizations, Governança e Custos',       domain:'cost',        week:8, file:'23-AWS-Organizations-Governanca-e-Custos/README.md',       cs:true,  q:true,  lab:false },
+  { num:'24', name:'Redes Avançadas e Conectividade Híbrida',  domain:'security',    week:8, file:'24-Redes-Avancadas-e-Conectividade-Hibrida/README.md',     cs:true,  q:true,  lab:false },
+  { num:'25', name:'Criptografia, KMS e Gestão de Segredos',   domain:'security',    week:8, file:'25-Criptografia-KMS-e-Gestao-de-Segredos/README.md',       cs:true,  q:true,  lab:false },
+  { num:'26', name:'Well-Architected Framework',               domain:'base',        week:9, file:'26-Well-Architected-Framework/README.md',                 cs:true,  q:true,  lab:false },
+  { num:'27', name:'Casos de Uso Reais',                       domain:'base',        week:9, file:'27-Casos-de-Uso-Reais/README.md',                         cs:false, q:true,  lab:false },
+  { num:'28', name:'Labs Práticos End-to-End',                 domain:'lab',         week:9, file:'28-Labs-Praticos/README.md',                              cs:false, q:false, lab:true  },
+  { num:'29', name:'Simulados, Questões e Reta Final',         domain:'cost',        week:9, file:'29-Simulados-e-Questoes/README.md',                       cs:false, q:true,  lab:false },
+  { num:'30', name:'Glossário',                                domain:'base',        week:9, file:'30-Glossario/README.md',                                  cs:false, q:false, lab:false },
+  { num:'31', name:'Recursos e Links Oficiais',                domain:'base',        week:9, file:'31-Recursos-e-Links/README.md',                           cs:false, q:false, lab:false },
+];
+
+const DC = { base:'#6b7fa3', security:'#9B59B6', resilient:'#4A9EFF', performance:'#2ECC71', cost:'#FF9900', lab:'#E74C3C' };
+const WL = { 1:'SEMANA 01', 2:'SEMANA 02', 3:'SEMANA 03', 4:'SEMANA 04', 5:'SEMANA 05', 6:'SEMANA 06', 7:'SEMANA 07', 8:'SEMANA 08', 9:'SEMANA 09 · RETA FINAL' };
+const DOMAIN_CARDS = [
+  { cls:'dm1', pct:'30%', name:'Arquiteturas Resilientes', domain:'resilient' },
+  { cls:'dm2', pct:'28%', name:'Alta Performance',         domain:'performance' },
+  { cls:'dm3', pct:'24%', name:'Segurança',                domain:'security' },
+  { cls:'dm4', pct:'18%', name:'Otimização de Custos',     domain:'cost' },
+];
+
+let progress = {}, activeNum = null, searchTerm = '', filterMode = 'all', activeModule = null;
+
+function loadProgress() { try { progress = JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}'); } catch { progress={}; } }
+function saveProgress() { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }
+function isCompleted(n) { return !!progress[n]; }
+
+function toggleProgress(num, e) {
+  if (e) e.stopPropagation();
+  if (progress[num]) delete progress[num]; else progress[num] = true;
+  saveProgress(); updateProgressBar(); buildSidebar(getCurrentFiltered());
+  updateContentHeader(); updateWelcomeDomains();
+  showToast(progress[num] ? `Módulo ${num} concluído ✓` : `Módulo ${num} desmarcado`, !!progress[num]);
+}
+
+function updateProgressBar() {
+  const done = MODULES.filter(m => isCompleted(m.num)).length;
+  const pct  = Math.round(done / MODULES.length * 100);
+  document.getElementById('progressCount').textContent = `${done}/${MODULES.length}`;
+  document.getElementById('progressFill').style.width  = pct + '%';
+  document.getElementById('progressPct').textContent   = pct + '%';
+  const domains = [...new Set(MODULES.map(m => m.domain))];
+  document.getElementById('domainStats').innerHTML = domains.map(d => {
+    const mods = MODULES.filter(m => m.domain === d);
+    return `<div class="ds"><span class="ds-dot" style="background:${DC[d]}"></span><span>${mods.filter(m=>isCompleted(m.num)).length}/${mods.length}</span></div>`;
+  }).join('');
+}
+
+function updateWelcomeDomains() {
+  const el = document.getElementById('welcomeDomainGrid');
+  if (!el) return;
+  el.innerHTML = DOMAIN_CARDS.map(dc => {
+    const mods = MODULES.filter(m => m.domain === dc.domain);
+    const done = mods.filter(m => isCompleted(m.num)).length;
+    const fp   = mods.length ? Math.round(done/mods.length*100) : 0;
+    return `<div class="domain-mini ${dc.cls}">
+      <div class="dm-top"><div class="dm-pct">${dc.pct}</div><div class="dm-prog">${done}/${mods.length}</div></div>
+      <div class="dm-name">${dc.name}</div>
+      <div class="dm-bar"><div class="dm-fill" style="width:${fp}%"></div></div>
+    </div>`;
+  }).join('');
+}
+
+function getCurrentFiltered() {
+  let m = MODULES;
+  if (searchTerm) m = m.filter(x => x.name.toLowerCase().includes(searchTerm) || x.num.includes(searchTerm));
+  if (filterMode === 'pending')   m = m.filter(x => !isCompleted(x.num));
+  if (filterMode === 'completed') m = m.filter(x =>  isCompleted(x.num));
+  return m;
+}
+
+function buildSidebar(modules) {
+  const list = document.getElementById('sidebarList');
+  list.innerHTML = '';
+  if (!modules.length) {
+    list.innerHTML = `<div style="padding:20px 16px;font-family:'Space Mono',monospace;font-size:11px;color:var(--sb-dim);text-align:center;">Nenhum módulo encontrado</div>`;
+    return;
+  }
+  const wp = {};
+  [...new Set(MODULES.map(m=>m.week))].forEach(w => {
+    const wm = MODULES.filter(m=>m.week===w);
+    wp[w] = { total:wm.length, done:wm.filter(m=>isCompleted(m.num)).length };
+  });
+  let lastWeek = null;
+  modules.forEach(m => {
+    if (m.week !== lastWeek) {
+      lastWeek = m.week;
+      const p = wp[m.week], allDone = p.done===p.total;
+      const r = document.createElement('div'); r.className='week-header-row';
+      r.innerHTML = `<span class="week-label">${WL[m.week]}</span><span class="week-prog ${allDone?'done':''}">${p.done}/${p.total}</span>`;
+      list.appendChild(r);
+    }
+    const done = isCompleted(m.num);
+    const item = document.createElement('div');
+    item.className = 'mod-item' + (m.num===activeNum?' active':'') + (done?' completed':'');
+    item.onclick = () => loadModule(m);
+    const badges = [m.lab?'<span class="mbadge mb-lab">LAB</span>':'', m.cs?'<span class="mbadge mb-cs">CS</span>':'', m.q?'<span class="mbadge mb-q">Q</span>':''].join('');
+    item.innerHTML = `
+      <div class="mod-check ${done?'checked':''}" onclick="toggleProgress('${m.num}',event)" title="${done?'Desmarcar':'Marcar concluído'}"></div>
+      <span class="mod-dot" style="background:${DC[m.domain]}"></span>
+      <span class="mod-num">${m.num}</span>
+      <span class="mod-name">${m.name}</span>
+      <div class="mod-badges">${badges}</div>`;
+    list.appendChild(item);
+  });
+}
+
+function setFilter(mode) {
+  filterMode = mode;
+  ['all','pending','completed'].forEach(f => document.getElementById('f-'+f).classList.toggle('active', f===mode));
+  buildSidebar(getCurrentFiltered());
+}
+function filterModules() {
+  searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  buildSidebar(getCurrentFiltered());
+}
+
+function updateContentHeader() {
+  if (!activeModule) return;
+  const m = activeModule, done = isCompleted(m.num);
+  document.getElementById('contentActions').innerHTML = `
+    <button class="action-btn ${done?'done-btn':''}" onclick="toggleProgress('${m.num}',event)">${done?'✓ Concluído':'○ Marcar Concluído'}</button>
+    <a href="${GH}/${m.file}" target="_blank" class="action-btn">GitHub ↗</a>`;
+}
+
+async function loadModule(mod) {
+  activeNum = mod.num; activeModule = mod;
+  buildSidebar(getCurrentFiltered());
+  document.getElementById('breadcrumbCurrent').textContent = `${mod.num} · ${mod.name}`;
+  updateContentHeader();
+  document.getElementById('contentBody').innerHTML = `<div class="loading"><div class="spinner"></div><div class="loading-text">Carregando módulo ${mod.num}…</div></div>`;
+  try {
+    const res = await fetch(`${BASE}/${mod.file}`);
+    if (!res.ok) throw new Error(res.status);
+    const html = marked.parse(await res.text());
+    const banner = isCompleted(mod.num) ? `<div class="complete-banner">✅ &nbsp;Módulo marcado como concluído. Bom trabalho!</div>` : '';
+    document.getElementById('contentBody').innerHTML = banner + `<div class="md-content">${html}</div>`;
+    document.getElementById('contentBody').scrollTop = 0;
+  } catch {
+    document.getElementById('contentBody').innerHTML = `<div class="error-state"><div class="err-code">:(</div><div>Não foi possível carregar o conteúdo.</div><div style="margin-top:12px"><a href="${GH}/${mod.file}" target="_blank" class="action-btn">Abrir no GitHub ↗</a></div></div>`;
+  }
+}
+
+let toastTimer;
+function showToast(msg, pos) {
+  const el=document.getElementById('toast'), dot=document.getElementById('toastDot'), txt=document.getElementById('toastMsg');
+  txt.textContent=msg; dot.className='toast-dot'+(pos?'':' undo');
+  el.classList.add('show'); clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>el.classList.remove('show'), 2500);
+}
+
+loadProgress(); updateProgressBar(); buildSidebar(MODULES); updateWelcomeDomains();
+</script>
+</body>
+</html>
