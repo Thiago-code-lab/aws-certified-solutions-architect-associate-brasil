@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about encryption and secrets. Which approach best meets the requirements?
+<!-- question-id: 25-Q01 -->
 
-A) Apply a generic solution without considering KMS.
+An application must store a database credential and rotate that credential in both the secret store and the database. Which service directly provides this secret lifecycle capability?
 
-B) Use KMS with a configuration that meets the requirements and minimizes operational overhead.
+A) AWS KMS key-material rotation alone.
 
-C) Add components that the scenario does not require.
+B) A security group rule.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A plaintext constant in the application image.
+
+D) AWS Secrets Manager with a supported rotation integration or correctly configured rotation function.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for encryption and secrets with a better balance of requirements, risk, and operational effort.
+**Explanation:** Secrets Manager rotation updates the secret and the target service using a supported mechanism. KMS protects cryptographic keys and data; rotating KMS material does not change a database password.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Key rotation and credential rotation are different operations.
+- **B:** Network filtering does not store and rotate credentials.
+- **C:** A baked-in plaintext value does not implement controlled secret rotation.
+
+**AWS references:** [Secrets Manager rotation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html), [KMS key rotation](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 25-Q02 -->
 
-A) Resolve everything manually during the incident.
+Automatic rotation changes the key material of a supported customer managed KMS key. What happens to existing data protected by that key?
 
-B) Combine Secrets Manager with observability and automation.
+A) Every protected object is immediately rewritten using new data keys.
 
-C) Add components that the scenario does not require.
+B) All earlier ciphertext becomes undecryptable immediately.
 
-D) Ignore explicit security, availability or cost requirements.
+C) The application database password changes automatically.
+
+D) It is not automatically re-encrypted; KMS retains the material required to decrypt earlier ciphertext.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for encryption and secrets with a better balance of requirements, risk, and operational effort.
+**Explanation:** KMS rotation changes backing key material for future cryptographic operations. It does not rotate generated data keys or rewrite application data, and it is not secret credential rotation.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Rotation alone does not rewrite protected data or rotate all data keys.
+- **B:** KMS retains earlier material so valid earlier ciphertext remains decryptable.
+- **C:** A database credential requires a separate secret-rotation mechanism.
+
+**AWS references:** [KMS key rotation](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html), [Secrets Manager rotation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 25-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+A regulated workload needs the customer to control a KMS key policy and its deletion lifecycle. Which key type fits?
 
-B) Size resources based on actual usage and use rotation where appropriate.
+A) An AWS owned key whose policy the customer cannot manage.
 
-C) Add components that the scenario does not require.
+B) A customer managed KMS key.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A public TLS certificate alone.
+
+D) An IAM access key treated as a KMS encryption key.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for encryption and secrets with a better balance of requirements, risk, and operational effort.
+**Explanation:** Customer managed keys let customers manage key policies and lifecycle settings, subject to KMS controls. AWS owned keys are managed by the service and do not provide that customer policy control.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Customers cannot manage the policy and deletion lifecycle of an AWS owned key.
+- **C:** A certificate is not the requested KMS key resource.
+- **D:** An IAM credential signs API requests and is not a KMS key.
+
+**AWS references:** [AWS KMS key concepts](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 25-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+A team needs versioned retrieval of a non-secret application configuration value. It does not require credential rotation. Which service is a suitable key-value configuration store?
 
-B) The option that ignores cues about envelope encryption and architectural dependencies.
+A) Systems Manager Parameter Store.
 
-C) Add components that the scenario does not require.
+B) A KMS key alias used as the entire configuration database.
 
-D) Ignore explicit security, availability or cost requirements.
+C) An SQS dead-letter queue as the configuration source.
+
+D) A public repository containing production passwords.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for encryption and secrets with a better balance of requirements, risk, and operational effort.
+**Explanation:** Parameter Store supports centrally managed parameter values and versioning. SecureString adds KMS encryption when needed; secrets requiring purpose-built rotation should use an appropriate secrets service.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** A key alias identifies a KMS key and is not a general configuration store.
+- **C:** A DLQ is for failed message handling, not stable versioned configuration.
+- **D:** Publishing credentials is neither required nor appropriate for non-secret configuration management.
+
+**AWS references:** [Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html), [Secrets Manager rotation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 25-Q05 -->
 
-A) Review only definitions without scenario practice.
+An S3 object uses SSE-KMS. A policy also requires encrypted transport for clients. What additional transport requirement is appropriate?
 
-B) Practice questions about envelope encryption and auditing with explanations of the trade-offs.
+A) Assume SSE-KMS encrypts every network connection automatically.
 
-C) Add components that the scenario does not require.
+B) Remove authentication because the object is encrypted at rest.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Require HTTPS/TLS for the client connection and enforce the relevant access policy.
+
+D) Store the KMS plaintext key material in the URL.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for encryption and secrets with a better balance of requirements, risk, and operational effort.
+**Explanation:** SSE-KMS protects object data at rest. TLS protects the network connection; authorization and transport enforcement are separate controls.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** At-rest encryption is not a blanket transport-encryption guarantee.
+- **B:** Encryption does not replace authentication and authorization.
+- **D:** Exposing key material is unsafe and not the KMS service model.
+
+**AWS references:** [AWS KMS key concepts](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html), [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html), [Direct Connect encryption](https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

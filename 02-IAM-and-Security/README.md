@@ -2,53 +2,51 @@
 
 ## Overview
 
-This module covers **access control, identity, and layered security**, focusing on the decisions tested on the SAA-C03. The goal is to turn business requirements into clear technical choices while balancing resilience, performance, security, and cost. Success on the exam depends on identifying the scenario's most important constraint and choosing a pattern that reduces operational risk, beyond memorizing individual services.
+Design access using temporary credentials, least privilege, explicit policy evaluation, and appropriate organization guardrails. Network controls and encryption complement authorization; they do not replace it.
 
 ## Key Concepts
 
-- Role of services: IAM, KMS, CloudTrail, Organizations, Secrets Manager.
-- Prioritization by dominant requirement (latency, availability, compliance or cost).
-- Integration between services with decoupling and minimal observability.
-- Choose the least complex architecture that meets the requirements.
+- **Temporary workload credentials:** Roles avoid distributing long-lived keys. The object ARN scope and permitted action must match the required prefix; a role name alone grants nothing.
+- **Explicit deny precedence:** An applicable explicit deny overrides an allow for the same request. Policy creation time does not determine authorization precedence.
+- **SCPs are guardrails:** SCPs limit permissions in member accounts and do not grant access. Applicable identity or resource policies must grant the action within those limits.
+- **Workforce access:** IAM Identity Center supports centralized workforce access to AWS accounts. Permission sets define the account permissions available through the assigned sessions.
+- **Least privilege analysis:** Access analysis and testing help reduce permissions while preserving required behavior. Observed activity is evidence, but infrequent legitimate operations must also be considered.
 
 ## Exam Relevance
 
-On the SAA-C03, questions in this domain often have two technically feasible options. Details such as the consistency model, failover strategy, recurring operating costs, throughput impact, and required automation determine the better answer. Studying this module means practicing those selection criteria as well as learning terminology.
+Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service.
 
-## Practical Cues (3 to 5)
+## Practical Cues
 
-1. When the scenario calls for elasticity with little manual work, favor managed services.
-2. When components depend on each other, check for decoupling to absorb spikes and partial failures.
-3. When security is a constraint, verify encryption in transit and at rest, along with least privilege.
-4. If cost is a requirement, compare usage classes, capacity modes, and access patterns.
-5. If the scenario is global, validate traffic route, latency and distribution strategy.
+1. **Temporary workload credentials:** An instance role with temporary credentials and s3:GetObject scoped to the required object prefix.
+2. **Explicit deny precedence:** The request is denied.
+3. **SCPs are guardrails:** A permissions ceiling; the role still needs an applicable permission grant.
+4. **Workforce access:** Use IAM Identity Center with account assignments and permission sets.
+5. **Least privilege analysis:** Review access activity, generate and validate a scoped policy, test required operations, and remove unused permissions.
 
 ## Common Pitfalls
 
-- Choosing a premium feature that the scenario does not require.
-- Confusing high availability features with read scaling features.
-- Ignoring service limits and failure behavior.
-- Addressing a security requirement with a tool unsuited to the secret lifecycle.
+- Shared administrator credentials violate the temporary-credential and least-privilege requirements.
+- An explicit deny is not overridden by an identity allow.
+- An allow in an SCP is not itself an IAM permission grant.
 
 ## Next Review Steps
 
-1. Review [cheatsheet.md](./cheatsheet.md) to reinforce decision-making cues.
-2. Answer [questions.md](./questions.md) without reference materials to test your technical judgment.
-3. Use [flashcards.md](./flashcards.md) for a brief daily review to reinforce critical distinctions.
+1. Review [cheatsheet.md](./cheatsheet.md) and explain the assumptions behind each choice.
+2. Answer [questions.md](./questions.md) before revealing the explanations.
+3. Use [flashcards.md](./flashcards.md) for spaced retrieval and record recurring mistakes.
 
 ## Additional Study
 
-To strengthen your AWS fundamentals before studying architectural scenarios in depth:
-https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
+[IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html), [IAM policy evaluation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html), [Service control policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html).
 
-For an additional learning path connecting architecture with generative AI and Bedrock:
-https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil
+Related community paths: [Cloud Practitioner](https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil) and [AI Practitioner](https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil). These external repositories may contain Portuguese material.
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

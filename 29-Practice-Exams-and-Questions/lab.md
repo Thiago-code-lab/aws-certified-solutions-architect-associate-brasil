@@ -2,47 +2,47 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **exam practice and reviewing knowledge gaps**, with clear behavioral validation and controlled costs for a study environment.
+Use practice evidence to correct reasoning without treating practice scores as exam predictions.
 
 ## Services Used
 
-SAA-C03, IAM, VPC, S3.
+The five module questions, twenty mini practice questions, error log, and current exam guide.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Offline study exercise. No AWS resource creation is required.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Answer the five module questions without revealing explanations and record the dominant requirement for each.
+2. Complete the four five-question mini blocks, noting that their equal size is not the official exam-domain distribution.
+3. For every incorrect choice, record the failed assumption and an applicable AWS primary reference.
+4. Review the rationale for all four alternatives, not just the answer letter.
+5. Retry later with the options hidden or reordered and explain the design in your own words.
+6. Use the error log and the official domain weights to plan further review; do not convert a small practice score into a guaranteed pass probability.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- Every mistake has a requirement-based explanation.
+- The official domain weights are correctly recorded.
+- The learner can explain the choice independently of its letter.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Keep the error log and remove any accidental sensitive account data from public notes.
+2. No cloud resources were created for this exercise.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [SAA-C03 exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html), [SAA-C03 in-scope services](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

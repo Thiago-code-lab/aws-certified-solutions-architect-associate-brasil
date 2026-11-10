@@ -1,0 +1,2573 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-10",
+  "baseline_commit": "b8d55e0f10de899c68e84b0388b6393a21104734",
+  "portuguese_source_commit": "d43bc6a571c668b22127b283315582ac8c413a70",
+  "review_contract": "Intentional accuracy corrections supersede Portuguese answer/number parity. Approved file and question digests bind reviewed content; changes require a new technical review, not an automatic snapshot refresh.",
+  "files": {
+    ".github/FUNDING.yml": {
+      "baseline_sha256": "d88b5a47c67bfbb426f77e6965ce828733a49be036564dd3a2ec2e46c4bfece4",
+      "approved_sha256": "d88b5a47c67bfbb426f77e6965ce828733a49be036564dd3a2ec2e46c4bfece4",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    ".github/ISSUE_TEMPLATE/aws_update.md": {
+      "baseline_sha256": "911b8f13c344939df14f20c95c9853fc850fd8cde262484d60efbead881b8d5c",
+      "approved_sha256": "911b8f13c344939df14f20c95c9853fc850fd8cde262484d60efbead881b8d5c",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    ".github/ISSUE_TEMPLATE/bug_report.md": {
+      "baseline_sha256": "3d5134c3b622e1dd286529029b2b3426b65fa37d3f7a2c1f1543b5f7f52b66a8",
+      "approved_sha256": "3d5134c3b622e1dd286529029b2b3426b65fa37d3f7a2c1f1543b5f7f52b66a8",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    ".github/ISSUE_TEMPLATE/pedagogy_suggestion.md": {
+      "baseline_sha256": "44c390734614ff60dbf0762256172d03be6836bbbd816ab51e4975105850d074",
+      "approved_sha256": "44c390734614ff60dbf0762256172d03be6836bbbd816ab51e4975105850d074",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    ".github/workflows/deploy.yml": {
+      "baseline_sha256": "9486e1bfbe3951681f5175a62efe513385346ad5b7eed7afdb75a2b35ed6c1b2",
+      "approved_sha256": "9486e1bfbe3951681f5175a62efe513385346ad5b7eed7afdb75a2b35ed6c1b2",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    "01-Introduction-SAA-C03/README.md": {
+      "baseline_sha256": "e20d8eb415ef3b72b8d976306eefd37bc0691ad8fe4cec654a59fd56ddac423f",
+      "approved_sha256": "60d3843a0679fce009245b4e8ed31d0ed4871100946368dfe6894c0d3c1f9f56",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "shared",
+        "s3version",
+        "dr",
+        "rto"
+      ]
+    },
+    "01-Introduction-SAA-C03/cheatsheet.md": {
+      "baseline_sha256": "7159b62c15659e66b53f2511fef6365c973d8dcd34ed83f292ea2ff6a1bb07c3",
+      "approved_sha256": "4fede39bb51605c3f3f414ea395b24f130a6a70382864ae38cf20ad1ab78d150",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "shared",
+        "s3version",
+        "dr",
+        "rto"
+      ]
+    },
+    "01-Introduction-SAA-C03/flashcards.md": {
+      "baseline_sha256": "aab5991222398c70b6112392b972e1e7222cc48434ce8e6adada91551fce1da3",
+      "approved_sha256": "8e715d0546f775860f02eafca5e18aba85de09aad07f35b3e63a3f6ddc4fc77f",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "shared",
+        "s3version",
+        "dr",
+        "rto"
+      ]
+    },
+    "01-Introduction-SAA-C03/lab.md": {
+      "baseline_sha256": "b59da055881e0616d8e75e20f7e202b186efc40aa97ff4c597f20a45b0a661b4",
+      "approved_sha256": "8a350d908648c306372987abe93b1a070882d52e068586edc5a82fc28c75f7e9",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "shared",
+        "rto"
+      ]
+    },
+    "01-Introduction-SAA-C03/links.md": {
+      "baseline_sha256": "efff21dda75638cf66dcbd74dbce28b0f3c11ba01695c12c361e3b3a82d5a55f",
+      "approved_sha256": "76922e94a02091d9b766d42bfcb9100e67e1e0e5eea59cf429e147a7fac53fda",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "shared",
+        "s3version",
+        "dr",
+        "rto"
+      ]
+    },
+    "01-Introduction-SAA-C03/questions.md": {
+      "baseline_sha256": "f93e3adbf42a6c2f0821cfe0e59a23972098b172eb0e207e47483c08fbf35249",
+      "approved_sha256": "1ab3f4423c03b76e1a365c47a52874d6f15dda6891d8a62144df719c9889209f",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "shared",
+        "s3version",
+        "dr",
+        "rto"
+      ]
+    },
+    "01-Introduction-SAA-C03/use-cases.md": {
+      "baseline_sha256": "98022b8621c3afabf0e1aa28e335e7030e0dba003876709c48ef675460d0320f",
+      "approved_sha256": "ab6cfa82e35e56c59df1537aa4f03cf9afc6c4ea4f2726885b384ea5f893e55b",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "shared",
+        "s3version",
+        "dr",
+        "rto"
+      ]
+    },
+    "02-IAM-and-Security/README.md": {
+      "baseline_sha256": "4a30743f9773667809200febe513e14879400ca77126f7187817cf212755218b",
+      "approved_sha256": "0cc81e15b51931eb37413d31573c1a3f0f0639febd58abaa77d30fe63f18d409",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "scp"
+      ]
+    },
+    "02-IAM-and-Security/cheatsheet.md": {
+      "baseline_sha256": "40970201019537b051bb23601a8edfef97170d9aafc65eb2f6390950df21b440",
+      "approved_sha256": "c01c32c229997b1354edf4a4d99ec754aef8fd30eedc4e67c2d5710d62420ae2",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "scp"
+      ]
+    },
+    "02-IAM-and-Security/flashcards.md": {
+      "baseline_sha256": "a33818269358894bceaeb2d4ad28d69eee726cf8fb0f639395abf935cd948794",
+      "approved_sha256": "f56d6cc666c304bcf5c3b3534482041007625eca4ef7b260b4057741b0b5494a",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "scp"
+      ]
+    },
+    "02-IAM-and-Security/lab.md": {
+      "baseline_sha256": "d7436596c149911ee5796e1338c4b79adafdbd3d566d805b5a3d0a608e807368",
+      "approved_sha256": "3fe5110fb64d3273fe9164b7b6ffa1ed61c18945d2f796dabcda6f814eaf917c",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy"
+      ]
+    },
+    "02-IAM-and-Security/links.md": {
+      "baseline_sha256": "e57b697f9145be001d19088d68cc7657640682d5cf286422d2822e116084c281",
+      "approved_sha256": "6b6b4b8a9e4d46957276398e22e3e201b0e720f7111386403dc5ba1af331d730",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "policy",
+        "scp"
+      ]
+    },
+    "02-IAM-and-Security/questions.md": {
+      "baseline_sha256": "89526d1353eb3e6c3b495a6318c3ce4316ab4de8734ea414571aa030a0a58b5e",
+      "approved_sha256": "a1bf634a67c24fbcfd434e9a84fb716e516b58a8c6cda70fd475186e5bf42d99",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "scp"
+      ]
+    },
+    "02-IAM-and-Security/use-cases.md": {
+      "baseline_sha256": "db11a9bd7395030cb85f9a5d2de1495e6010b09132010c8dc1ab8c05794a49d4",
+      "approved_sha256": "540ce52dd8225994d37952d4c607238efbd1b4db5f98abf12b54c1b155c1a5a7",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "scp"
+      ]
+    },
+    "03-IAM-and-Security-Labs/lab.md": {
+      "baseline_sha256": "c90a6aec4d0c4e012f41fb3b5e9f2c320bc54fe08b35368ef0ce997d5644d74c",
+      "approved_sha256": "b0543d9a182aaafbce98b79c96727ec70fa3bd6380b215b6fd415c81c40bb140",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "policy",
+        "scp"
+      ]
+    },
+    "03-IAM-and-Security-Labs/links.md": {
+      "baseline_sha256": "a626a310ee39a0fc8c30d0009a7fb7b031c9e927f4fca46452c3e687939afdee",
+      "approved_sha256": "9108fdb9c6fdff7e4937a2b5a1df262baaa05c0b3400336e4b53e18e8f105abf",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "policy",
+        "scp"
+      ]
+    },
+    "04-EC2-Compute/README.md": {
+      "baseline_sha256": "34c6741c9229941169be2cf951f230fb7b132a6081660d99818e85c7549d5c1f",
+      "approved_sha256": "cb11ec5fb979802e917aa3e801923c3f56f88cde26ec3628c15993a442725346",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "spot",
+        "placement",
+        "ebs",
+        "efs",
+        "savings"
+      ]
+    },
+    "04-EC2-Compute/cheatsheet.md": {
+      "baseline_sha256": "945b03e33bc25f6a35887cba38f16c1ed07e71d4b12391512d60983686bbf83b",
+      "approved_sha256": "b7d8a5698dfc9f6a2c865af1958511bb6627f8d7c10d56cbda2da506ae4243e9",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "spot",
+        "placement",
+        "ebs",
+        "efs",
+        "savings"
+      ]
+    },
+    "04-EC2-Compute/flashcards.md": {
+      "baseline_sha256": "76a68468c07f53f02395cc37b4881b0d812f7f6d30cf0429994f01790a2b0b60",
+      "approved_sha256": "1236f8b9d62a3244fdf88af673512ba35ded6e52fa0d042a05ea3a7b6411d379",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "spot",
+        "placement",
+        "ebs",
+        "efs",
+        "savings"
+      ]
+    },
+    "04-EC2-Compute/lab.md": {
+      "baseline_sha256": "1e435296d2be47aae7ee9919618678974178724a152cc68a204df2049f37582f",
+      "approved_sha256": "9c266d3bccd7932fd89cd36cc1137896f3517d1dcf6920ce5062b5e3145a906c",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "ebs"
+      ]
+    },
+    "04-EC2-Compute/links.md": {
+      "baseline_sha256": "9a0e42d874917a581fce1b7411c0389b6646e0a4ac6ac5769e1bf020a48f2d6a",
+      "approved_sha256": "6e3184a25336facc1b0fbee2cd6c42c24cb6ad65716472bc74f4eb82996b8fbf",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "spot",
+        "placement",
+        "ebs",
+        "efs",
+        "savings"
+      ]
+    },
+    "04-EC2-Compute/questions.md": {
+      "baseline_sha256": "824372113321075f265f57fd5311c2eda284a4bd243027a2119e07193af40fc8",
+      "approved_sha256": "8d801dc37bbbc512e52d57a663277946440520b7b299f8760c3ec188f7fcebbe",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "spot",
+        "placement",
+        "ebs",
+        "efs",
+        "savings"
+      ]
+    },
+    "04-EC2-Compute/use-cases.md": {
+      "baseline_sha256": "ecd37b900220eca3e05c93f2031710db443ab9e31781d85b579740ba3bc6fc5e",
+      "approved_sha256": "01886b02cbd22ce8a294b5aeeb5cf26d9fd8a80ab102545102b9eee67692273c",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "spot",
+        "placement",
+        "ebs",
+        "efs"
+      ]
+    },
+    "05-High-Availability-and-Scalability/README.md": {
+      "baseline_sha256": "2f566007b69d9de87bbefcadffdf9d1a510246d46eb38419ea065da9cd074d8c",
+      "approved_sha256": "a951130da4e184991002b99562eae498c7d0769e2b08fd7599ff8c6022fab2c3",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "shared",
+        "alb",
+        "nlb",
+        "asg",
+        "scaling",
+        "dr"
+      ]
+    },
+    "05-High-Availability-and-Scalability/cheatsheet.md": {
+      "baseline_sha256": "22d4834ece920a2bfd7091ba15bf8e900cc95303c0ecc9069d083d4ca5698057",
+      "approved_sha256": "5da1728d24579bac6655b236d79b666d9f0175944b583fe4e776e682dad1df96",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "shared",
+        "alb",
+        "nlb",
+        "asg",
+        "scaling",
+        "dr"
+      ]
+    },
+    "05-High-Availability-and-Scalability/flashcards.md": {
+      "baseline_sha256": "6fe3010a0fada909439aff4a984e62a9e4d736bd6ec6353fabe93834014c9038",
+      "approved_sha256": "aba9bc929def606d7535eeecb681476d6d8e6289a4631b3cb8d2fbb30ac60f79",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "shared",
+        "alb",
+        "nlb",
+        "asg",
+        "scaling",
+        "dr"
+      ]
+    },
+    "05-High-Availability-and-Scalability/lab.md": {
+      "baseline_sha256": "567b320acbb5acf612627e394621671a4a71a5f11b13f81bd74030ba5688d4eb",
+      "approved_sha256": "f6dadfbc9a29d84fc37d479eca08bfa71ee744bc3b09414c1ec089d934819790",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "asg",
+        "scaling"
+      ]
+    },
+    "05-High-Availability-and-Scalability/links.md": {
+      "baseline_sha256": "07e0b3781c18ece5265b3c6493032a8ba60e81da1bd0fc4da0d56b166f503252",
+      "approved_sha256": "313e23ab3308e6ff739413675ebb23e0c45826cbad79ed19b2de7e19d14ab04f",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "shared",
+        "alb",
+        "nlb",
+        "asg",
+        "scaling",
+        "dr"
+      ]
+    },
+    "05-High-Availability-and-Scalability/questions.md": {
+      "baseline_sha256": "d955192142bac3cbbfef8664acf4b8ac4fe06915ba3a43557cb1ea4b52d58df1",
+      "approved_sha256": "c1a7c8198bfb6ba91de5752c0a62c51e443bec9255674f917e9fbe99af23b967",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "shared",
+        "alb",
+        "nlb",
+        "asg",
+        "scaling",
+        "dr"
+      ]
+    },
+    "05-High-Availability-and-Scalability/use-cases.md": {
+      "baseline_sha256": "d78f7b32d636358e516298c5dcc72902345c68c02c206640064708915cf02cf3",
+      "approved_sha256": "e35fd98b54fe913233683757461a6f7b356f67c541f33035f78d1cea94362ff9",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "nlb",
+        "asg",
+        "scaling",
+        "dr"
+      ]
+    },
+    "06-Amazon-S3-and-Storage/README.md": {
+      "baseline_sha256": "6ac1860a37a822e7d4d5d403fa59902fec689186aa15e2dd244e56bb2062bfe2",
+      "approved_sha256": "7222357c6a0607e9c043b21c3e9d8d5dda806c0e47040d8b699d87c8a2338d59",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "s3classes",
+        "s3version",
+        "s3lock",
+        "s3public",
+        "s3life"
+      ]
+    },
+    "06-Amazon-S3-and-Storage/cheatsheet.md": {
+      "baseline_sha256": "9957ad5aadf7ffffb6933036543b160f44d5a648dae86701edf38868f359c547",
+      "approved_sha256": "4ee7b1d40014f36abcf62b467e690c1ac5044985ac9d11c59725eb9227d55b16",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "s3classes",
+        "s3version",
+        "s3lock",
+        "s3public",
+        "s3life"
+      ]
+    },
+    "06-Amazon-S3-and-Storage/flashcards.md": {
+      "baseline_sha256": "f08fe9c83153e7c5bbbd3289d0493fdf3f4540b33fd8468659f721926dbf65d8",
+      "approved_sha256": "c6e5e18222b58bdf3ec69672bdb21477e56e72f8c5f7e2ca2925f5ff42cebe3c",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "s3classes",
+        "s3version",
+        "s3lock",
+        "s3public",
+        "s3life"
+      ]
+    },
+    "06-Amazon-S3-and-Storage/questions.md": {
+      "baseline_sha256": "6aeb2fa17ff257dc80169dc2d4f6d1deff29b64f1516e993f915de168750c494",
+      "approved_sha256": "b84f8e49f5100ee1b5dc68992a92b6c5487b65fdf0a474d0b2ab32dafd8be432",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "s3classes",
+        "s3version",
+        "s3lock",
+        "s3public",
+        "s3life"
+      ]
+    },
+    "06-Amazon-S3-and-Storage/use-cases.md": {
+      "baseline_sha256": "98022b8621c3afabf0e1aa28e335e7030e0dba003876709c48ef675460d0320f",
+      "approved_sha256": "fa9c0b1e67ed84266bd537dd0a888e60cb3b702d6765b28f9f40048a163e9195",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "s3classes",
+        "s3version",
+        "s3lock",
+        "s3public",
+        "s3life"
+      ]
+    },
+    "07-Advanced-S3-Labs/lab.md": {
+      "baseline_sha256": "a5108e63fb14392096964ad99952a060ec5eae8b2d6ba5e340b4277ecb43daa3",
+      "approved_sha256": "36797cbe2af0d01da03faadf95d50f5b36c65274c5569e00dc55729b685eec85",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "s3version",
+        "s3lock",
+        "s3public",
+        "s3life"
+      ]
+    },
+    "07-Advanced-S3-Labs/links.md": {
+      "baseline_sha256": "5463b64cf2311573fbb2265a3b7ab6f8bd3e175f6abfc62057da19aa4e7b5ca6",
+      "approved_sha256": "9ebe1c58869bc147a26f25465aac889dfec27a0ec539f750ddf60616d448c4a6",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "s3classes",
+        "s3version",
+        "s3lock",
+        "s3public",
+        "s3life",
+        "s3rep"
+      ]
+    },
+    "08-VPC-and-Networking/README.md": {
+      "baseline_sha256": "56c9bf711df13dc048460a3d17b67d70f919416da07b2ae7343a23ffa590fdfa",
+      "approved_sha256": "68486ed6b6b1e5b8f73c1ecc81142bbce36f0f5564b00aea85cfa0da1583b3fd",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sg",
+        "nacl",
+        "nat",
+        "igw",
+        "endpoint"
+      ]
+    },
+    "08-VPC-and-Networking/cheatsheet.md": {
+      "baseline_sha256": "4aa551c5f68660358f44b292e714aaf4e017c04605bc7b049043a05e9c0d4e1d",
+      "approved_sha256": "f3944c700d386c8edb2d7f510a46beb93eed602d0d5c75ae5e301955f5cc86a5",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sg",
+        "nacl",
+        "nat",
+        "igw",
+        "endpoint"
+      ]
+    },
+    "08-VPC-and-Networking/flashcards.md": {
+      "baseline_sha256": "06c82390172f969c0f7c6156fbf7f3ef3a9fdf44da536c54c25e84241abdd134",
+      "approved_sha256": "351bf1950128a94f21b70bdb4e69993c0dec571fa114fdd1049a5bcc6b3ec9ea",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sg",
+        "nacl",
+        "nat",
+        "igw",
+        "endpoint"
+      ]
+    },
+    "08-VPC-and-Networking/questions.md": {
+      "baseline_sha256": "a4e7ff6b734bbc39670bd11b6a3c509885fe01aa9ad63799baf45e22cc055227",
+      "approved_sha256": "c327995ea35708c10c3ef39725eeadcc3dad730d44154f530827bb9b21c5b3a8",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sg",
+        "nacl",
+        "nat",
+        "igw",
+        "endpoint"
+      ]
+    },
+    "08-VPC-and-Networking/use-cases.md": {
+      "baseline_sha256": "db11a9bd7395030cb85f9a5d2de1495e6010b09132010c8dc1ab8c05794a49d4",
+      "approved_sha256": "15d8c5624ce44a1a61055750674fbeccb7ce69a750b54185349be00d65266f7e",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sg",
+        "nacl",
+        "igw",
+        "endpoint"
+      ]
+    },
+    "09-VPC-and-Networking-Labs/lab.md": {
+      "baseline_sha256": "8d6399e07ec4434350ac41f92e1db2c50e5aae67d1824e31926ba6851f70e2db",
+      "approved_sha256": "d74ccc1258f9a14f14321ff8e0ba9c69ffb9b4e46edce39bc3ec5cfa63a57737",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "igw",
+        "endpoint"
+      ]
+    },
+    "09-VPC-and-Networking-Labs/links.md": {
+      "baseline_sha256": "4913f60234113f25ab53b24dd8213f82f5fadc1ace28872a69bece1cd9c92252",
+      "approved_sha256": "f18ad99813291eddb1e7bd8c3cefdb130c05460948c8ab7ca386663770740c56",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "sg",
+        "nacl",
+        "nat",
+        "igw",
+        "endpoint"
+      ]
+    },
+    "10-Databases/README.md": {
+      "baseline_sha256": "750b1c3a6a2c1a6fd6b622000543b68f47cfc31d02eda6eda71798399e41d350",
+      "approved_sha256": "f181e2cb6045f1c7dfc37edb380cd8b8d712def56e9efe5127de809c6630b79f",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "rdsaz",
+        "replica",
+        "dynamodb",
+        "dr"
+      ]
+    },
+    "10-Databases/cheatsheet.md": {
+      "baseline_sha256": "bb1803c38b887648981262b4346dd7c82a6e743fd9c58a672c6cc2b2ad7255f2",
+      "approved_sha256": "761ed5d800fc24f699e6e38474149b7a615edfec3564fdc9aae70cd40f11522f",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "rdsaz",
+        "replica",
+        "dynamodb",
+        "dr"
+      ]
+    },
+    "10-Databases/flashcards.md": {
+      "baseline_sha256": "b9656175dc6a672d51fb597f786c28d6b5ba4e309a4bf947c8f4d26d884db543",
+      "approved_sha256": "b5396b924923e63325f672c33eaa365d4d587afe54f195003db1a2133adfc09b",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "rdsaz",
+        "replica",
+        "dynamodb",
+        "dr"
+      ]
+    },
+    "10-Databases/questions.md": {
+      "baseline_sha256": "7f0761fd4310c586f54101693ccda13988a55c4b46c75959c8dd99bed4cb5c15",
+      "approved_sha256": "9ac18cbfc3344560cdccf1cfcfb79b7b2f8f0bed1970a88b91a10852583e8bb6",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "rdsaz",
+        "replica",
+        "dynamodb",
+        "dr"
+      ]
+    },
+    "10-Databases/use-cases.md": {
+      "baseline_sha256": "3a08f1ec55ae21285ff5b967488ee0d16c788a9fb61487bcb56f26c5946065a8",
+      "approved_sha256": "c4ff8ed7216d4c8a71e8f66b4ca86137a4a193ba1fa8c62dffc4f94378266ea8",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "rdsaz",
+        "replica",
+        "dynamodb",
+        "dr"
+      ]
+    },
+    "11-RDS-and-Relational-Databases-Labs/lab.md": {
+      "baseline_sha256": "76c14b8eee3e32dfd66547369ac0a4b5b9885e14d829d09c23251d2aaf39c0ad",
+      "approved_sha256": "8b9e388ec111ff4d6f421cbda0ffc2cbfd7cbfb670fbf473d5ac6b2a8e37c90d",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "rdsaz",
+        "dr",
+        "rto"
+      ]
+    },
+    "11-RDS-and-Relational-Databases-Labs/links.md": {
+      "baseline_sha256": "62a5060a6cd887a1a92c60ef9e67b9865c26b2370146ad8867cc66ebca822876",
+      "approved_sha256": "9012963dce421ff233c181518fbeb75b7255f56a798c97a4fc6bcd334aa853c2",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "rdsaz",
+        "replica",
+        "dynamodb",
+        "dr"
+      ]
+    },
+    "12-DynamoDB/lab.md": {
+      "baseline_sha256": "38660aa8907253e194b74dc0580fdc3aeba32518cdb0423c406eef910132eee0",
+      "approved_sha256": "e54e4b06e67f83fdf16ba40ca7e22e00f938695996c23ef6e81f5364ea74521d",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dynamodb",
+        "ddbcapacity",
+        "ddbkeys"
+      ]
+    },
+    "12-DynamoDB/links.md": {
+      "baseline_sha256": "fab79c47675e8febb0e5c66a9c2e4038e155867621506da7c142ee03e4694196",
+      "approved_sha256": "588f7a86fa0db0769e4d2a61179413f1fbf6a9839bad95dc9a47b52501133d25",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "rdsaz",
+        "replica",
+        "dynamodb",
+        "ddbcapacity",
+        "dr"
+      ]
+    },
+    "13-DNS-Route53-and-CloudFront/README.md": {
+      "baseline_sha256": "41b09f931ac88882711a33a82e18a0cbfbadba5fc3b2f7b7f88760ea04121614",
+      "approved_sha256": "77f59267e3d1a02d363ab02ddf5018b147474ab28d1319967dbecb32fb467a71",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dns",
+        "oac",
+        "ga",
+        "waf"
+      ]
+    },
+    "13-DNS-Route53-and-CloudFront/cheatsheet.md": {
+      "baseline_sha256": "de59d5e24e9391336075c2e528ac509019305f27fe66cd634c718814f9a4bf4d",
+      "approved_sha256": "918bc812f375745ee3cb502620031c2a19bcf7103128fdd3b1b12cc5fe85941a",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dns",
+        "oac",
+        "ga",
+        "waf"
+      ]
+    },
+    "13-DNS-Route53-and-CloudFront/flashcards.md": {
+      "baseline_sha256": "839ced345cc23111d3453f77528a07bad1a953d1ef0ff558509f216ed025ed27",
+      "approved_sha256": "85f41d11040076ee47217714aca4ecc9d39d0358d9ceae33fa222509c88c81c8",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dns",
+        "oac",
+        "ga",
+        "waf"
+      ]
+    },
+    "13-DNS-Route53-and-CloudFront/questions.md": {
+      "baseline_sha256": "22d1db62a931a8316796aae35c3390c04692ed33eb267a4fa1e3ce679adfab4a",
+      "approved_sha256": "b9ce051310f417da902e08dc23ef52971a0d91b0c1d8cbcc768142055b33ad8b",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dns",
+        "oac",
+        "ga",
+        "waf"
+      ]
+    },
+    "13-DNS-Route53-and-CloudFront/use-cases.md": {
+      "baseline_sha256": "d78f7b32d636358e516298c5dcc72902345c68c02c206640064708915cf02cf3",
+      "approved_sha256": "7fa56e20d2f48af17e2879d59ff847e22a305b5afc182ab23a28542c5f153604",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dns",
+        "oac",
+        "ga"
+      ]
+    },
+    "14-Decoupling-SQS-SNS-EventBridge/README.md": {
+      "baseline_sha256": "6c0b4a9214ee42355b8e7803fbbdf7e02ddcec6bd3edbae9ef5eaec48f5fdcd6",
+      "approved_sha256": "07f5f0b72e1a0df7a6d4a454c52c61db7b1e3fc131c610de9ddd0b4c0a29cf56",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "fifo",
+        "dedup",
+        "sns",
+        "events",
+        "sfn",
+        "lambdasqs"
+      ]
+    },
+    "14-Decoupling-SQS-SNS-EventBridge/cheatsheet.md": {
+      "baseline_sha256": "f373eaea57238aa02032eb7c321ebdbeeeebb7a5c160c9530b60814ee6ab79ac",
+      "approved_sha256": "318892ad6594ec8d06cc18ff15f9112380a25221d5f304f4e8d879fc58ba25ed",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "fifo",
+        "dedup",
+        "sns",
+        "events",
+        "sfn",
+        "lambdasqs"
+      ]
+    },
+    "14-Decoupling-SQS-SNS-EventBridge/flashcards.md": {
+      "baseline_sha256": "4b903859132894aaf130b4cb25c33ac2ed78ca9c45571017e10c602ac4a24dc9",
+      "approved_sha256": "dc3bb902c37255e43759738abdb9fa098fa2044081c24fc2cf6f841d0f75cf2a",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "fifo",
+        "dedup",
+        "sns",
+        "events",
+        "sfn",
+        "lambdasqs"
+      ]
+    },
+    "14-Decoupling-SQS-SNS-EventBridge/questions.md": {
+      "baseline_sha256": "47765d9e7975975ea61f5dd06275eaaedac9c30c605f48070f0c60f643661b5b",
+      "approved_sha256": "566e496424e54ce985694df5c56cc7dcdc4fcd92d31350ebf7f8603cf579f89e",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "fifo",
+        "dedup",
+        "sns",
+        "events",
+        "sfn",
+        "lambdasqs"
+      ]
+    },
+    "14-Decoupling-SQS-SNS-EventBridge/use-cases.md": {
+      "baseline_sha256": "d78f7b32d636358e516298c5dcc72902345c68c02c206640064708915cf02cf3",
+      "approved_sha256": "e3e59c3218422ebe83b70959e007dfc0194ee0f90eb7f404131dc8323abf4acc",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "fifo",
+        "dedup",
+        "sns",
+        "lambdasqs"
+      ]
+    },
+    "15-SQS-SNS-Messaging-Labs/lab.md": {
+      "baseline_sha256": "745f67f7f99c7971f9b752931ac08321d0575ec32f5b571a6b5f88badf571df4",
+      "approved_sha256": "29798e3eaea8d82d431f2227d196104a6b49e835f39b7e7f0dd67aa8e76fd467",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "sns"
+      ]
+    },
+    "15-SQS-SNS-Messaging-Labs/links.md": {
+      "baseline_sha256": "61e2327965badbeed7302a459ad14dd347ad7074276df3ac24a3ca906137191d",
+      "approved_sha256": "a5b47fb7515b651e94e858c030e9f367ad25e98f902c3e7cec77f851c8af1a51",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "sqs",
+        "fifo",
+        "dedup",
+        "sns",
+        "events",
+        "sfn",
+        "lambdasqs"
+      ]
+    },
+    "16-Containers-ECS-EKS-Fargate/README.md": {
+      "baseline_sha256": "7b64e5f3e705467ab87ecef793eb1ddb7ab891d26738a265f6ef22f40ff071a1",
+      "approved_sha256": "aea3317a7f73ce2b2dfba682b5fe0bada5aa5df33a5cc995bbe2757434c80a9c",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "fargate",
+        "taskrole",
+        "executionrole",
+        "ecsautoscale",
+        "eks",
+        "apprunner"
+      ]
+    },
+    "16-Containers-ECS-EKS-Fargate/cheatsheet.md": {
+      "baseline_sha256": "2fdcaff5c6e5f9c5f4465c978fa5c3bf907673b8f4e9bf5a73e28cf174e23042",
+      "approved_sha256": "1471f76b024e9400421e0d9ef4370ab6b762958479a5895ab7b577505168630b",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "fargate",
+        "taskrole",
+        "executionrole",
+        "ecsautoscale",
+        "eks"
+      ]
+    },
+    "16-Containers-ECS-EKS-Fargate/flashcards.md": {
+      "baseline_sha256": "40d8c50444f2e814140e9ee089577a9f20bb3fe7b6f53b32e0bf35e650443eec",
+      "approved_sha256": "21d53483f57e793f0d1c8895337a06cc65425c63b2e3bdf3ff797f2ce1bcca94",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "fargate",
+        "taskrole",
+        "executionrole",
+        "ecsautoscale",
+        "eks"
+      ]
+    },
+    "16-Containers-ECS-EKS-Fargate/questions.md": {
+      "baseline_sha256": "8d414ce81b5fd4160d61676d4bb5162be9cfb5f64a17d83905d339821b9b8a8f",
+      "approved_sha256": "8dcbcf77e1e5ffa5486e31337fc8d6cdd1320c08059ce474b8a134dd13faf807",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "fargate",
+        "taskrole",
+        "executionrole",
+        "ecsautoscale",
+        "eks"
+      ]
+    },
+    "16-Containers-ECS-EKS-Fargate/use-cases.md": {
+      "baseline_sha256": "98022b8621c3afabf0e1aa28e335e7030e0dba003876709c48ef675460d0320f",
+      "approved_sha256": "bb1ed1defbb9df333ee50da8ed5a8794b643217f30c019c98d11e3c89fe8468b",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "fargate",
+        "taskrole",
+        "executionrole",
+        "eks"
+      ]
+    },
+    "17-Serverless-Lambda-API-Gateway/README.md": {
+      "baseline_sha256": "aa6c63cde8ef3fc09798cb14f5079176c89832600a4fd7af92947eacba54ff45",
+      "approved_sha256": "a5b475b39ad273561e6dcc5dfa0a7465e3e9ca24f3f6e62114fb832435927e32",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dynamodb",
+        "lambda",
+        "concurrency",
+        "lambdasqs",
+        "api",
+        "apikeys"
+      ]
+    },
+    "17-Serverless-Lambda-API-Gateway/cheatsheet.md": {
+      "baseline_sha256": "160f31d68d4410baf6efd7db0d728a57bf0b1e222e1421608b7188b6d1dda298",
+      "approved_sha256": "818b90a2b291ab8715b825f406c60748a4f8fba73db4ae53e1d3855d4c1f29d2",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dynamodb",
+        "lambda",
+        "concurrency",
+        "lambdasqs",
+        "api",
+        "apikeys"
+      ]
+    },
+    "17-Serverless-Lambda-API-Gateway/flashcards.md": {
+      "baseline_sha256": "57f4454d5bef182a8b631afcc62019a16b53509aa08516a4144395cd19ae1a8f",
+      "approved_sha256": "0893c54756eb5ae73331537a5824603f951e4073b1fed240bd6e69a071072807",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dynamodb",
+        "lambda",
+        "concurrency",
+        "lambdasqs",
+        "api",
+        "apikeys"
+      ]
+    },
+    "17-Serverless-Lambda-API-Gateway/lab.md": {
+      "baseline_sha256": "9008ddc889f9816a9b83da57da811a56e64581bbc36c24c6c712e86bc9c9b137",
+      "approved_sha256": "bcf4a14cbcb5b724337b6ad1846e6e9b9d4270025478eb491a0af64905908a80",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "lambda",
+        "concurrency",
+        "lambdasqs"
+      ]
+    },
+    "17-Serverless-Lambda-API-Gateway/links.md": {
+      "baseline_sha256": "1fa4f9a0992b947c2f53d1675de6b57ee0e8301bc366d5f53f7323a1ff4e8d97",
+      "approved_sha256": "13fbef732b1aa0e8ed034c9830db767f1d538f24c23555f45cf8b1fde56ff7f1",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "dynamodb",
+        "lambda",
+        "concurrency",
+        "lambdasqs",
+        "api",
+        "apikeys"
+      ]
+    },
+    "17-Serverless-Lambda-API-Gateway/questions.md": {
+      "baseline_sha256": "1260592dcd2a75c5111df808690ee84e8b675ce8f1f86db68cde51e732bfea4b",
+      "approved_sha256": "3c47221e970b56806f8c658a3d35a621bed5e2ee6f4b6ef1429e9e5844c234fb",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dynamodb",
+        "lambda",
+        "concurrency",
+        "lambdasqs",
+        "api",
+        "apikeys"
+      ]
+    },
+    "17-Serverless-Lambda-API-Gateway/use-cases.md": {
+      "baseline_sha256": "98022b8621c3afabf0e1aa28e335e7030e0dba003876709c48ef675460d0320f",
+      "approved_sha256": "2351812745b4bea41abbd28f2dfebf881a022915ed0c7a262cfca90fe8133c5c",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dynamodb",
+        "lambda",
+        "concurrency",
+        "lambdasqs"
+      ]
+    },
+    "18-Data-and-Analytics/README.md": {
+      "baseline_sha256": "ef36c81156469e9b028bed235778e3c509209d632a38f13ba9b9578411205c0a",
+      "approved_sha256": "c69c9f7e19520e462a4dc3fdd264ff75b0ff27a48b0ef6d4ccfb96a4df1c2c1b",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "athena",
+        "glue",
+        "firehose",
+        "kinesis",
+        "dms"
+      ]
+    },
+    "18-Data-and-Analytics/cheatsheet.md": {
+      "baseline_sha256": "d747f05ae316296b1605b39e415f18aa2b86a45167930aac42f33cd50eb85df9",
+      "approved_sha256": "22d891fd404bfbf9b4b85d72aca4fc7c4c9d254de1d1aeae0669ac57732193c2",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "athena",
+        "glue",
+        "firehose",
+        "kinesis",
+        "dms"
+      ]
+    },
+    "18-Data-and-Analytics/flashcards.md": {
+      "baseline_sha256": "dc5aeb3d986d10e9397286e91579bfb3761394a041fbcf45bce8f9c2f2e27a96",
+      "approved_sha256": "f953fca5576de8e2976d30bd04336e043dcb97ccfd53b01c6362face71687417",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "athena",
+        "glue",
+        "firehose",
+        "kinesis",
+        "dms"
+      ]
+    },
+    "18-Data-and-Analytics/lab.md": {
+      "baseline_sha256": "8595cb4a3cbb603028d7e0ce9261aff6836e98acc787e5d6551701214f2896c8",
+      "approved_sha256": "8947532400c262317384e772251b80fab00b970394091af9c70300141e696d7e",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "athena",
+        "glue"
+      ]
+    },
+    "18-Data-and-Analytics/links.md": {
+      "baseline_sha256": "8d42af619fe1604a3aec35a5706d1e3fcff0f26dd9900d72bbdbebb437152561",
+      "approved_sha256": "0fad10942da90bbca1bae84999df75415765a9864ef2f6e017b57d8fdc41cf77",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "sqs",
+        "athena",
+        "glue",
+        "firehose",
+        "kinesis",
+        "dms"
+      ]
+    },
+    "18-Data-and-Analytics/questions.md": {
+      "baseline_sha256": "9b8cb8aae173e04368955ba19fcd94220cfe31778bfcad528317c2bb82becd51",
+      "approved_sha256": "084d93b163478ccf2c6051eb81de02dc3142fcf4af04f9e2010b70b344979403",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "athena",
+        "glue",
+        "firehose",
+        "kinesis",
+        "dms"
+      ]
+    },
+    "18-Data-and-Analytics/use-cases.md": {
+      "baseline_sha256": "db11a9bd7395030cb85f9a5d2de1495e6010b09132010c8dc1ab8c05794a49d4",
+      "approved_sha256": "1e869914871a8ff268bf7714412bdee95aeb4f400a269a2d1a3b39f1b301cee8",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "sqs",
+        "athena",
+        "glue",
+        "firehose",
+        "kinesis"
+      ]
+    },
+    "19-Machine-Learning-and-AI/README.md": {
+      "baseline_sha256": "c2ef6ca625e7f38706aa79dff19aee78594a2172dbb8c08af693fdeba100ed3d",
+      "approved_sha256": "5398f7770ba57e0a3f4db0ec3b3f6a2c893ed6601f102d74093bcfb0ba959a46",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scope",
+        "iam",
+        "shared",
+        "sagemaker",
+        "comprehend",
+        "textract",
+        "bedrock"
+      ]
+    },
+    "19-Machine-Learning-and-AI/cheatsheet.md": {
+      "baseline_sha256": "288fc5723277a7cbe4ea05cd3bc0bbd7d4af218da01aecb29315efa15e793301",
+      "approved_sha256": "3f9188c1d747535684ca249ad6b2487071c071e2d969ae8328be2d50dd7addeb",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scope",
+        "iam",
+        "shared",
+        "sagemaker",
+        "comprehend",
+        "textract",
+        "bedrock"
+      ]
+    },
+    "19-Machine-Learning-and-AI/flashcards.md": {
+      "baseline_sha256": "a91c2d3960b5953a644290433d7c6200f5fe7dbcc153f31875ec0ec9aaed03a3",
+      "approved_sha256": "015b99fe6738224db6082e10a7a1cf73a071aa84f799f0664c8dfee53ff4f212",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scope",
+        "iam",
+        "shared",
+        "sagemaker",
+        "comprehend",
+        "textract",
+        "bedrock"
+      ]
+    },
+    "19-Machine-Learning-and-AI/lab.md": {
+      "baseline_sha256": "dec63dcfd5d21160f47b3d4f5170c30acd8e2a7311054042d6482339c5c541d8",
+      "approved_sha256": "29e5dcf9125f877e7cb92727bb78eda37a41f138cc99d44c041d7ec879294154",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scope",
+        "sagemaker",
+        "comprehend",
+        "textract",
+        "bedrock"
+      ]
+    },
+    "19-Machine-Learning-and-AI/links.md": {
+      "baseline_sha256": "f3cd2c0faadd1da21a6fecfe7e62d17a37222387e4feee99bd9f4b28fa6779a7",
+      "approved_sha256": "6829c6d4da9d9d5e6b2ba7f96348e5168f468ea8880fa3c783a1fe7318d87351",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "scope",
+        "iam",
+        "shared",
+        "sagemaker",
+        "comprehend",
+        "textract",
+        "bedrock"
+      ]
+    },
+    "19-Machine-Learning-and-AI/questions.md": {
+      "baseline_sha256": "ad4b7fe3a339eac1b716b14fd61cf5effdb3808d3fcd4e8407a71953c0ab1fac",
+      "approved_sha256": "19bbf613ea8f5186aed5f7d850effa147836a5232f3889df3444d0d79a6556a4",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scope",
+        "iam",
+        "shared",
+        "sagemaker",
+        "comprehend",
+        "textract",
+        "bedrock"
+      ]
+    },
+    "19-Machine-Learning-and-AI/use-cases.md": {
+      "baseline_sha256": "3a08f1ec55ae21285ff5b967488ee0d16c788a9fb61487bcb56f26c5946065a8",
+      "approved_sha256": "0b7b4eddf2ad565dbe74f6b5b9d5e0397a474c21ac469127ad4bb4d1ad27dcae",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scope",
+        "sagemaker",
+        "comprehend",
+        "textract",
+        "bedrock"
+      ]
+    },
+    "20-Monitoring-CloudWatch-CloudTrail/README.md": {
+      "baseline_sha256": "f9ae67ee5b233b4aa7a247a43db586d1135a915079dd9d31eaf3e33f9aef12f6",
+      "approved_sha256": "0a920b680f55926f08b90a3dd2d19cc8e4be1972e647a25b66365c837c0e616c",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scp",
+        "cw",
+        "trail",
+        "config",
+        "xray"
+      ]
+    },
+    "20-Monitoring-CloudWatch-CloudTrail/cheatsheet.md": {
+      "baseline_sha256": "74c0741b3e9ae6be2b0907a7e6ffb2badab7a9467437815f1d6c1e7dc5017680",
+      "approved_sha256": "6068e11cbdb693963c7b1e8fba49f0f6668e76f7f7c8d19c3e83a8c98d58597f",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scp",
+        "cw",
+        "trail",
+        "config",
+        "xray"
+      ]
+    },
+    "20-Monitoring-CloudWatch-CloudTrail/flashcards.md": {
+      "baseline_sha256": "bde11ded16507fed159412bf1e28e43efbcff531d06a3ca855aa0f23fe08fb49",
+      "approved_sha256": "440a3dfbbf2e5e332cf3a418b9bef58be80f67399bd083ec71372614007624bf",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scp",
+        "cw",
+        "trail",
+        "config",
+        "xray"
+      ]
+    },
+    "20-Monitoring-CloudWatch-CloudTrail/lab.md": {
+      "baseline_sha256": "b53d0a90d68b9793a4974fa1caddf8aeedca5c0fef28a4c67940342bb04ef686",
+      "approved_sha256": "49078c1d4b9e31caf83ec44386459c60ecc8d4aa0fd1d524c0ed48c8519e9b50",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "cw",
+        "trail",
+        "config",
+        "xray"
+      ]
+    },
+    "20-Monitoring-CloudWatch-CloudTrail/links.md": {
+      "baseline_sha256": "e81e59f8df9f77cbfb2cb0d3997c2a03867fd10028dd49940f68681882b84721",
+      "approved_sha256": "16fb066a8b4d46e55a95e625b17a000a90a048e52600288345be3afa500a174c",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "scp",
+        "cw",
+        "trail",
+        "config",
+        "xray"
+      ]
+    },
+    "20-Monitoring-CloudWatch-CloudTrail/questions.md": {
+      "baseline_sha256": "878c409b6ae37ae0bee9cfd4ad12c84f401c72d4c9e29f5dab3c054755b26502",
+      "approved_sha256": "bd9c86d392371d8f07bd1d885a751265c36d7bafc3b0b7d73cf6697ba64af094",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scp",
+        "cw",
+        "trail",
+        "config",
+        "xray"
+      ]
+    },
+    "20-Monitoring-CloudWatch-CloudTrail/use-cases.md": {
+      "baseline_sha256": "ecd37b900220eca3e05c93f2031710db443ab9e31781d85b579740ba3bc6fc5e",
+      "approved_sha256": "4523a137e7f6c4e8bdf6b854f28532100343d9e91fc2605b5b01e56fda254803",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "cw",
+        "trail",
+        "config",
+        "xray"
+      ]
+    },
+    "21-Migration-and-Transfer/README.md": {
+      "baseline_sha256": "a3e26d813aa54745d90405aead38fb3f28b0759291932b9b96bf0b8609af516e",
+      "approved_sha256": "814d3222ab467960bcd86b5ddff6f43089b9bceae9319b264e5da06dc28b2e98",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scope",
+        "dms",
+        "mgn",
+        "datasync",
+        "transfer",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "21-Migration-and-Transfer/cheatsheet.md": {
+      "baseline_sha256": "4c77232268e033a5ae6b74b980d8c472bb66987fa10ea0fb720405ad06c0574e",
+      "approved_sha256": "fb9b42c8e92c48cf018b76559803cbe87a2d6b0460c180f6dd2a7c2f791c5809",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scope",
+        "dms",
+        "mgn",
+        "datasync",
+        "transfer",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "21-Migration-and-Transfer/flashcards.md": {
+      "baseline_sha256": "4db3d55a11840ff690aa7566599c67dea8d43da53ffd3ac8f9d5c9b48d4dc9a1",
+      "approved_sha256": "2f47d323ad543316e22ddfc77af7b02b33509487daeb9a9e76e07c3b7480aea7",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scope",
+        "dms",
+        "mgn",
+        "datasync",
+        "transfer",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "21-Migration-and-Transfer/lab.md": {
+      "baseline_sha256": "2171f0882f20a1a8cec87738d6f6767201e596166a39f673eaeb2dceb2d60eed",
+      "approved_sha256": "34a4d9482e7aa92e88cbd08f6a231c37d591031adf53108313b132bb703fcc65",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dms",
+        "mgn",
+        "datasync",
+        "transfer",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "21-Migration-and-Transfer/links.md": {
+      "baseline_sha256": "eeea9b533a7bddd30148ba6d06aee890eb862809d7b30c2b0c8b089c09b90082",
+      "approved_sha256": "b90e228427390061e8cd987e0f3b0a424aaef072a15c924929ec66b103e87324",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "scope",
+        "dms",
+        "mgn",
+        "datasync",
+        "transfer",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "21-Migration-and-Transfer/questions.md": {
+      "baseline_sha256": "c3417da0fcf72ef190a35bf7486395d45fd1b2a699bf286a6ecd69bafdb5bcda",
+      "approved_sha256": "65ff794e0af0410ebcf9ec79b3c9ff2366701f9b9e4a50f082d4b7c55dfafc2f",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scope",
+        "dms",
+        "mgn",
+        "datasync",
+        "transfer",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "21-Migration-and-Transfer/use-cases.md": {
+      "baseline_sha256": "d78f7b32d636358e516298c5dcc72902345c68c02c206640064708915cf02cf3",
+      "approved_sha256": "1f1d4897985c79c2d0522d6459742befd82067352463b7a18a7c33339c88ecb1",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dms",
+        "mgn",
+        "datasync",
+        "transfer"
+      ]
+    },
+    "22-Disaster-Recovery-and-Business-Continuity/README.md": {
+      "baseline_sha256": "ffb5e58148a7553d4737e5b912ead24e62746e72bcdff6241f96a04ce7e56ec7",
+      "approved_sha256": "5a632af8629d1da8057546ac99b790af2c9532e61bb19443cdd6bf4bca903e34",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "rdsaz",
+        "dr",
+        "rto"
+      ]
+    },
+    "22-Disaster-Recovery-and-Business-Continuity/cheatsheet.md": {
+      "baseline_sha256": "2c3243060eb985c7a106591a13cb8a8be2bf3f6c661db6e223f25435ac4c07db",
+      "approved_sha256": "fc487b6cda9a930b0c4d9454e1f55d138fc735c7200cda526ad8ada996afbad7",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "rdsaz",
+        "dr",
+        "rto"
+      ]
+    },
+    "22-Disaster-Recovery-and-Business-Continuity/flashcards.md": {
+      "baseline_sha256": "a6fa85f24555f45ce9c9dac899f1d4a9d9af59ca5f618ffa64b40d597f1eec54",
+      "approved_sha256": "f716217faea37514b332608287e27b1c701acebbd05a5fb3b661a5f8bb83303d",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "rdsaz",
+        "dr",
+        "rto"
+      ]
+    },
+    "22-Disaster-Recovery-and-Business-Continuity/lab.md": {
+      "baseline_sha256": "5ec93d8c2873fa2f82f4679b902b7f6cc129baa5e1fd49011c3bd53b1e28e6e1",
+      "approved_sha256": "0059708d44db56f7358eb7c33d7f3622e1a3158aad429802c22c1280d09582a4",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "s3version",
+        "dr",
+        "rto"
+      ]
+    },
+    "22-Disaster-Recovery-and-Business-Continuity/links.md": {
+      "baseline_sha256": "fd114e029943e3094a1d6dff36944d7337b9fbd6646227f60e22ade980f60039",
+      "approved_sha256": "b1f35c532af7aa02dda0ab256f9583d8110c7152185161a69411838107b6e410",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "rdsaz",
+        "dr",
+        "rto"
+      ]
+    },
+    "22-Disaster-Recovery-and-Business-Continuity/questions.md": {
+      "baseline_sha256": "2af85e0187629dc2a4a03bd557ba7db6c960553886f819e796600279182461a7",
+      "approved_sha256": "f8f47c115a3b246af103ce359e01d5375a9e06ddd35b94983055e0f8ab11c812",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "rdsaz",
+        "dr",
+        "rto"
+      ]
+    },
+    "22-Disaster-Recovery-and-Business-Continuity/use-cases.md": {
+      "baseline_sha256": "98022b8621c3afabf0e1aa28e335e7030e0dba003876709c48ef675460d0320f",
+      "approved_sha256": "be5e0a6e501de3a1957863f564cc1264e58072b30fe8af2ab34e7c3ae8109d51",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dr",
+        "rto"
+      ]
+    },
+    "23-AWS-Organizations-Governance-and-Costs/README.md": {
+      "baseline_sha256": "33bd08a14d6400de710a9517d383000326d8a0319357b8d5465ea57149868371",
+      "approved_sha256": "41791cca4afd59d920cc6fe06fe4ddb5b4f74bd6822a9d7cbd593d7fc1f8f9ce",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "scp",
+        "spot",
+        "savings",
+        "budgets",
+        "cost"
+      ]
+    },
+    "23-AWS-Organizations-Governance-and-Costs/cheatsheet.md": {
+      "baseline_sha256": "e75d10f419b3fc2bfd301ad569a33388fd0d4b5b94d87f2c53c22b52d7190546",
+      "approved_sha256": "e6d75e9cdec8874a24146e92a7f5130595d786156cc43abfe5c24ca4170cf14d",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "scp",
+        "spot",
+        "savings",
+        "budgets",
+        "cost"
+      ]
+    },
+    "23-AWS-Organizations-Governance-and-Costs/flashcards.md": {
+      "baseline_sha256": "451907fdb639c62613466c32064e7d56616b70b5d8e31da3e47277410726c4bc",
+      "approved_sha256": "3f61b696d2edca023427123a3e5356eee2bfaf24fe51795033c9a73ec073c559",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "scp",
+        "spot",
+        "savings",
+        "budgets",
+        "cost"
+      ]
+    },
+    "23-AWS-Organizations-Governance-and-Costs/lab.md": {
+      "baseline_sha256": "c1b4ce82dd9c71109e6d910dc1a60f3d0a73702d7fc59f45b3076f1df42f247f",
+      "approved_sha256": "ab319aaf70c02652dbea3891c9cde519080bdf11d1e8c556bfdeff2dbad1e2ce",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scp",
+        "savings",
+        "budgets",
+        "cost"
+      ]
+    },
+    "23-AWS-Organizations-Governance-and-Costs/links.md": {
+      "baseline_sha256": "d3626bd59f4855b9322effcb36a81b58d18f5e8d1f2518e752c4e2dc496f92cd",
+      "approved_sha256": "7a5a77f3367a21ccd0e2ce69459683f0ab5b9c3435871e97048ecea2c22786c3",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "policy",
+        "scp",
+        "spot",
+        "savings",
+        "budgets",
+        "cost"
+      ]
+    },
+    "23-AWS-Organizations-Governance-and-Costs/questions.md": {
+      "baseline_sha256": "5b9981e4d79a04602939a6e81a552ed479facee4949e1303ba04b1bed7d0527c",
+      "approved_sha256": "6ea66a37a875b6309379ebb53e39bc236712f6d2496d4c1ee02eb01d6a26deed",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "scp",
+        "spot",
+        "savings",
+        "budgets",
+        "cost"
+      ]
+    },
+    "23-AWS-Organizations-Governance-and-Costs/use-cases.md": {
+      "baseline_sha256": "db11a9bd7395030cb85f9a5d2de1495e6010b09132010c8dc1ab8c05794a49d4",
+      "approved_sha256": "096939c738ce9e6842046e3029f3b97bd479a2e9218fc98b6ecd09126fb2501a",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "policy",
+        "scp",
+        "spot",
+        "savings",
+        "budgets",
+        "cost"
+      ]
+    },
+    "24-Advanced-Networking-and-Hybrid-Connectivity/README.md": {
+      "baseline_sha256": "252575cc1e4ed46c1722dcfd00f582056c30e807ec1d0d08c444f3a9712040c0",
+      "approved_sha256": "7e6af3f10557bd2f60f66150d24dfdc5879ca587bc7e22ec28971159afb88643",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "endpoint",
+        "dx",
+        "vpn",
+        "peering",
+        "tgw",
+        "privatelink"
+      ]
+    },
+    "24-Advanced-Networking-and-Hybrid-Connectivity/cheatsheet.md": {
+      "baseline_sha256": "f9a81f3dbf21d5059fdec478d364dbbff8ae427ba6e61e1ba345a5332d61659c",
+      "approved_sha256": "4047d463e1d5adad455ea82405bbbd0cc7be7a4bb5ad6468511a397c26cea289",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "endpoint",
+        "dx",
+        "vpn",
+        "peering",
+        "tgw",
+        "privatelink"
+      ]
+    },
+    "24-Advanced-Networking-and-Hybrid-Connectivity/flashcards.md": {
+      "baseline_sha256": "73655f3186f61fb96eb03eada235d36dd7af06849cdcdc1b5fa9b63eba4dcc5c",
+      "approved_sha256": "34467129e996341f8f1c04fc6fa896905623540abc64e7aadd6c32d6eaf0fc7d",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "endpoint",
+        "dx",
+        "vpn",
+        "peering",
+        "tgw",
+        "privatelink"
+      ]
+    },
+    "24-Advanced-Networking-and-Hybrid-Connectivity/lab.md": {
+      "baseline_sha256": "85971c5efe9674681422d43f0e17a2d60dfd0563b5143df7dacd4acb22c78b59",
+      "approved_sha256": "2886fddff962fe36c3586efd3332ad7d84a88a1a958466b68282ca8794475cd1",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dx",
+        "vpn",
+        "peering",
+        "tgw",
+        "privatelink"
+      ]
+    },
+    "24-Advanced-Networking-and-Hybrid-Connectivity/links.md": {
+      "baseline_sha256": "6ab04096c6e935caabd58735737169452a151afec13a2d59b0fae3ba7ec8d8fb",
+      "approved_sha256": "c96b34f2e8be704511a3e3592a1abfa69aac7bf088b4ccdf478d799c061626e7",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "endpoint",
+        "dx",
+        "vpn",
+        "peering",
+        "tgw",
+        "privatelink"
+      ]
+    },
+    "24-Advanced-Networking-and-Hybrid-Connectivity/questions.md": {
+      "baseline_sha256": "e1e6b29d1cee0b3fecf720d06ad523a05783c6f9f4ef45c90a7a750f0d69a52f",
+      "approved_sha256": "65f888347533f582e17a8a1a7f9c4c50970646a19c27bcec19a7a964026ed9d7",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "endpoint",
+        "dx",
+        "vpn",
+        "peering",
+        "tgw",
+        "privatelink"
+      ]
+    },
+    "24-Advanced-Networking-and-Hybrid-Connectivity/use-cases.md": {
+      "baseline_sha256": "3a08f1ec55ae21285ff5b967488ee0d16c788a9fb61487bcb56f26c5946065a8",
+      "approved_sha256": "97a1cf9bc9455a677b97062cd13403f94a606a33c566e476124b8e350137befb",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "endpoint",
+        "dx",
+        "peering",
+        "tgw",
+        "privatelink"
+      ]
+    },
+    "25-Encryption-KMS-and-Secrets-Management/README.md": {
+      "baseline_sha256": "1d44520e407d827b1f58b543266e6ad4c066309591a18d26f2c258add9a0b30e",
+      "approved_sha256": "7263c6baca16d2cfc5b17aa23e7fda3ace787d2f1ba6b7f46721751ce86f57ed",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "dx",
+        "kms",
+        "rotation",
+        "secrets",
+        "parameters"
+      ]
+    },
+    "25-Encryption-KMS-and-Secrets-Management/cheatsheet.md": {
+      "baseline_sha256": "6b2a02bd5975d07fa61bdc26cdecc13fa82f4f0206092776eb24e9d6ed24ae6c",
+      "approved_sha256": "e2d123aaedecb5b84351f8e59493133b8806a63ae8d079c4cb541d434d560d3a",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "dx",
+        "kms",
+        "rotation",
+        "secrets",
+        "parameters"
+      ]
+    },
+    "25-Encryption-KMS-and-Secrets-Management/flashcards.md": {
+      "baseline_sha256": "573fd7a54af00b730e0faee8e42217b8dde2ec21b3dd01c68ec579db802ebb6e",
+      "approved_sha256": "66075946cd28c6804c29bb0de14559edfeeb7ab0cb128fdbc43f8dac8fbfc301",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "dx",
+        "kms",
+        "rotation",
+        "secrets",
+        "parameters"
+      ]
+    },
+    "25-Encryption-KMS-and-Secrets-Management/lab.md": {
+      "baseline_sha256": "6cbf967a140dc8fde70f6150dff0fcce1295ccc989e676dc7d5e5623831867d4",
+      "approved_sha256": "cf88109e2ca87b291f57d967925d69a55383c6289ce0d9dd3e6612f690e1e03b",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "kms",
+        "rotation",
+        "secrets",
+        "parameters"
+      ]
+    },
+    "25-Encryption-KMS-and-Secrets-Management/links.md": {
+      "baseline_sha256": "17db5280bff557a5fc56bd4a60ea954a23f180e7e39a0509c8e22ed83d5b031b",
+      "approved_sha256": "e9817a58dcf30414de5610ff9edba42aa6725e850b9ddbf1aa300002685a3127",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "dx",
+        "kms",
+        "rotation",
+        "secrets",
+        "parameters"
+      ]
+    },
+    "25-Encryption-KMS-and-Secrets-Management/questions.md": {
+      "baseline_sha256": "75770c144aa3a57490d12a6b25fdbb3f67ba2e1c8f8fc4e53353284f96e97ebf",
+      "approved_sha256": "3125e656b6f2026789fce991a57b8a26948d896488a67d1fcbcfa477672b9402",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "dx",
+        "kms",
+        "rotation",
+        "secrets",
+        "parameters"
+      ]
+    },
+    "25-Encryption-KMS-and-Secrets-Management/use-cases.md": {
+      "baseline_sha256": "ecd37b900220eca3e05c93f2031710db443ab9e31781d85b579740ba3bc6fc5e",
+      "approved_sha256": "c4bc33a1147639ec7832739fe4d931eb155af0591f43c06ad7e3cd2aff96a9d5",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "kms",
+        "rotation",
+        "secrets",
+        "parameters"
+      ]
+    },
+    "26-Well-Architected-Framework/README.md": {
+      "baseline_sha256": "840f50440b3eb0c147cbffcb29e2b0c2564aeb648eafc4c68a4b1bff9027e74e",
+      "approved_sha256": "547ee088041d907470967bbccd30deef444479f120cf311fe6725b94cf61b567",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "shared",
+        "dr",
+        "pillars",
+        "watool"
+      ]
+    },
+    "26-Well-Architected-Framework/cheatsheet.md": {
+      "baseline_sha256": "080a0f6df2f9fc8ac9af84448e7e06776b11291a804a3510cbc1685b2a7148b6",
+      "approved_sha256": "29e6f89fa127851f372bb27d660e45bfd82f7f89d88359cf1afd326f5e96774e",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "shared",
+        "dr",
+        "pillars",
+        "watool"
+      ]
+    },
+    "26-Well-Architected-Framework/flashcards.md": {
+      "baseline_sha256": "0df12dc86151f011c7bcbb06730ce15f89c570456ea6ba498915ad28881ec17c",
+      "approved_sha256": "f9ea720a59d6dda6699f27f3246ed6189e42a3e6b8c4aa6c2768ffed57ce8a07",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "shared",
+        "dr",
+        "pillars",
+        "watool"
+      ]
+    },
+    "26-Well-Architected-Framework/lab.md": {
+      "baseline_sha256": "36c0a3c16c09fac394cfa88e8942947280782e82df8f298c65cb3c95c6b1e0ae",
+      "approved_sha256": "df51e9d918edab6101db1ddf52a4082e8511c0661cbf072944cffb5b2315fc2d",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "dr",
+        "pillars",
+        "watool"
+      ]
+    },
+    "26-Well-Architected-Framework/links.md": {
+      "baseline_sha256": "4a55dfe93018aa4993a24eb16ea841d7dccc17f55ac687bc012b756a85824937",
+      "approved_sha256": "b1ddfcf2ecf1458fc08b60344d66f28280cb32c153989434c321bb3fb0c6bb90",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "shared",
+        "dr",
+        "pillars",
+        "watool"
+      ]
+    },
+    "26-Well-Architected-Framework/questions.md": {
+      "baseline_sha256": "c07cc79a9e6eac65572a918bb8401886cf145746a774c0850639550f6fa46311",
+      "approved_sha256": "d4aa88aaebf1af1a4802bfc530a263d726565c92a7f853c698df26a24fabcf9e",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "shared",
+        "dr",
+        "pillars",
+        "watool"
+      ]
+    },
+    "26-Well-Architected-Framework/use-cases.md": {
+      "baseline_sha256": "d78f7b32d636358e516298c5dcc72902345c68c02c206640064708915cf02cf3",
+      "approved_sha256": "42639da530353d3a450d6c7d985a3a8dee552c2282d9b6c48d23d0690daf0acc",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "dr",
+        "pillars",
+        "watool"
+      ]
+    },
+    "27-Real-World-Use-Cases/README.md": {
+      "baseline_sha256": "1da439744527a9d7e423b0bd058183157d59771379a099e0c960d76174b3b376",
+      "approved_sha256": "3e747694a3f532460ea10ecb42f97d8db87c5e09cdfd171b057690e1def77ce0",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "s3public",
+        "rdsaz",
+        "dynamodb",
+        "oac",
+        "sqs",
+        "sns",
+        "dr",
+        "rto"
+      ]
+    },
+    "27-Real-World-Use-Cases/cheatsheet.md": {
+      "baseline_sha256": "437e20968913f6fff9eb5c49b616b659bc326489b69c5062b7e83f4e692439ae",
+      "approved_sha256": "9b6cc1590433f0d5b8cf3805e66bfe666584947dd6ab655e68c5d1374c01bb96",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "s3public",
+        "rdsaz",
+        "dynamodb",
+        "oac",
+        "sqs",
+        "sns",
+        "dr",
+        "rto"
+      ]
+    },
+    "27-Real-World-Use-Cases/flashcards.md": {
+      "baseline_sha256": "92260e361c0016c506516d5e8b67fceeefd7bc80ed6f7d0df97b88836ff4ef93",
+      "approved_sha256": "80b0c17bfed8552e1e91e9179e32c753b04aec8c249b427a73f5d288db863b61",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "s3public",
+        "rdsaz",
+        "dynamodb",
+        "oac",
+        "sqs",
+        "sns",
+        "dr",
+        "rto"
+      ]
+    },
+    "27-Real-World-Use-Cases/lab.md": {
+      "baseline_sha256": "edcc0a1f759da6a983c3626eda0f9e98d8d3e2176b747c685db1db250f79b2a4",
+      "approved_sha256": "b0ae4cf9d21562fe7a20db5fad58d49644c907bb9ba6f2b7d6f611ed0102c032",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "dynamodb",
+        "oac",
+        "sqs",
+        "sns"
+      ]
+    },
+    "27-Real-World-Use-Cases/links.md": {
+      "baseline_sha256": "522459d1764e7cbae97c78c0f24eb3438bbd3c846fb0454d3b8f4c564891717b",
+      "approved_sha256": "acd64e31e2d451092075e61b6c700947ced01364dc004c9b758d05b2c71c3110",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "alb",
+        "s3public",
+        "rdsaz",
+        "dynamodb",
+        "oac",
+        "sqs",
+        "sns",
+        "dr",
+        "rto"
+      ]
+    },
+    "27-Real-World-Use-Cases/questions.md": {
+      "baseline_sha256": "7c294979b54be4b3941a2cc7655ba813fff2979b76201bd131780f0fbeea0af0",
+      "approved_sha256": "7bc8a7b347483c083d4a4c0e94963d692d3f38799ba6cd23039bfba69b74ea09",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "s3public",
+        "rdsaz",
+        "dynamodb",
+        "oac",
+        "sqs",
+        "sns",
+        "dr",
+        "rto"
+      ]
+    },
+    "27-Real-World-Use-Cases/use-cases.md": {
+      "baseline_sha256": "98022b8621c3afabf0e1aa28e335e7030e0dba003876709c48ef675460d0320f",
+      "approved_sha256": "3815ebec8a52b0c401a56cb83e0aa67c1d690363c5bf9aef804623513aa42431",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "s3public",
+        "rdsaz",
+        "dynamodb",
+        "oac",
+        "sqs",
+        "sns",
+        "dr"
+      ]
+    },
+    "28-Hands-on-Labs/README.md": {
+      "baseline_sha256": "77d9d8cd0ed7ab39b4ccd0b916027762673def15879c2c395309c06dc6017745",
+      "approved_sha256": "c29390f74648d264daa943e8cb03bd254cce611f3a22fac25a8ae52099d39ca2",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "s3version",
+        "s3life",
+        "dr",
+        "rto",
+        "budgets",
+        "pricing",
+        "free"
+      ]
+    },
+    "28-Hands-on-Labs/cheatsheet.md": {
+      "baseline_sha256": "e9c4079156cd0a4fa84a39d5a08c30e07f7df45c00c484b29796d659818bd182",
+      "approved_sha256": "db28d8c33eba000e4c4a8c3cb0deb62fca9cd68d558661d6a1c4458ed990e983",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "s3version",
+        "s3life",
+        "dr",
+        "rto",
+        "budgets",
+        "pricing",
+        "free"
+      ]
+    },
+    "28-Hands-on-Labs/flashcards.md": {
+      "baseline_sha256": "64ef862867987f6bd291b697d679ebe0dc14c570a47cacb1af0c3afd30872a92",
+      "approved_sha256": "d4c01da691e855ec2a75f857d0f204e7482b0785e7f80c788fe69bab6f84b4b8",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "s3version",
+        "s3life",
+        "dr",
+        "rto",
+        "budgets",
+        "pricing",
+        "free"
+      ]
+    },
+    "28-Hands-on-Labs/lab.md": {
+      "baseline_sha256": "fdb4b31f2fc79146f1139f2902e0a9e04d14bde5f8abe194fe052b6197a207a0",
+      "approved_sha256": "1ada6ca12ac40d754c7557ed19e7090a0f32d7e1e51498d15a726c43f937f9e8",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "dr",
+        "budgets",
+        "pricing"
+      ]
+    },
+    "28-Hands-on-Labs/links.md": {
+      "baseline_sha256": "0073ed40d8e28c0478d279a52bba0ec17740fa3873b0f9bf87a1ed859230b5d3",
+      "approved_sha256": "ef96fdbe62de6a4dde8aa20b850df19f175fdac0c660133b260af5200ed0a3ee",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "s3version",
+        "s3life",
+        "dr",
+        "rto",
+        "budgets",
+        "pricing",
+        "free"
+      ]
+    },
+    "28-Hands-on-Labs/questions.md": {
+      "baseline_sha256": "2e355e58e4c2eaa8088b4508d112e65d3abd4a37e5125ca4c1c5a10ce66f6b58",
+      "approved_sha256": "6739640d3f0a19539f9b91bcdc5f2b13093e53d95c8d1efc0319059fcd88c4c6",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "s3version",
+        "s3life",
+        "dr",
+        "rto",
+        "budgets",
+        "pricing",
+        "free"
+      ]
+    },
+    "28-Hands-on-Labs/use-cases.md": {
+      "baseline_sha256": "db11a9bd7395030cb85f9a5d2de1495e6010b09132010c8dc1ab8c05794a49d4",
+      "approved_sha256": "3460aab21e9aff401a1949c90389e96d7f8dc5574601d8637a532d4dde5f40ba",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "s3version",
+        "dr",
+        "rto",
+        "budgets",
+        "pricing",
+        "free"
+      ]
+    },
+    "29-Practice-Exams-and-Questions/README.md": {
+      "baseline_sha256": "dd3e5508774a1896b798e33196e55769ee1c978648b3c758a8b9e97963561255",
+      "approved_sha256": "9c720ccacb74b3a62a6685742c89178e4fd23a90a56f88a1edb74bb22aeb3f54",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "alb",
+        "endpoint",
+        "rdsaz",
+        "replica",
+        "sqs",
+        "sns",
+        "dr"
+      ]
+    },
+    "29-Practice-Exams-and-Questions/cheatsheet.md": {
+      "baseline_sha256": "5980755b51134d36e5d98bae6c350c321871bbf213da41bf52de627aa503cad3",
+      "approved_sha256": "aeebc861227b85e5fde27b14653ac40e6fcf983b6eac6f1439f33b6f890a3bc3",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "alb",
+        "endpoint",
+        "rdsaz",
+        "replica",
+        "sqs",
+        "sns",
+        "dr"
+      ]
+    },
+    "29-Practice-Exams-and-Questions/error-log.md": {
+      "baseline_sha256": "be442e127ec82bed770f3b96c30167c35a037d450defd0e999e733d7c4642caa",
+      "approved_sha256": "9e49b79c5455e66bc490ebe5eb83cee575ad556f4044ffa2932d39f098d2673a",
+      "status": "editorially-corrected",
+      "review_reason": "Added stable question and AWS-source tracking; replaced the unsupported mastery claim with an explicitly optional personal review target. Updated CloudStudy positioning.",
+      "aws_sources": []
+    },
+    "29-Practice-Exams-and-Questions/final-review-saa-c03.md": {
+      "baseline_sha256": "957af074eed184f21f0dad92ad8a561b55a2cfd83b2bf2842e10667118477c0c",
+      "approved_sha256": "17cae0d5574a93d146abb5bc094f3546fb7d006b932b1d9ed6e158ce79c412da",
+      "status": "editorially-corrected",
+      "review_reason": "Added official domain weights; clarified the available practice format and decision criteria; removed the implication that a complete separate full-length exam exists here. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam"
+      ]
+    },
+    "29-Practice-Exams-and-Questions/flashcards.md": {
+      "baseline_sha256": "cf3c893395608508bfef28a6dd9e696027f9ea13957c7e4d48552f4dbb1eafed",
+      "approved_sha256": "e50734dfc99ccf36c486ba0becc28cf03467ed61ffb1d6724bee6ef34c31b030",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "alb",
+        "endpoint",
+        "rdsaz",
+        "replica",
+        "sqs",
+        "sns",
+        "dr"
+      ]
+    },
+    "29-Practice-Exams-and-Questions/lab.md": {
+      "baseline_sha256": "a7823d5994046b8c6fa9819165471405c53c5e68168f9acea265ea23a5aad0f6",
+      "approved_sha256": "804b7b4b9ed0a1f32f8577bb1f78cd8d06bc2f362e53fcd36ea7062ef981023d",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "scope"
+      ]
+    },
+    "29-Practice-Exams-and-Questions/links.md": {
+      "baseline_sha256": "f829235afce8a5b8367d23d0069fbe4ffe93cef1724863467667892e3917af55",
+      "approved_sha256": "be3b93e712db31aa1e61a633f30deac46fc6fd85b805770e628970510374e61f",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "iam",
+        "policy",
+        "alb",
+        "endpoint",
+        "rdsaz",
+        "replica",
+        "sqs",
+        "sns",
+        "dr"
+      ]
+    },
+    "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md": {
+      "baseline_sha256": "a67c16387c97424530498852dbaf92570bf92e09e8acb26b230a7a89b76c3bd9",
+      "approved_sha256": "7c90b392f7034dc5e73e2690220e2ec9cfe834ffc4bc7279f781e07835caae48",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed all twenty mini questions, scoped deployment and recovery assumptions, explained all distractors, cited AWS references, and distinguished equal practice blocks from official domain weights. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "spot",
+        "placement",
+        "savings",
+        "scaling",
+        "s3classes",
+        "sg",
+        "nat",
+        "endpoint",
+        "rdsaz",
+        "replica",
+        "ddbcapacity",
+        "ddbkeys",
+        "oac",
+        "ga",
+        "sqs",
+        "concurrency",
+        "athena",
+        "glue",
+        "trail",
+        "dr",
+        "budgets",
+        "cost",
+        "peering",
+        "privatelink",
+        "kms",
+        "rotation",
+        "secrets",
+        "pricing",
+        "free"
+      ]
+    },
+    "29-Practice-Exams-and-Questions/questions.md": {
+      "baseline_sha256": "e2b83ab2810b424febfee2323b28cf2737c7a44720fb444eb2c78952cad2a3d3",
+      "approved_sha256": "e42560eef584102d1a35af6fbadcae1678b254568a0b4dcb1500ae83c38f0aea",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "iam",
+        "policy",
+        "alb",
+        "endpoint",
+        "rdsaz",
+        "replica",
+        "sqs",
+        "sns",
+        "dr"
+      ]
+    },
+    "29-Practice-Exams-and-Questions/use-cases.md": {
+      "baseline_sha256": "98022b8621c3afabf0e1aa28e335e7030e0dba003876709c48ef675460d0320f",
+      "approved_sha256": "96fb4e0012f06057ecc3f150682349231428f3689b23fef0377da262d7660a19",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "endpoint",
+        "rdsaz",
+        "replica",
+        "sqs",
+        "sns",
+        "dr"
+      ]
+    },
+    "30-Glossary/README.md": {
+      "baseline_sha256": "35eae808e42915f89548551625a7ff7ebbf8a8d7b1e0802254616f2c9c55f61a",
+      "approved_sha256": "4b8dec4858329c9d5f693878a76fbb411db93e3dde99545161c7e808930c0782",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "scaling",
+        "s3classes",
+        "sqs",
+        "lambda",
+        "dr",
+        "rto"
+      ]
+    },
+    "30-Glossary/cheatsheet.md": {
+      "baseline_sha256": "fcb3950a273570405da40eb95a65aab6f2a549cf4ec5740644f199e5de742ff7",
+      "approved_sha256": "a73f7e873436d2fb326c1b9e689313666b61fe494b49e5431e68dc23962054b8",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "scaling",
+        "s3classes",
+        "sqs",
+        "lambda",
+        "dr",
+        "rto"
+      ]
+    },
+    "30-Glossary/flashcards.md": {
+      "baseline_sha256": "b21caa450a37397906f214e911c7380eedf007194120e97be876720fc4aa2b75",
+      "approved_sha256": "4d64b55b969f9f86d79ba4c56044565eeceab8212188e0605b08fb8b1fa4cc13",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "scaling",
+        "s3classes",
+        "sqs",
+        "lambda",
+        "dr",
+        "rto"
+      ]
+    },
+    "30-Glossary/lab.md": {
+      "baseline_sha256": "43ae129b3967bb9ce934fa9b3f5f778a8cdf8a3b8cf12b6374cbc322198299c2",
+      "approved_sha256": "520c7af2f77ba9601efbe3b9d58cc510e4eef538edc90bf9553b7cc121467107",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "scaling",
+        "sqs",
+        "dr",
+        "rto"
+      ]
+    },
+    "30-Glossary/links.md": {
+      "baseline_sha256": "33d232a474447e4c1e7248a285431b00860266361e33d0b7f5e1beae9edc4bbf",
+      "approved_sha256": "fed6aef439732244beaeb88e86ceda26055f4dd8241e17f12da7673c1acf4a69",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "alb",
+        "scaling",
+        "s3classes",
+        "sqs",
+        "lambda",
+        "dr",
+        "rto"
+      ]
+    },
+    "30-Glossary/questions.md": {
+      "baseline_sha256": "a7fd1269fc69a5de0219fbb9ee4ee2922d1777c56f411838e89df634bca4a6b5",
+      "approved_sha256": "fcfe9d826ab91fd42ec1e5188eab2324c5e50add200e9a6c02b146a9b876d5d3",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "scaling",
+        "s3classes",
+        "sqs",
+        "lambda",
+        "dr",
+        "rto"
+      ]
+    },
+    "30-Glossary/use-cases.md": {
+      "baseline_sha256": "3a08f1ec55ae21285ff5b967488ee0d16c788a9fb61487bcb56f26c5946065a8",
+      "approved_sha256": "f1ad0aeefb9b72b83ea725af4801e5ac7adaea676e5e4877cfbf1edea0a2577a",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "alb",
+        "scaling",
+        "s3classes",
+        "dr",
+        "rto"
+      ]
+    },
+    "31-Resources-and-Links/README.md": {
+      "baseline_sha256": "a8cbdeefee6aa6fa282c61b2d2859743e01b88712146182d50ef8fcafc269564",
+      "approved_sha256": "289c76d519a5db5448c68d41fa181ab15ac5516c2583af36f8b8f389107b2530",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced cross-topic introductory boilerplate with module-specific verified concepts and pitfalls; added official domain weights and primary references. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "scope",
+        "rdsaz",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "31-Resources-and-Links/cheatsheet.md": {
+      "baseline_sha256": "abede68ca44fc424ebf00d6985e963ada554348d254b23b4d4ecef9912366605",
+      "approved_sha256": "b6bffe8f418a90469724c3084e249b1c0f8cc86e10158ed8932702bee46ed781",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced generic elasticity recommendations with specific service responsibilities, explicit deployment and consistency boundaries, and referenced limitations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "scope",
+        "rdsaz",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "31-Resources-and-Links/flashcards.md": {
+      "baseline_sha256": "b624c3d33ebc388a3de820b266e698c3358e571e1fe082070f5623c95451cb6c",
+      "approved_sha256": "b96c828d7607fc4d3d00096dca143c21d8eb49a7ed89e9e5fb9d9790d3268fe3",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every retrieval item and replaced generic or incorrect service comparisons with concrete scoped concepts and AWS sources; retained the original flashcard count. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "scope",
+        "rdsaz",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "31-Resources-and-Links/lab.md": {
+      "baseline_sha256": "621090f6c6792d92d8b00468ec2ab409b2a52d7d0f7966c82694bdafcac8bf14",
+      "approved_sha256": "acd0d4a6358283c2542ddd2b62f48dcf7e6e7873f63368e2ff519b514839ac7a",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced an undefined create-resources/fail-a-component procedure with a bounded procedure or explicitly labeled planning exercise, prerequisites, realistic cost considerations, measured outcomes, and cleanup. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "rdsaz",
+        "snow"
+      ]
+    },
+    "31-Resources-and-Links/links.md": {
+      "baseline_sha256": "16a8be6b59dcc5e2b77a0ab66a3fde2800b4e5780d23b8a5a4f34e86676a8dd2",
+      "approved_sha256": "2b404e6b85ca515b7c96ce65bd51b9d98037dffea3d0042ace36f48d6e99df7c",
+      "status": "editorially-corrected",
+      "review_reason": "Prioritized service-specific current primary sources and explained scope versus availability; retained additional useful existing destinations. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "scope",
+        "rdsaz",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "31-Resources-and-Links/questions.md": {
+      "baseline_sha256": "94fab79d31b93c969865342ed98a2f373ffaa8f1efd896af840c8228be48ad97",
+      "approved_sha256": "9be4099247f56736089166fb06e670c3f6a0a8f7724cf169f9cd040735fb956e",
+      "status": "editorially-corrected",
+      "review_reason": "Reviewed every stem and option; replaced ambiguous generic items with explicit requirements, a defensible answer, all distractor rationales, and AWS references. Removed the resolved source-warning note. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "scope",
+        "rdsaz",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "31-Resources-and-Links/use-cases.md": {
+      "baseline_sha256": "ecd37b900220eca3e05c93f2031710db443ab9e31781d85b579740ba3bc6fc5e",
+      "approved_sha256": "3513e74199916bcf4c17a24a1abc0adec97ebf4e253c4b0ca83730d811e0b708",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced four generic scenarios with four module-specific explicit scenarios, justified choices, rejected alternatives, and AWS sources. Updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam",
+        "scope",
+        "rdsaz",
+        "snow",
+        "snowhistory"
+      ]
+    },
+    "CHANGELOG.md": {
+      "baseline_sha256": "c08b38ffa2a8a2aa98be39eba13bacdd94bb3f1c6f208fa83dad25c1d0a37850",
+      "approved_sha256": "89bd77e5580278ee3837fae3c7adb701387a2b2694f0a0d585f060909b4752e3",
+      "status": "editorially-corrected",
+      "review_reason": "Recorded the educational accuracy release and its intentional deviations from translation parity.",
+      "aws_sources": []
+    },
+    "CONTRIBUTING.md": {
+      "baseline_sha256": "03d7eb13e42a93e3cbd9f2f9b38c1d3d18d6c21447895c679756d6639d7a735b",
+      "approved_sha256": "b8cf0a6de578671e272203a8bea3ba1fdc851b090924b3d132f86d5dc7508b00",
+      "status": "editorially-corrected",
+      "review_reason": "Defined evidence-backed educational changes, stable IDs, distractor rationales, editorial digest review, and branch protection expectations.",
+      "aws_sources": []
+    },
+    "DOMAIN_STUDY_PATHS.md": {
+      "baseline_sha256": "17cf13f03b2e79e3122b6975b46b80f62c88448f5e404966895024e9b133ab83",
+      "approved_sha256": "1928b9a34d9bbb64cf7e4c41380a13a3979c2f897da4d5a9e9ca0cb94e9b9eae",
+      "status": "editorially-corrected",
+      "review_reason": "Added official exam weights and distinction from per-service question counts; updated CloudStudy positioning.",
+      "aws_sources": [
+        "exam"
+      ]
+    },
+    "LICENSE": {
+      "baseline_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+      "approved_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    "MODULE_TEMPLATE.md": {
+      "baseline_sha256": "ed41bee18015be9781e0e52cbffdb85eb60aef79adc6052a81827337d147e258",
+      "approved_sha256": "895a450fff4b9a3791203068970a899505410e30769f6bd729aa8f2146c93a3f",
+      "status": "editorially-corrected",
+      "review_reason": "Replaced uninformative concept placeholders with editorial requirements for scope, evidence, defensible questions, and bounded labs.",
+      "aws_sources": []
+    },
+    "README.md": {
+      "baseline_sha256": "a57999cd8d034dd47c0d34599c68ff356fd9973a7cf7f651cc8018e399f99d8c",
+      "approved_sha256": "38f0040879a5cce7f1f5cfb8034aae3b5734362e4902e80bbdefec023e8b0063",
+      "status": "editorially-corrected",
+      "review_reason": "Corrected exam weights and deployment-sensitive comparison rows; removed launch-stage promotion and unsupported frequency claims; updated review date and evidence links while preserving CloudStudy identity and destinations.",
+      "aws_sources": [
+        "exam",
+        "apprunner"
+      ]
+    },
+    "SECURITY.md": {
+      "baseline_sha256": "bb45cc64b1b14f6a666dcaed55cc8d960751e48cc3049fc4f634bdc779a4a157",
+      "approved_sha256": "bb45cc64b1b14f6a666dcaed55cc8d960751e48cc3049fc4f634bdc779a4a157",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    "assets/Banner-SolutionsArchitect.png": {
+      "baseline_sha256": "c407297bc575f648ea558279643d8b6b384b5c451ae282b0a6a7c87908bc79a2",
+      "approved_sha256": "c407297bc575f648ea558279643d8b6b384b5c451ae282b0a6a7c87908bc79a2",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    "assets/Free-open-repo.jpg": {
+      "baseline_sha256": "79c65998109e48d00dac8f54ade9a4ace07297c46ea8cb532e5ece14444ac5d6",
+      "approved_sha256": "79c65998109e48d00dac8f54ade9a4ace07297c46ea8cb532e5ece14444ac5d6",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    "assets/Logo-CloudStudy.png": {
+      "baseline_sha256": "020c13830d14b33100f8238b7a1edd95798b44c23b0e504d9eaf9e0bae4cb3c8",
+      "approved_sha256": "020c13830d14b33100f8238b7a1edd95798b44c23b0e504d9eaf9e0bae4cb3c8",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    "assets/Solution Architect Badge.png": {
+      "baseline_sha256": "4335b98af21477a3926d803df7f23aabfc837cf7b0799367661a9d617ebcd012",
+      "approved_sha256": "4335b98af21477a3926d803df7f23aabfc837cf7b0799367661a9d617ebcd012",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    "aws-saa-portal.html": {
+      "baseline_sha256": "b8d912e349681090eaed9360b22047b75e23d635d04ec04ee86dad91ae264ff6",
+      "approved_sha256": "a19f9e1607f8e59feaf2f3203e8aa3ca3829f1320cacd409c02b7c0c99f9c395",
+      "status": "editorially-corrected",
+      "review_reason": "Corrected all four domain card weights and replaced the inherited-allocation warning with official scored-content guidance. Preserved modules, loading configuration, storage keys, and visual identity.",
+      "aws_sources": []
+    },
+    "foto-thiago-cardoso.jpg": {
+      "baseline_sha256": "49d81baa6732731b2707db2156cb18e764c195ac65b34c26d1833f5a8745c369",
+      "approved_sha256": "49d81baa6732731b2707db2156cb18e764c195ac65b34c26d1833f5a8745c369",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    "index.html": {
+      "baseline_sha256": "8b2144951d5905bb49f6b0ecbc1008bfc91d74c1fca1e6a70124ecd4b948f0a4",
+      "approved_sha256": "8b2144951d5905bb49f6b0ecbc1008bfc91d74c1fca1e6a70124ecd4b948f0a4",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    },
+    "scripts/renumber-saa-c03-modules.sh": {
+      "baseline_sha256": "0a1d1325653a5a5b991afe92dae2b5d8620a8bd0d9c3405c288a55b3510db21c",
+      "approved_sha256": "0a1d1325653a5a5b991afe92dae2b5d8620a8bd0d9c3405c288a55b3510db21c",
+      "status": "reviewed-unchanged",
+      "review_reason": "Reviewed and retained: no inaccurate AWS teaching or stale promotional claim required an edit; preserve existing behavior, legal text, attribution, or configuration.",
+      "aws_sources": []
+    }
+  }
+}

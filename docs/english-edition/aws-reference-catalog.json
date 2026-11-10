@@ -1,0 +1,361 @@
+{
+  "review_date": "2026-11-10",
+  "sources": {
+    "exam": {
+      "title": "SAA-C03 exam guide",
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html"
+    },
+    "scope": {
+      "title": "SAA-C03 in-scope services",
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html"
+    },
+    "outscope": {
+      "title": "SAA-C03 out-of-scope services",
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-out-of-scope-services.html"
+    },
+    "iam": {
+      "title": "IAM security best practices",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+    },
+    "policy": {
+      "title": "IAM policy evaluation",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html"
+    },
+    "scp": {
+      "title": "Service control policies",
+      "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html"
+    },
+    "shared": {
+      "title": "Shared responsibility model",
+      "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    },
+    "spot": {
+      "title": "EC2 Spot Instances",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"
+    },
+    "placement": {
+      "title": "EC2 placement groups",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
+    },
+    "ebs": {
+      "title": "Amazon EBS volumes",
+      "url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html"
+    },
+    "efs": {
+      "title": "Amazon EFS",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+    },
+    "savings": {
+      "title": "Savings Plans",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html"
+    },
+    "alb": {
+      "title": "Application Load Balancers",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+    },
+    "nlb": {
+      "title": "Network Load Balancers",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html"
+    },
+    "asg": {
+      "title": "EC2 Auto Scaling health checks",
+      "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-checks-overview.html"
+    },
+    "scaling": {
+      "title": "EC2 Auto Scaling dynamic scaling",
+      "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html"
+    },
+    "s3classes": {
+      "title": "S3 storage classes",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"
+    },
+    "s3version": {
+      "title": "S3 Versioning",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html"
+    },
+    "s3lock": {
+      "title": "S3 Object Lock",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"
+    },
+    "s3public": {
+      "title": "S3 Block Public Access",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html"
+    },
+    "s3life": {
+      "title": "S3 Lifecycle",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+    },
+    "s3rep": {
+      "title": "S3 replication",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html"
+    },
+    "sg": {
+      "title": "VPC security groups",
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html"
+    },
+    "nacl": {
+      "title": "Network ACLs",
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html"
+    },
+    "nat": {
+      "title": "NAT gateways",
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+    },
+    "igw": {
+      "title": "Internet gateways",
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html"
+    },
+    "endpoint": {
+      "title": "Gateway VPC endpoints",
+      "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
+    },
+    "rdsaz": {
+      "title": "RDS Multi-AZ deployment types",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html"
+    },
+    "replica": {
+      "title": "RDS read replicas",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
+    },
+    "dynamodb": {
+      "title": "DynamoDB read consistency",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html"
+    },
+    "ddbcapacity": {
+      "title": "DynamoDB capacity modes",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html"
+    },
+    "ddbkeys": {
+      "title": "DynamoDB partition key design",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html"
+    },
+    "dns": {
+      "title": "Route 53 routing policies",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html"
+    },
+    "oac": {
+      "title": "CloudFront origin access control",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+    },
+    "ga": {
+      "title": "AWS Global Accelerator",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+    },
+    "waf": {
+      "title": "AWS WAF",
+      "url": "https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html"
+    },
+    "sqs": {
+      "title": "SQS at-least-once delivery",
+      "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html"
+    },
+    "fifo": {
+      "title": "SQS FIFO delivery logic",
+      "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
+    },
+    "dedup": {
+      "title": "SQS FIFO deduplication",
+      "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+    },
+    "sns": {
+      "title": "SNS to SQS fan-out",
+      "url": "https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html"
+    },
+    "events": {
+      "title": "EventBridge event buses",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html"
+    },
+    "sfn": {
+      "title": "AWS Step Functions",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
+    },
+    "fargate": {
+      "title": "Fargate for ECS",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html"
+    },
+    "taskrole": {
+      "title": "ECS task IAM roles",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html"
+    },
+    "executionrole": {
+      "title": "ECS task execution role",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html"
+    },
+    "ecsautoscale": {
+      "title": "ECS service auto scaling",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html"
+    },
+    "eks": {
+      "title": "Amazon EKS",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html"
+    },
+    "lambda": {
+      "title": "Lambda best practices",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html"
+    },
+    "concurrency": {
+      "title": "Lambda concurrency controls",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html"
+    },
+    "lambdasqs": {
+      "title": "Lambda with SQS",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html"
+    },
+    "api": {
+      "title": "API Gateway",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html"
+    },
+    "apikeys": {
+      "title": "API Gateway usage plans and API keys",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html"
+    },
+    "athena": {
+      "title": "Athena data optimization",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/performance-tuning-data-optimization-techniques.html"
+    },
+    "glue": {
+      "title": "AWS Glue components",
+      "url": "https://docs.aws.amazon.com/glue/latest/dg/components-overview.html"
+    },
+    "firehose": {
+      "title": "Amazon Data Firehose",
+      "url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"
+    },
+    "kinesis": {
+      "title": "Kinesis Data Streams",
+      "url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
+    },
+    "sagemaker": {
+      "title": "Amazon SageMaker AI",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
+    },
+    "comprehend": {
+      "title": "Amazon Comprehend",
+      "url": "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html"
+    },
+    "textract": {
+      "title": "Amazon Textract",
+      "url": "https://docs.aws.amazon.com/textract/latest/dg/what-is.html"
+    },
+    "bedrock": {
+      "title": "Amazon Bedrock",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+    },
+    "cw": {
+      "title": "Amazon CloudWatch",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+    },
+    "trail": {
+      "title": "CloudTrail data events",
+      "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+    },
+    "config": {
+      "title": "AWS Config",
+      "url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html"
+    },
+    "xray": {
+      "title": "X-Ray SDK and daemon maintenance",
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html"
+    },
+    "dms": {
+      "title": "AWS DMS",
+      "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"
+    },
+    "mgn": {
+      "title": "AWS Transform MGN",
+      "url": "https://docs.aws.amazon.com/mgn/latest/ug/what-is-mgn.html"
+    },
+    "datasync": {
+      "title": "AWS DataSync",
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+    },
+    "transfer": {
+      "title": "AWS Transfer Family",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html"
+    },
+    "snow": {
+      "title": "AWS Snowball availability notice",
+      "url": "https://aws.amazon.com/snowball/"
+    },
+    "snowhistory": {
+      "title": "Snowball availability history",
+      "url": "https://docs.aws.amazon.com/snowball/latest/developer-guide/doc-history.html"
+    },
+    "dr": {
+      "title": "Disaster recovery strategies",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html"
+    },
+    "rto": {
+      "title": "Recovery objectives",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html"
+    },
+    "budgets": {
+      "title": "AWS Budgets",
+      "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html"
+    },
+    "cost": {
+      "title": "AWS Cost Explorer",
+      "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html"
+    },
+    "dx": {
+      "title": "Direct Connect encryption",
+      "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html"
+    },
+    "vpn": {
+      "title": "AWS Site-to-Site VPN",
+      "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html"
+    },
+    "peering": {
+      "title": "VPC peering limitations",
+      "url": "https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html"
+    },
+    "tgw": {
+      "title": "AWS Transit Gateway",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html"
+    },
+    "privatelink": {
+      "title": "AWS PrivateLink",
+      "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html"
+    },
+    "kms": {
+      "title": "AWS KMS key concepts",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html"
+    },
+    "rotation": {
+      "title": "KMS key rotation",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"
+    },
+    "secrets": {
+      "title": "Secrets Manager rotation",
+      "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html"
+    },
+    "parameters": {
+      "title": "Systems Manager Parameter Store",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html"
+    },
+    "pillars": {
+      "title": "Well-Architected pillars",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html"
+    },
+    "watool": {
+      "title": "AWS Well-Architected Tool workload review",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/tutorial.html"
+    },
+    "pricing": {
+      "title": "AWS Pricing Calculator",
+      "url": "https://calculator.aws/"
+    },
+    "free": {
+      "title": "AWS Free Tier account eligibility",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier.html"
+    },
+    "securityreport": {
+      "title": "AWS vulnerability reporting",
+      "url": "https://aws.amazon.com/security/vulnerability-reporting/"
+    },
+    "apprunner": {
+      "title": "App Runner availability change",
+      "url": "https://docs.aws.amazon.com/apprunner/latest/dg/apprunner-availability-change.html"
+    }
+  }
+}

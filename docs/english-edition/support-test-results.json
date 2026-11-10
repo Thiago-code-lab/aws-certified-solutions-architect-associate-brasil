@@ -4,6 +4,7 @@
   "migration_scenarios": 5,
   "collision_protection": "passed",
   "idempotence": "passed",
+  "lab_shell_examples": 1,
   "yaml_configurations": 2,
   "issue_template_front_matter": 3,
   "errors": []

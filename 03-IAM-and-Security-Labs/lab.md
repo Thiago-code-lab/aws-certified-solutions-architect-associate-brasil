@@ -2,47 +2,46 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **guided IAM and security practice**, with clear behavioral validation and controlled costs for a study environment.
+Observe explicit-deny precedence and distinguish an allow from a permissions ceiling.
 
 ## Services Used
 
-IAM, KMS, CloudTrail.
+IAM policy simulation and AWS Organizations documentation.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Policy and documentation exercise. Do not attach experimental SCPs to a production organization.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Start with the narrow object-read allow designed in module 02.
+2. Add an explicit deny for one of the allowed test object resources in the simulated policy set.
+3. Simulate that same request and compare its result with an allowed object that the deny does not match.
+4. Read the SCP documentation and draw the intersection between applicable organization guardrails and an IAM grant.
+5. Record the management-account exception and explain why an SCP allow does not grant access to a new role.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- The applicable explicit deny wins over the allow.
+- A nonmatching deny is not treated as a global denial.
+- The notes distinguish identity grants, explicit denies, and organization ceilings.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Discard the experimental simulated policy set.
+2. Remove only draft lab policies; no live organization policy needs modification.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [IAM policy evaluation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html), [Service control policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

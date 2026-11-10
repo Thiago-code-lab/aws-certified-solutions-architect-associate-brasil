@@ -2,53 +2,51 @@
 
 ## Overview
 
-This module covers **object storage and selecting storage classes by access pattern**, focusing on the decisions tested on the SAA-C03. The goal is to turn business requirements into clear technical choices while balancing resilience, performance, security, and cost. Success on the exam depends on identifying the scenario's most important constraint and choosing a pattern that reduces operational risk, beyond memorizing individual services.
+Choose S3 storage and protection features from access patterns, failure tolerance, retention, and authorization requirements. Versioning, Object Lock, storage classes, and private access solve different problems.
 
 ## Key Concepts
 
-- Role of services: S3, S3 Glacier, EBS, EFS.
-- Prioritization by dominant requirement (latency, availability, compliance or cost).
-- Integration between services with decoupling and minimal observability.
-- Choose the least complex architecture that meets the requirements.
+- **Recover an overwritten object:** Versioning retains multiple versions of an object key. A lifecycle policy may be needed to control noncurrent-version storage costs, and permanent version deletion still needs protection.
+- **Object retention:** Compliance-mode retention prevents protected versions from being overwritten or deleted during the retention period, including by root. Plan carefully because a test record can remain retained until expiry.
+- **Single-AZ storage trade-off:** One Zone-IA stores data in one AZ and is not resilient to physical loss of that AZ. It suits reproducible data or appropriate secondary copies, not this sole-copy requirement.
+- **Prevent public exposure:** Block Public Access prevents public access according to its settings. It complements authenticated IAM access and does not replace least-privilege authorization.
+- **Archive retrieval requirements:** Glacier Instant Retrieval provides immediate access, whereas Flexible Retrieval and Deep Archive use restore workflows. Storage, request, retrieval, and minimum-duration costs all affect the choice.
 
 ## Exam Relevance
 
-On the SAA-C03, questions in this domain often have two technically feasible options. Details such as the consistency model, failover strategy, recurring operating costs, throughput impact, and required automation determine the better answer. Studying this module means practicing those selection criteria as well as learning terminology.
+Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service.
 
-## Practical Cues (3 to 5)
+## Practical Cues
 
-1. When the scenario calls for elasticity with little manual work, favor managed services.
-2. When components depend on each other, check for decoupling to absorb spikes and partial failures.
-3. When security is a constraint, verify encryption in transit and at rest, along with least privilege.
-4. If cost is a requirement, compare usage classes, capacity modes, and access patterns.
-5. If the scenario is global, validate traffic route, latency and distribution strategy.
+1. **Recover an overwritten object:** S3 Versioning.
+2. **Object retention:** S3 Object Lock in compliance mode with the required retention period.
+3. **Single-AZ storage trade-off:** S3 One Zone-IA.
+4. **Prevent public exposure:** S3 Block Public Access configured at the applicable account and bucket levels.
+5. **Archive retrieval requirements:** Choose a suitable immediate-access class, such as S3 Glacier Instant Retrieval, after checking retrieval and minimum-duration charges.
 
 ## Common Pitfalls
 
-- Choosing a premium feature that the scenario does not require.
-- Confusing high availability features with read scaling features.
-- Ignoring service limits and failure behavior.
-- Addressing a security requirement with a tool unsuited to the secret lifecycle.
+- Public read access does not retain earlier versions and is unnecessary here.
+- Versioning alone permits authorized permanent version deletion.
+- Standard stores data across multiple AZs.
 
 ## Next Review Steps
 
-1. Review [cheatsheet.md](./cheatsheet.md) to reinforce decision-making cues.
-2. Answer [questions.md](./questions.md) without reference materials to test your technical judgment.
-3. Use [flashcards.md](./flashcards.md) for a brief daily review to reinforce critical distinctions.
+1. Review [cheatsheet.md](./cheatsheet.md) and explain the assumptions behind each choice.
+2. Answer [questions.md](./questions.md) before revealing the explanations.
+3. Use [flashcards.md](./flashcards.md) for spaced retrieval and record recurring mistakes.
 
 ## Additional Study
 
-To strengthen your AWS fundamentals before studying architectural scenarios in depth:
-https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
+[S3 Versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html), [S3 Lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html), [S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html), [S3 storage classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html), [S3 Block Public Access](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html), [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
-For an additional learning path connecting architecture with generative AI and Bedrock:
-https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil
+Related community paths: [Cloud Practitioner](https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil) and [AI Practitioner](https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil). These external repositories may contain Portuguese material.
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

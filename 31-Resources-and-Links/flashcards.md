@@ -1,107 +1,120 @@
-# Review Cards
+# Review Flashcards
 
 ## Card 01
 
-**Question:** What is the central focus of this module?
+**Question:** Two community study plans disagree about SAA-C03 domain weights. Which source should determine the official allocation?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Master decisions about learning resources using SAA-C03 exam scenarios.
+**Answer:** The current AWS SAA-C03 exam guide. AWS defines the exam content domains and scored-content weights. Community question counts and promotional statements do not define the exam blueprint.
+
+**AWS references:** [SAA-C03 exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html).
 
 </details>
 
 ## Card 02
 
-**Question:** What mistake commonly occurs with this topic?
+**Question:** A service appears in the current AWS in-scope list. Which conclusion is justified?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Applying a generic answer without checking the scenario's specific cues for learning resources.
+**Answer:** It is within the published scope, but the list does not promise a fixed number of questions for that service. The guide describes scope and says the service list is non-exhaustive and subject to change. Exam coverage, deployment availability, and the correctness of a study explanation are separate questions.
+
+**AWS references:** [SAA-C03 in-scope services](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html), [SAA-C03 exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html), [AWS Snowball availability notice](https://aws.amazon.com/snowball/).
 
 </details>
 
 ## Card 03
 
-**Question:** How do you identify the best answer option?
+**Question:** A study note says that every RDS Multi-AZ deployment has no readable standbys. Which source most directly resolves the claim?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Prioritize the dominant requirement and choose services that address official documentation and practice exams with explanations with less operational overhead.
+**Answer:** Current RDS documentation distinguishing Multi-AZ DB instance deployments from Multi-AZ DB cluster deployments. The deployment-specific documentation establishes the distinction: a DB instance standby does not serve reads, while Multi-AZ DB cluster readers can serve reads.
+
+**AWS references:** [RDS Multi-AZ deployment types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html).
 
 </details>
 
 ## Card 04
 
-**Question:** Which trade-off usually appears?
+**Question:** An older learning resource recommends Snowball for a new commercial-Region deployment. What is the responsible next step?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Balance official documentation with cost, performance, and operational simplicity.
+**Answer:** Check current AWS availability and lifecycle notices, then select an eligible transfer approach for the actual customer and date. Historical learning value does not guarantee present deployment availability. Current service notices must inform actual implementation decisions.
+
+**AWS references:** [AWS Snowball availability notice](https://aws.amazon.com/snowball/), [Snowball availability history](https://docs.aws.amazon.com/snowball/latest/developer-guide/doc-history.html).
 
 </details>
 
 ## Card 05
 
-**Question:** What sign of a mature architecture appears in exam questions?
+**Question:** A contributor finds a contradiction between a practice answer and AWS documentation. What makes the proposed correction reviewable?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Deliberate use of practice exams with explanations with observability to reduce operational risk.
+**Answer:** Identify the exact question, define the scenario assumptions, cite applicable AWS documentation, and update the answer plus all affected explanations together. A defensible correction aligns the stem, alternatives, answer, and explanation under explicit assumptions. Traceable references and a question identifier let reviewers evaluate the change.
+
+**AWS references:** [SAA-C03 exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html), [RDS Multi-AZ deployment types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html).
 
 </details>
 
 ## Card 06
 
-**Question:** How can you avoid overengineering?
+**Question:** A service appears in the current AWS in-scope list. Which conclusion is justified?
+
+Why does this alternative fail: “Every exam form must contain exactly five questions about it.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Avoid extra components when curated resources or the SAA-C03 scope already meets the requirement.
+**Answer:** The guide does not assign a fixed per-service question count.
+
+**AWS references:** [SAA-C03 in-scope services](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html), [SAA-C03 exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html), [AWS Snowball availability notice](https://aws.amazon.com/snowball/).
 
 </details>
 
 ## Card 07
 
-**Question:** What should you review before a practice exam?
+**Question:** A study note says that every RDS Multi-AZ deployment has no readable standbys. Which source most directly resolves the claim?
+
+Why does this alternative fail: “An old summary that does not name the deployment type.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Practical differences between curated resources and the SAA-C03 scope.
+**Answer:** A summary without the deployment scope repeats the ambiguity rather than resolving it.
+
+**AWS references:** [RDS Multi-AZ deployment types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html).
 
 </details>
 
 ## Card 08
 
-**Question:** How can you finish a review session efficiently?
+**Question:** An older learning resource recommends Snowball for a new commercial-Region deployment. What is the responsible next step?
+
+Why does this alternative fail: “Assume the recommendation remains deployable because the PDF is downloadable.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Turn mistakes from this module into clear decision rules for learning resources.
+**Answer:** Document availability does not establish service-order eligibility.
+
+**AWS references:** [AWS Snowball availability notice](https://aws.amazon.com/snowball/), [Snowball availability history](https://docs.aws.amazon.com/snowball/latest/developer-guide/doc-history.html).
 
 </details>
-
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

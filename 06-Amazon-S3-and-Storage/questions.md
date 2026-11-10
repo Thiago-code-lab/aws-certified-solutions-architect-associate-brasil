@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about S3. Which approach best meets the requirements?
+<!-- question-id: 06-Q01 -->
 
-A) Apply a generic solution without considering lifecycle management.
+An S3 bucket must retain earlier object contents when an application overwrites an existing key. Which feature directly provides that history?
 
-B) Use lifecycle management with a configuration that meets the requirements and minimizes operational overhead.
+A) A public-read bucket policy.
 
-C) Add components that the scenario does not require.
+B) An S3 gateway endpoint alone.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A larger EC2 instance uploading the objects.
+
+D) S3 Versioning.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for S3 with a better balance of requirements, risk, and operational effort.
+**Explanation:** Versioning retains multiple versions of an object key. A lifecycle policy may be needed to control noncurrent-version storage costs, and permanent version deletion still needs protection.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Public read access does not retain earlier versions and is unnecessary here.
+- **B:** An endpoint controls the network path rather than object version history.
+- **C:** Uploader compute size does not change S3 version retention.
+
+**AWS references:** [S3 Versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html), [S3 Lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 06-Q02 -->
 
-A) Resolve everything manually during the incident.
+Records require a fixed WORM retention period that must not be shortened or bypassed by users, including the account root user. Which S3 feature and mode fits?
 
-B) Combine replication with observability and automation.
+A) Versioning alone with unrestricted DeleteObjectVersion access.
 
-C) Add components that the scenario does not require.
+B) Object Lock governance mode with bypass permission granted to administrators.
 
-D) Ignore explicit security, availability or cost requirements.
+C) S3 Object Lock in compliance mode with the required retention period.
+
+D) S3 Standard storage class without Object Lock.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for S3 with a better balance of requirements, risk, and operational effort.
+**Explanation:** Compliance-mode retention prevents protected versions from being overwritten or deleted during the retention period, including by root. Plan carefully because a test record can remain retained until expiry.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Versioning alone permits authorized permanent version deletion.
+- **B:** Governance retention can be bypassed by a principal with the relevant permission.
+- **D:** A storage class is not a WORM retention control.
+
+**AWS references:** [S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 06-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+A dataset is the only copy of irreplaceable records and must survive loss of an AZ. Which choice is unsuitable as its sole storage location?
 
-B) Size resources based on actual usage and use storage classes where appropriate.
+A) S3 Standard.
 
-C) Add components that the scenario does not require.
+B) S3 Standard-IA.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A suitable S3 Glacier multi-AZ storage class with retrieval requirements accounted for.
+
+D) S3 One Zone-IA.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for S3 with a better balance of requirements, risk, and operational effort.
+**Explanation:** One Zone-IA stores data in one AZ and is not resilient to physical loss of that AZ. It suits reproducible data or appropriate secondary copies, not this sole-copy requirement.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Standard stores data across multiple AZs.
+- **B:** Standard-IA uses multiple AZs; its access-cost model must still fit the workload.
+- **C:** Multi-AZ archival storage can meet the stated failure scope when retrieval delays are acceptable.
+
+**AWS references:** [S3 storage classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 06-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+A private application bucket must reject accidental public grants through bucket policies or ACLs. Which S3 control is specifically designed for that purpose?
 
-B) The option that ignores cues about versioning and architectural dependencies.
+A) S3 Block Public Access configured at the applicable account and bucket levels.
 
-C) Add components that the scenario does not require.
+B) A permissive public-read bucket policy.
 
-D) Ignore explicit security, availability or cost requirements.
+C) An EC2 security group attached to the bucket.
+
+D) Disabling versioning.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for S3 with a better balance of requirements, risk, and operational effort.
+**Explanation:** Block Public Access prevents public access according to its settings. It complements authenticated IAM access and does not replace least-privilege authorization.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** A public-read policy creates the exposure the requirement forbids.
+- **C:** S3 buckets do not use EC2 security groups as bucket access controls.
+- **D:** Versioning settings do not block public authorization grants.
+
+**AWS references:** [S3 Block Public Access](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html), [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 06-Q05 -->
 
-A) Review only definitions without scenario practice.
+A retained dataset is rarely read, but every retrieval must begin immediately without a restore job. Which storage decision follows the requirement?
 
-B) Practice questions about public access and durability with explanations of the trade-offs.
+A) Choose S3 Glacier Deep Archive solely because its storage rate is low.
 
-C) Add components that the scenario does not require.
+B) Assume all storage classes named Glacier have identical retrieval behavior.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Delete the data and regenerate it even though retention is mandatory.
+
+D) Choose a suitable immediate-access class, such as S3 Glacier Instant Retrieval, after checking retrieval and minimum-duration charges.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for S3 with a better balance of requirements, risk, and operational effort.
+**Explanation:** Glacier Instant Retrieval provides immediate access, whereas Flexible Retrieval and Deep Archive use restore workflows. Storage, request, retrieval, and minimum-duration costs all affect the choice.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Deep Archive does not meet the immediate-without-restore requirement.
+- **B:** Glacier storage classes have different access characteristics.
+- **C:** Deleting required retained data violates the stated requirement.
+
+**AWS references:** [S3 storage classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

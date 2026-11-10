@@ -2,47 +2,47 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **common AWS architecture terminology**, with clear behavioral validation and controlled costs for a study environment.
+Test architectural vocabulary with concrete counterexamples.
 
 ## Services Used
 
-AWS terms, high availability, scalability.
+Module glossary, recovery objective documentation, and service behavior references.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Offline concept exercise. No AWS resource creation is required.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Write separate definitions for availability, durability, RPO, RTO, horizontal scaling, vertical scaling, and idempotency.
+2. Describe data that is durable but temporarily unavailable and explain why the two properties differ.
+3. Given a retained recovery point and measured restoration time, calculate the observed data-loss window and recovery duration separately.
+4. Describe adding application instances versus enlarging one instance.
+5. Walk through delivery of the same order event twice and describe a duplicate-safe business operation.
+6. Check each explanation against the linked primary documentation and revise any definition that conflates different concepts.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- RPO and RTO are not reversed.
+- Availability is not equated with historical recoverability.
+- Idempotency is not confused with ordering or duplicate-free transport.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Keep the corrected definitions and counterexamples.
+2. No cloud resources were created.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [EC2 Auto Scaling dynamic scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html), [SQS at-least-once delivery](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

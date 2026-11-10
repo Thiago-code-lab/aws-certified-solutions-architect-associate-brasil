@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about migration. Which approach best meets the requirements?
+<!-- question-id: 21-Q01 -->
 
-A) Apply a generic solution without considering DMS.
+A heterogeneous relational database migration needs schema assessment and low-downtime data replication. Which plan accounts for both?
 
-B) Use DMS with a configuration that meets the requirements and minimizes operational overhead.
+A) Assume a data-copy task automatically converts every stored procedure without review.
 
-C) Add components that the scenario does not require.
+B) Use only a DNS change while leaving the target database empty.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Assess and convert the schema using suitable DMS Schema Conversion or AWS SCT capabilities, then configure supported full-load and CDC replication with cutover validation.
+
+D) Use an S3 lifecycle rule as database change data capture.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for migration with a better balance of requirements, risk, and operational effort.
+**Explanation:** DMS includes schema-conversion and data-migration capabilities, but support and conversion gaps depend on the source and target. Replication, application compatibility, and cutover must be validated separately.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Conversion support is not universal and incompatible objects can require changes.
+- **B:** DNS changes do not populate or validate a database.
+- **D:** Object lifecycle does not capture database transaction changes.
+
+**AWS references:** [AWS DMS](https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 21-Q02 -->
 
-A) Resolve everything manually during the incident.
+A team wants to rehost supported physical or virtual servers on AWS using continuous block-level replication. Which service is designed for this?
 
-B) Combine SCT with observability and automation.
+A) Amazon Comprehend.
 
-C) Add components that the scenario does not require.
+B) AWS Transform MGN, formerly AWS Application Migration Service.
 
-D) Ignore explicit security, availability or cost requirements.
+C) AWS WAF.
+
+D) AWS Secrets Manager rotation alone.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for migration with a better balance of requirements, risk, and operational effort.
+**Explanation:** MGN replicates server blocks and supports test launches and cutover for rehosting. Rehosting is not the same as database-engine conversion or application refactoring.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Text analysis does not replicate server disks.
+- **C:** Web request filtering does not migrate server operating systems.
+- **D:** Secret rotation does not replicate or launch a server.
+
+**AWS references:** [AWS Transform MGN](https://docs.aws.amazon.com/mgn/latest/ug/what-is-mgn.html), [AWS DMS](https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 21-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+An organization has adequate network connectivity and must regularly copy files from a supported on-premises NFS share into S3 with integrity validation. Which service fits?
 
-B) Size resources based on actual usage and use DataSync where appropriate.
+A) A Route 53 failover record.
 
-C) Add components that the scenario does not require.
+B) AWS DataSync.
 
-D) Ignore explicit security, availability or cost requirements.
+C) An IAM permissions boundary alone.
+
+D) An ALB listener rule.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for migration with a better balance of requirements, risk, and operational effort.
+**Explanation:** DataSync automates transfers between supported file or object storage systems and AWS storage. Source support, permissions, connectivity, and task settings still need verification.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** DNS failover does not copy a file dataset.
+- **C:** A permissions boundary does not transfer files.
+- **D:** HTTP target selection is not file synchronization.
+
+**AWS references:** [AWS DataSync](https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 21-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+Partners must keep their existing SFTP clients while uploading files to managed AWS-backed storage. Which service directly provides an SFTP endpoint?
 
-B) The option that ignores cues about Snowball and architectural dependencies.
+A) A bare S3 bucket endpoint assumed to speak SFTP.
 
-C) Add components that the scenario does not require.
+B) AWS Transfer Family configured with a supported storage backend and authentication design.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A DataSync task assumed to be an interactive partner SFTP server.
+
+D) An SQS queue.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for migration with a better balance of requirements, risk, and operational effort.
+**Explanation:** Transfer Family provides managed file-transfer protocol endpoints, including SFTP. S3 storage is not itself an SFTP server, and DataSync serves a different transfer model.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** The S3 API endpoint does not directly provide the SFTP protocol.
+- **C:** A DataSync task is not the requested partner-facing SFTP endpoint.
+- **D:** SQS transports messages rather than SFTP file sessions.
+
+**AWS references:** [AWS Transfer Family](https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html), [AWS DataSync](https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 21-Q05 -->
 
-A) Review only definitions without scenario practice.
+A new AWS customer in a commercial Region is planning a deployment on November 10, 2026. Should a new Snowball device order be assumed available?
 
-B) Practice questions about Snowball and cutover with explanations of the trade-offs.
+A) Yes. A mention in an exam service list guarantees new-customer production availability.
 
-C) Add components that the scenario does not require.
+B) No. Snowball Edge is closed to new customers, and AWS has announced commercial-Region device support ending December 31, 2026; evaluate currently available transfer alternatives.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Yes. Snowcone is the unrestricted replacement for every new customer.
+
+D) Yes. Buying a Savings Plan creates Snowball device eligibility.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for migration with a better balance of requirements, risk, and operational effort.
+**Explanation:** AWS service availability notices govern deployment eligibility. The exam scope list and historical offline-transfer patterns do not override customer or lifecycle restrictions.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Exam scope is not a service-ordering entitlement.
+- **C:** Snowcone was discontinued; it is not an unrestricted replacement.
+- **D:** A compute pricing commitment does not grant device-order eligibility.
+
+**AWS references:** [AWS Snowball availability notice](https://aws.amazon.com/snowball/), [Snowball availability history](https://docs.aws.amazon.com/snowball/latest/developer-guide/doc-history.html), [SAA-C03 in-scope services](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

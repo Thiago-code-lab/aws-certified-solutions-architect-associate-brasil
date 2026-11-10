@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about Route 53 and CloudFront. Which approach best meets the requirements?
+<!-- question-id: 13-Q01 -->
 
-A) Apply a generic solution without considering latency-based routing.
+A new CloudFront distribution serves a regular private S3 bucket origin. The bucket must stay private while CloudFront can read objects. Which design is recommended?
 
-B) Use latency-based routing with a configuration that meets the requirements and minimizes operational overhead.
+A) Make the bucket publicly readable and rely only on an obscure URL.
 
-C) Add components that the scenario does not require.
+B) Configure OAC, signed origin requests, and a bucket policy restricted to the intended CloudFront distribution.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Use OAC with an S3 static website endpoint as if it were a regular S3 origin.
+
+D) Attach an EC2 security group to the S3 bucket.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for Route 53 and CloudFront with a better balance of requirements, risk, and operational effort.
+**Explanation:** Origin access control authorizes CloudFront access to a regular S3 origin. The bucket policy must allow the intended distribution. Website endpoints are custom origins and do not support OAC.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Obscurity does not enforce private origin access.
+- **C:** OAC is not supported for S3 website endpoints.
+- **D:** S3 bucket authorization is not implemented by attaching EC2 security groups.
+
+**AWS references:** [CloudFront origin access control](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 13-Q02 -->
 
-A) Resolve everything manually during the incident.
+An application has equivalent endpoints in multiple AWS Regions. DNS responses should favor the Region offering the best latency to the user. Which Route 53 policy fits?
 
-B) Combine failover with observability and automation.
+A) Latency-based routing.
 
-C) Add components that the scenario does not require.
+B) Weighted routing used solely for a fixed traffic proportion.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Simple routing to one endpoint only.
+
+D) An S3 lifecycle rule.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for Route 53 and CloudFront with a better balance of requirements, risk, and operational effort.
+**Explanation:** Latency-based routing selects among configured regional resources using latency information. It does not promise the geographically nearest location or a fixed split of requests.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** Weighted routing expresses configured proportions rather than optimizing latency.
+- **C:** One simple endpoint does not make the requested regional selection.
+- **D:** Object retention rules do not select DNS endpoints.
+
+**AWS references:** [Route 53 routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 13-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+A team wants DNS responses distributed between old and new regional endpoints in configured relative proportions. Which Route 53 policy is intended for this?
 
-B) Size resources based on actual usage and use weighted routing where appropriate.
+A) Failover routing used only as active-passive standby.
 
-C) Add components that the scenario does not require.
+B) A security group with two outbound rules.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Weighted routing.
+
+D) A larger EC2 instance for the old endpoint.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for Route 53 and CloudFront with a better balance of requirements, risk, and operational effort.
+**Explanation:** Weighted records support relative response proportions. DNS caching and resolver behavior mean the observed application-request split is not an exact per-request percentage guarantee.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Active-passive failover is not a proportional rollout policy.
+- **B:** Firewall rules do not assign DNS response weights.
+- **D:** Instance size does not control DNS selection proportions.
+
+**AWS references:** [Route 53 routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 13-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+A globally used UDP application needs static anycast entry IPs and routing across the AWS network to healthy regional endpoints. Which service fits?
 
-B) The option that ignores cues about CDN and architectural dependencies.
+A) AWS Global Accelerator with supported endpoints.
 
-C) Add components that the scenario does not require.
+B) CloudFront as a general-purpose arbitrary UDP proxy.
 
-D) Ignore explicit security, availability or cost requirements.
+C) An S3 website endpoint.
+
+D) A NAT gateway as the global inbound application endpoint.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for Route 53 and CloudFront with a better balance of requirements, risk, and operational effort.
+**Explanation:** Global Accelerator supports TCP and UDP applications with static anycast IP addresses and regional endpoint routing. CloudFront is an HTTP(S) content delivery service, not an arbitrary UDP proxy.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** CloudFront does not provide the arbitrary UDP proxy behavior in the stem.
+- **C:** An S3 website endpoint is not a UDP application accelerator.
+- **D:** NAT gateways are not global inbound anycast application front doors.
+
+**AWS references:** [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 13-Q05 -->
 
-A) Review only definitions without scenario practice.
+An HTTP application behind an ALB needs managed rule-based filtering for common web exploits. Which service is designed for that application-layer filtering?
 
-B) Practice questions about cache and OAC/OAI with explanations of the trade-offs.
+A) A Route 53 TXT record.
 
-C) Add components that the scenario does not require.
+B) An EBS snapshot.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A network ACL expected to inspect SQL injection payloads.
+
+D) AWS WAF associated with the supported application resource.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for Route 53 and CloudFront with a better balance of requirements, risk, and operational effort.
+**Explanation:** AWS WAF evaluates web requests with rules and can protect supported resources such as an ALB. Its rules complement, rather than replace, secure application design and network controls.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** DNS text records do not inspect HTTP requests.
+- **B:** A block-storage snapshot is not a web firewall.
+- **C:** Subnet ACLs filter network traffic rather than parsing web exploit payloads.
+
+**AWS references:** [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

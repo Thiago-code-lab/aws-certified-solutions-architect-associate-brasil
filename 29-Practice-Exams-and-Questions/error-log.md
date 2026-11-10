@@ -2,10 +2,12 @@
 
 ## Question Review Template
 
+- Stable question ID and file:
 - Domain:
 - Topic:
 - Selected answer option:
 - Correct answer option:
+- Applicable AWS source and review date:
 - Technical reason for the error:
 - Decision rule to avoid repeating the mistake:
 
@@ -13,13 +15,13 @@
 
 - **Concept:** confusion between services or architectural patterns.
 - **Reading:** missed a key requirement in the question.
-- **Trade-off:** selected technically valid options with higher costs or operational overhead.
+- **Trade-off:** selected a technically viable option that missed the stated optimization objective.
 - **Rushing:** answered without eliminating options.
 
 ## Weekly Routine (20 Minutes)
 
 1. Group recurring mistakes by topic.
-2. Reread only `cheatsheet.md` and `questions.md` in the affected module.
+2. Review the affected cheatsheet, question explanation, and linked AWS documentation. Resolve deployment-specific assumptions before retrying.
 3. Redo 5 questions focused on the same type of error.
 4. Update your concise decision rule.
 
@@ -27,13 +29,13 @@
 
 - High recurrence: the same mistake in 2 or more practice exams.
 - Recurrence under control: mistake corrected within 1 review cycle.
-- Domain mastered: consistently score above 80% on that topic.
+- Optional personal review target: consistently explain the decisions behind scores above 80% on varied, previously unseen practice items. This is not an AWS pass-score conversion or guarantee of domain mastery.
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

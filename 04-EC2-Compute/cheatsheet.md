@@ -2,35 +2,39 @@
 
 ## Decision Table
 
-| Scenario cue | When to use | When to avoid | Exam pitfall |
-|---|---|---|---|
-| Low manual effort | A managed service with built-in automation | An unnecessary self-managed solution | Confusing full control with lower total cost |
-| Unpredictable spikes | Horizontal scaling and decoupling | Fixed capacity and manual adjustments | Sizing for average demand and failing during spikes |
-| Strong security requirement | Least privilege + encryption + auditing | Broad permission for convenience | Assuming encryption alone addresses governance |
-| Cost as an explicit constraint | Select based on usage and access patterns | One storage class for all data | Reducing costs without checking functional impact |
+| Requirement or distinction | Appropriate choice | Limitation to remember |
+|---|---|---|
+| Interruptible compute | Spot Instances. | Spot uses spare EC2 capacity and can be interrupted. Checkpointing and flexible scheduling make the stated batch workload a suitable candidate, subject to capacity availability. |
+| EBS Availability Zone scope | Create a snapshot and create a new volume from it in the instance Availability Zone. | An EBS volume attaches to instances in its own Availability Zone. A snapshot can be used to create a volume in another Availability Zone in the Region. |
+| Shared file storage | Amazon EFS Regional with mount targets and suitable security group rules. | EFS provides managed shared NFS storage; the Regional storage option supports a multi-AZ design. Mount targets and network access still need configuration. |
+| Low-latency placement | A cluster placement group. | A cluster placement group places supported instances close together in one AZ for tightly coupled workloads. This is a performance choice, not protection from losing that AZ. |
+| Pricing commitment versus capacity | It discounts eligible usage in exchange for a spend commitment; it does not by itself reserve EC2 capacity. | Savings Plans are pricing commitments. Capacity reservations are a separate design consideration, and unused commitment can reduce realized savings. |
 
 ## Service Selection Cues
 
-- **EC2**: prioritize when the scenario requires native integration and lower operational overhead.
-- **Auto Scaling**: use when controlled elasticity and predictable behavior during spikes are required.
+A service name is not an architectural requirement. Verify the deployment type, consistency or retry model, failure scope, quotas, permissions, and cost dimensions that apply to the proposed configuration.
 
 ## When to Use This Module During Review
 
-- Before architecture practice exams that focus on trade-offs.
-- When you repeatedly struggle to choose between two similar options.
-- During final review, to improve how you eliminate answer options.
+Use this table before practice questions and after a wrong answer. Explain why the rejected alternatives fail the stated constraints; do not memorize a letter or assume the longest option is correct.
 
 ## Recurring Pitfalls
 
-- Trying to meet an availability requirement with a performance feature.
-- Replacing a simple design with an oversized architecture.
-- Omitting observability from the final architecture.
+- **Interruptible compute:** Dedicated hardware addresses isolation or licensing, not this spare-capacity objective.
+- **EBS Availability Zone scope:** EBS attachment is not cross-AZ.
+- **Shared file storage:** Ordinary EBS attachment does not provide multi-AZ NFS sharing.
+- **Low-latency placement:** Spread prioritizes hardware separation rather than tightly packed placement.
+- **Pricing commitment versus capacity:** A pricing commitment is not a capacity guarantee.
+
+## AWS References
+
+[EC2 Spot Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html), [EC2 placement groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html), [Amazon EBS volumes](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html), [Amazon EFS](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html), [Savings Plans](https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

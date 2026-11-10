@@ -2,47 +2,47 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **architectural decisions guided by the AWS pillars**, with clear behavioral validation and controlled costs for a study environment.
+Perform a six-pillar workload review with concrete evidence and an improvement owner.
 
 ## Services Used
 
-Well-Architected Tool, Trusted Advisor, CloudWatch.
+AWS Well-Architected Framework and optional Well-Architected Tool.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Architecture review exercise; no workload provisioning is necessary. An optional tool review is not a production infrastructure deployment.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Choose a small documented application architecture and write its business requirements and assumptions.
+2. Review operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability separately.
+3. For each identified risk, record the evidence, affected requirement, proposed improvement, owner, and validation method.
+4. Choose one improvement and check its effect on the other pillars instead of optimizing one metric in isolation.
+5. If using Well-Architected Tool, record the assessment there and distinguish the review result from implementation evidence.
+6. Define a bounded follow-up test and success criterion for the chosen change.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- All six pillars are present.
+- A completed review is not treated as automatic remediation.
+- The improvement has an owner and a testable outcome.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Keep the review record or remove only a disposable tool workload record as appropriate.
+2. No production resources should have changed as a consequence of documenting the review.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [Well-Architected pillars](https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html), [AWS Well-Architected Tool workload review](https://docs.aws.amazon.com/wellarchitected/latest/userguide/tutorial.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about ML and AI. Which approach best meets the requirements?
+<!-- question-id: 19-Q01 -->
 
-A) Apply a generic solution without considering SageMaker.
+Data scientists need managed tools to build, train, and deploy a custom machine learning model. Which service directly supports that lifecycle?
 
-B) Use SageMaker with a configuration that meets the requirements and minimizes operational overhead.
+A) Amazon SageMaker AI.
 
-C) Add components that the scenario does not require.
+B) Amazon Route 53.
 
-D) Ignore explicit security, availability or cost requirements.
+C) AWS KMS alone.
+
+D) An S3 gateway endpoint alone.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for ML and AI with a better balance of requirements, risk, and operational effort.
+**Explanation:** SageMaker AI provides managed training and deployment capabilities. The team still owns dataset quality, model evaluation, permissions, and the suitability of the model for its use case.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** DNS routing does not train or host a custom model.
+- **C:** Key management is not a model-training platform.
+- **D:** A private network path to S3 is not a training or inference service.
+
+**AWS references:** [Amazon SageMaker AI](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 19-Q02 -->
 
-A) Resolve everything manually during the incident.
+An application needs entity and sentiment analysis of supported text without first building a custom model. Which service fits?
 
-B) Combine inference with observability and automation.
+A) Amazon Textract used solely to extract document text and tables.
 
-C) Add components that the scenario does not require.
+B) AWS Direct Connect.
 
-D) Ignore explicit security, availability or cost requirements.
+C) An Auto Scaling group health check.
+
+D) Amazon Comprehend.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for ML and AI with a better balance of requirements, risk, and operational effort.
+**Explanation:** Comprehend offers pretrained natural-language analysis, including entities and sentiment. Supported languages, input types, and feature constraints must be checked for the specific operation.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Text extraction and document layout analysis are not the requested sentiment capability.
+- **B:** A dedicated network connection does not perform language analysis.
+- **C:** A health check evaluates service health rather than text meaning.
+
+**AWS references:** [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html), [Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/what-is.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 19-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+A workflow must extract form fields and tables from scanned business documents using a managed document-analysis API. Which service fits?
 
-B) Size resources based on actual usage and use drift where appropriate.
+A) Amazon Comprehend sentiment analysis alone.
 
-C) Add components that the scenario does not require.
+B) An S3 lifecycle rule.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Amazon Textract.
+
+D) A Route 53 latency policy.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for ML and AI with a better balance of requirements, risk, and operational effort.
+**Explanation:** Textract supports document text, form, and table extraction. Validate extraction quality and route uncertain business-critical results for appropriate review.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Sentiment analysis is not document form and table extraction.
+- **B:** Lifecycle rules move or expire objects rather than parse document contents.
+- **D:** DNS routing does not extract fields from documents.
+
+**AWS references:** [Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/what-is.html), [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 19-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+An optional generative AI exercise needs managed access to foundation models rather than building a model-serving fleet. Which service matches that capability?
 
-B) The option that ignores cues about a pretrained model and architectural dependencies.
+A) Amazon Bedrock.
 
-C) Add components that the scenario does not require.
+B) AWS Config.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A network ACL.
+
+D) An EBS snapshot.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for ML and AI with a better balance of requirements, risk, and operational effort.
+**Explanation:** Bedrock provides managed foundation-model access. This is optional architecture context: the current SAA-C03 service list is non-exhaustive, and the repository must not claim a guaranteed exam question or weight for this topic.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** Config tracks resource configuration and compliance, not foundation-model inference.
+- **C:** A subnet traffic filter does not host foundation models.
+- **D:** A storage snapshot is not a model inference API.
+
+**AWS references:** [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html), [SAA-C03 in-scope services](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 19-Q05 -->
 
-A) Review only definitions without scenario practice.
+A team uses a managed model API for customer-facing decisions. Which operational responsibility remains with the team?
 
-B) Practice questions about latency and cost with explanations of the trade-offs.
+A) Evaluate output quality on representative data, protect inputs and outputs, and implement suitable handling for errors or unacceptable results.
 
-C) Add components that the scenario does not require.
+B) Assume every prediction is correct because the service is managed.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Send production secrets as sample text to simplify troubleshooting.
+
+D) Remove application access controls because AWS manages the model infrastructure.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for ML and AI with a better balance of requirements, risk, and operational effort.
+**Explanation:** Managed infrastructure does not establish that a model is appropriate for every business input. Application data handling, permissions, evaluation, and failure behavior remain part of the customer design.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** Managed hosting is not a guarantee of prediction correctness.
+- **C:** Secrets should not be exposed in test inputs or logs.
+- **D:** The customer still controls application access and data use.
+
+**AWS references:** [Shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model/), [Amazon SageMaker AI](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html), [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

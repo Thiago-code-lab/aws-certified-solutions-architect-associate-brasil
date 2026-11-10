@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about Containers. Which approach best meets the requirements?
+<!-- question-id: 16-Q01 -->
 
-A) Apply a generic solution without considering ECS.
+A team chooses ECS for long-running containers and does not want to provision or patch EC2 worker hosts. Which compute option fits?
 
-B) Use ECS with a configuration that meets the requirements and minimizes operational overhead.
+A) ECS on self-managed EC2 hosts with no host maintenance process.
 
-C) Add components that the scenario does not require.
+B) AWS Fargate for the ECS tasks.
 
-D) Ignore explicit security, availability or cost requirements.
+C) An ECR repository by itself as running compute.
+
+D) A task IAM role by itself as a container host.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for containers with a better balance of requirements, risk, and operational effort.
+**Explanation:** Fargate supplies managed container compute. The team still configures task resources, images, permissions, networking, and service scaling.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Self-managed EC2 hosts retain host-management responsibilities.
+- **C:** ECR stores images rather than executing application containers.
+- **D:** An IAM role grants permissions and does not supply compute.
+
+**AWS references:** [Fargate for ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html), [ECS task execution role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 16-Q02 -->
 
-A) Resolve everything manually during the incident.
+Application code inside an ECS task calls S3. Which role should carry the application S3 permissions?
 
-B) Combine EKS with observability and automation.
+A) Only the task execution role, assuming its credentials are application credentials.
 
-C) Add components that the scenario does not require.
+B) A root access key built into the container image.
 
-D) Ignore explicit security, availability or cost requirements.
+C) The ALB service-linked role.
+
+D) The ECS task IAM role.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for containers with a better balance of requirements, risk, and operational effort.
+**Explanation:** The task role supplies permissions to code running in containers. The task execution role serves agent operations such as pulling images and shipping configured logs.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Execution-role permissions are for the ECS/Fargate agents and are not the application task credentials.
+- **B:** Embedded root keys are unsafe and unnecessary.
+- **C:** Load balancer service permissions do not authorize application S3 calls.
+
+**AWS references:** [ECS task IAM roles](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html), [ECS task execution role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 16-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+A Fargate task needs its agent to pull a private ECR image and send logs with the awslogs driver. Which role is relevant to those agent operations?
 
-B) Size resources based on actual usage and use Fargate where appropriate.
+A) The application task role as the only role needed for agent image pulls.
 
-C) Add components that the scenario does not require.
+B) The task execution IAM role with the necessary permissions.
 
-D) Ignore explicit security, availability or cost requirements.
+C) An IAM user password pasted into the Dockerfile.
+
+D) A Route 53 hosted zone.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for containers with a better balance of requirements, risk, and operational effort.
+**Explanation:** The execution role authorizes supported ECS/Fargate agent operations. Application API permissions remain separate in the task role.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Task-role application permissions do not replace execution-role permissions for these operations.
+- **C:** A baked-in user password is not the supported execution-role design.
+- **D:** DNS zones cannot authorize ECR pulls or log delivery.
+
+**AWS references:** [ECS task execution role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html), [ECS task IAM roles](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 16-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+A workload explicitly requires Kubernetes APIs and Kubernetes-native controllers. Which AWS managed orchestration service matches that requirement?
 
-B) The option that ignores cues about task definition and architectural dependencies.
+A) Amazon ECS solely because it also runs containers.
 
-C) Add components that the scenario does not require.
+B) Amazon ECR as a Kubernetes control plane.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Amazon EKS.
+
+D) An SQS FIFO queue.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for containers with a better balance of requirements, risk, and operational effort.
+**Explanation:** EKS provides a managed Kubernetes control plane. Compute, access, add-ons, networking, and workload configuration still need an appropriate operating model.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** ECS is a different orchestration API and does not fulfill a Kubernetes API requirement.
+- **B:** ECR is an image registry, not a Kubernetes control plane.
+- **D:** A message queue does not provide container orchestration.
+
+**AWS references:** [Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html), [Fargate for ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 16-Q05 -->
 
-A) Review only definitions without scenario practice.
+An ECS service on Fargate must increase its desired task count as load rises. What is still required?
 
-B) Practice questions about task definition and service autoscaling with explanations of the trade-offs.
+A) Assume every Fargate service automatically increases its desired count with traffic without a scaling configuration.
 
-C) Add components that the scenario does not require.
+B) Increase the ECR repository storage quota to scale running tasks.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Configure an appropriate ECS service scaling policy and limits; Fargate alone does not choose the service desired count from application demand.
+
+D) Add administrator keys to every task.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for containers with a better balance of requirements, risk, and operational effort.
+**Explanation:** Fargate manages the underlying task compute. Application Auto Scaling policies determine desired-count changes for an ECS service, subject to configured limits and available capacity.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Managed hosts and application service scaling are separate concerns.
+- **B:** Registry storage capacity is not running service desired count.
+- **D:** Broader credentials do not implement a scaling policy.
+
+**AWS references:** [Fargate for ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html), [ECS service auto scaling](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about high availability. Which approach best meets the requirements?
+<!-- question-id: 05-Q01 -->
 
-A) Apply a generic solution without considering Multi-AZ.
+A stateless HTTP application must tolerate an AZ outage. Which design addresses that failure scope?
 
-B) Use Multi-AZ with a configuration that meets the requirements and minimizes operational overhead.
+A) A larger single EC2 instance with daily snapshots.
 
-C) Add components that the scenario does not require.
+B) An ALB and an Auto Scaling group spanning at least two AZs, with enough surviving capacity and externalized application state.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Two EC2 instances placed in only one AZ.
+
+D) A second DNS name for the same single instance.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for high availability with a better balance of requirements, risk, and operational effort.
+**Explanation:** Distributing compute and load balancing across AZs reduces dependence on one AZ. Surviving capacity, health checks, and state placement must also support the application during failure.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Snapshots help recovery but do not keep a single instance serving through an AZ outage.
+- **C:** Both instances can fail with their shared AZ.
+- **D:** Additional names do not remove the single compute failure domain.
+
+**AWS references:** [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html), [EC2 Auto Scaling health checks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-checks-overview.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 05-Q02 -->
 
-A) Resolve everything manually during the incident.
+One HTTPS entry point must route /images to one target group and /orders to another. Which load balancer provides this request-path routing?
 
-B) Combine health checks with observability and automation.
+A) Application Load Balancer.
 
-C) Add components that the scenario does not require.
+B) Network Load Balancer using only transport-layer listeners.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A NAT gateway.
+
+D) A security group.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for high availability with a better balance of requirements, risk, and operational effort.
+**Explanation:** ALB evaluates application-layer listener rules, including path conditions. The other choices do not provide HTTP path-based target-group routing.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** NLB transport listeners do not evaluate HTTP URL paths for routing.
+- **C:** A NAT gateway translates outbound connections rather than routing application paths.
+- **D:** Security groups filter traffic and do not dispatch HTTP requests to target groups.
+
+**AWS references:** [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html), [Network Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 05-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+An Auto Scaling instance passes EC2 status checks, but its application fails ALB health checks. Which configuration lets the group use those application health results to replace it?
 
-B) Size resources based on actual usage and use horizontal scaling where appropriate.
+A) Assume attaching a target group automatically enables every group health check.
 
-C) Add components that the scenario does not require.
+B) Disable all health checks.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Increase the instance EBS volume size without addressing the application.
+
+D) Enable Elastic Load Balancing health checks for the group and configure an appropriate grace period.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for high availability with a better balance of requirements, risk, and operational effort.
+**Explanation:** The group must be configured to use ELB health checks in addition to its default EC2 checks. A suitable grace period avoids replacing instances merely because startup is still in progress.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Default EC2 health checks alone do not detect every application failure.
+- **B:** Disabling checks prevents reliable unhealthy-instance detection.
+- **C:** Storage capacity is not the missing application-health integration.
+
+**AWS references:** [EC2 Auto Scaling health checks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-checks-overview.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 05-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+HTTP traffic varies unpredictably. The team wants the instance count to follow a utilization metric around a chosen target. Which policy fits?
 
-B) The option that ignores cues about stateless and architectural dependencies.
+A) Scheduled scaling alone at a fixed daily time.
 
-C) Add components that the scenario does not require.
+B) Manual instance launches during every spike.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A fixed desired capacity with no scaling policies.
+
+D) Target tracking scaling with a suitable metric and instance warmup configuration.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for high availability with a better balance of requirements, risk, and operational effort.
+**Explanation:** Target tracking changes capacity to keep a supported metric near its target. Scheduled changes can complement it for known events, but cannot alone react to unpredictable demand.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** A clock-based schedule does not respond to unanticipated metric changes.
+- **B:** Manual launches do not provide the requested automatic response.
+- **C:** A fixed capacity does not follow the changing utilization target.
+
+**AWS references:** [EC2 Auto Scaling dynamic scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 05-Q05 -->
 
-A) Review only definitions without scenario practice.
+Users lose shopping carts when an application instance is replaced. Carts exist only in that instance memory. Which change addresses the data-placement problem?
 
-B) Practice questions about stateless and ASG with explanations of the trade-offs.
+A) Treat ALB session stickiness as a durable backup of instance memory.
 
-C) Add components that the scenario does not require.
+B) Store cart state in an appropriate shared data store and make web instances replaceable.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Increase the DNS record TTL.
+
+D) Move all application instances into one AZ.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for high availability with a better balance of requirements, risk, and operational effort.
+**Explanation:** External state storage lets a replacement instance retrieve the cart, subject to the store consistency and durability design. Routing a user to one instance does not persist that instance memory.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Stickiness is a routing feature and does not preserve memory after instance loss.
+- **C:** DNS caching does not store application cart data.
+- **D:** Concentrating compute in one AZ increases correlated failure exposure.
+
+**AWS references:** [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [Shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model/).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

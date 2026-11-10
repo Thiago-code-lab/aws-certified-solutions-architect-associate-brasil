@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about decoupling. Which approach best meets the requirements?
+<!-- question-id: 14-Q01 -->
 
-A) Apply a generic solution without considering SQS.
+An order worker uses an SQS Standard queue. A message can be delivered again after a retry. Which application design addresses duplicate side effects?
 
-B) Use SQS with a configuration that meets the requirements and minimizes operational overhead.
+A) Use an idempotency key and an atomic or otherwise safe duplicate-detection operation before committing the order side effect.
 
-C) Add components that the scenario does not require.
+B) Assume a Standard queue guarantees each message is received exactly once.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Delete the message before attempting the business operation, regardless of success.
+
+D) Add a second queue consumer and assume that eliminates duplicates.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for decoupling with a better balance of requirements, risk, and operational effort.
+**Explanation:** Standard queues provide at-least-once delivery. The business operation must safely handle repeated delivery; successful processing and message acknowledgement are separate steps.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** Standard queues can deliver duplicate messages.
+- **C:** Premature deletion can lose work if processing subsequently fails.
+- **D:** Additional consumers increase parallelism, not exactly-once business semantics.
+
+**AWS references:** [SQS at-least-once delivery](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html), [Lambda with SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 14-Q02 -->
 
-A) Resolve everything manually during the incident.
+Updates for each customer must remain ordered, while different customers can process in parallel. Which SQS FIFO design matches that requirement?
 
-B) Combine SNS with observability and automation.
+A) Use a random MessageGroupId for every update to the same customer.
 
-C) Add components that the scenario does not require.
+B) Put every customer in one global group to maximize independent customer parallelism.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Use the customer identifier as MessageGroupId and appropriate deduplication identifiers.
+
+D) Use a Standard queue and assume strict ordering is guaranteed.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for decoupling with a better balance of requirements, risk, and operational effort.
+**Explanation:** FIFO ordering is scoped to a message group. Separate customer groups allow independent processing while preserving each group order.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Changing groups per update removes the requested per-customer ordering boundary.
+- **B:** One global group serializes unrelated customer work.
+- **D:** Standard queues do not provide strict FIFO ordering.
+
+**AWS references:** [SQS FIFO delivery logic](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html), [SQS FIFO deduplication](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 14-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+A producer retries an SQS FIFO SendMessage call with the same deduplication ID within the deduplication interval. Which conclusion is justified?
 
-B) Size resources based on actual usage and use EventBridge where appropriate.
+A) Every external payment side effect is guaranteed to happen exactly once forever.
 
-C) Add components that the scenario does not require.
+B) Consumer failure can never make a message visible again.
 
-D) Ignore explicit security, availability or cost requirements.
+C) The deduplication ID permanently prevents all future messages with that value.
+
+D) SQS suppresses duplicate sends in that interval, but the application must still handle retried processing safely.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for decoupling with a better balance of requirements, risk, and operational effort.
+**Explanation:** FIFO send deduplication operates within a documented five-minute interval. It is not an unlimited transaction guarantee for downstream business effects or failed consumer processing.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** A queue does not atomically coordinate arbitrary external side effects.
+- **B:** Visibility timeout and processing failures can require another processing attempt.
+- **C:** Deduplication is bounded by the interval, not permanent.
+
+**AWS references:** [SQS FIFO deduplication](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html), [SQS FIFO delivery logic](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html), [Lambda with SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 14-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+Billing and shipping must each receive every order event and process independently with durable buffering. Which design fits?
 
-B) The option that ignores cues about DLQ and architectural dependencies.
+A) An SNS topic with a separate subscribed SQS queue for each consumer, with appropriate queue access policies.
 
-C) Add components that the scenario does not require.
+B) One SQS queue with competing billing and shipping consumers, assuming each gets every message.
 
-D) Ignore explicit security, availability or cost requirements.
+C) One shared EBS volume used as a notification bus.
+
+D) An ALB listener expected to retain events until consumers return.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for decoupling with a better balance of requirements, risk, and operational effort.
+**Explanation:** SNS fan-out can place an event on each subscribed queue. Separate queues preserve independent buffering and retry behavior; duplicates still require safe consumer design.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** Competing consumers on one queue divide messages rather than each receiving every event.
+- **C:** EBS is not an SNS-style notification broker.
+- **D:** An ALB is not a durable asynchronous event queue.
+
+**AWS references:** [SNS to SQS fan-out](https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html), [SQS at-least-once delivery](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 14-Q05 -->
 
-A) Review only definitions without scenario practice.
+Order fulfillment needs an explicit sequence of tasks, branching, retries, and a human approval callback. Which service is designed to orchestrate such a workflow?
 
-B) Practice questions about FIFO and idempotency with explanations of the trade-offs.
+A) An S3 bucket policy alone.
 
-C) Add components that the scenario does not require.
+B) A NAT gateway.
 
-D) Ignore explicit security, availability or cost requirements.
+C) An appropriate AWS Step Functions Standard workflow.
+
+D) An EventBridge routing rule alone, with no workflow state machine.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for decoupling with a better balance of requirements, risk, and operational effort.
+**Explanation:** Step Functions models workflow state and task transitions, with supported callback integrations for Standard workflows. An event router can start a workflow but is not itself the full orchestrator.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** A bucket policy controls access, not workflow execution state.
+- **B:** NAT translates network connections and does not orchestrate tasks.
+- **D:** An event-matching rule alone does not implement the requested stateful task sequence.
+
+**AWS references:** [AWS Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html), [EventBridge event buses](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

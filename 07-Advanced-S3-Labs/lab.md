@@ -2,47 +2,48 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **S3 security and lifecycle management in a lab**, with clear behavioral validation and controlled costs for a study environment.
+Recover a versioned S3 test object and inspect retention costs without locking data irreversibly.
 
 ## Services Used
 
-S3, IAM.
+S3 Versioning, Lifecycle, and private bucket access.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Storage, requests, versions, and optional retrievals can incur charges. Use small non-sensitive files. This exercise does not require Object Lock compliance retention.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Create a private general-purpose S3 lab bucket with Block Public Access enabled and enable versioning.
+2. Upload a small text file under training/ and record its version ID.
+3. Overwrite the same key with different test contents and compare the two versions.
+4. Delete the key without specifying a version and inspect the resulting delete marker and retained earlier versions.
+5. Retrieve the earlier version, then restore the desired contents by making a new current version or removing the relevant delete marker when appropriate.
+6. Draft a lifecycle policy for noncurrent lab versions; review eligibility and minimum-duration implications before enabling transitions.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- Earlier version contents remain retrievable while that version is retained.
+- A delete marker is not mistaken for permanent erasure of all versions.
+- The bucket remains private throughout the exercise.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Remove the lab lifecycle configuration if it is no longer needed.
+2. Delete only the lab object versions and delete markers, then delete the empty bucket.
+3. Check that retention or legal-hold settings do not block intended cleanup.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [S3 Versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html), [S3 Lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html), [S3 Block Public Access](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html), [S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

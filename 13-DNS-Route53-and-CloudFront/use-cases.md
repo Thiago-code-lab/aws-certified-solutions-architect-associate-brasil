@@ -1,34 +1,58 @@
 # Use Cases
 
-## Scenario 1: A Brief Traffic Spike
+## Scenario 1: Private S3 origin access
 
-**Recommended pattern:** a managed layer with automatic scaling and decoupling.
-**Reason:** absorbs demand fluctuations without extensive manual intervention.
-**Exam cue:** phrases such as “unpredictable spike,” “maintain latency,” and “low operational effort.”
+**Requirement:** A new CloudFront distribution serves a regular private S3 bucket origin. The bucket must stay private while CloudFront can read objects. Which design is recommended?
 
-## Scenario 2: Audit and compliance requirement
+**Recommended design:** Configure OAC, signed origin requests, and a bucket policy restricted to the intended CloudFront distribution.
 
-**Recommended pattern:** granular identity controls, an audit trail, and end-to-end encryption.
-**Reason:** ensures traceability and protects sensitive data.
-**Exam cue:** “compliance,” “access logs,” and “sensitive data.”
+**Reason and boundary:** Origin access control authorizes CloudFront access to a regular S3 origin. The bucket policy must allow the intended distribution. Website endpoints are custom origins and do not support OAC.
 
-## Scenario 3: Lower Costs with the Same User Experience
+**Rejected alternative:** Make the bucket publicly readable and rely only on an obscure URL. Obscurity does not enforce private origin access.
 
-**Recommended pattern:** adjust the resource class and capacity to actual usage.
-**Reason:** avoids overprovisioning and reduces recurring expenses.
-**Exam cue:** “cost optimization,” “known usage pattern,” and “without degrading UX.”
+**AWS references:** [CloudFront origin access control](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html).
 
-## Scenario 4: Incremental architecture evolution
+## Scenario 2: Latency-based DNS
 
-**Recommended pattern:** start simple, with managed components and clear extension points.
-**Reason:** speeds up delivery and reduces the risk of premature complexity.
-**Exam cue:** “rapid delivery,” “gradual growth,” and “small team.”
+**Requirement:** An application has equivalent endpoints in multiple AWS Regions. DNS responses should favor the Region offering the best latency to the user. Which Route 53 policy fits?
+
+**Recommended design:** Latency-based routing.
+
+**Reason and boundary:** Latency-based routing selects among configured regional resources using latency information. It does not promise the geographically nearest location or a fixed split of requests.
+
+**Rejected alternative:** Weighted routing used solely for a fixed traffic proportion. Weighted routing expresses configured proportions rather than optimizing latency.
+
+**AWS references:** [Route 53 routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html).
+
+## Scenario 3: DNS-weighted rollout
+
+**Requirement:** A team wants DNS responses distributed between old and new regional endpoints in configured relative proportions. Which Route 53 policy is intended for this?
+
+**Recommended design:** Weighted routing.
+
+**Reason and boundary:** Weighted records support relative response proportions. DNS caching and resolver behavior mean the observed application-request split is not an exact per-request percentage guarantee.
+
+**Rejected alternative:** Failover routing used only as active-passive standby. Active-passive failover is not a proportional rollout policy.
+
+**AWS references:** [Route 53 routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html).
+
+## Scenario 4: Global UDP acceleration
+
+**Requirement:** A globally used UDP application needs static anycast entry IPs and routing across the AWS network to healthy regional endpoints. Which service fits?
+
+**Recommended design:** AWS Global Accelerator with supported endpoints.
+
+**Reason and boundary:** Global Accelerator supports TCP and UDP applications with static anycast IP addresses and regional endpoint routing. CloudFront is an HTTP(S) content delivery service, not an arbitrary UDP proxy.
+
+**Rejected alternative:** CloudFront as a general-purpose arbitrary UDP proxy. CloudFront does not provide the arbitrary UDP proxy behavior in the stem.
+
+**AWS references:** [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

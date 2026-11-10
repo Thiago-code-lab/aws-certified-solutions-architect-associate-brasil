@@ -2,53 +2,51 @@
 
 ## Overview
 
-This module covers **data protection and the secret lifecycle**, focusing on the decisions tested on the SAA-C03. The goal is to turn business requirements into clear technical choices while balancing resilience, performance, security, and cost. Success on the exam depends on identifying the scenario's most important constraint and choosing a pattern that reduces operational risk, beyond memorizing individual services.
+Separate cryptographic key management, encrypted configuration storage, credential rotation, and transport security. Use current KMS key terminology and an explicit policy and lifecycle design.
 
 ## Key Concepts
 
-- Role of services: KMS, Secrets Manager, SSM Parameter Store, CloudHSM.
-- Prioritization by dominant requirement (latency, availability, compliance or cost).
-- Integration between services with decoupling and minimal observability.
-- Choose the least complex architecture that meets the requirements.
+- **Key management versus secret rotation:** Secrets Manager rotation updates the secret and the target service using a supported mechanism. KMS protects cryptographic keys and data; rotating KMS material does not change a database password.
+- **KMS rotation is not re-encryption:** KMS rotation changes backing key material for future cryptographic operations. It does not rotate generated data keys or rewrite application data, and it is not secret credential rotation.
+- **Customer-controlled key policy:** Customer managed keys let customers manage key policies and lifecycle settings, subject to KMS controls. AWS owned keys are managed by the service and do not provide that customer policy control.
+- **Configuration versus rotating credential:** Parameter Store supports centrally managed parameter values and versioning. SecureString adds KMS encryption when needed; secrets requiring purpose-built rotation should use an appropriate secrets service.
+- **Encryption at rest versus transport:** SSE-KMS protects object data at rest. TLS protects the network connection; authorization and transport enforcement are separate controls.
 
 ## Exam Relevance
 
-On the SAA-C03, questions in this domain often have two technically feasible options. Details such as the consistency model, failover strategy, recurring operating costs, throughput impact, and required automation determine the better answer. Studying this module means practicing those selection criteria as well as learning terminology.
+Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service.
 
-## Practical Cues (3 to 5)
+## Practical Cues
 
-1. When the scenario calls for elasticity with little manual work, favor managed services.
-2. When components depend on each other, check for decoupling to absorb spikes and partial failures.
-3. When security is a constraint, verify encryption in transit and at rest, along with least privilege.
-4. If cost is a requirement, compare usage classes, capacity modes, and access patterns.
-5. If the scenario is global, validate traffic route, latency and distribution strategy.
+1. **Key management versus secret rotation:** AWS Secrets Manager with a supported rotation integration or correctly configured rotation function.
+2. **KMS rotation is not re-encryption:** It is not automatically re-encrypted; KMS retains the material required to decrypt earlier ciphertext.
+3. **Customer-controlled key policy:** A customer managed KMS key.
+4. **Configuration versus rotating credential:** Systems Manager Parameter Store.
+5. **Encryption at rest versus transport:** Require HTTPS/TLS for the client connection and enforce the relevant access policy.
 
 ## Common Pitfalls
 
-- Choosing a premium feature that the scenario does not require.
-- Confusing high availability features with read scaling features.
-- Ignoring service limits and failure behavior.
-- Addressing a security requirement with a tool unsuited to the secret lifecycle.
+- Key rotation and credential rotation are different operations.
+- Rotation alone does not rewrite protected data or rotate all data keys.
+- Customers cannot manage the policy and deletion lifecycle of an AWS owned key.
 
 ## Next Review Steps
 
-1. Review [cheatsheet.md](./cheatsheet.md) to reinforce decision-making cues.
-2. Answer [questions.md](./questions.md) without reference materials to test your technical judgment.
-3. Use [flashcards.md](./flashcards.md) for a brief daily review to reinforce critical distinctions.
+1. Review [cheatsheet.md](./cheatsheet.md) and explain the assumptions behind each choice.
+2. Answer [questions.md](./questions.md) before revealing the explanations.
+3. Use [flashcards.md](./flashcards.md) for spaced retrieval and record recurring mistakes.
 
 ## Additional Study
 
-To strengthen your AWS fundamentals before studying architectural scenarios in depth:
-https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
+[Secrets Manager rotation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html), [KMS key rotation](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html), [AWS KMS key concepts](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html), [Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html), [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html), [Direct Connect encryption](https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html).
 
-For an additional learning path connecting architecture with generative AI and Bedrock:
-https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil
+Related community paths: [Cloud Practitioner](https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil) and [AI Practitioner](https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil). These external repositories may contain Portuguese material.
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about Serverless. Which approach best meets the requirements?
+<!-- question-id: 17-Q01 -->
 
-A) Apply a generic solution without considering Lambda.
+A Lambda application must retain customer workflow state across retries and new execution environments. Where should that durable state live?
 
-B) Use Lambda with a configuration that meets the requirements and minimizes operational overhead.
+A) In an appropriate external durable store, such as DynamoDB, with a suitable consistency and idempotency design.
 
-C) Add components that the scenario does not require.
+B) Only in a module-level in-memory variable.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Only in /tmp, assuming every later invocation uses the same environment.
+
+D) In the function name.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for serverless with a better balance of requirements, risk, and operational effort.
+**Explanation:** Execution environment reuse can improve performance, but it is not a durability guarantee. Customer workflow state must survive environment replacement and concurrent invocations.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** Memory belongs to one environment and can be lost or differ across environments.
+- **C:** Ephemeral storage is not a cross-environment durable workflow database.
+- **D:** A resource name is not a mutable durable state store.
+
+**AWS references:** [Lambda best practices](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html), [DynamoDB read consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 17-Q02 -->
 
-A) Resolve everything manually during the incident.
+A team wants to limit a Lambda function concurrency so it cannot overwhelm a database. Which control directly sets a function concurrency ceiling?
 
-B) Combine API Gateway with observability and automation.
+A) Provisioned concurrency treated solely as a maximum invocation limit.
 
-C) Add components that the scenario does not require.
+B) An S3 lifecycle transition.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Reserved concurrency.
+
+D) A larger function deployment package.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for serverless with a better balance of requirements, risk, and operational effort.
+**Explanation:** Reserved concurrency reserves an allocation and caps that function concurrent execution. Provisioned concurrency pre-initializes environments to reduce cold-start latency and is a different control.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Provisioned concurrency alone is not the function total concurrency ceiling.
+- **B:** Object lifecycle does not limit function invocations.
+- **D:** Package size does not configure concurrency admission.
+
+**AWS references:** [Lambda concurrency controls](https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 17-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+A latency-sensitive Lambda function needs pre-initialized execution environments and accepts their additional cost. Which feature is designed for that requirement?
 
-B) Size resources based on actual usage and use Step Functions where appropriate.
+A) Provisioned concurrency on a supported function version or alias.
 
-C) Add components that the scenario does not require.
+B) Reserved concurrency alone, assuming it pre-initializes environments.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Disabling all retries for every event source.
+
+D) Using a longer DNS TTL for an unrelated bucket.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-Option B addresses the technical objective for serverless with a better balance of requirements, risk, and operational effort.
+**Explanation:** Provisioned concurrency keeps a configured number of environments initialized. Capacity planning and limits still matter; it is not a promise of zero latency for all traffic.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **B:** Reserved concurrency allocates and limits concurrency but does not itself pre-initialize environments.
+- **C:** Retry policy is not a cold-start initialization feature.
+- **D:** An unrelated DNS TTL does not initialize Lambda environments.
+
+**AWS references:** [Lambda concurrency controls](https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 17-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+A Lambda SQS batch contains several successful records and one failed record. How can the consumer avoid needlessly retrying the successful records?
 
-B) The option that ignores cues about cold start and architectural dependencies.
+A) Return success for the entire batch even when required work failed.
 
-C) Add components that the scenario does not require.
+B) Assume the default behavior always retries only failed records without configuration.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Enable and implement partial batch responses, returning the failed item identifiers while making processing idempotent.
+
+D) Disable the queue visibility timeout entirely.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for serverless with a better balance of requirements, risk, and operational effort.
+**Explanation:** Partial batch responses let a configured event source mapping retry the failed records. At-least-once processing still requires safe handling of duplicates.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Reporting complete success can discard failed work.
+- **B:** Without the partial response behavior, a failing batch can be retried as a whole.
+- **D:** Visibility timeout is part of queue processing and cannot be removed as a replacement for batch handling.
+
+**AWS references:** [Lambda with SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 17-Q05 -->
 
-A) Review only definitions without scenario practice.
+A public API Gateway REST API uses usage-plan API keys. The team must authenticate users and authorize protected operations. What additional design is required?
 
-B) Practice questions about cold start and throttling with explanations of the trade-offs.
+A) Treat the API key alone as secure user authentication and authorization.
 
-C) Add components that the scenario does not require.
+B) Use a supported authorization mechanism, such as an appropriate authorizer or IAM authorization; treat API keys as usage-plan identifiers.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Put the API key in a public URL and grant every caller administrator permissions.
+
+D) Remove authorization because usage quotas replace identity verification.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for serverless with a better balance of requirements, risk, and operational effort.
+**Explanation:** API Gateway usage-plan keys support identification for usage control, not authentication or authorization. Protected APIs need an explicit authorization design.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** AWS explicitly distinguishes API keys from authorization controls.
+- **C:** Public exposure and administrator permissions violate the protected-operation requirement.
+- **D:** A quota limits usage and does not verify or authorize a principal.
+
+**AWS references:** [API Gateway usage plans and API keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html), [API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

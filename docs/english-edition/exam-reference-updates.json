@@ -1,0 +1,286 @@
+{
+  "official_weights": {
+    "security": 30,
+    "resilience": 26,
+    "performance": 24,
+    "cost_optimization": 20
+  },
+  "references": [
+    {
+      "path": "01-Introduction-SAA-C03/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "01-Introduction-SAA-C03/README.md",
+      "line": 21,
+      "context": "official scored-content guidance",
+      "text": "1. **Official domain weights:** Security 30%, Resilience 26%, Performance 24%, Cost Optimization 20%."
+    },
+    {
+      "path": "01-Introduction-SAA-C03/cheatsheet.md",
+      "line": 7,
+      "context": "official scored-content guidance",
+      "text": "| Official domain weights | Security 30%, Resilience 26%, Performance 24%, Cost Optimization 20%. | The exam guide assigns these four weights to scored content. A community practice set need not have the same distribution. |"
+    },
+    {
+      "path": "01-Introduction-SAA-C03/flashcards.md",
+      "line": 10,
+      "context": "official scored-content guidance",
+      "text": "**Answer:** Security 30%, Resilience 26%, Performance 24%, Cost Optimization 20%. The exam guide assigns these four weights to scored content. A community practice set need not have the same distribution."
+    },
+    {
+      "path": "01-Introduction-SAA-C03/lab.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "1. Read the official guide and record Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%."
+    },
+    {
+      "path": "01-Introduction-SAA-C03/questions.md",
+      "line": 11,
+      "context": "reviewed assessment alternative",
+      "text": "A) Security 30%, Resilience 26%, Performance 24%, Cost Optimization 20%."
+    },
+    {
+      "path": "01-Introduction-SAA-C03/questions.md",
+      "line": 13,
+      "context": "reviewed assessment alternative",
+      "text": "B) Security 24%, Resilience 30%, Performance 28%, Cost Optimization 18%."
+    },
+    {
+      "path": "01-Introduction-SAA-C03/questions.md",
+      "line": 17,
+      "context": "reviewed assessment alternative",
+      "text": "D) Security 20%, Resilience 24%, Performance 26%, Cost Optimization 30%."
+    },
+    {
+      "path": "01-Introduction-SAA-C03/use-cases.md",
+      "line": 7,
+      "context": "official scored-content guidance",
+      "text": "**Recommended design:** Security 30%, Resilience 26%, Performance 24%, Cost Optimization 20%."
+    },
+    {
+      "path": "01-Introduction-SAA-C03/use-cases.md",
+      "line": 11,
+      "context": "reviewed assessment alternative",
+      "text": "**Rejected alternative:** Security 24%, Resilience 30%, Performance 28%, Cost Optimization 18%. These were the incorrect weights inherited from the source edition."
+    },
+    {
+      "path": "02-IAM-and-Security/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "04-EC2-Compute/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "05-High-Availability-and-Scalability/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "06-Amazon-S3-and-Storage/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "08-VPC-and-Networking/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "10-Databases/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "13-DNS-Route53-and-CloudFront/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "14-Decoupling-SQS-SNS-EventBridge/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "16-Containers-ECS-EKS-Fargate/README.md",
+      "line": 19,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "17-Serverless-Lambda-API-Gateway/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "18-Data-and-Analytics/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "19-Machine-Learning-and-AI/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "20-Monitoring-CloudWatch-CloudTrail/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "21-Migration-and-Transfer/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "22-Disaster-Recovery-and-Business-Continuity/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "23-AWS-Organizations-Governance-and-Costs/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "24-Advanced-Networking-and-Hybrid-Connectivity/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "25-Encryption-KMS-and-Secrets-Management/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "26-Well-Architected-Framework/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "27-Real-World-Use-Cases/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "28-Hands-on-Labs/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "29-Practice-Exams-and-Questions/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "29-Practice-Exams-and-Questions/final-review-saa-c03.md",
+      "line": 3,
+      "context": "official scored-content guidance",
+      "text": "Official scored-content weights: Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%, as defined by the [AWS exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html). Allocate additional time to observed weak areas; module counts and equal practice blocks are not exam weights."
+    },
+    {
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "line": 5,
+      "context": "official scored-content guidance",
+      "text": "Four equal practice blocks are provided for review; this is not an exam-weighted mock. Official scored-content weights: Security 30%, Resilience 26%, Performance 24%, Cost Optimization 20%."
+    },
+    {
+      "path": "30-Glossary/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "31-Resources-and-Links/README.md",
+      "line": 17,
+      "context": "official scored-content guidance",
+      "text": "Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service."
+    },
+    {
+      "path": "CHANGELOG.md",
+      "line": 6,
+      "context": "official scored-content guidance",
+      "text": "- Corrected scored-content weights to Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20% throughout active learning materials and the portal."
+    },
+    {
+      "path": "DOMAIN_STUDY_PATHS.md",
+      "line": 3,
+      "context": "official scored-content guidance",
+      "text": "Official scored-content weights: **Security 30% \u00b7 Resilience 26% \u00b7 Performance 24% \u00b7 Cost Optimization 20%**. See the [AWS SAA-C03 guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html). These are domain weights, not a fixed per-service question distribution."
+    },
+    {
+      "path": "README.md",
+      "line": 157,
+      "context": "official scored-content guidance",
+      "text": "| Design Resilient Architectures | 26% | High availability, disaster recovery, decoupling, multi-AZ, and multi-Region | 05, 06, 08, 09, 13, 14, 21, 22, 24, 26 |"
+    },
+    {
+      "path": "README.md",
+      "line": 158,
+      "context": "official scored-content guidance",
+      "text": "| Design High-Performing Architectures | 24% | Compute selection, caching, storage performance, networking, and databases | 04, 06, 08, 10, 11, 12, 13, 16, 18 |"
+    },
+    {
+      "path": "README.md",
+      "line": 159,
+      "context": "official scored-content guidance",
+      "text": "| Design Secure Architectures | 30% | IAM, KMS, network isolation, encryption, audit trails, and governance | 02, 03, 08, 09, 14, 17, 20, 23, 24, 25 |"
+    },
+    {
+      "path": "README.md",
+      "line": 160,
+      "context": "official scored-content guidance",
+      "text": "| Design Cost-Optimized Architectures | 20% | Rightsizing, storage classes, purchasing models, serverless, and automation | 04, 06, 15, 17, 21, 23 |"
+    },
+    {
+      "path": "aws-saa-portal.html",
+      "line": 968,
+      "context": "official scored-content guidance",
+      "text": "  { cls:'dm1', pct:'26%', name:'Resilient Architectures', domain:'resilient' },"
+    },
+    {
+      "path": "aws-saa-portal.html",
+      "line": 969,
+      "context": "official scored-content guidance",
+      "text": "  { cls:'dm2', pct:'24%', name:'High Performance',         domain:'performance' },"
+    },
+    {
+      "path": "aws-saa-portal.html",
+      "line": 970,
+      "context": "official scored-content guidance",
+      "text": "  { cls:'dm3', pct:'30%', name:'Security',                domain:'security' },"
+    },
+    {
+      "path": "aws-saa-portal.html",
+      "line": 971,
+      "context": "official scored-content guidance",
+      "text": "  { cls:'dm4', pct:'20%', name:'Cost Optimization',     domain:'cost' },"
+    }
+  ]
+}

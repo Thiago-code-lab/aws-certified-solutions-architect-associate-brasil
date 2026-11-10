@@ -2,35 +2,39 @@
 
 ## Decision Table
 
-| Scenario cue | When to use | When to avoid | Exam pitfall |
-|---|---|---|---|
-| Low manual effort | A managed service with built-in automation | An unnecessary self-managed solution | Confusing full control with lower total cost |
-| Unpredictable spikes | Horizontal scaling and decoupling | Fixed capacity and manual adjustments | Sizing for average demand and failing during spikes |
-| Strong security requirement | Least privilege + encryption + auditing | Broad permission for convenience | Assuming encryption alone addresses governance |
-| Cost as an explicit constraint | Select based on usage and access patterns | One storage class for all data | Reducing costs without checking functional impact |
+| Requirement or distinction | Appropriate choice | Limitation to remember |
+|---|---|---|
+| Recover an overwritten object | S3 Versioning. | Versioning retains multiple versions of an object key. A lifecycle policy may be needed to control noncurrent-version storage costs, and permanent version deletion still needs protection. |
+| Object retention | S3 Object Lock in compliance mode with the required retention period. | Compliance-mode retention prevents protected versions from being overwritten or deleted during the retention period, including by root. Plan carefully because a test record can remain retained until expiry. |
+| Single-AZ storage trade-off | S3 One Zone-IA. | One Zone-IA stores data in one AZ and is not resilient to physical loss of that AZ. It suits reproducible data or appropriate secondary copies, not this sole-copy requirement. |
+| Prevent public exposure | S3 Block Public Access configured at the applicable account and bucket levels. | Block Public Access prevents public access according to its settings. It complements authenticated IAM access and does not replace least-privilege authorization. |
+| Archive retrieval requirements | Choose a suitable immediate-access class, such as S3 Glacier Instant Retrieval, after checking retrieval and minimum-duration charges. | Glacier Instant Retrieval provides immediate access, whereas Flexible Retrieval and Deep Archive use restore workflows. Storage, request, retrieval, and minimum-duration costs all affect the choice. |
 
 ## Service Selection Cues
 
-- **S3**: prioritize when the scenario requires native integration and lower operational overhead.
-- **S3 Glacier**: use when controlled elasticity and predictable behavior during spikes are required.
+A service name is not an architectural requirement. Verify the deployment type, consistency or retry model, failure scope, quotas, permissions, and cost dimensions that apply to the proposed configuration.
 
 ## When to Use This Module During Review
 
-- Before architecture practice exams that focus on trade-offs.
-- When you repeatedly struggle to choose between two similar options.
-- During final review, to improve how you eliminate answer options.
+Use this table before practice questions and after a wrong answer. Explain why the rejected alternatives fail the stated constraints; do not memorize a letter or assume the longest option is correct.
 
 ## Recurring Pitfalls
 
-- Trying to meet an availability requirement with a performance feature.
-- Replacing a simple design with an oversized architecture.
-- Omitting observability from the final architecture.
+- **Recover an overwritten object:** Public read access does not retain earlier versions and is unnecessary here.
+- **Object retention:** Versioning alone permits authorized permanent version deletion.
+- **Single-AZ storage trade-off:** Standard stores data across multiple AZs.
+- **Prevent public exposure:** A public-read policy creates the exposure the requirement forbids.
+- **Archive retrieval requirements:** Deep Archive does not meet the immediate-without-restore requirement.
+
+## AWS References
+
+[S3 Versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html), [S3 Lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html), [S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html), [S3 storage classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html), [S3 Block Public Access](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html), [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

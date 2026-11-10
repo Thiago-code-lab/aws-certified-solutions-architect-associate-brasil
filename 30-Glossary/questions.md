@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about glossary terms. Which approach best meets the requirements?
+<!-- question-id: 30-Q01 -->
 
-A) Apply a generic solution without considering idempotency.
+Which term expresses the maximum acceptable amount of data loss measured in time after a disruption?
 
-B) Use idempotency with a configuration that meets the requirements and minimizes operational overhead.
+A) Recovery time objective, or RTO.
 
-C) Add components that the scenario does not require.
+B) The DNS time to live.
 
-D) Ignore explicit security, availability or cost requirements.
+C) The instance CPU utilization target.
+
+D) Recovery point objective, or RPO.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for glossary terms with a better balance of requirements, risk, and operational effort.
+**Explanation:** RPO expresses the acceptable data-loss window. It guides replication and backup requirements rather than the time needed to return the application to service.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** RTO expresses the acceptable recovery duration.
+- **B:** DNS TTL controls caching behavior rather than the business data-loss tolerance.
+- **C:** A compute scaling target is unrelated to acceptable recovered data age.
+
+**AWS references:** [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 30-Q02 -->
 
-A) Resolve everything manually during the incident.
+Which term expresses the maximum acceptable time to restore service after a disruption?
 
-B) Combine blast radius with observability and automation.
+A) Recovery point objective, or RPO.
 
-C) Add components that the scenario does not require.
+B) An S3 object retention date.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A KMS key identifier.
+
+D) Recovery time objective, or RTO.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for glossary terms with a better balance of requirements, risk, and operational effort.
+**Explanation:** RTO expresses the recovery-time target for the workload. Recovery testing should measure the end-to-end duration, including dependencies and application validation.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** RPO concerns tolerable data loss rather than recovery duration.
+- **B:** A retention date protects an object version until a time; it is not an application recovery objective.
+- **C:** A resource identifier is not a recovery duration.
+
+**AWS references:** [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 30-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+A storage system retains data safely but is temporarily unable to serve requests. Which distinction explains why this can occur?
 
-B) Size resources based on actual usage and use RTO where appropriate.
+A) Durability and availability always mean exactly the same property.
 
-C) Add components that the scenario does not require.
+B) Higher CPU utilization guarantees both properties for every storage service.
 
-D) Ignore explicit security, availability or cost requirements.
+C) DNS caching is the definition of storage durability.
+
+D) Durability concerns retaining data; availability concerns being able to access the service when needed.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for glossary terms with a better balance of requirements, risk, and operational effort.
+**Explanation:** Data can remain intact during a temporary access outage. Architecture must evaluate both preservation and access requirements rather than treating one as proof of the other.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** The two properties describe different aspects of service behavior.
+- **B:** CPU utilization is not a universal guarantee of data retention or service accessibility.
+- **C:** DNS caching does not define storage data retention.
+
+**AWS references:** [S3 storage classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 30-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+An application increases capacity by adding more instances behind a load balancer rather than enlarging one instance. What is this called?
 
-B) The option that ignores cues about RPO and architectural dependencies.
+A) Vertical scaling, or scaling up.
 
-C) Add components that the scenario does not require.
+B) Horizontal scaling, or scaling out.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Encryption at rest.
+
+D) A backup retention extension.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for glossary terms with a better balance of requirements, risk, and operational effort.
+**Explanation:** Horizontal scaling adds more workers or instances. Vertical scaling changes the capacity of an individual resource; neither term alone proves application resilience.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Scaling up enlarges an individual resource rather than adding instances.
+- **C:** Encryption protects data and is not a capacity-scaling term.
+- **D:** Retention changes recoverable history, not instance count.
+
+**AWS references:** [EC2 Auto Scaling dynamic scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html), [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 30-Q05 -->
 
-A) Review only definitions without scenario practice.
+A consumer may receive the same order event more than once. It records an order operation so retries do not charge the customer again. Which property is it implementing?
 
-B) Practice questions about RPO and throttling with explanations of the trade-offs.
+A) Strict global ordering for every message regardless of queue type.
 
-C) Add components that the scenario does not require.
+B) A guarantee that network delivery can never repeat.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Public access to the order database.
+
+D) Idempotent processing of the business operation.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for glossary terms with a better balance of requirements, risk, and operational effort.
+**Explanation:** Idempotency makes a repeated operation safe with respect to its intended side effect. It does not require the transport to stop delivering duplicate events.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Ordering and idempotency are different properties.
+- **B:** Safe repeated processing does not prove duplicate-free delivery.
+- **C:** Public exposure is unrelated to safe handling of retries.
+
+**AWS references:** [SQS at-least-once delivery](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html), [Lambda best practices](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

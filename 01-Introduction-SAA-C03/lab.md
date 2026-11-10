@@ -2,47 +2,46 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **certification fundamentals and exam strategy**, with clear behavioral validation and controlled costs for a study environment.
+Build an evidence-based SAA-C03 study plan without provisioning resources.
 
 ## Services Used
 
-Well-Architected, IAM, EC2, S3.
+Official exam guide and this repository.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Tabletop exercise. No AWS resource creation is required.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Read the official guide and record Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%.
+2. Map the 31 modules to the domains, allowing one module to support several domains.
+3. Choose an application scenario and write its availability, access, data-loss, recovery-time, latency, and budget constraints.
+4. Compare two candidate designs against those constraints before comparing their cost.
+5. Answer this module questions without the explanations; record each mistaken assumption and the supporting AWS reference.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- Weights sum to 100% and match the guide.
+- The plan distinguishes exam-domain weight from module completion.
+- Each design decision names the requirement it satisfies.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Keep the study notes and question error log.
+2. No cloud resources were created to remove.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [SAA-C03 exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html), [Shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model/), [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

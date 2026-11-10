@@ -1,107 +1,120 @@
-# Review Cards
+# Review Flashcards
 
 ## Card 01
 
-**Question:** What is the central focus of this module?
+**Question:** Data scientists need managed tools to build, train, and deploy a custom machine learning model. Which service directly supports that lifecycle?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Master decisions about ML and AI using SAA-C03 exam scenarios.
+**Answer:** Amazon SageMaker AI. SageMaker AI provides managed training and deployment capabilities. The team still owns dataset quality, model evaluation, permissions, and the suitability of the model for its use case.
+
+**AWS references:** [Amazon SageMaker AI](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html).
 
 </details>
 
 ## Card 02
 
-**Question:** What mistake commonly occurs with this topic?
+**Question:** An application needs entity and sentiment analysis of supported text without first building a custom model. Which service fits?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Applying a generic answer without checking the scenario's specific cues for ML and AI.
+**Answer:** Amazon Comprehend. Comprehend offers pretrained natural-language analysis, including entities and sentiment. Supported languages, input types, and feature constraints must be checked for the specific operation.
+
+**AWS references:** [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html), [Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/what-is.html).
 
 </details>
 
 ## Card 03
 
-**Question:** How do you identify the best answer option?
+**Question:** A workflow must extract form fields and tables from scanned business documents using a managed document-analysis API. Which service fits?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Prioritize the dominant requirement and choose services that address SageMaker and inference with less operational overhead.
+**Answer:** Amazon Textract. Textract supports document text, form, and table extraction. Validate extraction quality and route uncertain business-critical results for appropriate review.
+
+**AWS references:** [Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/what-is.html), [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html).
 
 </details>
 
 ## Card 04
 
-**Question:** Which trade-off usually appears?
+**Question:** An optional generative AI exercise needs managed access to foundation models rather than building a model-serving fleet. Which service matches that capability?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Balance SageMaker with cost, performance, and operational simplicity.
+**Answer:** Amazon Bedrock. Bedrock provides managed foundation-model access. This is optional architecture context: the current SAA-C03 service list is non-exhaustive, and the repository must not claim a guaranteed exam question or weight for this topic.
+
+**AWS references:** [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html), [SAA-C03 in-scope services](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html).
 
 </details>
 
 ## Card 05
 
-**Question:** What sign of a mature architecture appears in exam questions?
+**Question:** A team uses a managed model API for customer-facing decisions. Which operational responsibility remains with the team?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Deliberate use of inference with observability to reduce operational risk.
+**Answer:** Evaluate output quality on representative data, protect inputs and outputs, and implement suitable handling for errors or unacceptable results. Managed infrastructure does not establish that a model is appropriate for every business input. Application data handling, permissions, evaluation, and failure behavior remain part of the customer design.
+
+**AWS references:** [Shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model/), [Amazon SageMaker AI](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html), [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
 </details>
 
 ## Card 06
 
-**Question:** How can you avoid overengineering?
+**Question:** An application needs entity and sentiment analysis of supported text without first building a custom model. Which service fits?
+
+Why does this alternative fail: “Amazon Textract used solely to extract document text and tables.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Avoid extra components when drift or a pretrained model already meets the requirement.
+**Answer:** Text extraction and document layout analysis are not the requested sentiment capability.
+
+**AWS references:** [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html), [Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/what-is.html).
 
 </details>
 
 ## Card 07
 
-**Question:** What should you review before a practice exam?
+**Question:** A workflow must extract form fields and tables from scanned business documents using a managed document-analysis API. Which service fits?
+
+Why does this alternative fail: “Amazon Comprehend sentiment analysis alone.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Practical differences between latency and cost.
+**Answer:** Sentiment analysis is not document form and table extraction.
+
+**AWS references:** [Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/what-is.html), [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html).
 
 </details>
 
 ## Card 08
 
-**Question:** How can you finish a review session efficiently?
+**Question:** An optional generative AI exercise needs managed access to foundation models rather than building a model-serving fleet. Which service matches that capability?
+
+Why does this alternative fail: “AWS Config.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Turn mistakes from this module into clear decision rules for ML and AI.
+**Answer:** Config tracks resource configuration and compliance, not foundation-model inference.
+
+**AWS references:** [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html), [SAA-C03 in-scope services](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html).
 
 </details>
-
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

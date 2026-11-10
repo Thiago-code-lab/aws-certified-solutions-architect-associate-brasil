@@ -471,8 +471,8 @@
         <div class="welcome-icon">📚</div>
         <h2>SAA-C03 Study Portal</h2>
         <p>Select a module to read its content here.<br>Use ✓ to track your progress, saved automatically in this browser.</p>
-        <p>Percentages below preserve the source edition's allocations and differ from current exam weights. Check the <a href="https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03.html" target="_blank" rel="noopener noreferrer">official AWS exam guide</a> when planning your preparation.</p>
-        <div class="domain-grid" id="welcomeDomainGrid" aria-label="Source-edition allocations and module progress"></div>
+        <p>Percentages show the scored-content weights in the <a href="https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03.html" target="_blank" rel="noopener noreferrer">official AWS exam guide</a> for SAA-C03. Progress bars track module completion, not exam readiness.</p>
+        <div class="domain-grid" id="welcomeDomainGrid" aria-label="Official exam domain weights and module progress"></div>
       </div>
     </div>
   </main>
@@ -965,10 +965,10 @@ const DOCUMENT_PATHS = new Set([
 const DC = { base:'#6b7fa3', security:'#9B59B6', resilient:'#4A9EFF', performance:'#2ECC71', cost:'#FF9900', lab:'#E74C3C' };
 const WL = { 1:'WEEK 01', 2:'WEEK 02', 3:'WEEK 03', 4:'WEEK 04', 5:'WEEK 05', 6:'WEEK 06', 7:'WEEK 07', 8:'WEEK 08', 9:'WEEK 09 · FINAL REVIEW' };
 const DOMAIN_CARDS = [
-  { cls:'dm1', pct:'30%', name:'Resilient Architectures', domain:'resilient' },
-  { cls:'dm2', pct:'28%', name:'High Performance',         domain:'performance' },
-  { cls:'dm3', pct:'24%', name:'Security',                domain:'security' },
-  { cls:'dm4', pct:'18%', name:'Cost Optimization',     domain:'cost' },
+  { cls:'dm1', pct:'26%', name:'Resilient Architectures', domain:'resilient' },
+  { cls:'dm2', pct:'24%', name:'High Performance',         domain:'performance' },
+  { cls:'dm3', pct:'30%', name:'Security',                domain:'security' },
+  { cls:'dm4', pct:'20%', name:'Cost Optimization',     domain:'cost' },
 ];
 
 let progress = {}, activeNum = null, searchTerm = '', filterMode = 'all', activeModule = null;

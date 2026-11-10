@@ -1,107 +1,120 @@
-# Review Cards
+# Review Flashcards
 
 ## Card 01
 
-**Question:** What is the central focus of this module?
+**Question:** A new CloudFront distribution serves a regular private S3 bucket origin. The bucket must stay private while CloudFront can read objects. Which design is recommended?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Master decisions about Route 53 and CloudFront using SAA-C03 exam scenarios.
+**Answer:** Configure OAC, signed origin requests, and a bucket policy restricted to the intended CloudFront distribution. Origin access control authorizes CloudFront access to a regular S3 origin. The bucket policy must allow the intended distribution. Website endpoints are custom origins and do not support OAC.
+
+**AWS references:** [CloudFront origin access control](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html).
 
 </details>
 
 ## Card 02
 
-**Question:** What mistake commonly occurs with this topic?
+**Question:** An application has equivalent endpoints in multiple AWS Regions. DNS responses should favor the Region offering the best latency to the user. Which Route 53 policy fits?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Applying a generic answer without checking the scenario's specific cues for Route 53 and CloudFront.
+**Answer:** Latency-based routing. Latency-based routing selects among configured regional resources using latency information. It does not promise the geographically nearest location or a fixed split of requests.
+
+**AWS references:** [Route 53 routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html).
 
 </details>
 
 ## Card 03
 
-**Question:** How do you identify the best answer option?
+**Question:** A team wants DNS responses distributed between old and new regional endpoints in configured relative proportions. Which Route 53 policy is intended for this?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Prioritize the dominant requirement and choose services that address latency-based routing and failover with less operational overhead.
+**Answer:** Weighted routing. Weighted records support relative response proportions. DNS caching and resolver behavior mean the observed application-request split is not an exact per-request percentage guarantee.
+
+**AWS references:** [Route 53 routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html).
 
 </details>
 
 ## Card 04
 
-**Question:** Which trade-off usually appears?
+**Question:** A globally used UDP application needs static anycast entry IPs and routing across the AWS network to healthy regional endpoints. Which service fits?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Balance latency-based routing with cost, performance, and operational simplicity.
+**Answer:** AWS Global Accelerator with supported endpoints. Global Accelerator supports TCP and UDP applications with static anycast IP addresses and regional endpoint routing. CloudFront is an HTTP(S) content delivery service, not an arbitrary UDP proxy.
+
+**AWS references:** [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html).
 
 </details>
 
 ## Card 05
 
-**Question:** What sign of a mature architecture appears in exam questions?
+**Question:** An HTTP application behind an ALB needs managed rule-based filtering for common web exploits. Which service is designed for that application-layer filtering?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Deliberate use of failover with observability to reduce operational risk.
+**Answer:** AWS WAF associated with the supported application resource. AWS WAF evaluates web requests with rules and can protect supported resources such as an ALB. Its rules complement, rather than replace, secure application design and network controls.
+
+**AWS references:** [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html).
 
 </details>
 
 ## Card 06
 
-**Question:** How can you avoid overengineering?
+**Question:** An application has equivalent endpoints in multiple AWS Regions. DNS responses should favor the Region offering the best latency to the user. Which Route 53 policy fits?
+
+Why does this alternative fail: “Weighted routing used solely for a fixed traffic proportion.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Avoid extra components when weighted routing or CDN already meets the requirement.
+**Answer:** Weighted routing expresses configured proportions rather than optimizing latency.
+
+**AWS references:** [Route 53 routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html).
 
 </details>
 
 ## Card 07
 
-**Question:** What should you review before a practice exam?
+**Question:** A team wants DNS responses distributed between old and new regional endpoints in configured relative proportions. Which Route 53 policy is intended for this?
+
+Why does this alternative fail: “Failover routing used only as active-passive standby.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Practical differences between cache and OAC/OAI.
+**Answer:** Active-passive failover is not a proportional rollout policy.
+
+**AWS references:** [Route 53 routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html).
 
 </details>
 
 ## Card 08
 
-**Question:** How can you finish a review session efficiently?
+**Question:** A globally used UDP application needs static anycast entry IPs and routing across the AWS network to healthy regional endpoints. Which service fits?
+
+Why does this alternative fail: “CloudFront as a general-purpose arbitrary UDP proxy.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Turn mistakes from this module into clear decision rules for Route 53 and CloudFront.
+**Answer:** CloudFront does not provide the arbitrary UDP proxy behavior in the stem.
+
+**AWS references:** [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html).
 
 </details>
-
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

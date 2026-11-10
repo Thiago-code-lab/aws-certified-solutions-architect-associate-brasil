@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about resilience and DR. Which approach best meets the requirements?
+<!-- question-id: 22-Q01 -->
 
-A) Apply a generic solution without considering Multi-AZ.
+Backups complete every 24 hours. A business requires at most 15 minutes of data loss. Can a fast restore alone prove this design meets the RPO?
 
-B) Use Multi-AZ with a configuration that meets the requirements and minimizes operational overhead.
+A) Yes. Any restore taking less than 15 minutes guarantees a 15-minute RPO.
 
-C) Add components that the scenario does not require.
+B) No. The recoverable data points must satisfy the 15-minute loss window; restore speed addresses RTO.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Yes. RPO and RTO are interchangeable names.
+
+D) Yes. A backup schedule automatically protects every write until the next backup.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for resilience and DR with a better balance of requirements, risk, and operational effort.
+**Explanation:** RPO describes acceptable data loss in time. The recovery data path needs sufficiently current valid recovery points; fast infrastructure restoration does not make old backups newer.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Short recovery duration does not change the age of the recovered data.
+- **C:** RPO and RTO measure different requirements.
+- **D:** Periodic backups do not automatically include subsequent unbacked-up writes.
+
+**AWS references:** [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 22-Q02 -->
 
-A) Resolve everything manually during the incident.
+A workload must recover after an entire AWS Region becomes unavailable. Does deploying the application and database across AZs only within that Region satisfy the failure scope by itself?
 
-B) Combine failover with observability and automation.
+A) Yes. Every AZ is an independent AWS Region.
 
-C) Add components that the scenario does not require.
+B) Yes. An additional private subnet in the same VPC provides regional recovery.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Yes. A larger instance removes the regional dependency.
+
+D) No. A regional recovery design needs usable recovery resources and data outside the affected Region, plus tested recovery procedures.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for resilience and DR with a better balance of requirements, risk, and operational effort.
+**Explanation:** Multi-AZ deployment addresses AZ-level failures within a Region. Regional recovery needs an appropriately independent recovery location and tested data, configuration, and traffic recovery.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** AZs are isolated locations within a Region, not separate Regions.
+- **B:** Another same-Region subnet does not remove the Region dependency.
+- **C:** Instance size does not change geographic failure scope.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 22-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+A recovery Region maintains a small but fully functional copy of the application that can serve traffic before being scaled up. Which DR pattern best describes this?
 
-B) Size resources based on actual usage and use DR strategies where appropriate.
+A) Pilot light with only core data components active and application capacity still needing deployment.
 
-C) Add components that the scenario does not require.
+B) Warm standby.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Backup and restore with no running application.
+
+D) Multi-site active/active serving production traffic from both Regions.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for resilience and DR with a better balance of requirements, risk, and operational effort.
+**Explanation:** Warm standby maintains a scaled-down functioning workload. Pilot light keeps a smaller core running and requires additional activation or deployment before the full workload can serve.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** The stem explicitly says a fully functional application is already running.
+- **C:** The stem includes a running application, not only stored backups.
+- **D:** The recovery copy is standby, not already sharing normal production traffic.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 22-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+A team has a backup marked successful. What provides stronger evidence that business recovery objectives can be met?
 
-B) The option that ignores cues about RTO/RPO and architectural dependencies.
+A) Treat the backup job status alone as a guarantee of successful restoration.
 
-C) Add components that the scenario does not require.
+B) Assume a DNS record proves database recoverability.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Restore representative data in an isolated environment, validate the application, measure data loss and recovery duration, and compare them with RPO and RTO.
+
+D) Delete the source database before planning a restore test.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for resilience and DR with a better balance of requirements, risk, and operational effort.
+**Explanation:** Recovery testing checks that data, dependencies, permissions, and procedures actually work together. A successful backup is necessary evidence for that copy, but not proof of end-to-end recovery.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Backup completion does not validate all restoration and application dependencies.
+- **B:** DNS configuration does not verify restored data.
+- **D:** Destructive production actions are unnecessary for an isolated recovery test.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 22-Q05 -->
 
-A) Review only definitions without scenario practice.
+An accidental application command deletes valid records from a database whose changes replicate to its standby. What protection is additionally needed?
 
-B) Practice questions about decoupling and health checks with explanations of the trade-offs.
+A) Assume synchronous standby replication always preserves the pre-delete data as an independent backup.
 
-C) Add components that the scenario does not require.
+B) Use an ALB listener rule to reconstruct deleted rows.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Retained backups or an appropriate point-in-time recovery capability, with tested restoration procedures.
+
+D) Increase the database CPU without a recovery copy.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for resilience and DR with a better balance of requirements, risk, and operational effort.
+**Explanation:** Replication can reproduce logical mistakes as well as correct writes. Availability replicas do not replace retained recoverable history for corruption or accidental deletion.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** A standby can receive the same deletion and is not an independent historical backup.
+- **B:** A load balancer does not reconstruct database history.
+- **D:** Additional CPU does not restore lost data.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [RDS Multi-AZ deployment types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

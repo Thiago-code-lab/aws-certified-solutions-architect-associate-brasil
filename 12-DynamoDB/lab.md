@@ -2,47 +2,47 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **key design, throughput, and NoSQL patterns**, with clear behavioral validation and controlled costs for a study environment.
+Observe DynamoDB base-table access and review capacity and consistency settings.
 
 ## Services Used
 
-DynamoDB, DAX, Streams.
+DynamoDB and its console item explorer.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Table storage and read/write requests can incur charges. Use tiny synthetic items and a small bounded number of operations; do not assume on-demand mode is free or limitless.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Create a lab table in on-demand mode with a string partition key named orderId.
+2. Insert a few small synthetic orders with distinct orderId values.
+3. Read an item by its full primary key and inspect how an API GetItem request can request ConsistentRead.
+4. Compare a key-based lookup with the work needed by a broad Scan as the dataset grows; do not generate a large load merely to demonstrate the distinction.
+5. Review GSI read-consistency limitations and the documented MREC/MRSC global-table modes without creating unnecessary replicas.
+6. Record why key distribution, quotas, and capacity-mode behavior still matter in on-demand mode.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- Synthetic items can be retrieved by their primary key.
+- Strong consistency is not claimed for GSI reads.
+- The notes separate capacity mode from consistency mode and key design.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Delete the lab table after removing any optional test backups or exports that are no longer required.
+2. Confirm no replica table or extra billable resource was created unintentionally.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [DynamoDB read consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html), [DynamoDB capacity modes](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html), [DynamoDB partition key design](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

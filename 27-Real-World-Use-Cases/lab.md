@@ -2,47 +2,47 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **applying architectural patterns to business scenarios**, with clear behavioral validation and controlled costs for a study environment.
+Review a business architecture against failure, consistency, and access requirements.
 
 ## Services Used
 
-S3, RDS, SQS, Lambda.
+ALB, SQS/SNS, S3/CloudFront, and DynamoDB design documentation.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Scenario design exercise. No application fleet, database, or CDN distribution needs to be created.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Choose the order-processing scenario in this module and list web availability, accepted-job durability, consumer independence, and read consistency requirements.
+2. Draw multi-AZ web compute with an appropriate load balancer and externalized application state.
+3. Draw independent consumer queues behind fan-out and mark acknowledgement, duplicate handling, and backlog monitoring points.
+4. Choose the authoritative order-data read path and mark where a stale read would violate the requirement.
+5. If static assets are included, draw private S3 origin access separately from public CloudFront viewer access.
+6. Walk through loss of one web instance, one consumer, and one AZ; record which requirements still hold and which assumptions require testing.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- Each component is tied to a stated requirement.
+- No queue, cache, key service, or DNS record is treated as a universal replacement for another service category.
+- The diagram records real failure boundaries rather than generic resilience claims.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Keep the architecture decisions and unresolved assumptions.
+2. No cloud resources are required for this design exercise.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html), [SNS to SQS fan-out](https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html), [SQS at-least-once delivery](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html), [CloudFront origin access control](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html), [DynamoDB read consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

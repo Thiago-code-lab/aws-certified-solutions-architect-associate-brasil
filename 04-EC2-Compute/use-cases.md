@@ -1,34 +1,58 @@
 # Use Cases
 
-## Scenario 1: A Brief Traffic Spike
+## Scenario 1: Interruptible compute
 
-**Recommended pattern:** a managed layer with automatic scaling and decoupling.
-**Reason:** absorbs demand fluctuations without extensive manual intervention.
-**Exam cue:** phrases such as “unpredictable spike,” “maintain latency,” and “low operational effort.”
+**Requirement:** A batch job checkpoints its progress and can resume after interruption. It has a flexible completion window. Which EC2 purchase option is designed for spare capacity at a discount?
 
-## Scenario 2: Audit and compliance requirement
+**Recommended design:** Spot Instances.
 
-**Recommended pattern:** granular identity controls, an audit trail, and end-to-end encryption.
-**Reason:** ensures traceability and protects sensitive data.
-**Exam cue:** “compliance,” “access logs,” and “sensitive data.”
+**Reason and boundary:** Spot uses spare EC2 capacity and can be interrupted. Checkpointing and flexible scheduling make the stated batch workload a suitable candidate, subject to capacity availability.
 
-## Scenario 3: Lower Costs with the Same User Experience
+**Rejected alternative:** Dedicated Hosts solely to obtain the lowest batch price. Dedicated hardware addresses isolation or licensing, not this spare-capacity objective.
 
-**Recommended pattern:** adjust the resource class and capacity to actual usage.
-**Reason:** avoids overprovisioning and reduces recurring expenses.
-**Exam cue:** “cost optimization,” “known usage pattern,” and “without degrading UX.”
+**AWS references:** [EC2 Spot Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html), [EC2 placement groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html).
 
-## Scenario 4: Incremental architecture evolution
+## Scenario 2: EBS Availability Zone scope
 
-**Recommended pattern:** start simple, with managed components and clear extension points.
-**Reason:** speeds up delivery and reduces the risk of premature complexity.
-**Exam cue:** “rapid delivery,” “gradual growth,” and “small team.”
+**Requirement:** An EC2 instance is in one Availability Zone and an EBS volume is in another. How can the data be made available as an attachable EBS volume to that instance?
+
+**Recommended design:** Create a snapshot and create a new volume from it in the instance Availability Zone.
+
+**Reason and boundary:** An EBS volume attaches to instances in its own Availability Zone. A snapshot can be used to create a volume in another Availability Zone in the Region.
+
+**Rejected alternative:** Attach the existing volume directly across Availability Zones. EBS attachment is not cross-AZ.
+
+**AWS references:** [Amazon EBS volumes](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html).
+
+## Scenario 3: Shared file storage
+
+**Requirement:** Linux EC2 instances in multiple Availability Zones need concurrent access to the same managed NFS file system. Which choice fits?
+
+**Recommended design:** Amazon EFS Regional with mount targets and suitable security group rules.
+
+**Reason and boundary:** EFS provides managed shared NFS storage; the Regional storage option supports a multi-AZ design. Mount targets and network access still need configuration.
+
+**Rejected alternative:** An ordinary single EBS volume attached across Availability Zones. Ordinary EBS attachment does not provide multi-AZ NFS sharing.
+
+**AWS references:** [Amazon EFS](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html), [Amazon EBS volumes](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html).
+
+## Scenario 4: Low-latency placement
+
+**Requirement:** Tightly coupled EC2 workers need low-latency communication inside one Availability Zone. Which common placement strategy targets this requirement?
+
+**Recommended design:** A cluster placement group.
+
+**Reason and boundary:** A cluster placement group places supported instances close together in one AZ for tightly coupled workloads. This is a performance choice, not protection from losing that AZ.
+
+**Rejected alternative:** A spread placement group selected specifically to separate underlying hardware. Spread prioritizes hardware separation rather than tightly packed placement.
+
+**AWS references:** [EC2 placement groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

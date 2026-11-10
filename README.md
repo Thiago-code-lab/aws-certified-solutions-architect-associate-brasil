@@ -15,12 +15,12 @@
 </p>
 
 <p align="center">
-  <strong> Join the CloudStudy waitlist and receive early access to the platform.</strong>
+  <strong> Prepare for AWS certifications with CloudStudy.</strong>
 </p>
 
 <p align="center">
   <a href="https://www.cloudstudy.com.br/">
-    <img src="https://img.shields.io/badge/JOIN_THE_WAITLIST-CloudStudy-2563EB?style=for-the-badge&amp;logo=amazonaws&amp;logoColor=white" alt="Join the CloudStudy waitlist" />
+    <img src="https://img.shields.io/badge/EXPLORE_CLOUDSTUDY-CloudStudy-2563EB?style=for-the-badge&amp;logo=amazonaws&amp;logoColor=white" alt="Explore CloudStudy" />
   </a>
 </p>
 
@@ -115,7 +115,7 @@
 ## 🚦 Where to start
 
 - **Beginner learning path (from scratch):** follow [Module 01](./01-Introduction-SAA-C03/README.md) → [Module 02](./02-IAM-and-Security/README.md) → [Module 04](./04-EC2-Compute/README.md) → [Module 05](./05-High-Availability-and-Scalability/README.md) → [Module 06](./06-Amazon-S3-and-Storage/README.md) → [Module 08](./08-VPC-and-Networking/README.md) → [Module 10](./10-Databases/README.md) and complete in order up to [Module 31](./31-Resources-and-Links/README.md), including the corresponding labs in each week.
-- **Quick review:** review [cheatsheets](./01-Introduction-SAA-C03/cheatsheet.md), [flashcards](./01-Introduction-SAA-C03/flashcards.md) and [questions](./29-Practice-Exams-and-Questions/README.md), prioritizing modules with greater weight in the exam (security, resilience, performance and cost).
+- **Quick review:** review [cheatsheets](./01-Introduction-SAA-C03/cheatsheet.md), [flashcards](./01-Introduction-SAA-C03/flashcards.md) and [questions](./29-Practice-Exams-and-Questions/README.md), prioritizing your weak areas and using the official security, resilience, performance, and cost domain weights to plan review.
 - **Final review / last 14 days:** focus on [05](./05-High-Availability-and-Scalability/README.md), [06](./06-Amazon-S3-and-Storage/README.md), [08](./08-VPC-and-Networking/README.md), [10](./10-Databases/README.md), [13](./13-DNS-Route53-and-CloudFront/README.md), [14](./14-Decoupling-SQS-SNS-EventBridge/README.md), [17](./17-Serverless-Lambda-API-Gateway/README.md), [22](./22-Disaster-Recovery-and-Business-Continuity/README.md), [26](./26-Well-Architected-Framework/README.md) and finish with the [Module 29](./29-Practice-Exams-and-Questions/README.md): mini practice exams, an error log, and a final review plan.
 
 > An open English-language learning path for structured review of the AWS Certified Solutions Architect – Associate (SAA-C03) exam.
@@ -128,7 +128,7 @@ This English edition provides open-source study material focused on architectura
 
 This material is designed for intermediate learners who already use AWS regularly and understand cloud fundamentals. It develops the reasoning expected of a solutions architect: evaluating trade-offs between resilience, performance, security, and cost, beyond memorizing facts.
 
-This repository is designed for learning on GitHub. Across the curriculum, you will find lessons, exam-style questions, flashcards, cheatsheets, architectural scenarios, labs, and curated official links. The module sequence follows frequently tested exam topics and gradually increases in complexity for a 9-week review plan. Dedicated lab modules contain labs and links.
+This repository is designed for learning on GitHub. Across the curriculum, you will find lessons, exam-style questions, flashcards, cheatsheets, architectural scenarios, labs, and curated official links. The module sequence follows the published exam domains and gradually increases in complexity for a 9-week review plan. Dedicated lab modules contain labs and links.
 
 
 ## 🖥️ Interactive Portal
@@ -150,21 +150,21 @@ Open the [interactive study portal](./aws-saa-portal.html).
 
 ## 📊 Exam Structure and Domains
 
-> **Source-edition metadata:** The table preserves the original weights. The [official AWS SAA-C03 exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03.html) lists Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. Use the official weights for exam planning. See the [source-content limitations](./docs/english-edition/README.md#source-content-limitations) for details.
+> Exam domains follow the [official AWS SAA-C03 exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html). These are percentages of scored content, not guarantees about any particular practice set.
 
 | Domain | Weight | Topics tested | Main modules |
 |---|---:|---|---|
-| Design Resilient Architectures | 30% | High availability, disaster recovery, decoupling, multi-AZ, and multi-Region | 05, 06, 08, 09, 13, 14, 21, 22, 24, 26 |
-| Design High-Performing Architectures | 28% | Compute selection, caching, storage performance, networking, and databases | 04, 06, 08, 10, 11, 12, 13, 16, 18 |
-| Design Secure Applications and Architectures | 24% | IAM, KMS, network isolation, encryption, audit trails, and governance | 02, 03, 08, 09, 14, 17, 20, 23, 24, 25 |
-| Design Cost-Optimized Architectures | 18% | Rightsizing, storage classes, purchasing models, serverless, and automation | 04, 06, 15, 17, 21, 23 |
+| Design Resilient Architectures | 26% | High availability, disaster recovery, decoupling, multi-AZ, and multi-Region | 05, 06, 08, 09, 13, 14, 21, 22, 24, 26 |
+| Design High-Performing Architectures | 24% | Compute selection, caching, storage performance, networking, and databases | 04, 06, 08, 10, 11, 12, 13, 16, 18 |
+| Design Secure Architectures | 30% | IAM, KMS, network isolation, encryption, audit trails, and governance | 02, 03, 08, 09, 14, 17, 20, 23, 24, 25 |
+| Design Cost-Optimized Architectures | 20% | Rightsizing, storage classes, purchasing models, serverless, and automation | 04, 06, 15, 17, 21, 23 |
 
 <a id="study-map"></a>
 ## 🗺️ Study Map
 
 ### Week 1
 
-- Module 01: exam overview, strategy, domain weights, and frequently tested services
+- Module 01: exam overview, strategy, domain weights, and service-selection reasoning
 - Module 02: IAM, KMS, Organizations, Identity Center and policies
 - Module 03: guided IAM and security lab
 
@@ -191,7 +191,7 @@ Open the [interactive study portal](./aws-saa-portal.html).
 
 - Module 14: SQS, SNS, EventBridge and Step Functions
 - Module 15: SQS/SNS messaging lab
-- Module 16: ECS, EKS, Fargate, ECR and App Runner
+- Module 16: ECS, EKS, Fargate, ECR, and [App Runner availability restrictions](https://docs.aws.amazon.com/apprunner/latest/dg/apprunner-availability-change.html) for historical examples
 
 ### Week 6
 
@@ -200,9 +200,9 @@ Open the [interactive study portal](./aws-saa-portal.html).
 
 ### Week 7
 
-- Module 19: frequently tested managed AI and ML services
+- Module 19: managed AI/ML service selection and optional generative AI context
 - Module 20: CloudWatch, CloudTrail, Config and X-Ray
-- Module 21: DMS, MGN, DataSync, Snow Family and Transfer Family
+- Module 21: DMS, AWS Transform MGN (formerly AWS Application Migration Service), DataSync, Transfer Family, and Snow Family availability caveats
 
 ### Week 8
 
@@ -299,7 +299,7 @@ Open the [interactive study portal](./aws-saa-portal.html).
 2. Study modules 02 to 25 in order and use the laboratory modules to consolidate critical topics.
 3. At the end of each module, answer the questions before revealing the answer key.
 4. Use flashcards for spaced review and the cheatsheet for a quick review before a practice exam.
-5. Run the labs in us-east-1 whenever possible to maintain consistency with the material.
+5. Choose a lab Region based on required feature availability, data requirements, and current pricing. Region names in examples do not impose an exam requirement.
 6. Finish your preparation with case studies, end-to-end labs, practice exams, an error log, and domain-based review.
 
 <a id="recommended-study-workflow"></a>
@@ -331,15 +331,15 @@ Open the [interactive study portal](./aws-saa-portal.html).
 | Common source of confusion | When to use each option | Typical exam pitfall |
 |---|---|---|
 | SNS vs SQS | SNS for pub/sub fanout; SQS for decoupled queue with asynchronous processing and consumption control. | Confusing broadcast to multiple consumers with point-to-point queue. |
-| SQS Standard vs FIFO | Standard for high throughput when duplicates and occasional out-of-order delivery are acceptable; FIFO for strict ordering and deduplication. | Choosing FIFO unnecessarily and limiting scale, or choosing Standard when order is mandatory. |
-| RDS Multi-AZ vs Read Replicas | Multi-AZ for high availability and failover; read replicas for read scaling and reporting. | Assuming Multi-AZ improves read performance or a read replica replaces synchronous HA. |
-| NAT Gateway vs VPC Endpoint | NAT Gateway for general private egress to the internet; VPC Endpoint for private access to AWS services without internet. | Use NAT for S3/DynamoDB and pay more, even with an available endpoint. |
+| SQS Standard vs FIFO | Standard provides at-least-once delivery; FIFO preserves order within message groups and deduplicates sends within its documented interval. | Assuming FIFO makes arbitrary business side effects exactly once, or treating all message groups as one global order. |
+| RDS Multi-AZ deployments vs read replicas | A Multi-AZ DB instance standby is not readable; Multi-AZ DB cluster readers can serve reads and support failover. Ordinary asynchronous read replicas support read scaling with possible lag. | Treating every Multi-AZ deployment as identical, or assuming asynchronous replicas provide immediate read-after-write consistency. |
+| NAT gateway vs VPC endpoint | A public NAT gateway supports outbound internet access for private IPv4 workloads; supported VPC endpoints provide private service paths. | Using unnecessary NAT for supported same-Region S3/DynamoDB access, or assuming every endpoint type supports every service with identical costs. |
 | ALB vs NLB vs CLB | ALB for HTTP/HTTPS layer 7; NLB for TCP/UDP/TLS layer 4 and low latency; CLB for legacy. | Ignore protocol requirement and sticky/session routing. |
 | S3 Standard vs IA vs One Zone-IA vs Glacier | Standard for frequent access; IA for infrequent access; One Zone-IA for reproducible data; Glacier for archiving. | Choosing a cheap class without considering retrieval latency and minimum retention. |
 | EBS vs EFS vs FSx | EBS for block storage on EC2; EFS for multi-AZ NFS file sharing on Linux; FSx for specialized file systems (Windows, Lustre, ONTAP, OpenZFS). | Treating EBS as shared storage for multiple instances without a specific architecture. |
-| ASG vs scheduled scaling vs predictive scaling | ASG for automatic elasticity by metrics; scheduled for predictable events; predictive for historical patterns. | Only use scheduled under unpredictable load and lose resilience in peaks. |
+| Target tracking vs scheduled vs predictive scaling | Reactive target tracking follows a suitable metric; schedules cover known events; predictive scaling uses historical patterns. These policies can complement each other. | Assuming a fixed schedule alone reacts to unpredictable demand or that scaling removes the need to plan warmup and limits. |
 | API Gateway vs ALB for Lambda | API Gateway for managed APIs with auth, throttling and versioning; ALB for simple HTTP routing with Lambda integration. | Choose ALB when the question asks for advanced API management features. |
-| KMS CMK vs Secrets Manager vs SSM Parameter Store | KMS for encryption and keys; Secrets Manager for rotation and sensitive secrets; Parameter Store for parameters and simple secrets. | Assuming KMS alone manages the full secret lifecycle. |
+| KMS keys vs Secrets Manager vs Parameter Store | KMS manages cryptographic keys; Secrets Manager supports secret lifecycle and rotation; Parameter Store stores configuration, with SecureString for KMS-encrypted values. | Confusing KMS key-material rotation with credential rotation or automatic re-encryption of existing data. |
 
 ## 🤝 How to contribute
 
@@ -366,9 +366,9 @@ English edition inventory, validation results, and known limitations: [release a
 
 ## ✅ Content Quality and Last Review
 
-- Content is based on official AWS documentation and relevant whitepapers.
+- Technical claims and question rationales cite applicable official AWS documentation and relevant whitepapers; these community practice items are not actual AWS exam questions.
 - Examples and labs prioritize low-cost choices for practical study.
-- The repository is updated periodically according to changes in AWS services and the exam blueprint.
+- Check the official exam guide and service documentation for changes; community updates do not replace AWS announcements.
 
-**Last repository-wide review in the source edition:** April 8, 2026 (update this date after each comprehensive content review).
+**English educational accuracy review:** November 10, 2026. All 145 practice questions and the module materials were reviewed; details, sources, and execution limitations are recorded in the [editorial release report](./docs/english-edition/editorial-release-report.md).
 

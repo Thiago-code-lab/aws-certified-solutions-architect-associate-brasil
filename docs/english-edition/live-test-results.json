@@ -1,16 +1,5 @@
 {
-  "verified_release_commit": "76e84d90f1af583902cf2fc87d53e4074e19515f",
-  "source_equivalents_fetched": 198,
-  "http_status_and_git_blob_comparisons": "all passed",
-  "modules_loaded_from_real_github_raw": 31,
-  "browser": "Chromium",
-  "entry_point": "downloaded/local HTML (file://)",
-  "persistence_after_reload": "passed",
-  "page_errors": [],
-  "protected_refs": {
-    "refs/heads/gh-pages": "e3c8302917591c90cec89c2e3b4c19a30ffc3a74",
-    "refs/heads/main": "d43bc6a571c668b22127b283315582ac8c413a70",
-    "refs/heads/saa-c03-english": "76e84d90f1af583902cf2fc87d53e4074e19515f"
-  },
+  "status": "pending post-push verification of the educational accuracy release",
+  "previous_translation_verified_commit": "76e84d90f1af583902cf2fc87d53e4074e19515f",
   "errors": []
 }

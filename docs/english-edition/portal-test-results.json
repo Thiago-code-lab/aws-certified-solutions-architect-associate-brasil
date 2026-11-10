@@ -3,7 +3,14 @@
   "mode": "local checkout served through intercepted English-branch Raw URLs",
   "modules_loaded": 31,
   "documents_rendered": 187,
+  "official_exam_weights": {
+    "security": 30,
+    "resilient": 26,
+    "performance": 24,
+    "cost": 20
+  },
   "checks": [
+    "official exam weights",
     "search",
     "empty state",
     "all/pending/completed filters",

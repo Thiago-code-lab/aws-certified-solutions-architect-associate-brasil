@@ -1,34 +1,58 @@
 # Use Cases
 
-## Scenario 1: A Brief Traffic Spike
+## Scenario 1: RPO terminology
 
-**Recommended pattern:** a managed layer with automatic scaling and decoupling.
-**Reason:** absorbs demand fluctuations without extensive manual intervention.
-**Exam cue:** phrases such as “unpredictable spike,” “maintain latency,” and “low operational effort.”
+**Requirement:** Which term expresses the maximum acceptable amount of data loss measured in time after a disruption?
 
-## Scenario 2: Audit and compliance requirement
+**Recommended design:** Recovery point objective, or RPO.
 
-**Recommended pattern:** granular identity controls, an audit trail, and end-to-end encryption.
-**Reason:** ensures traceability and protects sensitive data.
-**Exam cue:** “compliance,” “access logs,” and “sensitive data.”
+**Reason and boundary:** RPO expresses the acceptable data-loss window. It guides replication and backup requirements rather than the time needed to return the application to service.
 
-## Scenario 3: Lower Costs with the Same User Experience
+**Rejected alternative:** Recovery time objective, or RTO. RTO expresses the acceptable recovery duration.
 
-**Recommended pattern:** adjust the resource class and capacity to actual usage.
-**Reason:** avoids overprovisioning and reduces recurring expenses.
-**Exam cue:** “cost optimization,” “known usage pattern,” and “without degrading UX.”
+**AWS references:** [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html).
 
-## Scenario 4: Incremental architecture evolution
+## Scenario 2: RTO terminology
 
-**Recommended pattern:** start simple, with managed components and clear extension points.
-**Reason:** speeds up delivery and reduces the risk of premature complexity.
-**Exam cue:** “rapid delivery,” “gradual growth,” and “small team.”
+**Requirement:** Which term expresses the maximum acceptable time to restore service after a disruption?
+
+**Recommended design:** Recovery time objective, or RTO.
+
+**Reason and boundary:** RTO expresses the recovery-time target for the workload. Recovery testing should measure the end-to-end duration, including dependencies and application validation.
+
+**Rejected alternative:** Recovery point objective, or RPO. RPO concerns tolerable data loss rather than recovery duration.
+
+**AWS references:** [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
+
+## Scenario 3: Durability versus availability
+
+**Requirement:** A storage system retains data safely but is temporarily unable to serve requests. Which distinction explains why this can occur?
+
+**Recommended design:** Durability concerns retaining data; availability concerns being able to access the service when needed.
+
+**Reason and boundary:** Data can remain intact during a temporary access outage. Architecture must evaluate both preservation and access requirements rather than treating one as proof of the other.
+
+**Rejected alternative:** Durability and availability always mean exactly the same property. The two properties describe different aspects of service behavior.
+
+**AWS references:** [S3 storage classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
+
+## Scenario 4: Horizontal versus vertical scaling
+
+**Requirement:** An application increases capacity by adding more instances behind a load balancer rather than enlarging one instance. What is this called?
+
+**Recommended design:** Horizontal scaling, or scaling out.
+
+**Reason and boundary:** Horizontal scaling adds more workers or instances. Vertical scaling changes the capacity of an individual resource; neither term alone proves application resilience.
+
+**Rejected alternative:** Vertical scaling, or scaling up. Scaling up enlarges an individual resource rather than adding instances.
+
+**AWS references:** [EC2 Auto Scaling dynamic scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html), [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

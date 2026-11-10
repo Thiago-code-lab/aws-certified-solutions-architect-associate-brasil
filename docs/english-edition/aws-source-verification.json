@@ -1,0 +1,717 @@
+{
+  "review_date": "2026-11-10",
+  "sources": [
+    {
+      "id": "exam",
+      "requested_url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+      "resolved_url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+      "status": 200,
+      "page_title": "AWS Certified Solutions Architect - Associate (SAA-C03) - AWS Certified Solutions Architect - Associate",
+      "reviewed_capability": "SAA-C03 exam guide"
+    },
+    {
+      "id": "scope",
+      "requested_url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html",
+      "resolved_url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html",
+      "status": 200,
+      "page_title": "In-Scope AWS Services - AWS Certified Solutions Architect - Associate",
+      "reviewed_capability": "SAA-C03 in-scope services"
+    },
+    {
+      "id": "outscope",
+      "requested_url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-out-of-scope-services.html",
+      "resolved_url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-out-of-scope-services.html",
+      "status": 200,
+      "page_title": "Out-of-Scope AWS Services - AWS Certified Solutions Architect - Associate",
+      "reviewed_capability": "SAA-C03 out-of-scope services"
+    },
+    {
+      "id": "iam",
+      "requested_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+      "resolved_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+      "status": 200,
+      "page_title": "Security best practices in IAM - AWS Identity and Access Management",
+      "reviewed_capability": "IAM security best practices"
+    },
+    {
+      "id": "policy",
+      "requested_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+      "resolved_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+      "status": 200,
+      "page_title": "Policy evaluation logic - AWS Identity and Access Management",
+      "reviewed_capability": "IAM policy evaluation"
+    },
+    {
+      "id": "scp",
+      "requested_url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html",
+      "resolved_url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html",
+      "status": 200,
+      "page_title": "Service control policies (SCPs) - AWS Organizations",
+      "reviewed_capability": "Service control policies"
+    },
+    {
+      "id": "shared",
+      "requested_url": "https://aws.amazon.com/compliance/shared-responsibility-model/",
+      "resolved_url": "https://aws.amazon.com/compliance/shared-responsibility-model/",
+      "status": 200,
+      "page_title": "Shared Responsibility Model - Amazon Web Services (AWS)",
+      "reviewed_capability": "Shared responsibility model"
+    },
+    {
+      "id": "spot",
+      "requested_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html",
+      "resolved_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html",
+      "status": 200,
+      "page_title": "Spot Instances - Amazon Elastic Compute Cloud",
+      "reviewed_capability": "EC2 Spot Instances"
+    },
+    {
+      "id": "placement",
+      "requested_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
+      "resolved_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
+      "status": 200,
+      "page_title": "Placement groups for your Amazon EC2 instances - Amazon Elastic Compute Cloud",
+      "reviewed_capability": "EC2 placement groups"
+    },
+    {
+      "id": "ebs",
+      "requested_url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html",
+      "resolved_url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html",
+      "status": 200,
+      "page_title": "Amazon EBS volumes - Amazon EBS",
+      "reviewed_capability": "Amazon EBS volumes"
+    },
+    {
+      "id": "efs",
+      "requested_url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+      "resolved_url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+      "status": 200,
+      "page_title": "What is Amazon Elastic File System? - Amazon Elastic File System",
+      "reviewed_capability": "Amazon EFS"
+    },
+    {
+      "id": "savings",
+      "requested_url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html",
+      "resolved_url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html",
+      "status": 200,
+      "page_title": "What are Savings Plans? - Savings Plans",
+      "reviewed_capability": "Savings Plans"
+    },
+    {
+      "id": "alb",
+      "requested_url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html",
+      "resolved_url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html",
+      "status": 200,
+      "page_title": "What is an Application Load Balancer? - Elastic Load Balancing",
+      "reviewed_capability": "Application Load Balancers"
+    },
+    {
+      "id": "nlb",
+      "requested_url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html",
+      "resolved_url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html",
+      "status": 200,
+      "page_title": "What is a Network Load Balancer? - Elastic Load Balancing",
+      "reviewed_capability": "Network Load Balancers"
+    },
+    {
+      "id": "asg",
+      "requested_url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-checks-overview.html",
+      "resolved_url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-checks-overview.html",
+      "status": 200,
+      "page_title": "About the health checks for your Auto Scaling group - Amazon EC2 Auto Scaling",
+      "reviewed_capability": "EC2 Auto Scaling health checks"
+    },
+    {
+      "id": "scaling",
+      "requested_url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html",
+      "resolved_url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html",
+      "status": 200,
+      "page_title": "Dynamic scaling for Amazon EC2 Auto Scaling - Amazon EC2 Auto Scaling",
+      "reviewed_capability": "EC2 Auto Scaling dynamic scaling"
+    },
+    {
+      "id": "s3classes",
+      "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+      "status": 200,
+      "page_title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service",
+      "reviewed_capability": "S3 storage classes"
+    },
+    {
+      "id": "s3version",
+      "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html",
+      "status": 200,
+      "page_title": "Retaining multiple versions of objects with S3 Versioning - Amazon Simple Storage Service",
+      "reviewed_capability": "S3 Versioning"
+    },
+    {
+      "id": "s3lock",
+      "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
+      "status": 200,
+      "page_title": "Locking objects with Object Lock - Amazon Simple Storage Service",
+      "reviewed_capability": "S3 Object Lock"
+    },
+    {
+      "id": "s3public",
+      "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html",
+      "status": 200,
+      "page_title": "Blocking public access to your Amazon S3 storage - Amazon Simple Storage Service",
+      "reviewed_capability": "S3 Block Public Access"
+    },
+    {
+      "id": "s3life",
+      "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html",
+      "status": 200,
+      "page_title": "Managing the lifecycle of objects - Amazon Simple Storage Service",
+      "reviewed_capability": "S3 Lifecycle"
+    },
+    {
+      "id": "s3rep",
+      "requested_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html",
+      "status": 200,
+      "page_title": "Replicating objects within and across Regions - Amazon Simple Storage Service",
+      "reviewed_capability": "S3 replication"
+    },
+    {
+      "id": "sg",
+      "requested_url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html",
+      "status": 200,
+      "page_title": "Control traffic to your AWS resources using security groups - Amazon Virtual Private Cloud",
+      "reviewed_capability": "VPC security groups"
+    },
+    {
+      "id": "nacl",
+      "requested_url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html",
+      "status": 200,
+      "page_title": "Control subnet traffic with network access control lists - Amazon Virtual Private Cloud",
+      "reviewed_capability": "Network ACLs"
+    },
+    {
+      "id": "nat",
+      "requested_url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html",
+      "status": 200,
+      "page_title": "NAT gateways - Amazon Virtual Private Cloud",
+      "reviewed_capability": "NAT gateways"
+    },
+    {
+      "id": "igw",
+      "requested_url": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html",
+      "status": 200,
+      "page_title": "Enable internet access for a VPC using an internet gateway - Amazon Virtual Private Cloud",
+      "reviewed_capability": "Internet gateways"
+    },
+    {
+      "id": "endpoint",
+      "requested_url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html",
+      "status": 200,
+      "page_title": "Gateway endpoints - Amazon Virtual Private Cloud",
+      "reviewed_capability": "Gateway VPC endpoints"
+    },
+    {
+      "id": "rdsaz",
+      "requested_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html",
+      "status": 200,
+      "page_title": "Configuring and managing a Multi-AZ deployment for Amazon RDS - Amazon Relational Database Service",
+      "reviewed_capability": "RDS Multi-AZ deployment types"
+    },
+    {
+      "id": "replica",
+      "requested_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
+      "status": 200,
+      "page_title": "Working with DB instance read replicas - Amazon Relational Database Service",
+      "reviewed_capability": "RDS read replicas"
+    },
+    {
+      "id": "dynamodb",
+      "requested_url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html",
+      "resolved_url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html",
+      "status": 200,
+      "page_title": "DynamoDB read consistency - Amazon DynamoDB",
+      "reviewed_capability": "DynamoDB read consistency"
+    },
+    {
+      "id": "ddbcapacity",
+      "requested_url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html",
+      "resolved_url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/capacity-mode.html",
+      "status": 200,
+      "page_title": "DynamoDB throughput capacity - Amazon DynamoDB",
+      "reviewed_capability": "DynamoDB capacity modes"
+    },
+    {
+      "id": "ddbkeys",
+      "requested_url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html",
+      "resolved_url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html",
+      "status": 200,
+      "page_title": "Best practices for designing and using partition keys effectively in DynamoDB - Amazon DynamoDB",
+      "reviewed_capability": "DynamoDB partition key design"
+    },
+    {
+      "id": "dns",
+      "requested_url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html",
+      "resolved_url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html",
+      "status": 200,
+      "page_title": "Choosing a routing policy - Amazon Route 53",
+      "reviewed_capability": "Route 53 routing policies"
+    },
+    {
+      "id": "oac",
+      "requested_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html",
+      "status": 200,
+      "page_title": "Restrict access to an Amazon S3 origin - Amazon CloudFront",
+      "reviewed_capability": "CloudFront origin access control"
+    },
+    {
+      "id": "ga",
+      "requested_url": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html",
+      "resolved_url": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html",
+      "status": 200,
+      "page_title": "What is AWS Global Accelerator? - AWS Global Accelerator",
+      "reviewed_capability": "AWS Global Accelerator"
+    },
+    {
+      "id": "waf",
+      "requested_url": "https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html",
+      "resolved_url": "https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html",
+      "status": 200,
+      "page_title": "What are AWS WAF, AWS Shield Advanced, AWS Shield network security director and AWS Firewall Manager? - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director",
+      "reviewed_capability": "AWS WAF"
+    },
+    {
+      "id": "sqs",
+      "requested_url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html",
+      "resolved_url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html",
+      "status": 200,
+      "page_title": "Amazon SQS at-least-once delivery - Amazon Simple Queue Service",
+      "reviewed_capability": "SQS at-least-once delivery"
+    },
+    {
+      "id": "fifo",
+      "requested_url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html",
+      "resolved_url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html",
+      "status": 200,
+      "page_title": "FIFO queue delivery logic in Amazon SQS - Amazon Simple Queue Service",
+      "reviewed_capability": "SQS FIFO delivery logic"
+    },
+    {
+      "id": "dedup",
+      "requested_url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html",
+      "resolved_url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html",
+      "status": 200,
+      "page_title": "Exactly-once processing in Amazon SQS - Amazon Simple Queue Service",
+      "reviewed_capability": "SQS FIFO deduplication"
+    },
+    {
+      "id": "sns",
+      "requested_url": "https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html",
+      "resolved_url": "https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html",
+      "status": 200,
+      "page_title": "Fanout Amazon SNS notifications to Amazon SQS queues for asynchronous processing - Amazon Simple Notification Service",
+      "reviewed_capability": "SNS to SQS fan-out"
+    },
+    {
+      "id": "events",
+      "requested_url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html",
+      "resolved_url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html",
+      "status": 200,
+      "page_title": "Amazon EventBridge event bus (default and Classic) - Amazon EventBridge",
+      "reviewed_capability": "EventBridge event buses"
+    },
+    {
+      "id": "sfn",
+      "requested_url": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html",
+      "resolved_url": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html",
+      "status": 200,
+      "page_title": "What is Step Functions? - AWS Step Functions",
+      "reviewed_capability": "AWS Step Functions"
+    },
+    {
+      "id": "fargate",
+      "requested_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html",
+      "status": 200,
+      "page_title": "Architect for AWS Fargate for Amazon ECS - Amazon Elastic Container Service",
+      "reviewed_capability": "Fargate for ECS"
+    },
+    {
+      "id": "taskrole",
+      "requested_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html",
+      "status": 200,
+      "page_title": "Amazon ECS task IAM role - Amazon Elastic Container Service",
+      "reviewed_capability": "ECS task IAM roles"
+    },
+    {
+      "id": "executionrole",
+      "requested_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html",
+      "status": 200,
+      "page_title": "Amazon ECS task execution IAM role - Amazon Elastic Container Service",
+      "reviewed_capability": "ECS task execution role"
+    },
+    {
+      "id": "ecsautoscale",
+      "requested_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html",
+      "status": 200,
+      "page_title": "Automatically scale your Amazon ECS service - Amazon Elastic Container Service",
+      "reviewed_capability": "ECS service auto scaling"
+    },
+    {
+      "id": "eks",
+      "requested_url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html",
+      "resolved_url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html",
+      "status": 200,
+      "page_title": "What is Amazon EKS? - Amazon EKS",
+      "reviewed_capability": "Amazon EKS"
+    },
+    {
+      "id": "lambda",
+      "requested_url": "https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html",
+      "resolved_url": "https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html",
+      "status": 200,
+      "page_title": "Best practices for working with AWS Lambda Event Functions - AWS Lambda",
+      "reviewed_capability": "Lambda best practices"
+    },
+    {
+      "id": "concurrency",
+      "requested_url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html",
+      "resolved_url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html",
+      "status": 200,
+      "page_title": "Configuring reserved concurrency for an Event Function - AWS Lambda",
+      "reviewed_capability": "Lambda concurrency controls"
+    },
+    {
+      "id": "lambdasqs",
+      "requested_url": "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html",
+      "resolved_url": "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html",
+      "status": 200,
+      "page_title": "Using Lambda with Amazon SQS - AWS Lambda",
+      "reviewed_capability": "Lambda with SQS"
+    },
+    {
+      "id": "api",
+      "requested_url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html",
+      "resolved_url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html",
+      "status": 200,
+      "page_title": "What is Amazon API Gateway? - Amazon API Gateway",
+      "reviewed_capability": "API Gateway"
+    },
+    {
+      "id": "apikeys",
+      "requested_url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html",
+      "resolved_url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html",
+      "status": 200,
+      "page_title": "Usage plans and API keys for REST APIs in API Gateway - Amazon API Gateway",
+      "reviewed_capability": "API Gateway usage plans and API keys"
+    },
+    {
+      "id": "athena",
+      "requested_url": "https://docs.aws.amazon.com/athena/latest/ug/performance-tuning-data-optimization-techniques.html",
+      "resolved_url": "https://docs.aws.amazon.com/athena/latest/ug/performance-tuning-data-optimization-techniques.html",
+      "status": 200,
+      "page_title": "Optimize data - Amazon Athena",
+      "reviewed_capability": "Athena data optimization"
+    },
+    {
+      "id": "glue",
+      "requested_url": "https://docs.aws.amazon.com/glue/latest/dg/components-overview.html",
+      "resolved_url": "https://docs.aws.amazon.com/glue/latest/dg/components-overview.html",
+      "status": 200,
+      "page_title": "AWS Glue components - AWS Glue",
+      "reviewed_capability": "AWS Glue components"
+    },
+    {
+      "id": "firehose",
+      "requested_url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html",
+      "resolved_url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html",
+      "status": 200,
+      "page_title": "What is Amazon Data Firehose? - Amazon Data Firehose",
+      "reviewed_capability": "Amazon Data Firehose"
+    },
+    {
+      "id": "kinesis",
+      "requested_url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html",
+      "resolved_url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html",
+      "status": 200,
+      "page_title": "What is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams",
+      "reviewed_capability": "Kinesis Data Streams"
+    },
+    {
+      "id": "sagemaker",
+      "requested_url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+      "resolved_url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+      "status": 200,
+      "page_title": "What is Amazon SageMaker AI? - Amazon SageMaker AI",
+      "reviewed_capability": "Amazon SageMaker AI"
+    },
+    {
+      "id": "comprehend",
+      "requested_url": "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html",
+      "resolved_url": "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html",
+      "status": 200,
+      "page_title": "What is Amazon Comprehend? - Amazon Comprehend",
+      "reviewed_capability": "Amazon Comprehend"
+    },
+    {
+      "id": "textract",
+      "requested_url": "https://docs.aws.amazon.com/textract/latest/dg/what-is.html",
+      "resolved_url": "https://docs.aws.amazon.com/textract/latest/dg/what-is.html",
+      "status": 200,
+      "page_title": "What is Amazon Textract? - Amazon Textract",
+      "reviewed_capability": "Amazon Textract"
+    },
+    {
+      "id": "bedrock",
+      "requested_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+      "resolved_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+      "status": 200,
+      "page_title": "Overview - Amazon Bedrock",
+      "reviewed_capability": "Amazon Bedrock"
+    },
+    {
+      "id": "cw",
+      "requested_url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html",
+      "status": 200,
+      "page_title": "What is Amazon CloudWatch? - Amazon CloudWatch",
+      "reviewed_capability": "Amazon CloudWatch"
+    },
+    {
+      "id": "trail",
+      "requested_url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html",
+      "resolved_url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html",
+      "status": 200,
+      "page_title": "Logging data events - AWS CloudTrail",
+      "reviewed_capability": "CloudTrail data events"
+    },
+    {
+      "id": "config",
+      "requested_url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html",
+      "resolved_url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html",
+      "status": 200,
+      "page_title": "What Is AWS Config? - AWS Config",
+      "reviewed_capability": "AWS Config"
+    },
+    {
+      "id": "xray",
+      "requested_url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html",
+      "resolved_url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html",
+      "status": 200,
+      "page_title": "AWS X-Ray daemon - AWS X-Ray",
+      "reviewed_capability": "X-Ray SDK and daemon maintenance"
+    },
+    {
+      "id": "dms",
+      "requested_url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+      "resolved_url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+      "status": 200,
+      "page_title": "What is AWS Database Migration Service? - AWS Database Migration Service",
+      "reviewed_capability": "AWS DMS"
+    },
+    {
+      "id": "mgn",
+      "requested_url": "https://docs.aws.amazon.com/mgn/latest/ug/what-is-mgn.html",
+      "resolved_url": "https://docs.aws.amazon.com/mgn/latest/ug/what-is-mgn.html",
+      "status": 200,
+      "page_title": "What Is AWS Transform MGN? - AWS Transform MGN",
+      "reviewed_capability": "AWS Transform MGN"
+    },
+    {
+      "id": "datasync",
+      "requested_url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html",
+      "resolved_url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html",
+      "status": 200,
+      "page_title": "What is AWS DataSync? - AWS DataSync",
+      "reviewed_capability": "AWS DataSync"
+    },
+    {
+      "id": "transfer",
+      "requested_url": "https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html",
+      "resolved_url": "https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html",
+      "status": 200,
+      "page_title": "What is AWS Transfer Family? - AWS Transfer Family",
+      "reviewed_capability": "AWS Transfer Family"
+    },
+    {
+      "id": "snow",
+      "requested_url": "https://aws.amazon.com/snowball/",
+      "resolved_url": "https://aws.amazon.com/snowball/",
+      "status": 200,
+      "page_title": "AWS Snowball | Secure Edge Computing and Offline Data Transfer | Amazon Web Services",
+      "reviewed_capability": "AWS Snowball availability notice"
+    },
+    {
+      "id": "snowhistory",
+      "requested_url": "https://docs.aws.amazon.com/snowball/latest/developer-guide/doc-history.html",
+      "resolved_url": "https://docs.aws.amazon.com/snowball/latest/developer-guide/doc-history.html",
+      "status": 200,
+      "page_title": "Document history - AWS Snowball Edge Developer Guide",
+      "reviewed_capability": "Snowball availability history"
+    },
+    {
+      "id": "dr",
+      "requested_url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html",
+      "resolved_url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html",
+      "status": 200,
+      "page_title": "Disaster recovery options in the cloud - Disaster Recovery of Workloads on AWS: Recovery in the Cloud",
+      "reviewed_capability": "Disaster recovery strategies"
+    },
+    {
+      "id": "rto",
+      "requested_url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html",
+      "resolved_url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html",
+      "status": 200,
+      "page_title": "REL13-BP01 Define recovery objectives for downtime and data loss - AWS Well-Architected Framework",
+      "reviewed_capability": "Recovery objectives"
+    },
+    {
+      "id": "budgets",
+      "requested_url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+      "resolved_url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+      "status": 200,
+      "page_title": "Managing your costs with AWS Budgets - AWS Cost Management",
+      "reviewed_capability": "AWS Budgets"
+    },
+    {
+      "id": "cost",
+      "requested_url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html",
+      "resolved_url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html",
+      "status": 200,
+      "page_title": "Analyzing your costs and usage with AWS Cost Explorer - AWS Cost Management",
+      "reviewed_capability": "AWS Cost Explorer"
+    },
+    {
+      "id": "dx",
+      "requested_url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html",
+      "resolved_url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html",
+      "status": 200,
+      "page_title": "Encryption in AWS Direct Connect - AWS Direct Connect",
+      "reviewed_capability": "Direct Connect encryption"
+    },
+    {
+      "id": "vpn",
+      "requested_url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html",
+      "status": 200,
+      "page_title": "What is AWS Site-to-Site VPN? - AWS Site-to-Site VPN",
+      "reviewed_capability": "AWS Site-to-Site VPN"
+    },
+    {
+      "id": "peering",
+      "requested_url": "https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html",
+      "status": 200,
+      "page_title": "How VPC peering connections work - Amazon Virtual Private Cloud",
+      "reviewed_capability": "VPC peering limitations"
+    },
+    {
+      "id": "tgw",
+      "requested_url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html",
+      "status": 200,
+      "page_title": "What is AWS Transit Gateway for Amazon VPC? - Amazon VPC",
+      "reviewed_capability": "AWS Transit Gateway"
+    },
+    {
+      "id": "privatelink",
+      "requested_url": "https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html",
+      "status": 200,
+      "page_title": "What is AWS PrivateLink? - Amazon Virtual Private Cloud",
+      "reviewed_capability": "AWS PrivateLink"
+    },
+    {
+      "id": "kms",
+      "requested_url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html",
+      "resolved_url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html",
+      "status": 200,
+      "page_title": "AWS KMS keys - AWS Key Management Service",
+      "reviewed_capability": "AWS KMS key concepts"
+    },
+    {
+      "id": "rotation",
+      "requested_url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html",
+      "resolved_url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html",
+      "status": 200,
+      "page_title": "Rotate AWS KMS keys - AWS Key Management Service",
+      "reviewed_capability": "KMS key rotation"
+    },
+    {
+      "id": "secrets",
+      "requested_url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html",
+      "resolved_url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html",
+      "status": 200,
+      "page_title": "Rotate AWS Secrets Manager secrets - AWS Secrets Manager",
+      "reviewed_capability": "Secrets Manager rotation"
+    },
+    {
+      "id": "parameters",
+      "requested_url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html",
+      "resolved_url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html",
+      "status": 200,
+      "page_title": "AWS Systems Manager Parameter Store - AWS Systems Manager",
+      "reviewed_capability": "Systems Manager Parameter Store"
+    },
+    {
+      "id": "pillars",
+      "requested_url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+      "resolved_url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+      "status": 200,
+      "page_title": "The pillars of the framework - AWS Well-Architected Framework",
+      "reviewed_capability": "Well-Architected pillars"
+    },
+    {
+      "id": "watool",
+      "requested_url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/tutorial.html",
+      "resolved_url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/tutorial.html",
+      "status": 200,
+      "page_title": "Tutorial: Document an AWS Well-Architected Tool workload - AWS Well-Architected",
+      "reviewed_capability": "AWS Well-Architected Tool workload review"
+    },
+    {
+      "id": "pricing",
+      "requested_url": "https://calculator.aws/",
+      "resolved_url": "https://calculator.aws/",
+      "status": 200,
+      "page_title": "AWS Pricing Calculator",
+      "reviewed_capability": "AWS Pricing Calculator"
+    },
+    {
+      "id": "free",
+      "requested_url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier.html",
+      "resolved_url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier.html",
+      "status": 200,
+      "page_title": "Explore AWS services with AWS Free Tier - AWS Billing",
+      "reviewed_capability": "AWS Free Tier account eligibility"
+    },
+    {
+      "id": "securityreport",
+      "requested_url": "https://aws.amazon.com/security/vulnerability-reporting/",
+      "resolved_url": "https://aws.amazon.com/security/vulnerability-reporting/",
+      "status": 200,
+      "page_title": "Vulnerability Reporting - Amazon Web Services (AWS)",
+      "reviewed_capability": "AWS vulnerability reporting"
+    },
+    {
+      "id": "apprunner",
+      "requested_url": "https://docs.aws.amazon.com/apprunner/latest/dg/apprunner-availability-change.html",
+      "resolved_url": "https://docs.aws.amazon.com/apprunner/latest/dg/apprunner-availability-change.html",
+      "status": 200,
+      "page_title": "AWS App Runner availability change - AWS App Runner",
+      "reviewed_capability": "App Runner availability change"
+    }
+  ]
+}

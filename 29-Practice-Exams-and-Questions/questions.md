@@ -1,127 +1,159 @@
 # Review Questions
 
+Choose one answer for each question. These original practice items are not AWS exam questions.
+
 ## Question 1
 
-A web application must remain available if an Availability Zone fails. Traffic must be distributed automatically among healthy instances. Which approach best meets these requirements?
+<!-- question-id: 29-Q01 -->
 
-A) A single EC2 instance with daily snapshot.
+A relational database needs managed AZ failover. The chosen deployment is an RDS Multi-AZ DB instance deployment; extra read capacity is not required. Which feature is the direct fit?
 
-B) Auto Scaling Group in multiple AZs behind an Application Load Balancer.
+A) Only an ordinary asynchronous read replica, assumed to be the same feature.
 
-C) A larger EC2 instance on a public subnet.
+B) The synchronous standby and managed failover of that Multi-AZ DB instance deployment.
 
-D) Manual backup of the AMI before each deployment.
+C) A cache that does not retain the authoritative database.
+
+D) A manually installed database on one EC2 instance with no failover automation.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-A multi-AZ Auto Scaling group behind an ALB distributes traffic to healthy targets and maintains capacity even if an Availability Zone fails.
+**Explanation:** This specifies the deployment type and availability objective. A Multi-AZ DB instance standby supports managed failover; an asynchronous read replica primarily provides another read or recovery copy with different semantics.
 
-**Why option A is wrong:**
-Snapshot helps recovery, but does not deliver high availability during failure.
+**Why the other options are incorrect:**
+
+- **A:** An ordinary read replica does not provide the identical synchronous standby failover feature.
+- **C:** A cache is not a substitute for protecting the authoritative database.
+- **D:** A single self-managed instance lacks the requested managed AZ failover.
+
+**AWS references:** [RDS Multi-AZ deployment types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html), [RDS read replicas](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html).
 
 </details>
 
 ## Question 2
 
-A company wants to reduce the cost of accessing S3 from private workloads in a VPC, without exposing traffic to the internet. Which choice is best?
+<!-- question-id: 29-Q02 -->
 
-A) NAT Gateway for all access to S3.
+A stateless web application must remain available when one AZ fails. Which design directly addresses that failure scope?
 
-B) Internet Gateway associated with the private subnet.
+A) One larger EC2 instance with a daily AMI.
 
-C) VPC Gateway Endpoint for S3.
+B) Two application instances confined to the same AZ.
 
-D) Elastic IP on each private instance.
+C) An ALB with application instances across multiple AZs, working health checks, externalized state, and sufficient surviving capacity.
+
+D) An Elastic IP associated with the only web instance.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** C
 
-**Explanation:**
-Gateway Endpoint for S3 maintains traffic on the AWS network and reduces dependence on NAT Gateway for this access.
+**Explanation:** Multiple AZs and appropriately placed state reduce the single-AZ dependency. Recovery copies and static addressing do not by themselves keep a sole failed instance serving requests.
 
-**Why option A is wrong:**
-Works for egress, but adds cost and is not the most straightforward option for private S3.
+**Why the other options are incorrect:**
+
+- **A:** An AMI supports recovery but does not keep that one instance available during AZ failure.
+- **B:** One AZ remains the common failure domain.
+- **D:** An address does not supply a healthy replacement application server.
+
+**AWS references:** [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Question 3
 
-A relational database needs automatic failover with minimal disruption. Read scaling is not the primary goal. Which feature best meets this requirement?
+<!-- question-id: 29-Q03 -->
 
-A) RDS Multi-AZ.
+A VPC workload needs same-Region S3 access without NAT or public internet routing. Which choice supplies a route-table-based private path?
 
-B) Read Replica in another region.
+A) A NAT gateway used for all S3 traffic.
 
-C) Export to S3 every hour.
+B) An internet gateway described as an attachment to a private subnet.
 
-D) EC2 with a manually installed database.
+C) An S3 gateway endpoint with the required routes and appropriate endpoint, bucket, and IAM policies.
+
+D) An Elastic IP assigned to the S3 bucket.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** A
+✅ **Correct answer:** C
 
-**Explanation:**
-RDS Multi-AZ provides high availability with managed failover for the primary database.
+**Explanation:** A gateway endpoint supports S3 access through VPC route tables without NAT or an internet gateway for that traffic. Authorization remains a separate requirement.
 
-**Why option B is wrong:**
-A read replica supports read workloads and DR, but does not replace Multi-AZ for managed failover with synchronous replication in the same scope.
+**Why the other options are incorrect:**
+
+- **A:** NAT violates the explicit network-path constraint.
+- **B:** Internet gateways attach to VPCs and do not satisfy the private endpoint requirement.
+- **D:** S3 buckets do not receive Elastic IP addresses.
+
+**AWS references:** [Gateway VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html).
 
 </details>
 
 ## Question 4
 
-An API receives unpredictable spikes and needs to decouple producers and consumers, accepting asynchronous processing. Which service best reduces operational risk?
+<!-- question-id: 29-Q04 -->
 
-A) Amazon SQS.
+An API accepts jobs durably and workers can process them asynchronously. It needs to absorb traffic bursts without requiring every worker to be available at acceptance time. Which service fits?
 
-B) Amazon EFS.
+A) Amazon SQS with suitable producer error handling and retry-safe consumers.
 
-C) AWS WAF.
+B) Amazon EFS used as if it were a managed queue.
 
-D) AWS Direct Connect.
+C) AWS WAF used as durable job storage.
+
+D) AWS Direct Connect used as message retention.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** A
 
-**Explanation:**
-SQS absorbs spikes, decouples components and allows asynchronous processing by consumers at different rates.
+**Explanation:** SQS decouples job acceptance from consumer processing. Applications still handle send failures, retention, retries, duplicate processing, and backlog growth.
 
-**Why option B is wrong:**
-EFS is shared file storage, not a decoupling queue.
+**Why the other options are incorrect:**
+
+- **B:** Shared file storage does not provide the managed queue semantics requested.
+- **C:** Web request filtering is not durable job buffering.
+- **D:** A network circuit does not retain jobs.
+
+**AWS references:** [SQS at-least-once delivery](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html), [SNS to SQS fan-out](https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html).
 
 </details>
 
 ## Question 5
 
-During final review, a learner answers IAM questions incorrectly by choosing overly broad permissions. Which practice best addresses this pattern?
+<!-- question-id: 29-Q05 -->
 
-A) Use managed policies with full permissions to avoid access restrictions.
+A learner selects a policy allowing every S3 action on every bucket when the scenario requires reading only one object prefix. Which correction addresses the actual authorization requirement?
 
-B) Review least privilege, scope of resources, and conditions in policies.
+A) Allow the required object-read action only on the specified object-prefix resources, accounting for any separately required bucket actions.
 
-C) Ignore IAM and focus only on networks.
+B) Keep administrator permissions because all managed policies are inherently least privilege.
 
-D) Memorize service names without analyzing allowed actions.
+C) Replace the role with a shared root key.
+
+D) Modify only network ACL rules while leaving excessive IAM authorization unchanged.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** A
 
-**Explanation:**
-SAA-C03 security questions often test least privilege, correct resource scoping, and explicit access control.
+**Explanation:** Least privilege matches allowed actions and resource scope to the requirement. Bucket-level operations, if genuinely needed, use appropriate bucket resource scopes rather than indiscriminately broad object permissions.
 
-**Why option A is wrong:**
-Broad permissions increase risk and usually conflict with the exam's security requirements.
+**Why the other options are incorrect:**
+
+- **B:** Managed policy status does not make broad permissions least privilege for a narrow scenario.
+- **C:** Root credentials broaden risk and do not solve resource scoping.
+- **D:** Network filters do not remove excessive IAM permissions.
+
+**AWS references:** [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html), [IAM policy evaluation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html).
 
 </details>
 
@@ -129,7 +161,7 @@ Broad permissions increase risk and usually conflict with the exam's security re
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

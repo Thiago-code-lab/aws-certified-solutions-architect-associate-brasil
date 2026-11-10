@@ -1,34 +1,58 @@
 # Use Cases
 
-## Scenario 1: A Brief Traffic Spike
+## Scenario 1: Athena data layout
 
-**Recommended pattern:** a managed layer with automatic scaling and decoupling.
-**Reason:** absorbs demand fluctuations without extensive manual intervention.
-**Exam cue:** phrases such as “unpredictable spike,” “maintain latency,” and “low operational effort.”
+**Requirement:** Athena queries frequently filter an S3 dataset by date and read only a few columns. Which change can reduce scanned data for on-demand queries?
 
-## Scenario 2: Audit and compliance requirement
+**Recommended design:** Use a suitable date partition layout, columnar Parquet or ORC, compression, and queries that filter the partition keys.
 
-**Recommended pattern:** granular identity controls, an audit trail, and end-to-end encryption.
-**Reason:** ensures traceability and protects sensitive data.
-**Exam cue:** “compliance,” “access logs,” and “sensitive data.”
+**Reason and boundary:** Partition pruning and columnar formats can reduce data read. Partition granularity and file sizes must match the workload; excessive small files can hurt performance.
 
-## Scenario 3: Lower Costs with the Same User Experience
+**Rejected alternative:** Put every record in many tiny unpartitioned CSV objects. Many tiny files add overhead and omit the requested pruning design.
 
-**Recommended pattern:** adjust the resource class and capacity to actual usage.
-**Reason:** avoids overprovisioning and reduces recurring expenses.
-**Exam cue:** “cost optimization,” “known usage pattern,” and “without degrading UX.”
+**AWS references:** [Athena data optimization](https://docs.aws.amazon.com/athena/latest/ug/performance-tuning-data-optimization-techniques.html).
 
-## Scenario 4: Incremental architecture evolution
+## Scenario 2: Catalog metadata versus ETL
 
-**Recommended pattern:** start simple, with managed components and clear extension points.
-**Reason:** speeds up delivery and reduces the risk of premature complexity.
-**Exam cue:** “rapid delivery,” “gradual growth,” and “small team.”
+**Requirement:** A team needs a shared metadata catalog for tables stored in S3 and a separate transformation job. Which distinction is accurate?
+
+**Recommended design:** The Glue Data Catalog stores metadata; a Glue ETL job performs the configured transformation.
+
+**Reason and boundary:** Catalog tables describe data and schemas. Crawlers can discover metadata; ETL jobs execute transformation logic. Metadata registration is not proof of transformed output.
+
+**Rejected alternative:** Creating a catalog table automatically rewrites all source data into Parquet. Registering metadata does not itself rewrite the data files.
+
+**AWS references:** [AWS Glue components](https://docs.aws.amazon.com/glue/latest/dg/components-overview.html), [Athena data optimization](https://docs.aws.amazon.com/athena/latest/ug/performance-tuning-data-optimization-techniques.html).
+
+## Scenario 3: Managed streaming delivery
+
+**Requirement:** An application needs managed delivery of streaming records into S3 and can tolerate buffering before delivery. Which service directly matches?
+
+**Recommended design:** Amazon Data Firehose.
+
+**Reason and boundary:** Data Firehose buffers and delivers streaming records to supported destinations. Buffering and delivery behavior must be included in end-to-end latency planning.
+
+**Rejected alternative:** A Route 53 weighted record. DNS routing does not ingest and deliver streaming records.
+
+**AWS references:** [Amazon Data Firehose](https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html).
+
+## Scenario 4: Stream consumers and replay
+
+**Requirement:** Several applications need to read a stream independently and reprocess retained records using their own consumer positions. Which service is designed for this model?
+
+**Recommended design:** Kinesis Data Streams with suitable retention and consumer throughput configuration.
+
+**Reason and boundary:** Kinesis Data Streams supports independent consumers reading retained records. Shard or capacity configuration, retention, partitioning, and consumer limits must fit the workload.
+
+**Rejected alternative:** One SQS queue with all applications competing for the same messages, assuming independent replay positions. A shared competing-consumer queue does not provide an independent stream replay cursor to every application.
+
+**AWS references:** [Kinesis Data Streams](https://docs.aws.amazon.com/streams/latest/dev/introduction.html), [SQS at-least-once delivery](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

@@ -6,8 +6,13 @@
   "answer_keys": 145,
   "answer_options": 580,
   "answer_blocks": 343,
-  "local_references": 260,
-  "anchors": 30,
+  "local_references": 390,
+  "anchors": 151,
+  "editorial_baseline": "b8d55e0f10de899c68e84b0388b6393a21104734",
+  "reviewed_original_files": 198,
+  "intentional_editorial_file_changes": 184,
+  "practice_questions": 145,
+  "explained_distractors": 435,
   "portal_modules": 31,
   "errors": []
 }

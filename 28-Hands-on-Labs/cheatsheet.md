@@ -2,35 +2,39 @@
 
 ## Decision Table
 
-| Scenario cue | When to use | When to avoid | Exam pitfall |
-|---|---|---|---|
-| Low manual effort | A managed service with built-in automation | An unnecessary self-managed solution | Confusing full control with lower total cost |
-| Unpredictable spikes | Horizontal scaling and decoupling | Fixed capacity and manual adjustments | Sizing for average demand and failing during spikes |
-| Strong security requirement | Least privilege + encryption + auditing | Broad permission for convenience | Assuming encryption alone addresses governance |
-| Cost as an explicit constraint | Select based on usage and access patterns | One storage class for all data | Reducing costs without checking functional impact |
+| Requirement or distinction | Appropriate choice | Limitation to remember |
+|---|---|---|
+| Lab cost planning | Estimate the specific regional resources and usage, check the account applicable credits or Free Tier eligibility, set cost notifications, and plan cleanup. | Short runtime does not imply zero cost. Pricing, plan eligibility, retained resources, and delayed cost reporting must all be considered before deployment. |
+| Bounded failure testing | Use isolated lab resources with non-sensitive test data, define the expected failure and rollback, and verify recovery without touching production. | A bounded recovery experiment needs an explicit hypothesis, recoverable data, observability, and a safe environment. The test result should be compared with its recovery objective. |
+| Recover versioned lab objects | Retrieve the earlier version and, if needed, copy it to become the current version of the key. | Versioning retains earlier object versions, which can be retrieved or used to restore desired contents. Recovery still depends on retaining the needed version and permissions. |
+| Authorize only lab access | Use a dedicated workload role scoped to the required actions and object resources. | A scoped role limits the blast radius and avoids distributing long-lived credentials. Test data and resource boundaries should be separated from production. |
+| Versioned bucket cleanup | Review noncurrent versions and delete markers, along with other retained lab resources, and remove only approved test data. | A simple delete in a versioned bucket can add a delete marker while earlier versions remain. Cleanup must account for versions and any retention restrictions without deleting unrelated data. |
 
 ## Service Selection Cues
 
-- **VPC**: prioritize when the scenario requires native integration and lower operational overhead.
-- **EC2**: use when controlled elasticity and predictable behavior during spikes are required.
+A service name is not an architectural requirement. Verify the deployment type, consistency or retry model, failure scope, quotas, permissions, and cost dimensions that apply to the proposed configuration.
 
 ## When to Use This Module During Review
 
-- Before architecture practice exams that focus on trade-offs.
-- When you repeatedly struggle to choose between two similar options.
-- During final review, to improve how you eliminate answer options.
+Use this table before practice questions and after a wrong answer. Explain why the rejected alternatives fail the stated constraints; do not memorize a letter or assume the longest option is correct.
 
 ## Recurring Pitfalls
 
-- Trying to meet an availability requirement with a performance feature.
-- Replacing a simple design with an oversized architecture.
-- Omitting observability from the final architecture.
+- **Lab cost planning:** Many resources incur charges during short sessions.
+- **Bounded failure testing:** An uncontrolled production interruption is not an isolated learning experiment.
+- **Recover versioned lab objects:** The premise says an earlier retained version exists.
+- **Authorize only lab access:** Root credentials are not appropriate reusable lab credentials.
+- **Versioned bucket cleanup:** Delete markers hide an object as current but do not erase all prior versions.
+
+## AWS References
+
+[AWS Pricing Calculator](https://calculator.aws/), [AWS Free Tier account eligibility](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier.html), [AWS Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html), [S3 Versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html), [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html), [S3 Lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

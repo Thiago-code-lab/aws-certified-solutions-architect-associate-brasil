@@ -1,5 +1,7 @@
 # Study Paths by Domain
 
+Official scored-content weights: **Security 30% · Resilience 26% · Performance 24% · Cost Optimization 20%**. See the [AWS SAA-C03 guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html). These are domain weights, not a fixed per-service question distribution.
+
 ## Foundational Study Path
 
 - Introduction, security, compute, storage, networking, and databases.
@@ -29,7 +31,7 @@
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

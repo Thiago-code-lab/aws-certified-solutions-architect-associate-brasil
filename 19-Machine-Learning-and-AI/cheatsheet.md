@@ -2,35 +2,39 @@
 
 ## Decision Table
 
-| Scenario cue | When to use | When to avoid | Exam pitfall |
-|---|---|---|---|
-| Low manual effort | A managed service with built-in automation | An unnecessary self-managed solution | Confusing full control with lower total cost |
-| Unpredictable spikes | Horizontal scaling and decoupling | Fixed capacity and manual adjustments | Sizing for average demand and failing during spikes |
-| Strong security requirement | Least privilege + encryption + auditing | Broad permission for convenience | Assuming encryption alone addresses governance |
-| Cost as an explicit constraint | Select based on usage and access patterns | One storage class for all data | Reducing costs without checking functional impact |
+| Requirement or distinction | Appropriate choice | Limitation to remember |
+|---|---|---|
+| Managed custom ML | Amazon SageMaker AI. | SageMaker AI provides managed training and deployment capabilities. The team still owns dataset quality, model evaluation, permissions, and the suitability of the model for its use case. |
+| Pretrained text analysis | Amazon Comprehend. | Comprehend offers pretrained natural-language analysis, including entities and sentiment. Supported languages, input types, and feature constraints must be checked for the specific operation. |
+| Document extraction | Amazon Textract. | Textract supports document text, form, and table extraction. Validate extraction quality and route uncertain business-critical results for appropriate review. |
+| Generative AI context without scope claims | Amazon Bedrock. | Bedrock provides managed foundation-model access. This is optional architecture context: the current SAA-C03 service list is non-exhaustive, and the repository must not claim a guaranteed exam question or weight for this topic. |
+| Managed inference still needs evaluation | Evaluate output quality on representative data, protect inputs and outputs, and implement suitable handling for errors or unacceptable results. | Managed infrastructure does not establish that a model is appropriate for every business input. Application data handling, permissions, evaluation, and failure behavior remain part of the customer design. |
 
 ## Service Selection Cues
 
-- **Bedrock**: prioritize when the scenario requires native integration and lower operational overhead.
-- **SageMaker**: use when controlled elasticity and predictable behavior during spikes are required.
+A service name is not an architectural requirement. Verify the deployment type, consistency or retry model, failure scope, quotas, permissions, and cost dimensions that apply to the proposed configuration.
 
 ## When to Use This Module During Review
 
-- Before architecture practice exams that focus on trade-offs.
-- When you repeatedly struggle to choose between two similar options.
-- During final review, to improve how you eliminate answer options.
+Use this table before practice questions and after a wrong answer. Explain why the rejected alternatives fail the stated constraints; do not memorize a letter or assume the longest option is correct.
 
 ## Recurring Pitfalls
 
-- Trying to meet an availability requirement with a performance feature.
-- Replacing a simple design with an oversized architecture.
-- Omitting observability from the final architecture.
+- **Managed custom ML:** DNS routing does not train or host a custom model.
+- **Pretrained text analysis:** Text extraction and document layout analysis are not the requested sentiment capability.
+- **Document extraction:** Sentiment analysis is not document form and table extraction.
+- **Generative AI context without scope claims:** Config tracks resource configuration and compliance, not foundation-model inference.
+- **Managed inference still needs evaluation:** Managed hosting is not a guarantee of prediction correctness.
+
+## AWS References
+
+[Amazon SageMaker AI](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html), [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html), [Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/what-is.html), [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html), [SAA-C03 in-scope services](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html), [Shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model/), [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

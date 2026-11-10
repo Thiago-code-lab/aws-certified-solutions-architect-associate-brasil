@@ -2,35 +2,39 @@
 
 ## Decision Table
 
-| Scenario cue | When to use | When to avoid | Exam pitfall |
-|---|---|---|---|
-| Low manual effort | A managed service with built-in automation | An unnecessary self-managed solution | Confusing full control with lower total cost |
-| Unpredictable spikes | Horizontal scaling and decoupling | Fixed capacity and manual adjustments | Sizing for average demand and failing during spikes |
-| Strong security requirement | Least privilege + encryption + auditing | Broad permission for convenience | Assuming encryption alone addresses governance |
-| Cost as an explicit constraint | Select based on usage and access patterns | One storage class for all data | Reducing costs without checking functional impact |
+| Requirement or distinction | Appropriate choice | Limitation to remember |
+|---|---|---|
+| Private S3 network path | An S3 gateway VPC endpoint. | An S3 gateway endpoint provides a route-based private path to supported S3 destinations. Bucket, endpoint, and IAM policies still need to permit the requests. |
+| Security group statefulness | It allows the response traffic through connection tracking, subject to the documented tracking behavior. | Security groups are stateful. Network ACLs and routes remain separate requirements; the security group does not replace either. |
+| Network ACL return traffic | The stateless ACL must also allow the required outbound return traffic, including client ephemeral ports. | Network ACLs evaluate inbound and outbound packets independently. Required return traffic must match an outbound allow rule before a deny rule. |
+| Public subnet versus reachable instance | The route makes the subnet public, but the instance also needs a public IPv4 address or Elastic IP and appropriate network rules for direct internet communication. | Public-subnet routing and public addressing are separate requirements. Security groups and network ACLs must also allow the intended traffic. |
+| Outbound NAT does not grant inbound access | Use an appropriately routed public NAT gateway and keep the instances without public IPv4 addresses. | A public NAT gateway supports outbound-initiated IPv4 internet connectivity for private instances. It does not accept unsolicited inbound connections to them; routing and firewall rules still matter. |
 
 ## Service Selection Cues
 
-- **VPC**: prioritize when the scenario requires native integration and lower operational overhead.
-- **NAT Gateway**: use when controlled elasticity and predictable behavior during spikes are required.
+A service name is not an architectural requirement. Verify the deployment type, consistency or retry model, failure scope, quotas, permissions, and cost dimensions that apply to the proposed configuration.
 
 ## When to Use This Module During Review
 
-- Before architecture practice exams that focus on trade-offs.
-- When you repeatedly struggle to choose between two similar options.
-- During final review, to improve how you eliminate answer options.
+Use this table before practice questions and after a wrong answer. Explain why the rejected alternatives fail the stated constraints; do not memorize a letter or assume the longest option is correct.
 
 ## Recurring Pitfalls
 
-- Trying to meet an availability requirement with a performance feature.
-- Replacing a simple design with an oversized architecture.
-- Omitting observability from the final architecture.
+- **Private S3 network path:** The requirement explicitly excludes a NAT path.
+- **Security group statefulness:** This describes a stateless filtering requirement, not normal tracked security group responses.
+- **Network ACL return traffic:** Network ACLs are stateless, unlike security groups.
+- **Public subnet versus reachable instance:** Route table entries do not assign public addresses.
+- **Outbound NAT does not grant inbound access:** This exposes directly addressable instances and violates the inbound constraint.
+
+## AWS References
+
+[Gateway VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html), [VPC security groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html), [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html), [Internet gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html), [NAT gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

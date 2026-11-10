@@ -2,47 +2,48 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **subnets, routes, and private outbound connectivity in a lab**, with clear behavioral validation and controlled costs for a study environment.
+Trace a private same-Region S3 network path through a gateway endpoint.
 
 ## Services Used
 
-VPC, NAT Gateway, VPC Endpoint.
+VPC route tables, S3 gateway endpoint, IAM, and a private test client.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Gateway endpoints have a different charging model from interface endpoints and NAT gateways. Client compute, storage, requests, and any existing access infrastructure can still cost money.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Use dedicated lab VPC networking and an approved private test client that already has a secure management path. Do not open management ports to the entire internet.
+2. Create a private S3 test bucket in the same Region and grant the client role read access only to a small test object.
+3. Create an S3 gateway endpoint and associate it with the route table used by the test-client subnet.
+4. Review the added S3 prefix-list route and the endpoint policy. Keep bucket and IAM authorization in place.
+5. From the managed test client, retrieve the known object using its existing temporary role credentials.
+6. Inspect the route selection and verify that this S3 request path does not depend on a NAT gateway or internet gateway. Do not change unrelated production routes.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- The endpoint route applies to the test subnet route table.
+- The scoped authorized request succeeds without public bucket access.
+- The learner distinguishes connectivity permission from IAM authorization.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Delete the lab endpoint and remove its lab route associations.
+2. Remove the test bucket object and bucket, client compute, and lab-only access infrastructure as appropriate.
+3. Verify that no interface endpoint or NAT gateway created for access was overlooked.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [Gateway VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html), [Internet gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html), [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

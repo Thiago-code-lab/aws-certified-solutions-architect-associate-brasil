@@ -2,47 +2,49 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **serverless APIs, events, and operations**, with clear behavioral validation and controlled costs for a study environment.
+Review retry-safe Lambda SQS batch handling and concurrency protection.
 
 ## Services Used
 
-Lambda, API Gateway, DynamoDB, CloudWatch.
+Lambda, SQS event source mapping, and a test-only function.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Function requests and duration, queue requests, logs, and provisioned concurrency can incur charges. This lab does not require provisioned concurrency.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Use a dedicated test function and Standard queue in the same Region; give the execution role only the required queue and logging permissions.
+2. Configure the mapping visibility timeout and function timeout using the linked Lambda SQS documentation, and enable reporting of batch item failures.
+3. Use a tested handler with durable idempotency state keyed by business operation identifier. Coordinate completion state with the side effect using a transaction or a downstream idempotency mechanism; recording an identifier alone before the effect can lose work after a crash. Test retries, concurrent duplicates, and failures between state changes locally before connecting the queue.
+4. Prepare a small batch with one intentionally failing synthetic record and otherwise successful records.
+5. Verify the handler returns the failed record identifier in its partial batch response and that successful records are not needlessly retried by the mapping.
+6. Set an appropriate reserved-concurrency ceiling and mapping concurrency limits for the exercise; document how they protect downstream dependencies.
+7. If a complete tested handler or durable idempotency store is not available, perform this as a design review and do not claim a live exactly-once side-effect result.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- The recorded result distinguishes design review from executed integration evidence.
+- Batch-failure reporting and duplicate handling are separate verified behaviors.
+- Reserved concurrency is not called a cold-start preinitialization feature.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Disable/delete the lab event source mapping before removing the function and queue.
+2. Remove the test idempotency data and exclusively lab-created tables or logs.
+3. Check concurrency settings and retained data for any remaining lab resource.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [Lambda with SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html), [Lambda concurrency controls](https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html), [Lambda best practices](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

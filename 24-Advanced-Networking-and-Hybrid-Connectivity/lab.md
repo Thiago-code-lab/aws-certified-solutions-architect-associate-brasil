@@ -2,47 +2,47 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **hybrid connectivity, routing, and advanced segmentation**, with clear behavioral validation and controlled costs for a study environment.
+Review hybrid-network routing, encryption, and redundancy boundaries.
 
 ## Services Used
 
-Transit Gateway, Direct Connect, VPN, PrivateLink.
+Transit Gateway, VPC peering, PrivateLink, Direct Connect, and Site-to-Site VPN documentation.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Design exercise. Real gateways, VPNs, endpoints, circuits, and data transfers can incur charges; do not provision them simply to draw the topology.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Draw three non-overlapping sample VPC networks and an on-premises network.
+2. Draw A-to-B and B-to-C peering and show why it does not create an A-to-C transit route.
+3. Replace the intended hub connectivity with appropriate Transit Gateway attachments and separate route-table domains on the diagram.
+4. Draw a separate PrivateLink consumer-to-service path and label why it is not general network transit.
+5. Annotate each Direct Connect or VPN link with its encryption mechanism and exact coverage; do not label a private circuit encrypted by default.
+6. Remove one drawn path or tunnel at a time and explain the remaining routes and any single points of failure.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- Return routing, traffic filters, and service authorization are considered separately.
+- Peering is not assumed transitive.
+- Encryption coverage and redundancy are explicit rather than implied by a service name.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Keep the topology and failure observations.
+2. No live circuit or gateway is required; remove any separately approved disposable network resources under their own dependency-aware plan.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [VPC peering limitations](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html), [AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html), [AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html), [Direct Connect encryption](https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html), [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

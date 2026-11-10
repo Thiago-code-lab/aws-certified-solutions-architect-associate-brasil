@@ -67,6 +67,17 @@ def check_yaml() -> dict[str, int]:
     return {'yaml_configurations': len(configurations), 'issue_template_front_matter': len(templates)}
 
 
+def check_lab_shell(bash: str, workspace: Path) -> int:
+    count = 0
+    for path in sorted(ROOT.glob('[0-9][0-9]-*/lab.md')):
+        for source in re.findall(r'```bash\n(.*?)```', path.read_text(encoding='utf-8'), re.S):
+            script = workspace / f'lab-{count}.sh'
+            script.write_text(source, encoding='utf-8', newline='\n')
+            subprocess.run([bash, '-n', str(script)], check=True)
+            count += 1
+    return count
+
+
 def main() -> None:
     bash = bash_path()
     subprocess.run([bash, '-n', str(ROOT / 'scripts/renumber-saa-c03-modules.sh')], check=True)
@@ -78,9 +89,10 @@ def main() -> None:
         javascript.write_text('\n'.join(re.findall(r'<script>(.*?)</script>', source, re.S)), encoding='utf-8')
         subprocess.run(['node', '--check', str(javascript)], check=True)
         scenarios = check_migration(bash, workspace)
+        lab_shell = check_lab_shell(bash, workspace)
     report = {'javascript_syntax': 'passed', 'shell_syntax': 'passed',
         'migration_scenarios': scenarios, 'collision_protection': 'passed', 'idempotence': 'passed',
-        **check_yaml(), 'errors': []}
+        'lab_shell_examples': lab_shell, **check_yaml(), 'errors': []}
     (ROOT / 'docs/english-edition/support-test-results.json').write_text(
         json.dumps(report, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(report, indent=2))

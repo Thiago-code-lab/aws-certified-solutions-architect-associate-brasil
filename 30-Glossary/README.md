@@ -2,53 +2,51 @@
 
 ## Overview
 
-This module covers **common AWS architecture terminology**, focusing on the decisions tested on the SAA-C03. The goal is to turn business requirements into clear technical choices while balancing resilience, performance, security, and cost. Success on the exam depends on identifying the scenario's most important constraint and choosing a pattern that reduces operational risk, beyond memorizing individual services.
+Use architectural terms precisely. RPO and RTO, durability and availability, scaling directions, and idempotency describe different properties and must not be used as substitutes for one another.
 
 ## Key Concepts
 
-- Key terminology: AWS terms, high availability, scalability.
-- Prioritization by dominant requirement (latency, availability, compliance or cost).
-- Integration between services with decoupling and minimal observability.
-- Choose the least complex architecture that meets the requirements.
+- **RPO terminology:** RPO expresses the acceptable data-loss window. It guides replication and backup requirements rather than the time needed to return the application to service.
+- **RTO terminology:** RTO expresses the recovery-time target for the workload. Recovery testing should measure the end-to-end duration, including dependencies and application validation.
+- **Durability versus availability:** Data can remain intact during a temporary access outage. Architecture must evaluate both preservation and access requirements rather than treating one as proof of the other.
+- **Horizontal versus vertical scaling:** Horizontal scaling adds more workers or instances. Vertical scaling changes the capacity of an individual resource; neither term alone proves application resilience.
+- **Idempotency terminology:** Idempotency makes a repeated operation safe with respect to its intended side effect. It does not require the transport to stop delivering duplicate events.
 
 ## Exam Relevance
 
-On the SAA-C03, questions in this domain often have two technically feasible options. Details such as the consistency model, failover strategy, recurring operating costs, throughput impact, and required automation determine the better answer. Studying this module means practicing those selection criteria as well as learning terminology.
+Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service.
 
-## Practical Cues (3 to 5)
+## Practical Cues
 
-1. When the scenario calls for elasticity with little manual work, favor managed services.
-2. When components depend on each other, check for decoupling to absorb spikes and partial failures.
-3. When security is a constraint, verify encryption in transit and at rest, along with least privilege.
-4. If cost is a requirement, compare usage classes, capacity modes, and access patterns.
-5. If the scenario is global, validate traffic route, latency and distribution strategy.
+1. **RPO terminology:** Recovery point objective, or RPO.
+2. **RTO terminology:** Recovery time objective, or RTO.
+3. **Durability versus availability:** Durability concerns retaining data; availability concerns being able to access the service when needed.
+4. **Horizontal versus vertical scaling:** Horizontal scaling, or scaling out.
+5. **Idempotency terminology:** Idempotent processing of the business operation.
 
 ## Common Pitfalls
 
-- Choosing a premium feature that the scenario does not require.
-- Confusing high availability features with read scaling features.
-- Ignoring service limits and failure behavior.
-- Addressing a security requirement with a tool unsuited to the secret lifecycle.
+- RTO expresses the acceptable recovery duration.
+- RPO concerns tolerable data loss rather than recovery duration.
+- The two properties describe different aspects of service behavior.
 
 ## Next Review Steps
 
-1. Review [cheatsheet.md](./cheatsheet.md) to reinforce decision-making cues.
-2. Answer [questions.md](./questions.md) without reference materials to test your technical judgment.
-3. Use [flashcards.md](./flashcards.md) for a brief daily review to reinforce critical distinctions.
+1. Review [cheatsheet.md](./cheatsheet.md) and explain the assumptions behind each choice.
+2. Answer [questions.md](./questions.md) before revealing the explanations.
+3. Use [flashcards.md](./flashcards.md) for spaced retrieval and record recurring mistakes.
 
 ## Additional Study
 
-To strengthen your AWS fundamentals before studying architectural scenarios in depth:
-https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
+[Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [S3 storage classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html), [EC2 Auto Scaling dynamic scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html), [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html), [SQS at-least-once delivery](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html), [Lambda best practices](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html).
 
-For an additional learning path connecting architecture with generative AI and Bedrock:
-https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil
+Related community paths: [Cloud Practitioner](https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil) and [AI Practitioner](https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil). These external repositories may contain Portuguese material.
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

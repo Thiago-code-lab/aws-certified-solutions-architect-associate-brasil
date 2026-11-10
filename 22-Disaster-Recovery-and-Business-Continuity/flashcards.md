@@ -1,107 +1,120 @@
-# Review Cards
+# Review Flashcards
 
 ## Card 01
 
-**Question:** What is the central focus of this module?
+**Question:** Backups complete every 24 hours. A business requires at most 15 minutes of data loss. Can a fast restore alone prove this design meets the RPO?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Master decisions about resilience and DR using SAA-C03 exam scenarios.
+**Answer:** No. The recoverable data points must satisfy the 15-minute loss window; restore speed addresses RTO. RPO describes acceptable data loss in time. The recovery data path needs sufficiently current valid recovery points; fast infrastructure restoration does not make old backups newer.
+
+**AWS references:** [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Card 02
 
-**Question:** What mistake commonly occurs with this topic?
+**Question:** A workload must recover after an entire AWS Region becomes unavailable. Does deploying the application and database across AZs only within that Region satisfy the failure scope by itself?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Applying a generic answer without checking the scenario's specific cues for resilience and DR.
+**Answer:** No. A regional recovery design needs usable recovery resources and data outside the affected Region, plus tested recovery procedures. Multi-AZ deployment addresses AZ-level failures within a Region. Regional recovery needs an appropriately independent recovery location and tested data, configuration, and traffic recovery.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Card 03
 
-**Question:** How do you identify the best answer option?
+**Question:** A recovery Region maintains a small but fully functional copy of the application that can serve traffic before being scaled up. Which DR pattern best describes this?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Prioritize the dominant requirement and choose services that address Multi-AZ and failover with less operational overhead.
+**Answer:** Warm standby. Warm standby maintains a scaled-down functioning workload. Pilot light keeps a smaller core running and requires additional activation or deployment before the full workload can serve.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Card 04
 
-**Question:** Which trade-off usually appears?
+**Question:** A team has a backup marked successful. What provides stronger evidence that business recovery objectives can be met?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Balance Multi-AZ with cost, performance, and operational simplicity.
+**Answer:** Restore representative data in an isolated environment, validate the application, measure data loss and recovery duration, and compare them with RPO and RTO. Recovery testing checks that data, dependencies, permissions, and procedures actually work together. A successful backup is necessary evidence for that copy, but not proof of end-to-end recovery.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html).
 
 </details>
 
 ## Card 05
 
-**Question:** What sign of a mature architecture appears in exam questions?
+**Question:** An accidental application command deletes valid records from a database whose changes replicate to its standby. What protection is additionally needed?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Deliberate use of failover with observability to reduce operational risk.
+**Answer:** Retained backups or an appropriate point-in-time recovery capability, with tested restoration procedures. Replication can reproduce logical mistakes as well as correct writes. Availability replicas do not replace retained recoverable history for corruption or accidental deletion.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [RDS Multi-AZ deployment types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html).
 
 </details>
 
 ## Card 06
 
-**Question:** How can you avoid overengineering?
+**Question:** A workload must recover after an entire AWS Region becomes unavailable. Does deploying the application and database across AZs only within that Region satisfy the failure scope by itself?
+
+Why does this alternative fail: “Yes. Every AZ is an independent AWS Region.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Avoid extra components when DR strategies or RTO/RPO already meets the requirement.
+**Answer:** AZs are isolated locations within a Region, not separate Regions.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Card 07
 
-**Question:** What should you review before a practice exam?
+**Question:** A recovery Region maintains a small but fully functional copy of the application that can serve traffic before being scaled up. Which DR pattern best describes this?
+
+Why does this alternative fail: “Pilot light with only core data components active and application capacity still needing deployment.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Practical differences between decoupling and health checks.
+**Answer:** The stem explicitly says a fully functional application is already running.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 </details>
 
 ## Card 08
 
-**Question:** How can you finish a review session efficiently?
+**Question:** A team has a backup marked successful. What provides stronger evidence that business recovery objectives can be met?
+
+Why does this alternative fail: “Treat the backup job status alone as a guarantee of successful restoration.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Turn mistakes from this module into clear decision rules for resilience and DR.
+**Answer:** Backup completion does not validate all restoration and application dependencies.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html).
 
 </details>
-
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

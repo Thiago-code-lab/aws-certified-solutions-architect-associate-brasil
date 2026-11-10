@@ -2,47 +2,49 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **compute selection and availability with EC2**, with clear behavioral validation and controlled costs for a study environment.
+Verify that EBS volume attachment is scoped to an Availability Zone.
 
 ## Services Used
 
-EC2, Auto Scaling, ELB, EBS.
+EC2, EBS, and EBS snapshots.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+EC2 runtime, EBS volumes, snapshots, and public IPv4 addresses can incur charges. Estimate the selected sizes and Region before launching.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Choose an isolated lab account, one Region, and two AZs; tag every created resource for cleanup.
+2. Create a small test EBS volume in the first AZ and a supported small EC2 instance in the second AZ using approved access and networking.
+3. Inspect attachment eligibility and confirm the first-AZ volume cannot attach to the second-AZ instance.
+4. Create a snapshot of the test volume and wait until the snapshot is complete.
+5. Create a new volume from the snapshot in the instance AZ and attach that new volume to the instance.
+6. Record the volume AZs, attachment state, and the distinction between a volume and a snapshot.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- Only the volume in the instance AZ can be attached.
+- The copied volume is a new resource, not a cross-AZ attachment.
+- No production volume or snapshot is used.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Detach and delete both lab volumes when no longer needed.
+2. Terminate the lab instance and inspect its remaining volumes.
+3. Delete the lab snapshot after confirming no retention requirement applies.
+4. Release lab public addresses and review the inventory and delayed billing data.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [Amazon EBS volumes](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

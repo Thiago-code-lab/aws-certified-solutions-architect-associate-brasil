@@ -1,129 +1,159 @@
 # Review Questions
 
-> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+Choose one answer for each question. These original practice items are not AWS exam questions.
 
 ## Question 1
 
-A scenario requires a sound decision about monitoring. Which approach best meets the requirements?
+<!-- question-id: 20-Q01 -->
 
-A) Apply a generic solution without considering CloudWatch.
+An operations team needs a dashboard and alarm for an EC2 application latency metric. Which service directly provides metrics, dashboards, and alarms?
 
-B) Use CloudWatch with a configuration that meets the requirements and minimizes operational overhead.
+A) An S3 Object Lock retention setting.
 
-C) Add components that the scenario does not require.
+B) AWS DMS schema conversion.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Amazon CloudWatch.
+
+D) An SCP as a time-series metrics store.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for monitoring with a better balance of requirements, risk, and operational effort.
+**Explanation:** CloudWatch supports metrics, dashboards, logs, and alarms. The application must publish or instrument the relevant latency signal if it is not supplied automatically.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Retention controls protect object versions rather than evaluate latency metrics.
+- **B:** Schema migration does not provide an operational latency alarm.
+- **D:** SCPs are permission guardrails rather than a metrics store.
+
+**AWS references:** [Amazon CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html).
 
 </details>
 
 ## Question 2
 
-Which choice reduces operational risk in this domain?
+<!-- question-id: 20-Q02 -->
 
-A) Resolve everything manually during the incident.
+Auditors need S3 GetObject activity for a selected bucket. The team has only the default CloudTrail event history view. What must be considered?
 
-B) Combine CloudTrail with observability and automation.
+A) Assume all S3 object data events appear automatically in default management event history.
 
-C) Add components that the scenario does not require.
+B) Configure appropriate S3 object data-event logging on a trail or event data store, including its cost and selection scope.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Enable EC2 detailed monitoring and assume it records S3 object API callers.
+
+D) Add a Route 53 TXT record for the bucket name.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
 ✅ **Correct answer:** B
 
-**Explanation:**
-Option B addresses the technical objective for monitoring with a better balance of requirements, risk, and operational effort.
+**Explanation:** S3 object operations are CloudTrail data events. Trails and event data stores do not log data events by default; selectors must include the needed activity.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** Management event history does not automatically supply all object data events.
+- **C:** EC2 metric frequency is unrelated to S3 API caller auditing.
+- **D:** DNS text records do not enable CloudTrail data-event capture.
+
+**AWS references:** [CloudTrail data events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html).
 
 </details>
 
 ## Question 3
 
-To keep costs under control without losing technical quality, what should you do?
+<!-- question-id: 20-Q03 -->
 
-A) Always choose the cheapest option without validating the requirement.
+A team must determine how a supported security group configuration changed over time and evaluate it against configuration rules. Which service fits?
 
-B) Size resources based on actual usage and use alarms where appropriate.
+A) A CloudWatch CPU metric alone.
 
-C) Add components that the scenario does not require.
+B) A NAT gateway.
 
-D) Ignore explicit security, availability or cost requirements.
+C) AWS Config with the required recording and rules enabled.
+
+D) An SQS visibility timeout.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** C
 
-**Explanation:**
-Option B addresses the technical objective for monitoring with a better balance of requirements, risk, and operational effort.
+**Explanation:** Config records supported resource configuration history and evaluates configuration against rules. CloudTrail complements it with API activity, but serves a different primary question.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** CPU time series do not reconstruct a security group configuration history.
+- **B:** NAT is not a configuration recorder.
+- **D:** Queue message visibility does not evaluate security group compliance.
+
+**AWS references:** [AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html), [CloudTrail data events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html).
 
 </details>
 
 ## Question 4
 
-Which option is likely to be incorrect in an exam question on this topic?
+<!-- question-id: 20-Q04 -->
 
-A) The one that meets the dominant requirement with less complexity.
+A new distributed application needs tracing. Should the team treat the legacy X-Ray SDK and daemon as the preferred long-term instrumentation choice without reviewing support status?
 
-B) The option that ignores cues about logs and architectural dependencies.
+A) Yes. The X-Ray SDK maintenance notice means the X-Ray service itself is already unavailable.
 
-C) Add components that the scenario does not require.
+B) Yes. Maintenance status never affects instrumentation decisions.
 
-D) Ignore explicit security, availability or cost requirements.
+C) Disable tracing because CloudTrail provides complete request-span traces.
+
+D) No. Review the maintenance notice and prefer an appropriate OpenTelemetry instrumentation and collection path.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for monitoring with a better balance of requirements, risk, and operational effort.
+**Explanation:** AWS documents maintenance mode for the X-Ray SDKs and daemon starting February 25, 2026 and recommends OpenTelemetry migration. Distinguish instrumentation lifecycle from the availability of the X-Ray service.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** The SDK/daemon notice does not state that the X-Ray service is unavailable.
+- **B:** Support lifecycle affects maintenance and migration planning.
+- **C:** CloudTrail API auditing is not a substitute for application distributed tracing.
+
+**AWS references:** [X-Ray SDK and daemon maintenance](https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html), [Amazon CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html).
 
 </details>
 
 ## Question 5
 
-Which review approach improves your accuracy in this module?
+<!-- question-id: 20-Q05 -->
 
-A) Review only definitions without scenario practice.
+A Config rule reports that a resource is noncompliant. No remediation or preventive policy is configured. Which statement is justified?
 
-B) Practice questions about logs and MTTR with explanations of the trade-offs.
+A) The resource must already have been blocked from being created.
 
-C) Add components that the scenario does not require.
+B) Every Config rule automatically deletes every noncompliant resource.
 
-D) Ignore explicit security, availability or cost requirements.
+C) A compliance result guarantees the entire application is secure.
+
+D) The rule detects the condition; prevention or remediation requires an additional appropriate control.
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-✅ **Correct answer:** B
+✅ **Correct answer:** D
 
-**Explanation:**
-Option B addresses the technical objective for monitoring with a better balance of requirements, risk, and operational effort.
+**Explanation:** Detection, prevention, and remediation are distinct capabilities. A configured rule evaluation is not proof that corrective action occurred or that all security requirements are met.
 
-**Why option A is wrong:**
-It does not meet the primary requirement with the same architectural consistency.
+**Why the other options are incorrect:**
+
+- **A:** A detective evaluation is not inherently a creation-time denial.
+- **B:** Deletion is not the automatic behavior of every rule.
+- **C:** Compliance with selected rules does not prove all aspects of application security.
+
+**AWS references:** [AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html), [Service control policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html).
 
 </details>
 
@@ -131,7 +161,7 @@ It does not meet the primary requirement with the same architectural consistency
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

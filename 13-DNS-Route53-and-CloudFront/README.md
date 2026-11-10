@@ -2,53 +2,51 @@
 
 ## Overview
 
-This module covers **global distribution, DNS, and delivery acceleration**, focusing on the decisions tested on the SAA-C03. The goal is to turn business requirements into clear technical choices while balancing resilience, performance, security, and cost. Success on the exam depends on identifying the scenario's most important constraint and choosing a pattern that reduces operational risk, beyond memorizing individual services.
+Separate DNS selection, HTTP content delivery, private origin authorization, global network acceleration, and web request filtering. DNS cache behavior and endpoint health affect traffic changes.
 
 ## Key Concepts
 
-- Role of services: Route 53, CloudFront, WAF, Global Accelerator.
-- Prioritization by dominant requirement (latency, availability, compliance or cost).
-- Integration between services with decoupling and minimal observability.
-- Choose the least complex architecture that meets the requirements.
+- **Private S3 origin access:** Origin access control authorizes CloudFront access to a regular S3 origin. The bucket policy must allow the intended distribution. Website endpoints are custom origins and do not support OAC.
+- **Latency-based DNS:** Latency-based routing selects among configured regional resources using latency information. It does not promise the geographically nearest location or a fixed split of requests.
+- **DNS-weighted rollout:** Weighted records support relative response proportions. DNS caching and resolver behavior mean the observed application-request split is not an exact per-request percentage guarantee.
+- **Global UDP acceleration:** Global Accelerator supports TCP and UDP applications with static anycast IP addresses and regional endpoint routing. CloudFront is an HTTP(S) content delivery service, not an arbitrary UDP proxy.
+- **Web request filtering:** AWS WAF evaluates web requests with rules and can protect supported resources such as an ALB. Its rules complement, rather than replace, secure application design and network controls.
 
 ## Exam Relevance
 
-On the SAA-C03, questions in this domain often have two technically feasible options. Details such as the consistency model, failover strategy, recurring operating costs, throughput impact, and required automation determine the better answer. Studying this module means practicing those selection criteria as well as learning terminology.
+Use the scenario requirements to select an answer. The official scored-content weights are Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. These weights apply to exam domains, not to an individual module or service.
 
-## Practical Cues (3 to 5)
+## Practical Cues
 
-1. When the scenario calls for elasticity with little manual work, favor managed services.
-2. When components depend on each other, check for decoupling to absorb spikes and partial failures.
-3. When security is a constraint, verify encryption in transit and at rest, along with least privilege.
-4. If cost is a requirement, compare usage classes, capacity modes, and access patterns.
-5. If the scenario is global, validate traffic route, latency and distribution strategy.
+1. **Private S3 origin access:** Configure OAC, signed origin requests, and a bucket policy restricted to the intended CloudFront distribution.
+2. **Latency-based DNS:** Latency-based routing.
+3. **DNS-weighted rollout:** Weighted routing.
+4. **Global UDP acceleration:** AWS Global Accelerator with supported endpoints.
+5. **Web request filtering:** AWS WAF associated with the supported application resource.
 
 ## Common Pitfalls
 
-- Choosing a premium feature that the scenario does not require.
-- Confusing high availability features with read scaling features.
-- Ignoring service limits and failure behavior.
-- Addressing a security requirement with a tool unsuited to the secret lifecycle.
+- Obscurity does not enforce private origin access.
+- Weighted routing expresses configured proportions rather than optimizing latency.
+- Active-passive failover is not a proportional rollout policy.
 
 ## Next Review Steps
 
-1. Review [cheatsheet.md](./cheatsheet.md) to reinforce decision-making cues.
-2. Answer [questions.md](./questions.md) without reference materials to test your technical judgment.
-3. Use [flashcards.md](./flashcards.md) for a brief daily review to reinforce critical distinctions.
+1. Review [cheatsheet.md](./cheatsheet.md) and explain the assumptions behind each choice.
+2. Answer [questions.md](./questions.md) before revealing the explanations.
+3. Use [flashcards.md](./flashcards.md) for spaced retrieval and record recurring mistakes.
 
 ## Additional Study
 
-To strengthen your AWS fundamentals before studying architectural scenarios in depth:
-https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
+[CloudFront origin access control](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html), [Route 53 routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html), [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html), [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html).
 
-For an additional learning path connecting architecture with generative AI and Bedrock:
-https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil
+Related community paths: [Cloud Practitioner](https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil) and [AI Practitioner](https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil). These external repositories may contain Portuguese material.
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

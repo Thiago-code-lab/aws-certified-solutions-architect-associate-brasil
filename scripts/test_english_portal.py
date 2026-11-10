@@ -180,6 +180,9 @@ async def run_browser(base: str) -> dict[str, Any]:
         await page.goto(base + '/aws-saa-portal.html')
         await page.wait_for_function('typeof MODULES !== "undefined"')
         assert await page.locator('html').get_attribute('lang') == 'en'
+        weights = await page.evaluate('Object.fromEntries(DOMAIN_CARDS.map(card => [card.domain, parseInt(card.pct)]))')
+        assert weights == {'security': 30, 'resilient': 26, 'performance': 24, 'cost': 20}
+        assert 'official' in (await page.locator('#welcomeDomainGrid').get_attribute('aria-label')).lower()
         modules, documents = await check_all_documents(page)
         await check_filters(page)
         await check_progress(page)
@@ -191,7 +194,8 @@ async def run_browser(base: str) -> dict[str, Any]:
         await browser.close()
     return {'browser': 'Chromium', 'mode': 'local checkout served through intercepted English-branch Raw URLs',
         'modules_loaded': modules, 'documents_rendered': documents,
-        'checks': ['search', 'empty state', 'all/pending/completed filters', 'progress toggling',
+        'official_exam_weights': {'security': 30, 'resilient': 26, 'performance': 24, 'cost': 20},
+        'checks': ['official exam weights', 'search', 'empty state', 'all/pending/completed filters', 'progress toggling',
             'keyboard progress controls', 'persistence after reload', 'domain progress', 'resource navigation',
             'relative Markdown links', 'anchor navigation', 'image rebasing', 'GitHub links',
             'HTTP error and retry', 'request race handling', 'HTML sanitization',

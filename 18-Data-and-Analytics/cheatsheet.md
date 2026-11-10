@@ -2,35 +2,39 @@
 
 ## Decision Table
 
-| Scenario cue | When to use | When to avoid | Exam pitfall |
-|---|---|---|---|
-| Low manual effort | A managed service with built-in automation | An unnecessary self-managed solution | Confusing full control with lower total cost |
-| Unpredictable spikes | Horizontal scaling and decoupling | Fixed capacity and manual adjustments | Sizing for average demand and failing during spikes |
-| Strong security requirement | Least privilege + encryption + auditing | Broad permission for convenience | Assuming encryption alone addresses governance |
-| Cost as an explicit constraint | Select based on usage and access patterns | One storage class for all data | Reducing costs without checking functional impact |
+| Requirement or distinction | Appropriate choice | Limitation to remember |
+|---|---|---|
+| Athena data layout | Use a suitable date partition layout, columnar Parquet or ORC, compression, and queries that filter the partition keys. | Partition pruning and columnar formats can reduce data read. Partition granularity and file sizes must match the workload; excessive small files can hurt performance. |
+| Catalog metadata versus ETL | The Glue Data Catalog stores metadata; a Glue ETL job performs the configured transformation. | Catalog tables describe data and schemas. Crawlers can discover metadata; ETL jobs execute transformation logic. Metadata registration is not proof of transformed output. |
+| Managed streaming delivery | Amazon Data Firehose. | Data Firehose buffers and delivers streaming records to supported destinations. Buffering and delivery behavior must be included in end-to-end latency planning. |
+| Stream consumers and replay | Kinesis Data Streams with suitable retention and consumer throughput configuration. | Kinesis Data Streams supports independent consumers reading retained records. Shard or capacity configuration, retention, partitioning, and consumer limits must fit the workload. |
+| Do not use migration as analytics | No. DMS replication and the required analytical transformations must be assessed separately; use an appropriate ETL design such as Glue jobs. | DMS moves data and supports migration-related capabilities; it is not a blanket substitute for arbitrary business ETL. Define the transformations and validate the curated results. |
 
 ## Service Selection Cues
 
-- **Kinesis**: prioritize when the scenario requires native integration and lower operational overhead.
-- **Glue**: use when controlled elasticity and predictable behavior during spikes are required.
+A service name is not an architectural requirement. Verify the deployment type, consistency or retry model, failure scope, quotas, permissions, and cost dimensions that apply to the proposed configuration.
 
 ## When to Use This Module During Review
 
-- Before architecture practice exams that focus on trade-offs.
-- When you repeatedly struggle to choose between two similar options.
-- During final review, to improve how you eliminate answer options.
+Use this table before practice questions and after a wrong answer. Explain why the rejected alternatives fail the stated constraints; do not memorize a letter or assume the longest option is correct.
 
 ## Recurring Pitfalls
 
-- Trying to meet an availability requirement with a performance feature.
-- Replacing a simple design with an oversized architecture.
-- Omitting observability from the final architecture.
+- **Athena data layout:** Many tiny files add overhead and omit the requested pruning design.
+- **Catalog metadata versus ETL:** Registering metadata does not itself rewrite the data files.
+- **Managed streaming delivery:** DNS routing does not ingest and deliver streaming records.
+- **Stream consumers and replay:** A shared competing-consumer queue does not provide an independent stream replay cursor to every application.
+- **Do not use migration as analytics:** Replication does not imply all required analytical transformations.
+
+## AWS References
+
+[Athena data optimization](https://docs.aws.amazon.com/athena/latest/ug/performance-tuning-data-optimization-techniques.html), [AWS Glue components](https://docs.aws.amazon.com/glue/latest/dg/components-overview.html), [Amazon Data Firehose](https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html), [Kinesis Data Streams](https://docs.aws.amazon.com/streams/latest/dev/introduction.html), [SQS at-least-once delivery](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html), [AWS DMS](https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

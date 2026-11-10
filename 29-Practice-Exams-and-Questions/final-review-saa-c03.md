@@ -1,5 +1,7 @@
 # SAA-C03 Final Review (14 Days)
 
+Official scored-content weights: Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%, as defined by the [AWS exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html). Allocate additional time to observed weak areas; module counts and equal practice blocks are not exam weights.
+
 ## Block 1 (Days 1-4): High-Priority Fundamentals
 
 - Security: IAM, KMS, audit trail.
@@ -14,16 +16,16 @@
 
 ## Block 3 (Days 10-14): Targeted Exam Practice
 
-- Take 2 full-length practice exams without consulting reference materials.
+- Complete 2 timed practice sessions without consulting reference materials, then review every rationale. This repository provides module questions and twenty mini-practice questions in four domain blocks, not a separately authored full-length exam. If using another full-length resource, check its current format against the AWS guide.
 - Review of the error log by priority.
 - Retake mini practice exams for critical domains.
 
 ## Quick Decision Rule
 
-1. Find the dominant requirement.
-2. Eliminate options that break this requirement.
-3. Compare the operational costs of the remaining options.
-4. Choose the simplest solution that meets the scenario.
+1. Identify every mandatory requirement and the stated optimization objective.
+2. Eliminate options that violate any mandatory constraint.
+3. Compare viable options against the stated objective, such as latency, recovery time, operational effort, or cost.
+4. Prefer a simpler design when it meets the constraints and objective. Simplicity alone does not override latency, consistency, security, or recovery requirements.
 
 ## The Day Before the Exam
 
@@ -35,7 +37,7 @@
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

@@ -2,47 +2,47 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **curated resources for final review and reference**, with clear behavioral validation and controlled costs for a study environment.
+Verify a study claim against current primary sources and publish a traceable correction.
 
 ## Services Used
 
-Documentation, Whitepapers, Workshops.
+Official exam guide, service documentation, lifecycle notices, and repository contribution guidance.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Documentation exercise. No AWS resource creation or paid course purchase is required.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Choose a concrete claim from a study note and record its exact location and date.
+2. Determine whether it is an exam-scope claim, service-behavior claim, pricing claim, or deployment-availability claim.
+3. Find the applicable primary source: current exam guide, deployment-specific service documentation, pricing information, or lifecycle notice.
+4. Compare the assumptions and scope; resolve distinctions such as RDS deployment type or Snowball customer eligibility.
+5. Write a correction that updates the claim and any affected answer or explanation together, with a source link and review date.
+6. Run the repository validation suites and document any remaining uncertainty rather than implying that a successful link check proves technical truth.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- The evidence directly supports the corrected claim.
+- The correction is traceable to a file and, when relevant, a stable question identifier.
+- A documented technical review is distinguished from automated structural checks.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Keep the evidence and correction record.
+2. Do not publish account credentials or personal learner information in the report.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [SAA-C03 exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html), [RDS Multi-AZ deployment types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html), [AWS Snowball availability notice](https://aws.amazon.com/snowball/).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

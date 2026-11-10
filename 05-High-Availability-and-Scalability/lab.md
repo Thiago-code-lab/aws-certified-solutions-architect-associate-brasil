@@ -2,47 +2,60 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **resilience, failover, and architectural elasticity**, with clear behavioral validation and controlled costs for a study environment.
+Observe replacement of a lab web instance behind a multi-AZ load balancer.
 
 ## Services Used
 
-Auto Scaling, ELB, Route 53, Multi-AZ.
+EC2 Auto Scaling, ALB, target groups, and EC2.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+ALB runtime, EC2 instances, EBS, and public IPv4 use are billable as applicable. Use a short planned test window and do not buy a pricing commitment for this lab.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Create dedicated lab networking across two AZs with the outbound access required for package installation. Allow HTTP to application instances only from the ALB security group.
+2. Create an Amazon Linux 2023 launch template and use the complete user-data script below to install a minimal HTTP target.
+3. Create an HTTP target group with the /health health-check path and an ALB spanning the two AZs. Limit viewer access to the intended lab client network.
+4. Create an Auto Scaling group across those AZs with desired capacity two and attach the target group. Enable ELB health checks and choose a grace period that covers installation.
+5. Wait for two healthy targets and request the ALB endpoint from the allowed client.
+6. Mark one lab group instance unhealthy using the Auto Scaling controls; observe replacement events and target-health recovery. Do not remove the last healthy target deliberately.
+7. Record capacity during replacement and explain why two instances alone do not guarantee every workload availability target.
+
+### Web Target User Data
+
+```bash
+#!/bin/bash
+set -euo pipefail
+dnf install -y httpd
+printf 'healthy\n' > /var/www/html/health
+printf 'SAA-C03 lab\n' > /var/www/html/index.html
+systemctl enable --now httpd
+```
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- The ALB has healthy targets in the planned AZs before the experiment.
+- The group launches a replacement and the target group returns to the planned healthy capacity.
+- The test demonstrates controlled instance replacement, not a real AWS AZ outage.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Delete the Auto Scaling group and terminate its remaining lab instances.
+2. Delete the lab ALB, target group, launch template, and unused lab network resources.
+3. Check remaining volumes and public addresses; review delayed charges.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html), [EC2 Auto Scaling health checks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-checks-overview.html), [EC2 Auto Scaling dynamic scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

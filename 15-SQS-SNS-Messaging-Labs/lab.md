@@ -2,47 +2,47 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **fan-out and asynchronous processing in a lab**, with clear behavioral validation and controlled costs for a study environment.
+Demonstrate independent SNS-to-SQS fan-out.
 
 ## Services Used
 
-SQS, SNS, Lambda.
+SNS topic and two SQS Standard queues.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+SNS/SQS requests, retained messages, encryption, and optional logs can incur charges. Use a few small synthetic messages.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Create one lab SNS Standard topic and two lab SQS Standard queues.
+2. Subscribe each queue to the topic and configure each queue policy to allow only the intended topic to send messages.
+3. Publish one synthetic order message containing a unique business operation identifier.
+4. Poll both queues and verify each receives its own copy; inspect whether the SNS envelope is enabled or raw delivery is selected.
+5. Delete the processed message from only the first queue and verify the second queue processing remains independent.
+6. Allow a received test message visibility timeout to expire without deletion, then poll again and explain why consumers must handle repeat processing safely.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- Both queues receive the published event.
+- Deleting from one queue does not remove the other queue copy.
+- The observed retry is not misrepresented as exactly-once business processing.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Remove the subscriptions, delete both lab queues, and delete the topic.
+2. Delete optional lab logs or keys only if they were created exclusively for this exercise.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [SNS to SQS fan-out](https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html), [SQS at-least-once delivery](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

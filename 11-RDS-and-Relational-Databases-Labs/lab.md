@@ -2,47 +2,48 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **hands-on relational database high availability with RDS**, with clear behavioral validation and controlled costs for a study environment.
+Inspect and test the failover behavior of an RDS Multi-AZ DB instance deployment.
 
 ## Services Used
 
-RDS, Aurora, CloudWatch.
+RDS MySQL or PostgreSQL, a private lab client, and monitoring.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+A Multi-AZ database, standby capacity, storage, backups, and client compute can be billable. Estimate before creation and use a short window; this is not a guaranteed Free Tier exercise.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Choose a supported engine/version for a Multi-AZ DB instance deployment with one standby, and explicitly avoid confusing it with a Multi-AZ DB cluster.
+2. Create a private lab database using a DB subnet group across the required AZs and permit the database port only from the lab-client security group.
+3. Connect from an approved lab client using securely stored lab credentials; create a small marker table and commit a test row.
+4. Record the writer endpoint, primary AZ, deployment type, and the database events and metrics to watch.
+5. Use the documented reboot-with-failover operation for this supported lab deployment. Observe the connection interruption and primary AZ change.
+6. Reconnect through the database endpoint after failover, confirm the committed marker row, and record recovery duration.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- A client can reconnect and read the committed marker after the managed failover.
+- The measured interruption is recorded rather than presented as a universal RTO guarantee.
+- The single standby is not treated as a readable reporting endpoint.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Delete the lab database after deciding whether any lab final snapshot is needed.
+2. Delete lab-only snapshots and retained automated backups that have no retention requirement.
+3. Remove lab clients, secrets, subnet groups, and security groups only when no other resource uses them.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [RDS Multi-AZ deployment types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

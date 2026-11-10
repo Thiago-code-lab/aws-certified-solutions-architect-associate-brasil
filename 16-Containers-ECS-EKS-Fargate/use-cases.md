@@ -1,34 +1,58 @@
 # Use Cases
 
-## Scenario 1: A Brief Traffic Spike
+## Scenario 1: Container compute without EC2 hosts
 
-**Recommended pattern:** a managed layer with automatic scaling and decoupling.
-**Reason:** absorbs demand fluctuations without extensive manual intervention.
-**Exam cue:** phrases such as “unpredictable spike,” “maintain latency,” and “low operational effort.”
+**Requirement:** A team chooses ECS for long-running containers and does not want to provision or patch EC2 worker hosts. Which compute option fits?
 
-## Scenario 2: Audit and compliance requirement
+**Recommended design:** AWS Fargate for the ECS tasks.
 
-**Recommended pattern:** granular identity controls, an audit trail, and end-to-end encryption.
-**Reason:** ensures traceability and protects sensitive data.
-**Exam cue:** “compliance,” “access logs,” and “sensitive data.”
+**Reason and boundary:** Fargate supplies managed container compute. The team still configures task resources, images, permissions, networking, and service scaling.
 
-## Scenario 3: Lower Costs with the Same User Experience
+**Rejected alternative:** ECS on self-managed EC2 hosts with no host maintenance process. Self-managed EC2 hosts retain host-management responsibilities.
 
-**Recommended pattern:** adjust the resource class and capacity to actual usage.
-**Reason:** avoids overprovisioning and reduces recurring expenses.
-**Exam cue:** “cost optimization,” “known usage pattern,” and “without degrading UX.”
+**AWS references:** [Fargate for ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html), [ECS task execution role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html).
 
-## Scenario 4: Incremental architecture evolution
+## Scenario 2: Task role versus execution role
 
-**Recommended pattern:** start simple, with managed components and clear extension points.
-**Reason:** speeds up delivery and reduces the risk of premature complexity.
-**Exam cue:** “rapid delivery,” “gradual growth,” and “small team.”
+**Requirement:** Application code inside an ECS task calls S3. Which role should carry the application S3 permissions?
+
+**Recommended design:** The ECS task IAM role.
+
+**Reason and boundary:** The task role supplies permissions to code running in containers. The task execution role serves agent operations such as pulling images and shipping configured logs.
+
+**Rejected alternative:** Only the task execution role, assuming its credentials are application credentials. Execution-role permissions are for the ECS/Fargate agents and are not the application task credentials.
+
+**AWS references:** [ECS task IAM roles](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html), [ECS task execution role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html).
+
+## Scenario 3: Image pulls and log delivery
+
+**Requirement:** A Fargate task needs its agent to pull a private ECR image and send logs with the awslogs driver. Which role is relevant to those agent operations?
+
+**Recommended design:** The task execution IAM role with the necessary permissions.
+
+**Reason and boundary:** The execution role authorizes supported ECS/Fargate agent operations. Application API permissions remain separate in the task role.
+
+**Rejected alternative:** The application task role as the only role needed for agent image pulls. Task-role application permissions do not replace execution-role permissions for these operations.
+
+**AWS references:** [ECS task execution role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html), [ECS task IAM roles](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html).
+
+## Scenario 4: Kubernetes orchestration
+
+**Requirement:** A workload explicitly requires Kubernetes APIs and Kubernetes-native controllers. Which AWS managed orchestration service matches that requirement?
+
+**Recommended design:** Amazon EKS.
+
+**Reason and boundary:** EKS provides a managed Kubernetes control plane. Compute, access, add-ons, networking, and workload configuration still need an appropriate operating model.
+
+**Rejected alternative:** Amazon ECS solely because it also runs containers. ECS is a different orchestration API and does not fulfill a Kubernetes API requirement.
+
+**AWS references:** [Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html), [Fargate for ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

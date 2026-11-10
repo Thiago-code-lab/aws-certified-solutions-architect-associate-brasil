@@ -2,47 +2,47 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **reinforcing architectural patterns through lightweight practice**, with clear behavioral validation and controlled costs for a study environment.
+Run and document one bounded hands-on exercise end to end.
 
 ## Services Used
 
-VPC, EC2, S3, RDS.
+One selected guided lab from modules 03, 04, 07, 09, 11, 12, or 15.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Costs depend on the selected lab, Region, account plan, and retained resources. Review that lab cost and cleanup sections before provisioning.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Choose one of the linked guided labs and state its single learning objective and allowed account/resource scope.
+2. Read its prerequisites and estimate every resource category, including storage, public addresses, endpoints, logging, and backups.
+3. Prepare synthetic test inputs, appropriate temporary credentials, and a resource inventory for cleanup.
+4. Execute only that selected lab procedure and record expected versus actual results with resource identifiers kept out of public screenshots when sensitive.
+5. For a failure experiment, use only the described lab scope and preserve a recovery path.
+6. Execute the selected cleanup procedure, inspect residual resources, and review billing again after delayed data arrives.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- The record identifies the chosen lab and actual operations performed.
+- Execution evidence is distinguished from a design-only walkthrough.
+- The cleanup inventory includes resources left behind intentionally and their owner.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Remove only the selected lab resources using that lab dependency-aware cleanup sequence.
+2. Keep the learning notes and reconcile any residual charges or retained resources.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html), [AWS Pricing Calculator](https://calculator.aws/), [AWS Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

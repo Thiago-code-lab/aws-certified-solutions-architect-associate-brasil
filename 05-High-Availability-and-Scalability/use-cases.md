@@ -1,34 +1,58 @@
 # Use Cases
 
-## Scenario 1: A Brief Traffic Spike
+## Scenario 1: Multi-AZ application availability
 
-**Recommended pattern:** a managed layer with automatic scaling and decoupling.
-**Reason:** absorbs demand fluctuations without extensive manual intervention.
-**Exam cue:** phrases such as “unpredictable spike,” “maintain latency,” and “low operational effort.”
+**Requirement:** A stateless HTTP application must tolerate an AZ outage. Which design addresses that failure scope?
 
-## Scenario 2: Audit and compliance requirement
+**Recommended design:** An ALB and an Auto Scaling group spanning at least two AZs, with enough surviving capacity and externalized application state.
 
-**Recommended pattern:** granular identity controls, an audit trail, and end-to-end encryption.
-**Reason:** ensures traceability and protects sensitive data.
-**Exam cue:** “compliance,” “access logs,” and “sensitive data.”
+**Reason and boundary:** Distributing compute and load balancing across AZs reduces dependence on one AZ. Surviving capacity, health checks, and state placement must also support the application during failure.
 
-## Scenario 3: Lower Costs with the Same User Experience
+**Rejected alternative:** A larger single EC2 instance with daily snapshots. Snapshots help recovery but do not keep a single instance serving through an AZ outage.
 
-**Recommended pattern:** adjust the resource class and capacity to actual usage.
-**Reason:** avoids overprovisioning and reduces recurring expenses.
-**Exam cue:** “cost optimization,” “known usage pattern,” and “without degrading UX.”
+**AWS references:** [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html), [EC2 Auto Scaling health checks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-checks-overview.html), [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html).
 
-## Scenario 4: Incremental architecture evolution
+## Scenario 2: Layer 7 routing
 
-**Recommended pattern:** start simple, with managed components and clear extension points.
-**Reason:** speeds up delivery and reduces the risk of premature complexity.
-**Exam cue:** “rapid delivery,” “gradual growth,” and “small team.”
+**Requirement:** One HTTPS entry point must route /images to one target group and /orders to another. Which load balancer provides this request-path routing?
+
+**Recommended design:** Application Load Balancer.
+
+**Reason and boundary:** ALB evaluates application-layer listener rules, including path conditions. The other choices do not provide HTTP path-based target-group routing.
+
+**Rejected alternative:** Network Load Balancer using only transport-layer listeners. NLB transport listeners do not evaluate HTTP URL paths for routing.
+
+**AWS references:** [Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html), [Network Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html).
+
+## Scenario 3: Application health replacement
+
+**Requirement:** An Auto Scaling instance passes EC2 status checks, but its application fails ALB health checks. Which configuration lets the group use those application health results to replace it?
+
+**Recommended design:** Enable Elastic Load Balancing health checks for the group and configure an appropriate grace period.
+
+**Reason and boundary:** The group must be configured to use ELB health checks in addition to its default EC2 checks. A suitable grace period avoids replacing instances merely because startup is still in progress.
+
+**Rejected alternative:** Assume attaching a target group automatically enables every group health check. Default EC2 health checks alone do not detect every application failure.
+
+**AWS references:** [EC2 Auto Scaling health checks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-checks-overview.html).
+
+## Scenario 4: Dynamic scaling
+
+**Requirement:** HTTP traffic varies unpredictably. The team wants the instance count to follow a utilization metric around a chosen target. Which policy fits?
+
+**Recommended design:** Target tracking scaling with a suitable metric and instance warmup configuration.
+
+**Reason and boundary:** Target tracking changes capacity to keep a supported metric near its target. Scheduled changes can complement it for known events, but cannot alone react to unpredictable demand.
+
+**Rejected alternative:** Scheduled scaling alone at a fixed daily time. A clock-based schedule does not respond to unanticipated metric changes.
+
+**AWS references:** [EC2 Auto Scaling dynamic scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

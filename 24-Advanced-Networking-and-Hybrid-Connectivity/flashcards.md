@@ -1,107 +1,120 @@
-# Review Cards
+# Review Flashcards
 
 ## Card 01
 
-**Question:** What is the central focus of this module?
+**Question:** A design uses Direct Connect and must encrypt data in transit. Which statement is accurate?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Master decisions about hybrid connectivity using SAA-C03 exam scenarios.
+**Answer:** Direct Connect is not encrypted by default; choose suitable TLS, IPsec VPN, or supported MACsec protection for the required path. Private connectivity and encryption are separate properties. MACsec protects supported connection segments, so its coverage must be matched to the actual requirement rather than assumed end-to-end.
+
+**AWS references:** [Direct Connect encryption](https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html).
 
 </details>
 
 ## Card 02
 
-**Question:** What mistake commonly occurs with this topic?
+**Question:** VPC A is peered with VPC B, and B is peered with C. There is no A-to-C peering or transit service. Can A use B to reach C through those peerings?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Applying a generic answer without checking the scenario's specific cues for hybrid connectivity.
+**Answer:** No. VPC peering does not support transitive routing. A-to-B and B-to-C peerings do not create an A-to-C transit route. Use a supported connectivity design, such as suitable direct peerings or Transit Gateway attachments and routing.
+
+**AWS references:** [VPC peering limitations](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html), [AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html).
 
 </details>
 
 ## Card 03
 
-**Question:** How do you identify the best answer option?
+**Question:** Many VPCs and on-premises networks need a managed hub-and-spoke connectivity design with centralized routing domains. Which service fits?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Prioritize the dominant requirement and choose services that address Direct Connect and VPN with less operational overhead.
+**Answer:** AWS Transit Gateway with appropriate attachments and route tables. Transit Gateway supplies a regional transit hub for supported attachments. Its route table associations, propagation, segmentation, and failure design still need explicit configuration.
+
+**AWS references:** [AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html).
 
 </details>
 
 ## Card 04
 
-**Question:** Which trade-off usually appears?
+**Question:** A provider wants to expose a supported application service privately to consumer VPCs without providing general network transit between the VPCs. Which pattern fits?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Balance Direct Connect with cost, performance, and operational simplicity.
+**Answer:** AWS PrivateLink with a suitable endpoint service and consumer interface endpoints. PrivateLink supports private connectivity to supported services through endpoints. It is service-oriented connectivity, not general-purpose transitive routing between all attached networks.
+
+**AWS references:** [AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html), [Gateway VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html), [VPC peering limitations](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html).
 
 </details>
 
 ## Card 05
 
-**Question:** What sign of a mature architecture appears in exam questions?
+**Question:** A new design needs encrypted on-premises-to-VPC connectivity over existing internet access. Which service directly fits that transport model?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Deliberate use of VPN with observability to reduce operational risk.
+**Answer:** AWS Site-to-Site VPN, with both provided tunnels and appropriate customer-side routing and redundancy. Site-to-Site VPN provides IPsec connectivity. Using both tunnels and designing customer-device and path redundancy improves resilience; no single connection choice guarantees uninterrupted availability.
+
+**AWS references:** [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html), [Direct Connect encryption](https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html).
 
 </details>
 
 ## Card 06
 
-**Question:** How can you avoid overengineering?
+**Question:** VPC A is peered with VPC B, and B is peered with C. There is no A-to-C peering or transit service. Can A use B to reach C through those peerings?
+
+Why does this alternative fail: “Yes. All peering connections are automatically transitive.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Avoid extra components when Transit Gateway or BGP already meets the requirement.
+**Answer:** Peering does not provide transitive routing.
+
+**AWS references:** [VPC peering limitations](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html), [AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html).
 
 </details>
 
 ## Card 07
 
-**Question:** What should you review before a practice exam?
+**Question:** Many VPCs and on-premises networks need a managed hub-and-spoke connectivity design with centralized routing domains. Which service fits?
+
+Why does this alternative fail: “A single security group shared as if it were a router.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Practical differences between BGP and PrivateLink.
+**Answer:** Security groups filter traffic and do not provide transit routing.
+
+**AWS references:** [AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html).
 
 </details>
 
 ## Card 08
 
-**Question:** How can you finish a review session efficiently?
+**Question:** A provider wants to expose a supported application service privately to consumer VPCs without providing general network transit between the VPCs. Which pattern fits?
+
+Why does this alternative fail: “An unrestricted internet endpoint as the only service path.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Turn mistakes from this module into clear decision rules for hybrid connectivity.
+**Answer:** A public-only path violates the private connectivity requirement.
+
+**AWS references:** [AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html), [Gateway VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html), [VPC peering limitations](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html).
 
 </details>
-
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

@@ -1,107 +1,120 @@
-# Review Cards
+# Review Flashcards
 
 ## Card 01
 
-**Question:** What is the central focus of this module?
+**Question:** EC2 workloads in a VPC need same-Region S3 access without using an internet gateway or a NAT gateway. Which endpoint type can be added to the relevant route tables?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Master decisions about VPC using SAA-C03 exam scenarios.
+**Answer:** An S3 gateway VPC endpoint. An S3 gateway endpoint provides a route-based private path to supported S3 destinations. Bucket, endpoint, and IAM policies still need to permit the requests.
+
+**AWS references:** [Gateway VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html).
 
 </details>
 
 ## Card 02
 
-**Question:** What mistake commonly occurs with this topic?
+**Question:** A security group permits an EC2 instance to initiate an outbound TCP connection. What is its behavior for response traffic belonging to that connection?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Applying a generic answer without checking the scenario's specific cues for VPC.
+**Answer:** It allows the response traffic through connection tracking, subject to the documented tracking behavior. Security groups are stateful. Network ACLs and routes remain separate requirements; the security group does not replace either.
+
+**AWS references:** [VPC security groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html), [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html).
 
 </details>
 
 ## Card 03
 
-**Question:** How do you identify the best answer option?
+**Question:** A custom network ACL allows inbound HTTPS to an instance but denies all outbound traffic. Why can a client connection still fail?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Prioritize the dominant requirement and choose services that address subnets and route tables with less operational overhead.
+**Answer:** The stateless ACL must also allow the required outbound return traffic, including client ephemeral ports. Network ACLs evaluate inbound and outbound packets independently. Required return traffic must match an outbound allow rule before a deny rule.
+
+**AWS references:** [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html), [VPC security groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html).
 
 </details>
 
 ## Card 04
 
-**Question:** Which trade-off usually appears?
+**Question:** A subnet route table points to an internet gateway. An EC2 instance has only a private IPv4 address. Which statement is correct for direct IPv4 internet connectivity?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Balance subnets with cost, performance, and operational simplicity.
+**Answer:** The route makes the subnet public, but the instance also needs a public IPv4 address or Elastic IP and appropriate network rules for direct internet communication. Public-subnet routing and public addressing are separate requirements. Security groups and network ACLs must also allow the intended traffic.
+
+**AWS references:** [Internet gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html).
 
 </details>
 
 ## Card 05
 
-**Question:** What sign of a mature architecture appears in exam questions?
+**Question:** Private IPv4 instances need to initiate connections to public software repositories, while unsolicited inbound internet connections must remain unavailable. Which design fits?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Deliberate use of route tables with observability to reduce operational risk.
+**Answer:** Use an appropriately routed public NAT gateway and keep the instances without public IPv4 addresses. A public NAT gateway supports outbound-initiated IPv4 internet connectivity for private instances. It does not accept unsolicited inbound connections to them; routing and firewall rules still matter.
+
+**AWS references:** [NAT gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html), [Internet gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html), [Gateway VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html).
 
 </details>
 
 ## Card 06
 
-**Question:** How can you avoid overengineering?
+**Question:** A security group permits an EC2 instance to initiate an outbound TCP connection. What is its behavior for response traffic belonging to that connection?
+
+Why does this alternative fail: “It always requires a matching inbound security group rule for every response packet.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Avoid extra components when NAT Gateway or endpoints already meets the requirement.
+**Answer:** This describes a stateless filtering requirement, not normal tracked security group responses.
+
+**AWS references:** [VPC security groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html), [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html).
 
 </details>
 
 ## Card 07
 
-**Question:** What should you review before a practice exam?
+**Question:** A custom network ACL allows inbound HTTPS to an instance but denies all outbound traffic. Why can a client connection still fail?
+
+Why does this alternative fail: “Network ACLs automatically allow all responses because they are stateful.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Practical differences between SG vs NACL and Transit Gateway.
+**Answer:** Network ACLs are stateless, unlike security groups.
+
+**AWS references:** [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html), [VPC security groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html).
 
 </details>
 
 ## Card 08
 
-**Question:** How can you finish a review session efficiently?
+**Question:** A subnet route table points to an internet gateway. An EC2 instance has only a private IPv4 address. Which statement is correct for direct IPv4 internet connectivity?
+
+Why does this alternative fail: “The route alone assigns the instance a public IPv4 address.”?
 
 <details>
 <summary><strong>View answer</strong></summary>
 
-**Answer:**
-Turn mistakes from this module into clear decision rules for VPC.
+**Answer:** Route table entries do not assign public addresses.
+
+**AWS references:** [Internet gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html).
 
 </details>
-
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

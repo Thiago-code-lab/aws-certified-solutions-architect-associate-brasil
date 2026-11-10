@@ -2,47 +2,48 @@
 
 ## Objective
 
-Build a minimal working workflow that demonstrates **RTO/RPO and business continuity strategies**, with clear behavioral validation and controlled costs for a study environment.
+Measure a bounded backup restoration against explicit RPO and RTO targets.
 
 ## Services Used
 
-Backup, Pilot Light, Warm Standby, Multi-Region.
+A dedicated S3 versioned test dataset or another approved nonproduction backup system.
 
 ## Expected Cost Range
 
-- Short study session: low cost when resources run for only a few hours.
-- Avoid keeping resources active after validation.
-- Use the Free Tier when available.
+Small object storage, versioning, requests, and any optional recovery infrastructure can incur charges. Do not create a full standby Region solely for this basic restoration exercise.
 
 ## Step-by-Step Instructions
 
-1. Create the essential resources for the workflow in a lab account.
-2. Configure minimum necessary access policies and basic observability.
-3. Run a small test workload to validate functional behavior.
-4. Simulate a simple failure (component interruption) and observe recovery.
-5. Record key metrics and adjust a setting to compare results.
+1. Write a concrete acceptable data-loss window and recovery-time target for the test dataset.
+2. Create a small synthetic dataset and retain a known recoverable version or backup.
+3. Record the backup point, apply a controlled change only to the test data, and record the time the simulated disruption is declared.
+4. Restore the selected valid version into an isolated recovery location and validate its contents.
+5. Measure the restored data age relative to the last valid writes and the full elapsed recovery duration.
+6. Compare those observations with RPO and RTO. Explain which additional infrastructure, configuration, and traffic changes a real regional workload recovery would require.
 
 ## Validation
 
-- End-to-end flow runs without critical error.
-- Logs/metrics show expected behavior.
-- Document evidence of a trade-off between performance and cost.
+- Recovered contents match the chosen valid recovery point.
+- Data-loss window and restoration duration are measured separately.
+- An object restoration is not mislabeled as proof of complete regional application recovery.
 
 ## Cleanup
 
-1. Remove the resources created for the lab.
-2. Delete temporary data and unnecessary snapshots.
-3. Check billing the following day to confirm that resource charges have stopped.
+1. Remove only the synthetic restored copies and disposable versions.
+2. Keep required evidence or backups until their lab retention decision permits deletion.
+3. Inspect all retained versions and recovery resources for ongoing charges.
 
 ## Exam Takeaway
 
-The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+State what the exercise proves, the assumptions it relies on, and what it does not test. A successful lab is evidence for the tested configuration, not a guarantee for every workload.
+
+**AWS references:** [Disaster recovery strategies](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), [Recovery objectives](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html), [S3 Versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html).
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 

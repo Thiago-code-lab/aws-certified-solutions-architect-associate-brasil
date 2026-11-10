@@ -20,6 +20,9 @@ from urllib.parse import unquote, urlsplit
 
 import yaml
 
+from editorial_checks import (check_approved_files, check_learning_guidance,
+    check_question_bank, check_weights)
+
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / 'docs/english-edition'
 INVENTORY: dict[str, Any] = json.loads((AUDIT / 'source-inventory.json').read_text(encoding='utf-8'))
@@ -86,7 +89,9 @@ def check_content(blobs: dict[str, bytes], errors: list[str]) -> dict[str, int]:
             f'Invalid source digest: {item["source"]}', errors)
         if not target.is_file():
             continue
-        if item['category'] == 'binary-or-visual-asset' or item['source'] in {'LICENSE', '.github/FUNDING.yml'}:
+        if item['category'] == 'binary-or-visual-asset':
+            require(target.read_bytes() == blobs[item['source']], f'Protected binary modified: {item["target"]}', errors)
+        elif item['source'] in {'LICENSE', '.github/FUNDING.yml'}:
             require(target.read_bytes().replace(b'\r\n', b'\n') == blobs[item['source']].replace(b'\r\n', b'\n'),
                 f'Protected file modified: {item["target"]}', errors)
         if not target.suffix == '.md':
@@ -94,14 +99,13 @@ def check_content(blobs: dict[str, bytes], errors: list[str]) -> dict[str, int]:
         old = structure(blobs[item['source']].decode('utf-8'), True)
         target_text = target.read_text(encoding='utf-8')
         new = structure(target_text, False)
-        for field in ['answers', 'options', 'details', 'summaries', 'code', 'tables']:
-            require(old[field] == new[field], f'Changed {field}: {item["target"]}', errors)
-        if re.match(r'^\d{2}-', item['target']):
-            old_urls = Counter(URL_PATTERN.findall(unescape(blobs[item['source']].decode('utf-8'))))
-            new_urls = Counter(URL_PATTERN.findall(unescape(target_text)))
-            require(not old_urls - new_urls, f'Original external URLs missing: {item["target"]}', errors)
-            for field in ['headings', 'numbers']:
-                require(old[field] == new[field], f'Changed {field}: {item["target"]}', errors)
+        # Editorial content is bound to approved English-baseline digests and
+        # per-question review records. Portuguese answer/number parity is no
+        # longer a correctness requirement. Counts still prevent accidental loss.
+        for field in ['answers', 'options']:
+            require(len(old[field]) == len(new[field]), f'Lost or added {field}: {item["target"]}', errors)
+        for field in ['details', 'summaries']:
+            require(old[field] == new[field], f'Changed answer disclosure count: {item["target"]}', errors)
         totals.update(documents=1, answer_keys=len(new['answers']),
             answer_options=len(new['options']), answer_blocks=new['details'])
     return dict(totals)
@@ -195,6 +199,8 @@ def main() -> int:
     errors: list[str] = []
     blobs = source_blobs()
     totals = check_content(blobs, errors)
+    editorial = check_approved_files(INVENTORY, errors)
+    educational = check_question_bank(errors)
     files = [ROOT / item['target'] for item in INVENTORY['files']
              if Path(item['target']).suffix in {'.md', '.html'} and (ROOT / item['target']).exists()]
     files.extend(sorted(AUDIT.glob('*.md')))
@@ -202,9 +208,13 @@ def main() -> int:
     require(module_dirs == sorted(INVENTORY['directories'].values()), 'Module directory inventory changed', errors)
     links = check_links(files, errors)
     check_language(files, errors)
+    check_learning_guidance(files, errors)
+    errors.extend(check_weights((ROOT / 'README.md').read_text(encoding='utf-8'),
+        (ROOT / 'aws-saa-portal.html').read_text(encoding='utf-8')))
     check_automation(errors)
     report = {'source_commit': INVENTORY['source_commit'], 'source_files': len(INVENTORY['files']),
-        'modules': len(module_dirs), **totals, **links, 'portal_modules': check_portal(errors), 'errors': errors}
+        'modules': len(module_dirs), **totals, **links, **editorial, **educational,
+        'portal_modules': check_portal(errors), 'errors': errors}
     (AUDIT / 'validation-results.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(report, indent=2))
     return 1 if errors else 0

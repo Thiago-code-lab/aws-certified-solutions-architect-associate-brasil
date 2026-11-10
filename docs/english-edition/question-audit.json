@@ -1,0 +1,2721 @@
+{
+  "baseline_commit": "b8d55e0f10de899c68e84b0388b6393a21104734",
+  "questions": [
+    {
+      "id": "01-Q01",
+      "path": "01-Introduction-SAA-C03/questions.md",
+      "number": 1,
+      "topic": "Official domain weights",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "A scenario requires a sound decision about introductory concepts. Which approach best meets the requirements?",
+      "stem": "Which allocation matches the official SAA-C03 scored-content domains?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Security 30%, Resilience 26%, Performance 24%, Cost Optimization 20%.",
+      "technical_resolution": "The exam guide assigns these four weights to scored content. A community practice set need not have the same distribution.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "exam"
+      ],
+      "sha256": "1a89e13673a829c021d4e59855dd2607e3dd81fa77570ef4a5a5b7326650ace1"
+    },
+    {
+      "id": "01-Q02",
+      "path": "01-Introduction-SAA-C03/questions.md",
+      "number": 2,
+      "topic": "Shared responsibility for EC2",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A team runs its application on EC2 instances. Under the shared responsibility model, who patches the guest operating system?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The customer operating the EC2 instances.",
+      "technical_resolution": "For EC2, AWS manages the underlying infrastructure; the customer manages the guest OS, applications, and their configuration. Automation can help the customer perform that responsibility.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "shared"
+      ],
+      "sha256": "6a6799afa0598812d413b957bb607bc7a608fe199dbee02f7623231651515228"
+    },
+    {
+      "id": "01-Q03",
+      "path": "01-Introduction-SAA-C03/questions.md",
+      "number": 3,
+      "topic": "Availability is not backup",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A workload must recover a document that a user accidentally overwrote yesterday. Which capability directly addresses that requirement?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Retain previous object versions and test how to restore the required version.",
+      "technical_resolution": "S3 Versioning retains earlier versions so an overwrite can be reversed. Redundant compute and DNS do not retain earlier application data.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "s3version",
+        "dr"
+      ],
+      "sha256": "a7d01681a3e51c065be29bfba7dcd328ddc8bf2efd74423590de0fccc867ff26"
+    },
+    {
+      "id": "01-Q04",
+      "path": "01-Introduction-SAA-C03/questions.md",
+      "number": 4,
+      "topic": "Interpreting recovery objectives",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A business can tolerate losing at most 15 minutes of data and needs service restored within 2 hours. Which objectives express these requirements?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "RPO of 15 minutes and RTO of 2 hours.",
+      "technical_resolution": "RPO limits acceptable data loss measured in time; RTO limits acceptable recovery time. Managed services do not remove the need to define or test those objectives.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "rto"
+      ],
+      "sha256": "0a73120ed95b64af21fd0c71ad09302d919817e42871faf846bd075b096d7e17"
+    },
+    {
+      "id": "01-Q05",
+      "path": "01-Introduction-SAA-C03/questions.md",
+      "number": 5,
+      "topic": "Requirements before cost preference",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A design requires AWS API access from an EC2 application without distributing long-lived access keys. Which proposal satisfies the security requirement?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Attach an appropriately scoped IAM role to the instance through an instance profile.",
+      "technical_resolution": "An EC2 workload can obtain temporary credentials from its IAM role. Permissions should cover only the application actions and resources it needs.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "iam"
+      ],
+      "sha256": "c4f78e030d1cc329c9e92bb142941436b152bc47aeacb23ed58d409ccabad81d"
+    },
+    {
+      "id": "02-Q01",
+      "path": "02-IAM-and-Security/questions.md",
+      "number": 1,
+      "topic": "Temporary workload credentials",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "A scenario requires a sound decision about IAM and security. Which approach best meets the requirements?",
+      "stem": "An EC2 application needs to read objects only from one S3 prefix. What is the recommended credential and permission design?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An instance role with temporary credentials and s3:GetObject scoped to the required object prefix.",
+      "technical_resolution": "Roles avoid distributing long-lived keys. The object ARN scope and permitted action must match the required prefix; a role name alone grants nothing.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "iam",
+        "policy"
+      ],
+      "sha256": "05dda22486c741b5f9f9368fb872326ca1b28965803b866bdc58cd3f0ebc49b5"
+    },
+    {
+      "id": "02-Q02",
+      "path": "02-IAM-and-Security/questions.md",
+      "number": 2,
+      "topic": "Explicit deny precedence",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "An identity policy allows an S3 action, but an applicable bucket policy explicitly denies that same request. What is the authorization result?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The request is denied.",
+      "technical_resolution": "An applicable explicit deny overrides an allow for the same request. Policy creation time does not determine authorization precedence.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "policy"
+      ],
+      "sha256": "2e1aa60e1579246fd02f7d6dc5c91a03498ea3b92e66a6c0270370fc86654287"
+    },
+    {
+      "id": "02-Q03",
+      "path": "02-IAM-and-Security/questions.md",
+      "number": 3,
+      "topic": "SCPs are guardrails",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A member account has an SCP that allows S3 actions, but a new IAM role has no identity or resource policy granting S3 access. What does the SCP provide?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "A permissions ceiling; the role still needs an applicable permission grant.",
+      "technical_resolution": "SCPs limit permissions in member accounts and do not grant access. Applicable identity or resource policies must grant the action within those limits.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "scp",
+        "policy"
+      ],
+      "sha256": "145e62d63c293e8e09903c54baa6573534c1ab3ef7f70b2d4902934feb2d069e"
+    },
+    {
+      "id": "02-Q04",
+      "path": "02-IAM-and-Security/questions.md",
+      "number": 4,
+      "topic": "Workforce access",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "Employees need centrally managed sign-in to several AWS accounts with short-lived sessions. Which approach best fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Use IAM Identity Center with account assignments and permission sets.",
+      "technical_resolution": "IAM Identity Center supports centralized workforce access to AWS accounts. Permission sets define the account permissions available through the assigned sessions.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "iam"
+      ],
+      "sha256": "5cd217a8199825e195750b1bbbddd097c02e665fe534d1f7411e330c310f9a68"
+    },
+    {
+      "id": "02-Q05",
+      "path": "02-IAM-and-Security/questions.md",
+      "number": 5,
+      "topic": "Least privilege analysis",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A production role has broader permissions than its observed workload requires. Which improvement follows AWS least-privilege guidance?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Review access activity, generate and validate a scoped policy, test required operations, and remove unused permissions.",
+      "technical_resolution": "Access analysis and testing help reduce permissions while preserving required behavior. Observed activity is evidence, but infrequent legitimate operations must also be considered.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "iam"
+      ],
+      "sha256": "51e94fb1d89a80fa4706f77105c6152ebbb2d1e576dd1ac56fec2fe1155453c7"
+    },
+    {
+      "id": "04-Q01",
+      "path": "04-EC2-Compute/questions.md",
+      "number": 1,
+      "topic": "Interruptible compute",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "A scenario requires a sound decision about EC2. Which approach best meets the requirements?",
+      "stem": "A batch job checkpoints its progress and can resume after interruption. It has a flexible completion window. Which EC2 purchase option is designed for spare capacity at a discount?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Spot Instances.",
+      "technical_resolution": "Spot uses spare EC2 capacity and can be interrupted. Checkpointing and flexible scheduling make the stated batch workload a suitable candidate, subject to capacity availability.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "spot",
+        "placement"
+      ],
+      "sha256": "7ae14406848323f817c029fe910a2ee3153a75e2c0807e63c45e854c943355a9"
+    },
+    {
+      "id": "04-Q02",
+      "path": "04-EC2-Compute/questions.md",
+      "number": 2,
+      "topic": "EBS Availability Zone scope",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "An EC2 instance is in one Availability Zone and an EBS volume is in another. How can the data be made available as an attachable EBS volume to that instance?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Create a snapshot and create a new volume from it in the instance Availability Zone.",
+      "technical_resolution": "An EBS volume attaches to instances in its own Availability Zone. A snapshot can be used to create a volume in another Availability Zone in the Region.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "ebs"
+      ],
+      "sha256": "ce5a7e220f2179bf8560677174d397417635d7d4b9f77911af8f87745ecd57e9"
+    },
+    {
+      "id": "04-Q03",
+      "path": "04-EC2-Compute/questions.md",
+      "number": 3,
+      "topic": "Shared file storage",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "Linux EC2 instances in multiple Availability Zones need concurrent access to the same managed NFS file system. Which choice fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Amazon EFS Regional with mount targets and suitable security group rules.",
+      "technical_resolution": "EFS provides managed shared NFS storage; the Regional storage option supports a multi-AZ design. Mount targets and network access still need configuration.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "efs",
+        "ebs"
+      ],
+      "sha256": "03b3fba96632e4cded9f575f49f5524cb03b54b5385ae058559e8dd223892921"
+    },
+    {
+      "id": "04-Q04",
+      "path": "04-EC2-Compute/questions.md",
+      "number": 4,
+      "topic": "Low-latency placement",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "Tightly coupled EC2 workers need low-latency communication inside one Availability Zone. Which common placement strategy targets this requirement?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "A cluster placement group.",
+      "technical_resolution": "A cluster placement group places supported instances close together in one AZ for tightly coupled workloads. This is a performance choice, not protection from losing that AZ.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "placement"
+      ],
+      "sha256": "e19a619af95631fb6766b735fa82fa2f4306b88dc315a5b5d4b4f3439ff77875"
+    },
+    {
+      "id": "04-Q05",
+      "path": "04-EC2-Compute/questions.md",
+      "number": 5,
+      "topic": "Pricing commitment versus capacity",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A team buys a Compute Savings Plan for its steady baseline. Which statement is accurate?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "It discounts eligible usage in exchange for a spend commitment; it does not by itself reserve EC2 capacity.",
+      "technical_resolution": "Savings Plans are pricing commitments. Capacity reservations are a separate design consideration, and unused commitment can reduce realized savings.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "savings",
+        "placement",
+        "spot"
+      ],
+      "sha256": "598175284d85118bf7fa3a6afffaa06a2a42948674dea7d90e5b519ed34d6598"
+    },
+    {
+      "id": "05-Q01",
+      "path": "05-High-Availability-and-Scalability/questions.md",
+      "number": 1,
+      "topic": "Multi-AZ application availability",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "A scenario requires a sound decision about high availability. Which approach best meets the requirements?",
+      "stem": "A stateless HTTP application must tolerate an AZ outage. Which design addresses that failure scope?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An ALB and an Auto Scaling group spanning at least two AZs, with enough surviving capacity and externalized application state.",
+      "technical_resolution": "Distributing compute and load balancing across AZs reduces dependence on one AZ. Surviving capacity, health checks, and state placement must also support the application during failure.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "alb",
+        "asg",
+        "dr"
+      ],
+      "sha256": "421856cfaa0b9e294d1c5c1a8c18bb0fab0b54f8bd95caa8c595ea70566e5adb"
+    },
+    {
+      "id": "05-Q02",
+      "path": "05-High-Availability-and-Scalability/questions.md",
+      "number": 2,
+      "topic": "Layer 7 routing",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "One HTTPS entry point must route /images to one target group and /orders to another. Which load balancer provides this request-path routing?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Application Load Balancer.",
+      "technical_resolution": "ALB evaluates application-layer listener rules, including path conditions. The other choices do not provide HTTP path-based target-group routing.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "alb",
+        "nlb"
+      ],
+      "sha256": "1b4bd4e253250bfb15e7842ded21dbea1c9e99e36f9d74aadcd8efdf879daaf3"
+    },
+    {
+      "id": "05-Q03",
+      "path": "05-High-Availability-and-Scalability/questions.md",
+      "number": 3,
+      "topic": "Application health replacement",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "An Auto Scaling instance passes EC2 status checks, but its application fails ALB health checks. Which configuration lets the group use those application health results to replace it?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Enable Elastic Load Balancing health checks for the group and configure an appropriate grace period.",
+      "technical_resolution": "The group must be configured to use ELB health checks in addition to its default EC2 checks. A suitable grace period avoids replacing instances merely because startup is still in progress.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "asg"
+      ],
+      "sha256": "baff39c0ab6114dfc5d48761a1bc95de713eef36974ee88bc78f0c3ce5edc418"
+    },
+    {
+      "id": "05-Q04",
+      "path": "05-High-Availability-and-Scalability/questions.md",
+      "number": 4,
+      "topic": "Dynamic scaling",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "HTTP traffic varies unpredictably. The team wants the instance count to follow a utilization metric around a chosen target. Which policy fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Target tracking scaling with a suitable metric and instance warmup configuration.",
+      "technical_resolution": "Target tracking changes capacity to keep a supported metric near its target. Scheduled changes can complement it for known events, but cannot alone react to unpredictable demand.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "scaling"
+      ],
+      "sha256": "6c3c2dd2bec694fd5dc3c63b7e34907cc9ec65cf2e7429a03a3d65407e26a1f3"
+    },
+    {
+      "id": "05-Q05",
+      "path": "05-High-Availability-and-Scalability/questions.md",
+      "number": 5,
+      "topic": "Session state during replacement",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "Users lose shopping carts when an application instance is replaced. Carts exist only in that instance memory. Which change addresses the data-placement problem?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Store cart state in an appropriate shared data store and make web instances replaceable.",
+      "technical_resolution": "External state storage lets a replacement instance retrieve the cart, subject to the store consistency and durability design. Routing a user to one instance does not persist that instance memory.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "alb",
+        "dr",
+        "shared"
+      ],
+      "sha256": "67e270381d91962ce0424146d001aea80e39d119324f2b61077c412a2e22c93a"
+    },
+    {
+      "id": "06-Q01",
+      "path": "06-Amazon-S3-and-Storage/questions.md",
+      "number": 1,
+      "topic": "Recover an overwritten object",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "A scenario requires a sound decision about S3. Which approach best meets the requirements?",
+      "stem": "An S3 bucket must retain earlier object contents when an application overwrites an existing key. Which feature directly provides that history?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "S3 Versioning.",
+      "technical_resolution": "Versioning retains multiple versions of an object key. A lifecycle policy may be needed to control noncurrent-version storage costs, and permanent version deletion still needs protection.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "s3version",
+        "s3life"
+      ],
+      "sha256": "3ebcd8ae5e5336d7c25a922b755d7a774638dc97b2e474d23304ff4a487e074a"
+    },
+    {
+      "id": "06-Q02",
+      "path": "06-Amazon-S3-and-Storage/questions.md",
+      "number": 2,
+      "topic": "Object retention",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "Records require a fixed WORM retention period that must not be shortened or bypassed by users, including the account root user. Which S3 feature and mode fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "S3 Object Lock in compliance mode with the required retention period.",
+      "technical_resolution": "Compliance-mode retention prevents protected versions from being overwritten or deleted during the retention period, including by root. Plan carefully because a test record can remain retained until expiry.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "s3lock"
+      ],
+      "sha256": "b5b64c6823daeccf59465ac64194f4a02aa0dd5b47ade1a0445ea351dd9b71d0"
+    },
+    {
+      "id": "06-Q03",
+      "path": "06-Amazon-S3-and-Storage/questions.md",
+      "number": 3,
+      "topic": "Single-AZ storage trade-off",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A dataset is the only copy of irreplaceable records and must survive loss of an AZ. Which choice is unsuitable as its sole storage location?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "S3 One Zone-IA.",
+      "technical_resolution": "One Zone-IA stores data in one AZ and is not resilient to physical loss of that AZ. It suits reproducible data or appropriate secondary copies, not this sole-copy requirement.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "s3classes"
+      ],
+      "sha256": "ffb63d0fc23e90f2ac45b3421157642cec6b13498e9a17db995306c57f995803"
+    },
+    {
+      "id": "06-Q04",
+      "path": "06-Amazon-S3-and-Storage/questions.md",
+      "number": 4,
+      "topic": "Prevent public exposure",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A private application bucket must reject accidental public grants through bucket policies or ACLs. Which S3 control is specifically designed for that purpose?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "S3 Block Public Access configured at the applicable account and bucket levels.",
+      "technical_resolution": "Block Public Access prevents public access according to its settings. It complements authenticated IAM access and does not replace least-privilege authorization.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "s3public",
+        "iam"
+      ],
+      "sha256": "0c9cd2dd1079e8756f30c867e39b581e4a6c37bce38db60f778d0908734be9ef"
+    },
+    {
+      "id": "06-Q05",
+      "path": "06-Amazon-S3-and-Storage/questions.md",
+      "number": 5,
+      "topic": "Archive retrieval requirements",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A retained dataset is rarely read, but every retrieval must begin immediately without a restore job. Which storage decision follows the requirement?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Choose a suitable immediate-access class, such as S3 Glacier Instant Retrieval, after checking retrieval and minimum-duration charges.",
+      "technical_resolution": "Glacier Instant Retrieval provides immediate access, whereas Flexible Retrieval and Deep Archive use restore workflows. Storage, request, retrieval, and minimum-duration costs all affect the choice.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "s3classes"
+      ],
+      "sha256": "3eab7c4455dc894085460132a584ac7da6df8be91ad6edb9d21f0df5c80d57af"
+    },
+    {
+      "id": "08-Q01",
+      "path": "08-VPC-and-Networking/questions.md",
+      "number": 1,
+      "topic": "Private S3 network path",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "A scenario requires a sound decision about VPC. Which approach best meets the requirements?",
+      "stem": "EC2 workloads in a VPC need same-Region S3 access without using an internet gateway or a NAT gateway. Which endpoint type can be added to the relevant route tables?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An S3 gateway VPC endpoint.",
+      "technical_resolution": "An S3 gateway endpoint provides a route-based private path to supported S3 destinations. Bucket, endpoint, and IAM policies still need to permit the requests.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "endpoint"
+      ],
+      "sha256": "fc8dce04ec450c71d6b054e6bc4c2fef24be0bd90bd12b08fbe784a428ed235b"
+    },
+    {
+      "id": "08-Q02",
+      "path": "08-VPC-and-Networking/questions.md",
+      "number": 2,
+      "topic": "Security group statefulness",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A security group permits an EC2 instance to initiate an outbound TCP connection. What is its behavior for response traffic belonging to that connection?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "It allows the response traffic through connection tracking, subject to the documented tracking behavior.",
+      "technical_resolution": "Security groups are stateful. Network ACLs and routes remain separate requirements; the security group does not replace either.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "sg",
+        "nacl"
+      ],
+      "sha256": "eeb7bd33981d84776b6e5fd8d04c67e9195f32067f07f44106b66e2a90c72198"
+    },
+    {
+      "id": "08-Q03",
+      "path": "08-VPC-and-Networking/questions.md",
+      "number": 3,
+      "topic": "Network ACL return traffic",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A custom network ACL allows inbound HTTPS to an instance but denies all outbound traffic. Why can a client connection still fail?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The stateless ACL must also allow the required outbound return traffic, including client ephemeral ports.",
+      "technical_resolution": "Network ACLs evaluate inbound and outbound packets independently. Required return traffic must match an outbound allow rule before a deny rule.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "nacl",
+        "sg"
+      ],
+      "sha256": "fd52db75fe49b5a22fa72633299316aac6e6db60cd1fb1d0d9322e80233a6708"
+    },
+    {
+      "id": "08-Q04",
+      "path": "08-VPC-and-Networking/questions.md",
+      "number": 4,
+      "topic": "Public subnet versus reachable instance",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A subnet route table points to an internet gateway. An EC2 instance has only a private IPv4 address. Which statement is correct for direct IPv4 internet connectivity?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The route makes the subnet public, but the instance also needs a public IPv4 address or Elastic IP and appropriate network rules for direct internet communication.",
+      "technical_resolution": "Public-subnet routing and public addressing are separate requirements. Security groups and network ACLs must also allow the intended traffic.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "igw"
+      ],
+      "sha256": "89703b18b5793c82eeb61fe972afe80160978b6b221d70f05827b46a3c799fe9"
+    },
+    {
+      "id": "08-Q05",
+      "path": "08-VPC-and-Networking/questions.md",
+      "number": 5,
+      "topic": "Outbound NAT does not grant inbound access",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "Private IPv4 instances need to initiate connections to public software repositories, while unsolicited inbound internet connections must remain unavailable. Which design fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Use an appropriately routed public NAT gateway and keep the instances without public IPv4 addresses.",
+      "technical_resolution": "A public NAT gateway supports outbound-initiated IPv4 internet connectivity for private instances. It does not accept unsolicited inbound connections to them; routing and firewall rules still matter.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "nat",
+        "igw",
+        "endpoint"
+      ],
+      "sha256": "34f51012f9e7798bb1677d11615998e9df3b6cbe8cb063a6cc7ec3ac16adcff3"
+    },
+    {
+      "id": "10-Q01",
+      "path": "10-Databases/questions.md",
+      "number": 1,
+      "topic": "RDS instance deployment standby",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "A scenario requires a sound decision about databases. Which approach best meets the requirements?",
+      "stem": "An RDS Multi-AZ DB instance deployment has one primary and one synchronous standby. Which statement about that standby is correct?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "It supports managed failover and does not serve application read traffic.",
+      "technical_resolution": "The standby in a Multi-AZ DB instance deployment is for availability. This must not be generalized to Multi-AZ DB clusters, whose reader instances can serve reads.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "rdsaz",
+        "dr"
+      ],
+      "sha256": "c0938a6c1964c279dc4cf3916c4c7d97b107dd30e6fd2d8b61503849b3549dc5"
+    },
+    {
+      "id": "10-Q02",
+      "path": "10-Databases/questions.md",
+      "number": 2,
+      "topic": "RDS cluster deployment readers",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A team selects an RDS Multi-AZ DB cluster deployment with a writer and two readable instances in separate AZs. How can those instances be used?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "They support failover and can serve read traffic through the appropriate endpoints.",
+      "technical_resolution": "RDS distinguishes Multi-AZ DB clusters from Multi-AZ DB instance deployments. The cluster has one writer and readable failover candidates distributed across three AZs in one Region.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "rdsaz"
+      ],
+      "sha256": "0f417ebf1cd9b462e7db128a69b17544e46c5bd8175603664230b50df0797fd6"
+    },
+    {
+      "id": "10-Q03",
+      "path": "10-Databases/questions.md",
+      "number": 3,
+      "topic": "Read replica lag",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "Reports are directed to an ordinary asynchronous RDS DB instance read replica. Can an application assume every successful write to the primary is immediately visible there?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "No. Replication lag can make the replica temporarily stale.",
+      "technical_resolution": "Asynchronous read replicas are useful for read scaling, but the application must tolerate lag. Read-after-write requirements may require a different read path.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "replica"
+      ],
+      "sha256": "2bf52fca7021c6b7088a40677b3de3f1a66c9c37f778087146959a9627a7e43c"
+    },
+    {
+      "id": "10-Q04",
+      "path": "10-Databases/questions.md",
+      "number": 4,
+      "topic": "DynamoDB GSI consistency",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A DynamoDB application requires strongly consistent reads immediately after a successful write. Which read path supports that consistency option?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Read the base table with ConsistentRead enabled, rather than using a GSI for this read.",
+      "technical_resolution": "DynamoDB supports strongly consistent reads on tables and local secondary indexes. Global secondary index reads are eventually consistent; that restriction is distinct from global-table consistency modes.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "dynamodb"
+      ],
+      "sha256": "f84d2f1b5581a524cee272e06cd7d9115c465695477572113cf881c0b8ea2257"
+    },
+    {
+      "id": "10-Q05",
+      "path": "10-Databases/questions.md",
+      "number": 5,
+      "topic": "DynamoDB global table modes",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A review claims that every DynamoDB global table is necessarily eventually consistent across Regions. What is the accurate correction?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Global tables offer multi-Region eventual consistency and multi-Region strong consistency modes; check the selected mode and supported configuration.",
+      "technical_resolution": "The current documentation distinguishes MREC and MRSC. Availability, topology, and feature constraints must be checked before choosing a mode; neither blanket consistency claim is correct.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dynamodb"
+      ],
+      "sha256": "cb11a086173db69ef1c2a021e0de61512d8cc647324972b3baca6ef54f1c43fe"
+    },
+    {
+      "id": "13-Q01",
+      "path": "13-DNS-Route53-and-CloudFront/questions.md",
+      "number": 1,
+      "topic": "Private S3 origin access",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "A scenario requires a sound decision about Route 53 and CloudFront. Which approach best meets the requirements?",
+      "stem": "A new CloudFront distribution serves a regular private S3 bucket origin. The bucket must stay private while CloudFront can read objects. Which design is recommended?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Configure OAC, signed origin requests, and a bucket policy restricted to the intended CloudFront distribution.",
+      "technical_resolution": "Origin access control authorizes CloudFront access to a regular S3 origin. The bucket policy must allow the intended distribution. Website endpoints are custom origins and do not support OAC.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "oac"
+      ],
+      "sha256": "a64a98bc98f8f3d1176a3ed2d74a7f19ed0fd0b6c88a209007b984d29330175d"
+    },
+    {
+      "id": "13-Q02",
+      "path": "13-DNS-Route53-and-CloudFront/questions.md",
+      "number": 2,
+      "topic": "Latency-based DNS",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "An application has equivalent endpoints in multiple AWS Regions. DNS responses should favor the Region offering the best latency to the user. Which Route 53 policy fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Latency-based routing.",
+      "technical_resolution": "Latency-based routing selects among configured regional resources using latency information. It does not promise the geographically nearest location or a fixed split of requests.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dns"
+      ],
+      "sha256": "66bcc817ca73881f0bb9bbfb88e40f25fea84fa9dbc031bc81595093359c20f4"
+    },
+    {
+      "id": "13-Q03",
+      "path": "13-DNS-Route53-and-CloudFront/questions.md",
+      "number": 3,
+      "topic": "DNS-weighted rollout",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A team wants DNS responses distributed between old and new regional endpoints in configured relative proportions. Which Route 53 policy is intended for this?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Weighted routing.",
+      "technical_resolution": "Weighted records support relative response proportions. DNS caching and resolver behavior mean the observed application-request split is not an exact per-request percentage guarantee.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dns"
+      ],
+      "sha256": "d5aa261bd3dc4328aa8b510b6a120845e8ed91c5fbc522ce6993e7f2e786bb2d"
+    },
+    {
+      "id": "13-Q04",
+      "path": "13-DNS-Route53-and-CloudFront/questions.md",
+      "number": 4,
+      "topic": "Global UDP acceleration",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A globally used UDP application needs static anycast entry IPs and routing across the AWS network to healthy regional endpoints. Which service fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS Global Accelerator with supported endpoints.",
+      "technical_resolution": "Global Accelerator supports TCP and UDP applications with static anycast IP addresses and regional endpoint routing. CloudFront is an HTTP(S) content delivery service, not an arbitrary UDP proxy.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "ga"
+      ],
+      "sha256": "decb1f9a33a2d960a8a1f8d26c26c93349f4f1fdbc84435aa46eebc3b93edd08"
+    },
+    {
+      "id": "13-Q05",
+      "path": "13-DNS-Route53-and-CloudFront/questions.md",
+      "number": 5,
+      "topic": "Web request filtering",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "An HTTP application behind an ALB needs managed rule-based filtering for common web exploits. Which service is designed for that application-layer filtering?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS WAF associated with the supported application resource.",
+      "technical_resolution": "AWS WAF evaluates web requests with rules and can protect supported resources such as an ALB. Its rules complement, rather than replace, secure application design and network controls.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "waf"
+      ],
+      "sha256": "c1d8b8b855c292dbb1b52b15a9f0368e0ba84c9e4a208441ae5ca7a61536ee2d"
+    },
+    {
+      "id": "14-Q01",
+      "path": "14-Decoupling-SQS-SNS-EventBridge/questions.md",
+      "number": 1,
+      "topic": "Standard queue duplicates",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "A scenario requires a sound decision about decoupling. Which approach best meets the requirements?",
+      "stem": "An order worker uses an SQS Standard queue. A message can be delivered again after a retry. Which application design addresses duplicate side effects?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Use an idempotency key and an atomic or otherwise safe duplicate-detection operation before committing the order side effect.",
+      "technical_resolution": "Standard queues provide at-least-once delivery. The business operation must safely handle repeated delivery; successful processing and message acknowledgement are separate steps.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "sqs",
+        "lambdasqs"
+      ],
+      "sha256": "e9278837fe6511a67d73204dad60c195da2ee1789780fbe2bd385b82d8487d30"
+    },
+    {
+      "id": "14-Q02",
+      "path": "14-Decoupling-SQS-SNS-EventBridge/questions.md",
+      "number": 2,
+      "topic": "FIFO ordering scope",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "Updates for each customer must remain ordered, while different customers can process in parallel. Which SQS FIFO design matches that requirement?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Use the customer identifier as MessageGroupId and appropriate deduplication identifiers.",
+      "technical_resolution": "FIFO ordering is scoped to a message group. Separate customer groups allow independent processing while preserving each group order.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "fifo",
+        "dedup"
+      ],
+      "sha256": "a3a8c0d1ef087361e29619c9b00a59dc592599283b51200dcda19abc15797e78"
+    },
+    {
+      "id": "14-Q03",
+      "path": "14-Decoupling-SQS-SNS-EventBridge/questions.md",
+      "number": 3,
+      "topic": "FIFO deduplication is bounded",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A producer retries an SQS FIFO SendMessage call with the same deduplication ID within the deduplication interval. Which conclusion is justified?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "SQS suppresses duplicate sends in that interval, but the application must still handle retried processing safely.",
+      "technical_resolution": "FIFO send deduplication operates within a documented five-minute interval. It is not an unlimited transaction guarantee for downstream business effects or failed consumer processing.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dedup",
+        "fifo",
+        "lambdasqs"
+      ],
+      "sha256": "2a40484c61a73d7eb3ea60dfb238d7a838df58b2630ad552aa6e2a047941e74e"
+    },
+    {
+      "id": "14-Q04",
+      "path": "14-Decoupling-SQS-SNS-EventBridge/questions.md",
+      "number": 4,
+      "topic": "Independent fan-out consumers",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "Billing and shipping must each receive every order event and process independently with durable buffering. Which design fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An SNS topic with a separate subscribed SQS queue for each consumer, with appropriate queue access policies.",
+      "technical_resolution": "SNS fan-out can place an event on each subscribed queue. Separate queues preserve independent buffering and retry behavior; duplicates still require safe consumer design.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "sns",
+        "sqs"
+      ],
+      "sha256": "30504cbcdffa2773f08e8a41abad9c642087547b3ee719466bf0e97e81d427c4"
+    },
+    {
+      "id": "14-Q05",
+      "path": "14-Decoupling-SQS-SNS-EventBridge/questions.md",
+      "number": 5,
+      "topic": "Workflow orchestration",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "Order fulfillment needs an explicit sequence of tasks, branching, retries, and a human approval callback. Which service is designed to orchestrate such a workflow?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An appropriate AWS Step Functions Standard workflow.",
+      "technical_resolution": "Step Functions models workflow state and task transitions, with supported callback integrations for Standard workflows. An event router can start a workflow but is not itself the full orchestrator.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "sfn",
+        "events"
+      ],
+      "sha256": "bc059f0cf55ffd3c718b45426e7617be84ec6b2fcf97e715fee4e1dc8e37379a"
+    },
+    {
+      "id": "16-Q01",
+      "path": "16-Containers-ECS-EKS-Fargate/questions.md",
+      "number": 1,
+      "topic": "Container compute without EC2 hosts",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "A scenario requires a sound decision about Containers. Which approach best meets the requirements?",
+      "stem": "A team chooses ECS for long-running containers and does not want to provision or patch EC2 worker hosts. Which compute option fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS Fargate for the ECS tasks.",
+      "technical_resolution": "Fargate supplies managed container compute. The team still configures task resources, images, permissions, networking, and service scaling.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "fargate",
+        "executionrole"
+      ],
+      "sha256": "268aa22d66e91552b134e4a2293b5b2a1f9a1e72d98f09dcb5282166f179c16e"
+    },
+    {
+      "id": "16-Q02",
+      "path": "16-Containers-ECS-EKS-Fargate/questions.md",
+      "number": 2,
+      "topic": "Task role versus execution role",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "Application code inside an ECS task calls S3. Which role should carry the application S3 permissions?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The ECS task IAM role.",
+      "technical_resolution": "The task role supplies permissions to code running in containers. The task execution role serves agent operations such as pulling images and shipping configured logs.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "taskrole",
+        "executionrole"
+      ],
+      "sha256": "d5988e485750f6a7c0abf2fc28e155511f3f2f17f718ec3256f03a9c87fb7449"
+    },
+    {
+      "id": "16-Q03",
+      "path": "16-Containers-ECS-EKS-Fargate/questions.md",
+      "number": 3,
+      "topic": "Image pulls and log delivery",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A Fargate task needs its agent to pull a private ECR image and send logs with the awslogs driver. Which role is relevant to those agent operations?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The task execution IAM role with the necessary permissions.",
+      "technical_resolution": "The execution role authorizes supported ECS/Fargate agent operations. Application API permissions remain separate in the task role.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "executionrole",
+        "taskrole"
+      ],
+      "sha256": "4dbb89349c1796a27125f9e4d9bf86bdbb98389995628bd9e3888c7ed50cc1d2"
+    },
+    {
+      "id": "16-Q04",
+      "path": "16-Containers-ECS-EKS-Fargate/questions.md",
+      "number": 4,
+      "topic": "Kubernetes orchestration",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A workload explicitly requires Kubernetes APIs and Kubernetes-native controllers. Which AWS managed orchestration service matches that requirement?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Amazon EKS.",
+      "technical_resolution": "EKS provides a managed Kubernetes control plane. Compute, access, add-ons, networking, and workload configuration still need an appropriate operating model.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "eks",
+        "fargate"
+      ],
+      "sha256": "dd3c3dbc646d1b8d20ed53e11ae15b11a9caba236e5ee93845a88d4047b0a24f"
+    },
+    {
+      "id": "16-Q05",
+      "path": "16-Containers-ECS-EKS-Fargate/questions.md",
+      "number": 5,
+      "topic": "Fargate does not choose task demand",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "An ECS service on Fargate must increase its desired task count as load rises. What is still required?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Configure an appropriate ECS service scaling policy and limits; Fargate alone does not choose the service desired count from application demand.",
+      "technical_resolution": "Fargate manages the underlying task compute. Application Auto Scaling policies determine desired-count changes for an ECS service, subject to configured limits and available capacity.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "fargate",
+        "ecsautoscale"
+      ],
+      "sha256": "075a074536eaa07b5b6ca0b47886dc4cf65246f8e997c00832b2eae0e06c5914"
+    },
+    {
+      "id": "17-Q01",
+      "path": "17-Serverless-Lambda-API-Gateway/questions.md",
+      "number": 1,
+      "topic": "Durable function state",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "A scenario requires a sound decision about Serverless. Which approach best meets the requirements?",
+      "stem": "A Lambda application must retain customer workflow state across retries and new execution environments. Where should that durable state live?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "In an appropriate external durable store, such as DynamoDB, with a suitable consistency and idempotency design.",
+      "technical_resolution": "Execution environment reuse can improve performance, but it is not a durability guarantee. Customer workflow state must survive environment replacement and concurrent invocations.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "lambda",
+        "dynamodb"
+      ],
+      "sha256": "6e35d65dbdc95cf37483810a9d9b0bef24c09cf296b318a86c5d28d0a2fa70cd"
+    },
+    {
+      "id": "17-Q02",
+      "path": "17-Serverless-Lambda-API-Gateway/questions.md",
+      "number": 2,
+      "topic": "Reserved versus provisioned concurrency",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A team wants to limit a Lambda function concurrency so it cannot overwhelm a database. Which control directly sets a function concurrency ceiling?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Reserved concurrency.",
+      "technical_resolution": "Reserved concurrency reserves an allocation and caps that function concurrent execution. Provisioned concurrency pre-initializes environments to reduce cold-start latency and is a different control.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "concurrency"
+      ],
+      "sha256": "f3e233b4e22ddcb1359933d89990368831a0f4062e4b25244a5de969262508f0"
+    },
+    {
+      "id": "17-Q03",
+      "path": "17-Serverless-Lambda-API-Gateway/questions.md",
+      "number": 3,
+      "topic": "Reduce cold starts deliberately",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A latency-sensitive Lambda function needs pre-initialized execution environments and accepts their additional cost. Which feature is designed for that requirement?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Provisioned concurrency on a supported function version or alias.",
+      "technical_resolution": "Provisioned concurrency keeps a configured number of environments initialized. Capacity planning and limits still matter; it is not a promise of zero latency for all traffic.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "concurrency"
+      ],
+      "sha256": "e6c2158e85569810b7698a4c52c80ca8cd79489a6f6eb70250c55ba232d8ccd8"
+    },
+    {
+      "id": "17-Q04",
+      "path": "17-Serverless-Lambda-API-Gateway/questions.md",
+      "number": 4,
+      "topic": "SQS partial batch retries",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A Lambda SQS batch contains several successful records and one failed record. How can the consumer avoid needlessly retrying the successful records?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Enable and implement partial batch responses, returning the failed item identifiers while making processing idempotent.",
+      "technical_resolution": "Partial batch responses let a configured event source mapping retry the failed records. At-least-once processing still requires safe handling of duplicates.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "lambdasqs"
+      ],
+      "sha256": "47bcd8a7597ae0b3ee20b52dc6e7f23970d1b5eafea015a8675099cfc10aa5d3"
+    },
+    {
+      "id": "17-Q05",
+      "path": "17-Serverless-Lambda-API-Gateway/questions.md",
+      "number": 5,
+      "topic": "API keys are not authorization",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A public API Gateway REST API uses usage-plan API keys. The team must authenticate users and authorize protected operations. What additional design is required?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Use a supported authorization mechanism, such as an appropriate authorizer or IAM authorization; treat API keys as usage-plan identifiers.",
+      "technical_resolution": "API Gateway usage-plan keys support identification for usage control, not authentication or authorization. Protected APIs need an explicit authorization design.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "apikeys",
+        "api"
+      ],
+      "sha256": "731374f2b3ab7d0fa7d1a82374f23f5f005a032aa9a4eced7d04e386cbaa03b0"
+    },
+    {
+      "id": "18-Q01",
+      "path": "18-Data-and-Analytics/questions.md",
+      "number": 1,
+      "topic": "Athena data layout",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "A scenario requires a sound decision about Analytics. Which approach best meets the requirements?",
+      "stem": "Athena queries frequently filter an S3 dataset by date and read only a few columns. Which change can reduce scanned data for on-demand queries?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Use a suitable date partition layout, columnar Parquet or ORC, compression, and queries that filter the partition keys.",
+      "technical_resolution": "Partition pruning and columnar formats can reduce data read. Partition granularity and file sizes must match the workload; excessive small files can hurt performance.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "athena"
+      ],
+      "sha256": "31083da1e4441ce837de258a469ae33fff396fcce821f2af77c45af542e9392e"
+    },
+    {
+      "id": "18-Q02",
+      "path": "18-Data-and-Analytics/questions.md",
+      "number": 2,
+      "topic": "Catalog metadata versus ETL",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A team needs a shared metadata catalog for tables stored in S3 and a separate transformation job. Which distinction is accurate?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The Glue Data Catalog stores metadata; a Glue ETL job performs the configured transformation.",
+      "technical_resolution": "Catalog tables describe data and schemas. Crawlers can discover metadata; ETL jobs execute transformation logic. Metadata registration is not proof of transformed output.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "glue",
+        "athena"
+      ],
+      "sha256": "6923318340051bdd53a037c8495c3025192c4a9d2daa97f4e9e56d15de0de2e7"
+    },
+    {
+      "id": "18-Q03",
+      "path": "18-Data-and-Analytics/questions.md",
+      "number": 3,
+      "topic": "Managed streaming delivery",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "An application needs managed delivery of streaming records into S3 and can tolerate buffering before delivery. Which service directly matches?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Amazon Data Firehose.",
+      "technical_resolution": "Data Firehose buffers and delivers streaming records to supported destinations. Buffering and delivery behavior must be included in end-to-end latency planning.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "firehose"
+      ],
+      "sha256": "24a7d9293fbd099e513cb7418d5a1a89179d80080a955e2689ff100b9e000f74"
+    },
+    {
+      "id": "18-Q04",
+      "path": "18-Data-and-Analytics/questions.md",
+      "number": 4,
+      "topic": "Stream consumers and replay",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "Several applications need to read a stream independently and reprocess retained records using their own consumer positions. Which service is designed for this model?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Kinesis Data Streams with suitable retention and consumer throughput configuration.",
+      "technical_resolution": "Kinesis Data Streams supports independent consumers reading retained records. Shard or capacity configuration, retention, partitioning, and consumer limits must fit the workload.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "kinesis",
+        "sqs"
+      ],
+      "sha256": "c5fa58a8ca817e19c9ef235d4c6899b199c613050e3486fefafd65a9927f1086"
+    },
+    {
+      "id": "18-Q05",
+      "path": "18-Data-and-Analytics/questions.md",
+      "number": 5,
+      "topic": "Do not use migration as analytics",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A team must transform and curate S3 data for analytics. Is an AWS DMS ongoing replication task alone proof that the required business ETL has been implemented?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "No. DMS replication and the required analytical transformations must be assessed separately; use an appropriate ETL design such as Glue jobs.",
+      "technical_resolution": "DMS moves data and supports migration-related capabilities; it is not a blanket substitute for arbitrary business ETL. Define the transformations and validate the curated results.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dms",
+        "glue"
+      ],
+      "sha256": "dd1f3c1dee1e325fc8ba4cf2627dda44112d30c8e31f969b2fbb4102a4857cef"
+    },
+    {
+      "id": "19-Q01",
+      "path": "19-Machine-Learning-and-AI/questions.md",
+      "number": 1,
+      "topic": "Managed custom ML",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "A scenario requires a sound decision about ML and AI. Which approach best meets the requirements?",
+      "stem": "Data scientists need managed tools to build, train, and deploy a custom machine learning model. Which service directly supports that lifecycle?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Amazon SageMaker AI.",
+      "technical_resolution": "SageMaker AI provides managed training and deployment capabilities. The team still owns dataset quality, model evaluation, permissions, and the suitability of the model for its use case.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "sagemaker"
+      ],
+      "sha256": "2ac67cd694b12b9b7afa27354c4c11b988b29537faf1d4f6dec3e6507bcabea6"
+    },
+    {
+      "id": "19-Q02",
+      "path": "19-Machine-Learning-and-AI/questions.md",
+      "number": 2,
+      "topic": "Pretrained text analysis",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "An application needs entity and sentiment analysis of supported text without first building a custom model. Which service fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Amazon Comprehend.",
+      "technical_resolution": "Comprehend offers pretrained natural-language analysis, including entities and sentiment. Supported languages, input types, and feature constraints must be checked for the specific operation.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "comprehend",
+        "textract"
+      ],
+      "sha256": "cbd48d44c6156832365f8933cc06fbc4217431a6556bcff543ca413bbc40243f"
+    },
+    {
+      "id": "19-Q03",
+      "path": "19-Machine-Learning-and-AI/questions.md",
+      "number": 3,
+      "topic": "Document extraction",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A workflow must extract form fields and tables from scanned business documents using a managed document-analysis API. Which service fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Amazon Textract.",
+      "technical_resolution": "Textract supports document text, form, and table extraction. Validate extraction quality and route uncertain business-critical results for appropriate review.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "textract",
+        "comprehend"
+      ],
+      "sha256": "18c7f31e24658a36dde8978c3eed859a305c04d0bb4db24148814e106f9a2294"
+    },
+    {
+      "id": "19-Q04",
+      "path": "19-Machine-Learning-and-AI/questions.md",
+      "number": 4,
+      "topic": "Generative AI context without scope claims",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "An optional generative AI exercise needs managed access to foundation models rather than building a model-serving fleet. Which service matches that capability?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Amazon Bedrock.",
+      "technical_resolution": "Bedrock provides managed foundation-model access. This is optional architecture context: the current SAA-C03 service list is non-exhaustive, and the repository must not claim a guaranteed exam question or weight for this topic.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "bedrock",
+        "scope"
+      ],
+      "sha256": "c6f43397cffba8070e431496b0883d1212f028ac17a2750c01ee15b209518a44"
+    },
+    {
+      "id": "19-Q05",
+      "path": "19-Machine-Learning-and-AI/questions.md",
+      "number": 5,
+      "topic": "Managed inference still needs evaluation",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A team uses a managed model API for customer-facing decisions. Which operational responsibility remains with the team?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Evaluate output quality on representative data, protect inputs and outputs, and implement suitable handling for errors or unacceptable results.",
+      "technical_resolution": "Managed infrastructure does not establish that a model is appropriate for every business input. Application data handling, permissions, evaluation, and failure behavior remain part of the customer design.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "shared",
+        "sagemaker",
+        "iam"
+      ],
+      "sha256": "a97abcff3818d46d7c284071ccb5703cb473a990c455129c61cdc9ddba1ee1b5"
+    },
+    {
+      "id": "20-Q01",
+      "path": "20-Monitoring-CloudWatch-CloudTrail/questions.md",
+      "number": 1,
+      "topic": "Operational telemetry",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "A scenario requires a sound decision about monitoring. Which approach best meets the requirements?",
+      "stem": "An operations team needs a dashboard and alarm for an EC2 application latency metric. Which service directly provides metrics, dashboards, and alarms?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Amazon CloudWatch.",
+      "technical_resolution": "CloudWatch supports metrics, dashboards, logs, and alarms. The application must publish or instrument the relevant latency signal if it is not supplied automatically.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "cw"
+      ],
+      "sha256": "50c911874dba2b7ef518cdd1cd90acb5169f40b58262e4550fb4e24f18c450bb"
+    },
+    {
+      "id": "20-Q02",
+      "path": "20-Monitoring-CloudWatch-CloudTrail/questions.md",
+      "number": 2,
+      "topic": "Object API audit events",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "Auditors need S3 GetObject activity for a selected bucket. The team has only the default CloudTrail event history view. What must be considered?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Configure appropriate S3 object data-event logging on a trail or event data store, including its cost and selection scope.",
+      "technical_resolution": "S3 object operations are CloudTrail data events. Trails and event data stores do not log data events by default; selectors must include the needed activity.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "trail"
+      ],
+      "sha256": "935dd3bddc7fd44146adc0385a559ffb414b813ee3caf88db8454ac4475f19a4"
+    },
+    {
+      "id": "20-Q03",
+      "path": "20-Monitoring-CloudWatch-CloudTrail/questions.md",
+      "number": 3,
+      "topic": "Configuration history",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A team must determine how a supported security group configuration changed over time and evaluate it against configuration rules. Which service fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS Config with the required recording and rules enabled.",
+      "technical_resolution": "Config records supported resource configuration history and evaluates configuration against rules. CloudTrail complements it with API activity, but serves a different primary question.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "config",
+        "trail"
+      ],
+      "sha256": "1bbdddc8686c58118909eb0f567be9951443fe6b5068b0929f62e0035ce30105"
+    },
+    {
+      "id": "20-Q04",
+      "path": "20-Monitoring-CloudWatch-CloudTrail/questions.md",
+      "number": 4,
+      "topic": "Tracing instrumentation maintenance",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A new distributed application needs tracing. Should the team treat the legacy X-Ray SDK and daemon as the preferred long-term instrumentation choice without reviewing support status?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "No. Review the maintenance notice and prefer an appropriate OpenTelemetry instrumentation and collection path.",
+      "technical_resolution": "AWS documents maintenance mode for the X-Ray SDKs and daemon starting February 25, 2026 and recommends OpenTelemetry migration. Distinguish instrumentation lifecycle from the availability of the X-Ray service.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "xray",
+        "cw"
+      ],
+      "sha256": "24c6c1ca6fc7d113647ff44333a82afe451a82018e1fd3758c03efa2ca0a1046"
+    },
+    {
+      "id": "20-Q05",
+      "path": "20-Monitoring-CloudWatch-CloudTrail/questions.md",
+      "number": 5,
+      "topic": "Telemetry is not prevention by default",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A Config rule reports that a resource is noncompliant. No remediation or preventive policy is configured. Which statement is justified?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The rule detects the condition; prevention or remediation requires an additional appropriate control.",
+      "technical_resolution": "Detection, prevention, and remediation are distinct capabilities. A configured rule evaluation is not proof that corrective action occurred or that all security requirements are met.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "config",
+        "scp"
+      ],
+      "sha256": "d142cd9f22adbe6f0c3a5bc41dd8237261fd826c811bf1e97cbd327b3959c9d0"
+    },
+    {
+      "id": "21-Q01",
+      "path": "21-Migration-and-Transfer/questions.md",
+      "number": 1,
+      "topic": "Database migration and conversion",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "A scenario requires a sound decision about migration. Which approach best meets the requirements?",
+      "stem": "A heterogeneous relational database migration needs schema assessment and low-downtime data replication. Which plan accounts for both?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Assess and convert the schema using suitable DMS Schema Conversion or AWS SCT capabilities, then configure supported full-load and CDC replication with cutover validation.",
+      "technical_resolution": "DMS includes schema-conversion and data-migration capabilities, but support and conversion gaps depend on the source and target. Replication, application compatibility, and cutover must be validated separately.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dms"
+      ],
+      "sha256": "90f511bc792f39c75768135d86f314f08dc4ce055610839acb707f8c09b79455"
+    },
+    {
+      "id": "21-Q02",
+      "path": "21-Migration-and-Transfer/questions.md",
+      "number": 2,
+      "topic": "Server rehosting",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A team wants to rehost supported physical or virtual servers on AWS using continuous block-level replication. Which service is designed for this?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS Transform MGN, formerly AWS Application Migration Service.",
+      "technical_resolution": "MGN replicates server blocks and supports test launches and cutover for rehosting. Rehosting is not the same as database-engine conversion or application refactoring.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "mgn",
+        "dms"
+      ],
+      "sha256": "2dfbd24290e179c7a2bc50e59411742e264d3ac8a5a6a70954ed02aeff4619ba"
+    },
+    {
+      "id": "21-Q03",
+      "path": "21-Migration-and-Transfer/questions.md",
+      "number": 3,
+      "topic": "Online file transfer",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "An organization has adequate network connectivity and must regularly copy files from a supported on-premises NFS share into S3 with integrity validation. Which service fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS DataSync.",
+      "technical_resolution": "DataSync automates transfers between supported file or object storage systems and AWS storage. Source support, permissions, connectivity, and task settings still need verification.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "datasync"
+      ],
+      "sha256": "fb5b7f3b72bfac67708f2dfa6ebed1de74a1a8956f2fee82dc3a7c10763f88b7"
+    },
+    {
+      "id": "21-Q04",
+      "path": "21-Migration-and-Transfer/questions.md",
+      "number": 4,
+      "topic": "Keep SFTP clients",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "Partners must keep their existing SFTP clients while uploading files to managed AWS-backed storage. Which service directly provides an SFTP endpoint?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS Transfer Family configured with a supported storage backend and authentication design.",
+      "technical_resolution": "Transfer Family provides managed file-transfer protocol endpoints, including SFTP. S3 storage is not itself an SFTP server, and DataSync serves a different transfer model.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "transfer",
+        "datasync"
+      ],
+      "sha256": "4c27541e09d52e2f66d14494c038bd60e58f704653acadf1b08d7fe787d55e62"
+    },
+    {
+      "id": "21-Q05",
+      "path": "21-Migration-and-Transfer/questions.md",
+      "number": 5,
+      "topic": "Snowball availability caveat",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A new AWS customer in a commercial Region is planning a deployment on November 10, 2026. Should a new Snowball device order be assumed available?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "No. Snowball Edge is closed to new customers, and AWS has announced commercial-Region device support ending December 31, 2026; evaluate currently available transfer alternatives.",
+      "technical_resolution": "AWS service availability notices govern deployment eligibility. The exam scope list and historical offline-transfer patterns do not override customer or lifecycle restrictions.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "snow",
+        "snowhistory",
+        "scope"
+      ],
+      "sha256": "ca1acf9b3978fded6d4feea21e39d9456c9ea3b2e4c85ca00888197653314a0a"
+    },
+    {
+      "id": "22-Q01",
+      "path": "22-Disaster-Recovery-and-Business-Continuity/questions.md",
+      "number": 1,
+      "topic": "RPO is not restoration speed",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "A scenario requires a sound decision about resilience and DR. Which approach best meets the requirements?",
+      "stem": "Backups complete every 24 hours. A business requires at most 15 minutes of data loss. Can a fast restore alone prove this design meets the RPO?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "No. The recoverable data points must satisfy the 15-minute loss window; restore speed addresses RTO.",
+      "technical_resolution": "RPO describes acceptable data loss in time. The recovery data path needs sufficiently current valid recovery points; fast infrastructure restoration does not make old backups newer.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "rto",
+        "dr"
+      ],
+      "sha256": "ac778e7792098a323b39f40e13681dbb818d3c16d6516f4455faa0ae0b5bfc5f"
+    },
+    {
+      "id": "22-Q02",
+      "path": "22-Disaster-Recovery-and-Business-Continuity/questions.md",
+      "number": 2,
+      "topic": "Regional disaster scope",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A workload must recover after an entire AWS Region becomes unavailable. Does deploying the application and database across AZs only within that Region satisfy the failure scope by itself?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "No. A regional recovery design needs usable recovery resources and data outside the affected Region, plus tested recovery procedures.",
+      "technical_resolution": "Multi-AZ deployment addresses AZ-level failures within a Region. Regional recovery needs an appropriately independent recovery location and tested data, configuration, and traffic recovery.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dr"
+      ],
+      "sha256": "3f738143112ed0a41094a8fbe5a18bae4a2f777ef3dfa3b989364d9b06dd0e54"
+    },
+    {
+      "id": "22-Q03",
+      "path": "22-Disaster-Recovery-and-Business-Continuity/questions.md",
+      "number": 3,
+      "topic": "Pilot light versus warm standby",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A recovery Region maintains a small but fully functional copy of the application that can serve traffic before being scaled up. Which DR pattern best describes this?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Warm standby.",
+      "technical_resolution": "Warm standby maintains a scaled-down functioning workload. Pilot light keeps a smaller core running and requires additional activation or deployment before the full workload can serve.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dr"
+      ],
+      "sha256": "e608ad7e5c7e83a6ee6fb56efdd26b519e005f79505f0d374d09f90acfab421d"
+    },
+    {
+      "id": "22-Q04",
+      "path": "22-Disaster-Recovery-and-Business-Continuity/questions.md",
+      "number": 4,
+      "topic": "Measure recovery",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A team has a backup marked successful. What provides stronger evidence that business recovery objectives can be met?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Restore representative data in an isolated environment, validate the application, measure data loss and recovery duration, and compare them with RPO and RTO.",
+      "technical_resolution": "Recovery testing checks that data, dependencies, permissions, and procedures actually work together. A successful backup is necessary evidence for that copy, but not proof of end-to-end recovery.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "dr",
+        "rto"
+      ],
+      "sha256": "75348a534a2bd809f012b6982d2e30d7a85db718514cdb5347221dc6e0f6a485"
+    },
+    {
+      "id": "22-Q05",
+      "path": "22-Disaster-Recovery-and-Business-Continuity/questions.md",
+      "number": 5,
+      "topic": "Availability and corruption recovery",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "An accidental application command deletes valid records from a database whose changes replicate to its standby. What protection is additionally needed?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Retained backups or an appropriate point-in-time recovery capability, with tested restoration procedures.",
+      "technical_resolution": "Replication can reproduce logical mistakes as well as correct writes. Availability replicas do not replace retained recoverable history for corruption or accidental deletion.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dr",
+        "rdsaz"
+      ],
+      "sha256": "cf889aa2665f1c3ebc509293fa66288dcd23a5d8107cabb464e728c891eaf498"
+    },
+    {
+      "id": "23-Q01",
+      "path": "23-AWS-Organizations-Governance-and-Costs/questions.md",
+      "number": 1,
+      "topic": "Organization permission ceiling",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "A scenario requires a sound decision about governance and costs. Which approach best meets the requirements?",
+      "stem": "An SCP explicitly denies a service action in a member account. An IAM role there has AdministratorAccess. What happens to a request covered by the SCP deny?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "It is denied, unless the principal or action is within a documented SCP exemption.",
+      "technical_resolution": "An applicable SCP deny limits permissions in member accounts, including administrator roles. Management-account principals and some other entities have documented exceptions, which must not be generalized away.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "scp",
+        "policy"
+      ],
+      "sha256": "9a48558a7dadf9db2c3248e4aea52614475b554309f9ed73b6c7204cedd05dae"
+    },
+    {
+      "id": "23-Q02",
+      "path": "23-AWS-Organizations-Governance-and-Costs/questions.md",
+      "number": 2,
+      "topic": "Budget is not an instantaneous cap",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A lab account has an AWS Budgets notification at a chosen spend threshold. Does this guarantee that all charges stop exactly at that amount?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "No. Budget data and notifications are delayed; explicit controls, suitable actions, limits, and cleanup are still needed.",
+      "technical_resolution": "Budgets track costs and usage and can support configured actions. They are not a universal instantaneous hard spending cap; already-running resources and delayed cost data require careful operational controls.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "budgets"
+      ],
+      "sha256": "0e379937d1c7f2b9ce29853f612c6eaa9edda659df31afc7883fca3e3b8876ce"
+    },
+    {
+      "id": "23-Q03",
+      "path": "23-AWS-Organizations-Governance-and-Costs/questions.md",
+      "number": 3,
+      "topic": "Commit only a measured baseline",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A workload has a predictable long-running compute baseline plus uncertain bursts. Which cost approach avoids committing to the full possible peak?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Right-size from measured usage and evaluate an appropriate Savings Plan commitment for the stable baseline, leaving variable usage to suitable flexible capacity.",
+      "technical_resolution": "A commitment should match expected eligible usage and tolerance for underutilization. Bursts and interruption-sensitive work need a separate capacity and pricing decision.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "savings",
+        "spot",
+        "cost"
+      ],
+      "sha256": "368a7fc3031746d064f650d9b0be83ad86df23c0a9a1eee77733f9edcf2dc343"
+    },
+    {
+      "id": "23-Q04",
+      "path": "23-AWS-Organizations-Governance-and-Costs/questions.md",
+      "number": 4,
+      "topic": "Analyze spending",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A team needs to inspect historical AWS costs by service and compare trends before choosing optimization actions. Which service fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS Cost Explorer with appropriate filters and grouping.",
+      "technical_resolution": "Cost Explorer supports cost and usage analysis. Reliable allocation may require activated cost allocation tags or other account structure; analysis does not automatically implement every optimization.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "cost"
+      ],
+      "sha256": "f7fcc56888f055ba73304e6fe27217db71c630ecc7c41e7e3c1cd5532e8c5fcd"
+    },
+    {
+      "id": "23-Q05",
+      "path": "23-AWS-Organizations-Governance-and-Costs/questions.md",
+      "number": 5,
+      "topic": "SCP management-account exception",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A team expects an SCP attached to the organization root to restrict IAM roles in the organization management account. What is the correction?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "SCPs do not restrict users or roles in the management account; protect that account with appropriate IAM controls and limited use.",
+      "technical_resolution": "AWS documents that SCPs do not affect management-account users or roles. Keep workloads and routine operations appropriately separated from highly privileged organization administration.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "scp",
+        "iam"
+      ],
+      "sha256": "b08df3d29fe5a15df007c9ab45e5f762bfdbf0ce433ac33676c2e30d6627e5a1"
+    },
+    {
+      "id": "24-Q01",
+      "path": "24-Advanced-Networking-and-Hybrid-Connectivity/questions.md",
+      "number": 1,
+      "topic": "Direct Connect encryption",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "A scenario requires a sound decision about hybrid connectivity. Which approach best meets the requirements?",
+      "stem": "A design uses Direct Connect and must encrypt data in transit. Which statement is accurate?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Direct Connect is not encrypted by default; choose suitable TLS, IPsec VPN, or supported MACsec protection for the required path.",
+      "technical_resolution": "Private connectivity and encryption are separate properties. MACsec protects supported connection segments, so its coverage must be matched to the actual requirement rather than assumed end-to-end.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dx"
+      ],
+      "sha256": "9249de90abba61e4ae3193a5461c2ba607eb95babedb89a0b7b9283d96ac29e1"
+    },
+    {
+      "id": "24-Q02",
+      "path": "24-Advanced-Networking-and-Hybrid-Connectivity/questions.md",
+      "number": 2,
+      "topic": "Nontransitive peering",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "VPC A is peered with VPC B, and B is peered with C. There is no A-to-C peering or transit service. Can A use B to reach C through those peerings?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "No. VPC peering does not support transitive routing.",
+      "technical_resolution": "A-to-B and B-to-C peerings do not create an A-to-C transit route. Use a supported connectivity design, such as suitable direct peerings or Transit Gateway attachments and routing.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "peering",
+        "tgw"
+      ],
+      "sha256": "5d6555c1560e9c7fa5c1052e42dce92e7581e4b1a85814b508c4a329e7cdeaff"
+    },
+    {
+      "id": "24-Q03",
+      "path": "24-Advanced-Networking-and-Hybrid-Connectivity/questions.md",
+      "number": 3,
+      "topic": "Hub network connectivity",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "Many VPCs and on-premises networks need a managed hub-and-spoke connectivity design with centralized routing domains. Which service fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS Transit Gateway with appropriate attachments and route tables.",
+      "technical_resolution": "Transit Gateway supplies a regional transit hub for supported attachments. Its route table associations, propagation, segmentation, and failure design still need explicit configuration.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "tgw"
+      ],
+      "sha256": "17ec879e001b6c046d3acfaf4a7f9cad0d433353194a3812c6b9186919860a0a"
+    },
+    {
+      "id": "24-Q04",
+      "path": "24-Advanced-Networking-and-Hybrid-Connectivity/questions.md",
+      "number": 4,
+      "topic": "Private service exposure",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A provider wants to expose a supported application service privately to consumer VPCs without providing general network transit between the VPCs. Which pattern fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS PrivateLink with a suitable endpoint service and consumer interface endpoints.",
+      "technical_resolution": "PrivateLink supports private connectivity to supported services through endpoints. It is service-oriented connectivity, not general-purpose transitive routing between all attached networks.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "privatelink",
+        "endpoint",
+        "peering"
+      ],
+      "sha256": "4adc9df0b4a8b8ff9572cadb73b6365c3b168ade82a0b2d90f95427d0b62d326"
+    },
+    {
+      "id": "24-Q05",
+      "path": "24-Advanced-Networking-and-Hybrid-Connectivity/questions.md",
+      "number": 5,
+      "topic": "VPN and redundancy",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A new design needs encrypted on-premises-to-VPC connectivity over existing internet access. Which service directly fits that transport model?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS Site-to-Site VPN, with both provided tunnels and appropriate customer-side routing and redundancy.",
+      "technical_resolution": "Site-to-Site VPN provides IPsec connectivity. Using both tunnels and designing customer-device and path redundancy improves resilience; no single connection choice guarantees uninterrupted availability.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "vpn",
+        "dx"
+      ],
+      "sha256": "0228db2f7a8dcf4a7d5029e989c8131b279e625edccd3a38d9728863c217bf16"
+    },
+    {
+      "id": "25-Q01",
+      "path": "25-Encryption-KMS-and-Secrets-Management/questions.md",
+      "number": 1,
+      "topic": "Key management versus secret rotation",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "A scenario requires a sound decision about encryption and secrets. Which approach best meets the requirements?",
+      "stem": "An application must store a database credential and rotate that credential in both the secret store and the database. Which service directly provides this secret lifecycle capability?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS Secrets Manager with a supported rotation integration or correctly configured rotation function.",
+      "technical_resolution": "Secrets Manager rotation updates the secret and the target service using a supported mechanism. KMS protects cryptographic keys and data; rotating KMS material does not change a database password.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "secrets",
+        "rotation"
+      ],
+      "sha256": "e8aac31b717f957d1cbf8d49c2ae113c563f50f356439d0bc3e01d122340f597"
+    },
+    {
+      "id": "25-Q02",
+      "path": "25-Encryption-KMS-and-Secrets-Management/questions.md",
+      "number": 2,
+      "topic": "KMS rotation is not re-encryption",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "Automatic rotation changes the key material of a supported customer managed KMS key. What happens to existing data protected by that key?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "It is not automatically re-encrypted; KMS retains the material required to decrypt earlier ciphertext.",
+      "technical_resolution": "KMS rotation changes backing key material for future cryptographic operations. It does not rotate generated data keys or rewrite application data, and it is not secret credential rotation.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "rotation",
+        "secrets"
+      ],
+      "sha256": "c1c3970e2555ec387ac15434266a76052ba337253ff40b5fef4df76d562ad319"
+    },
+    {
+      "id": "25-Q03",
+      "path": "25-Encryption-KMS-and-Secrets-Management/questions.md",
+      "number": 3,
+      "topic": "Customer-controlled key policy",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A regulated workload needs the customer to control a KMS key policy and its deletion lifecycle. Which key type fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "A customer managed KMS key.",
+      "technical_resolution": "Customer managed keys let customers manage key policies and lifecycle settings, subject to KMS controls. AWS owned keys are managed by the service and do not provide that customer policy control.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "kms"
+      ],
+      "sha256": "eb3600fedefc5b37abbfd5a961a694356f57336ec7e3db59b5a3f139747728a2"
+    },
+    {
+      "id": "25-Q04",
+      "path": "25-Encryption-KMS-and-Secrets-Management/questions.md",
+      "number": 4,
+      "topic": "Configuration versus rotating credential",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A team needs versioned retrieval of a non-secret application configuration value. It does not require credential rotation. Which service is a suitable key-value configuration store?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Systems Manager Parameter Store.",
+      "technical_resolution": "Parameter Store supports centrally managed parameter values and versioning. SecureString adds KMS encryption when needed; secrets requiring purpose-built rotation should use an appropriate secrets service.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "parameters",
+        "secrets"
+      ],
+      "sha256": "8f8460b5de1a6598bf038d085a385fc003636bee29bf84004c32abb0d75e7987"
+    },
+    {
+      "id": "25-Q05",
+      "path": "25-Encryption-KMS-and-Secrets-Management/questions.md",
+      "number": 5,
+      "topic": "Encryption at rest versus transport",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "An S3 object uses SSE-KMS. A policy also requires encrypted transport for clients. What additional transport requirement is appropriate?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Require HTTPS/TLS for the client connection and enforce the relevant access policy.",
+      "technical_resolution": "SSE-KMS protects object data at rest. TLS protects the network connection; authorization and transport enforcement are separate controls.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "kms",
+        "iam",
+        "dx"
+      ],
+      "sha256": "eff30fc7dff7cbff5cf0d42190a588afc93a74a496950889915a790cdcb509cb"
+    },
+    {
+      "id": "26-Q01",
+      "path": "26-Well-Architected-Framework/questions.md",
+      "number": 1,
+      "topic": "Six Well-Architected pillars",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "A scenario requires a sound decision about Well-Architected. Which approach best meets the requirements?",
+      "stem": "Which set names the six pillars of the AWS Well-Architected Framework?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability.",
+      "technical_resolution": "The framework has six pillars. The four SAA-C03 scored-content domains are a different grouping and must not be mistaken for the complete framework.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "pillars",
+        "exam"
+      ],
+      "sha256": "f794d8cede22887b0dc4129bfaa71a12baea26249052ccbd99b3f757fed86bb4"
+    },
+    {
+      "id": "26-Q02",
+      "path": "26-Well-Architected-Framework/questions.md",
+      "number": 2,
+      "topic": "Review tool versus automatic remediation",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A team completes a workload review in AWS Well-Architected Tool. What does that establish?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "It records review findings and improvement opportunities; implementing and validating improvements remains the team responsibility.",
+      "technical_resolution": "The tool supports structured workload assessment and improvement planning. Review completion is not proof that every recommended change was implemented or tested.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "watool",
+        "pillars"
+      ],
+      "sha256": "aca42ac20b39cc7c713eb33e512308add3c250a6430c0ad790aea829885b26f6"
+    },
+    {
+      "id": "26-Q03",
+      "path": "26-Well-Architected-Framework/questions.md",
+      "number": 3,
+      "topic": "Measured cost trade-offs",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A proposal cuts cost by removing the only recovery copy of irreplaceable business data. The retention and recovery requirements have not changed. Is the proposal justified solely by lower storage cost?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "No. Cost optimization must still satisfy retention and recovery requirements.",
+      "technical_resolution": "The pillars must be considered together. Lower cost is not an improvement when it violates a mandatory data-protection or recovery constraint.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "pillars",
+        "dr"
+      ],
+      "sha256": "fc8087a044749eb39218f0a2aadaac39124a3d422ac35d56602cac7d793a01fb"
+    },
+    {
+      "id": "26-Q04",
+      "path": "26-Well-Architected-Framework/questions.md",
+      "number": 4,
+      "topic": "Operational excellence evidence",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "Which practice provides useful evidence that an operational recovery runbook works?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Exercise the runbook in an isolated recovery test, measure results, and update it from observed failures.",
+      "technical_resolution": "A tested procedure exposes missing dependencies, permissions, and timing assumptions. Runbooks and observability support learning and repeatable operations.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "pillars",
+        "dr"
+      ],
+      "sha256": "16a9a8dae7f671cb20803518b9c77884ae1a19131ef837db2634da80100daf66"
+    },
+    {
+      "id": "26-Q05",
+      "path": "26-Well-Architected-Framework/questions.md",
+      "number": 5,
+      "topic": "Security remains a design responsibility",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A team migrates a workload to managed services. Which architectural conclusion follows the shared responsibility model?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS manages more infrastructure, but the team must still design appropriate access, data protection, configuration, and application behavior.",
+      "technical_resolution": "The responsibility boundary depends on the service. Managed infrastructure does not remove customer responsibility for data use, permissions, and workload configuration.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "shared",
+        "iam",
+        "pillars"
+      ],
+      "sha256": "073a5de13be29b12debc8567282ab4a70f407490ebae3dc58ac271c5ae284b0e"
+    },
+    {
+      "id": "27-Q01",
+      "path": "27-Real-World-Use-Cases/questions.md",
+      "number": 1,
+      "topic": "Survive loss of a web AZ",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "A scenario requires a sound decision about real-world scenarios. Which approach best meets the requirements?",
+      "stem": "A web tier runs in one AZ, while its database already has suitable Multi-AZ protection. The business requires the web tier to survive an AZ outage. Which change addresses the missing protection?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Deploy replaceable web instances across multiple AZs behind a multi-AZ ALB and keep required state outside individual instances.",
+      "technical_resolution": "The unprotected component is the web tier. Database redundancy does not make single-AZ application compute available during that AZ failure.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "alb",
+        "dr",
+        "rdsaz"
+      ],
+      "sha256": "b54f15d590ec3f639bd0a161592bb5a48d0482ce82f1a88091f659eea66de094"
+    },
+    {
+      "id": "27-Q02",
+      "path": "27-Real-World-Use-Cases/questions.md",
+      "number": 2,
+      "topic": "Independent order subscribers",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "Inventory and invoicing must each receive every accepted order, even if one subsystem is temporarily unavailable. Which design isolates their processing backlogs?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Publish to SNS and subscribe a separate SQS queue for each subsystem, with retry-safe consumers.",
+      "technical_resolution": "Separate subscribed queues provide independent buffering. Successful publication, correct subscription policies, retry behavior, and idempotent consumers are necessary parts of the design.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "sns",
+        "sqs"
+      ],
+      "sha256": "fb6e478e8e46441b208cb3e2c1128cf3fdd4c534a23367770e6dc4b863402daa"
+    },
+    {
+      "id": "27-Q03",
+      "path": "27-Real-World-Use-Cases/questions.md",
+      "number": 3,
+      "topic": "Private origin for a public CDN",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "Customers must download public website assets through CloudFront, while direct unauthenticated access to the regular S3 bucket origin must remain blocked. Which configuration fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Use CloudFront OAC and a scoped bucket policy while retaining appropriate S3 public-access blocking.",
+      "technical_resolution": "Viewer access and origin access are separate boundaries. OAC plus a distribution-scoped bucket policy lets CloudFront retrieve private origin objects without making the bucket public.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "oac",
+        "s3public"
+      ],
+      "sha256": "a18427b11db2cd35517e6cd0296b92f5642014645def04c19ea7797af90893ee"
+    },
+    {
+      "id": "27-Q04",
+      "path": "27-Real-World-Use-Cases/questions.md",
+      "number": 4,
+      "topic": "Immediate database read after write",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A DynamoDB checkout workflow must confirm the latest committed order state immediately after its write. The current path reads an eventually consistent GSI. Which change directly addresses consistency?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Read the known order key from the base table using a strongly consistent read where required.",
+      "technical_resolution": "The base table supports strongly consistent reads. GSI reads do not; a faster caller or cache does not turn an eventually consistent read into a strong read.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "dynamodb"
+      ],
+      "sha256": "faf165360f4a7aa0c8306206becc9e7ba208dc049f7b5d139c2b8c658bfbcc44"
+    },
+    {
+      "id": "27-Q05",
+      "path": "27-Real-World-Use-Cases/questions.md",
+      "number": 5,
+      "topic": "Select DR from business constraints",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A recovery design replicates critical data to another Region, but application servers there are not running. Recovery requires deploying or activating the application tier. Which pattern is closest?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Pilot light.",
+      "technical_resolution": "Pilot light keeps core recovery components such as data replication active, then brings up the remaining workload for recovery. The measured RTO depends on that activation path.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dr",
+        "rto"
+      ],
+      "sha256": "e17a59eebaba37b395c033d7c5fd1eaf75edaf9cf4276210cdf2084b9743c9cc"
+    },
+    {
+      "id": "28-Q01",
+      "path": "28-Hands-on-Labs/questions.md",
+      "number": 1,
+      "topic": "Lab cost planning",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "A scenario requires a sound decision about hands-on labs. Which approach best meets the requirements?",
+      "stem": "Before creating a NAT gateway and database for a short lab, which cost practice is appropriate?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Estimate the specific regional resources and usage, check the account applicable credits or Free Tier eligibility, set cost notifications, and plan cleanup.",
+      "technical_resolution": "Short runtime does not imply zero cost. Pricing, plan eligibility, retained resources, and delayed cost reporting must all be considered before deployment.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "pricing",
+        "free",
+        "budgets"
+      ],
+      "sha256": "1501163e988841bdf43836a74de9e24b2f55577cd4ae87ba69bbb326e53a0014"
+    },
+    {
+      "id": "28-Q02",
+      "path": "28-Hands-on-Labs/questions.md",
+      "number": 2,
+      "topic": "Bounded failure testing",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A learner wants to test recovery behavior. Which approach keeps the experiment appropriately scoped?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Use isolated lab resources with non-sensitive test data, define the expected failure and rollback, and verify recovery without touching production.",
+      "technical_resolution": "A bounded recovery experiment needs an explicit hypothesis, recoverable data, observability, and a safe environment. The test result should be compared with its recovery objective.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dr",
+        "rto"
+      ],
+      "sha256": "7dee8342cae4a02ef8e1760266ea6102c705bdc1f0b2160e5e02b43135cb284c"
+    },
+    {
+      "id": "28-Q03",
+      "path": "28-Hands-on-Labs/questions.md",
+      "number": 3,
+      "topic": "Recover versioned lab objects",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A learner overwrote an object in a versioning-enabled S3 test bucket. The earlier version was not permanently deleted. Which recovery action fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Retrieve the earlier version and, if needed, copy it to become the current version of the key.",
+      "technical_resolution": "Versioning retains earlier object versions, which can be retrieved or used to restore desired contents. Recovery still depends on retaining the needed version and permissions.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "s3version"
+      ],
+      "sha256": "358663f0e23b36c74271b091f3e0dc7022a2efda697094057f60dc882c94ef9f"
+    },
+    {
+      "id": "28-Q04",
+      "path": "28-Hands-on-Labs/questions.md",
+      "number": 4,
+      "topic": "Authorize only lab access",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "A lab requires read-only access to one test object prefix. Which permission approach fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Use a dedicated workload role scoped to the required actions and object resources.",
+      "technical_resolution": "A scoped role limits the blast radius and avoids distributing long-lived credentials. Test data and resource boundaries should be separated from production.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "iam"
+      ],
+      "sha256": "77c0c6afe5235ac71f6f3d1300df2b145b74eabb3dff6cdbb590386ba513fbea"
+    },
+    {
+      "id": "28-Q05",
+      "path": "28-Hands-on-Labs/questions.md",
+      "number": 5,
+      "topic": "Versioned bucket cleanup",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A learner empties only current objects from a versioning-enabled lab bucket. What additional cleanup check is needed before assuming the bucket has no retained billable data?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Review noncurrent versions and delete markers, along with other retained lab resources, and remove only approved test data.",
+      "technical_resolution": "A simple delete in a versioned bucket can add a delete marker while earlier versions remain. Cleanup must account for versions and any retention restrictions without deleting unrelated data.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "s3version",
+        "s3life"
+      ],
+      "sha256": "0970b1c197965109529e0d93d20ad36e5c646606ffb2f5d58fec02c4d14ec018"
+    },
+    {
+      "id": "29-Q01",
+      "path": "29-Practice-Exams-and-Questions/questions.md",
+      "number": 1,
+      "topic": "RDS failover question clarified",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "A web application must remain available if an Availability Zone fails. Traffic must be distributed automatically among healthy instances. Which approach best meets these requirements?",
+      "stem": "A relational database needs managed AZ failover. The chosen deployment is an RDS Multi-AZ DB instance deployment; extra read capacity is not required. Which feature is the direct fit?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The synchronous standby and managed failover of that Multi-AZ DB instance deployment.",
+      "technical_resolution": "This specifies the deployment type and availability objective. A Multi-AZ DB instance standby supports managed failover; an asynchronous read replica primarily provides another read or recovery copy with different semantics.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "rdsaz",
+        "replica"
+      ],
+      "sha256": "f59e1f7a89e5686a7e391b5c71d08e129c03894f0dd7d6dd839bc84c9c1f84ee"
+    },
+    {
+      "id": "29-Q02",
+      "path": "29-Practice-Exams-and-Questions/questions.md",
+      "number": 2,
+      "topic": "Resilient application question clarified",
+      "original_answer": "C",
+      "answer": "C",
+      "original_stem": "A company wants to reduce the cost of accessing S3 from private workloads in a VPC, without exposing traffic to the internet. Which choice is best?",
+      "stem": "A stateless web application must remain available when one AZ fails. Which design directly addresses that failure scope?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An ALB with application instances across multiple AZs, working health checks, externalized state, and sufficient surviving capacity.",
+      "technical_resolution": "Multiple AZs and appropriately placed state reduce the single-AZ dependency. Recovery copies and static addressing do not by themselves keep a sole failed instance serving requests.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "alb",
+        "dr"
+      ],
+      "sha256": "b176dcd55c987dde7c904504159ca156a200194e786ebbf4fa0b355289288e79"
+    },
+    {
+      "id": "29-Q03",
+      "path": "29-Practice-Exams-and-Questions/questions.md",
+      "number": 3,
+      "topic": "Private S3 question clarified",
+      "original_answer": "A",
+      "answer": "C",
+      "original_stem": "A relational database needs automatic failover with minimal disruption. Read scaling is not the primary goal. Which feature best meets this requirement?",
+      "stem": "A VPC workload needs same-Region S3 access without NAT or public internet routing. Which choice supplies a route-table-based private path?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An S3 gateway endpoint with the required routes and appropriate endpoint, bucket, and IAM policies.",
+      "technical_resolution": "A gateway endpoint supports S3 access through VPC route tables without NAT or an internet gateway for that traffic. Authorization remains a separate requirement.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "endpoint"
+      ],
+      "sha256": "d63abf736a6a7a547491085ab7a3d31d69e9f709034fa7ea9f9a997b20baea6b"
+    },
+    {
+      "id": "29-Q04",
+      "path": "29-Practice-Exams-and-Questions/questions.md",
+      "number": 4,
+      "topic": "Queue decoupling question clarified",
+      "original_answer": "A",
+      "answer": "A",
+      "original_stem": "An API receives unpredictable spikes and needs to decouple producers and consumers, accepting asynchronous processing. Which service best reduces operational risk?",
+      "stem": "An API accepts jobs durably and workers can process them asynchronously. It needs to absorb traffic bursts without requiring every worker to be available at acceptance time. Which service fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Amazon SQS with suitable producer error handling and retry-safe consumers.",
+      "technical_resolution": "SQS decouples job acceptance from consumer processing. Applications still handle send failures, retention, retries, duplicate processing, and backlog growth.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "sqs",
+        "sns"
+      ],
+      "sha256": "e54fa54840311fc99373ac26d1adc230b42d091f9e3ff7df871d31646660bb96"
+    },
+    {
+      "id": "29-Q05",
+      "path": "29-Practice-Exams-and-Questions/questions.md",
+      "number": 5,
+      "topic": "IAM review question made concrete",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "During final review, a learner answers IAM questions incorrectly by choosing overly broad permissions. Which practice best addresses this pattern?",
+      "stem": "A learner selects a policy allowing every S3 action on every bucket when the scenario requires reading only one object prefix. Which correction addresses the actual authorization requirement?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Allow the required object-read action only on the specified object-prefix resources, accounting for any separately required bucket actions.",
+      "technical_resolution": "Least privilege matches allowed actions and resource scope to the requirement. Bucket-level operations, if genuinely needed, use appropriate bucket resource scopes rather than indiscriminately broad object permissions.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "iam",
+        "policy"
+      ],
+      "sha256": "cd7603a7f241255572ed9ed3b9bad55d89f6380d387eb3c989a11ed5fe21501d"
+    },
+    {
+      "id": "30-Q01",
+      "path": "30-Glossary/questions.md",
+      "number": 1,
+      "topic": "RPO terminology",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "A scenario requires a sound decision about glossary terms. Which approach best meets the requirements?",
+      "stem": "Which term expresses the maximum acceptable amount of data loss measured in time after a disruption?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Recovery point objective, or RPO.",
+      "technical_resolution": "RPO expresses the acceptable data-loss window. It guides replication and backup requirements rather than the time needed to return the application to service.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "rto"
+      ],
+      "sha256": "caa0b40e73b7fa7266042d1cf870b10d0771dc05fbeedaa27e92d2dc8c3e1d1e"
+    },
+    {
+      "id": "30-Q02",
+      "path": "30-Glossary/questions.md",
+      "number": 2,
+      "topic": "RTO terminology",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "Which term expresses the maximum acceptable time to restore service after a disruption?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Recovery time objective, or RTO.",
+      "technical_resolution": "RTO expresses the recovery-time target for the workload. Recovery testing should measure the end-to-end duration, including dependencies and application validation.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "rto",
+        "dr"
+      ],
+      "sha256": "967be84211d2a9cb308906391c6a33852018c5a505011407acc47cff0c58581b"
+    },
+    {
+      "id": "30-Q03",
+      "path": "30-Glossary/questions.md",
+      "number": 3,
+      "topic": "Durability versus availability",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A storage system retains data safely but is temporarily unable to serve requests. Which distinction explains why this can occur?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Durability concerns retaining data; availability concerns being able to access the service when needed.",
+      "technical_resolution": "Data can remain intact during a temporary access outage. Architecture must evaluate both preservation and access requirements rather than treating one as proof of the other.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "s3classes",
+        "dr"
+      ],
+      "sha256": "f259d9c24c7d32071deb502b781b4632ef780766d05eca6823b2fc1528c014f7"
+    },
+    {
+      "id": "30-Q04",
+      "path": "30-Glossary/questions.md",
+      "number": 4,
+      "topic": "Horizontal versus vertical scaling",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "An application increases capacity by adding more instances behind a load balancer rather than enlarging one instance. What is this called?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Horizontal scaling, or scaling out.",
+      "technical_resolution": "Horizontal scaling adds more workers or instances. Vertical scaling changes the capacity of an individual resource; neither term alone proves application resilience.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "scaling",
+        "alb"
+      ],
+      "sha256": "0c6ca3f3783cae6575b9c885132c8cf1a2496a02e1fa09d65255bb8f69726b25"
+    },
+    {
+      "id": "30-Q05",
+      "path": "30-Glossary/questions.md",
+      "number": 5,
+      "topic": "Idempotency terminology",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A consumer may receive the same order event more than once. It records an order operation so retries do not charge the customer again. Which property is it implementing?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Idempotent processing of the business operation.",
+      "technical_resolution": "Idempotency makes a repeated operation safe with respect to its intended side effect. It does not require the transport to stop delivering duplicate events.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "sqs",
+        "lambda"
+      ],
+      "sha256": "7e3dc9b5f3b346c41c2a4e05f5234a2e18d5d6b0d454ebf5c7cf1fd58a7ed2e4"
+    },
+    {
+      "id": "31-Q01",
+      "path": "31-Resources-and-Links/questions.md",
+      "number": 1,
+      "topic": "Primary exam reference",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "A scenario requires a sound decision about learning resources. Which approach best meets the requirements?",
+      "stem": "Two community study plans disagree about SAA-C03 domain weights. Which source should determine the official allocation?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The current AWS SAA-C03 exam guide.",
+      "technical_resolution": "AWS defines the exam content domains and scored-content weights. Community question counts and promotional statements do not define the exam blueprint.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "exam"
+      ],
+      "sha256": "ae6971b711d01b943dfbbe95c1d95d0c831d13b1ec24cec3f2f479f82b828f8f"
+    },
+    {
+      "id": "31-Q02",
+      "path": "31-Resources-and-Links/questions.md",
+      "number": 2,
+      "topic": "Exam scope is not a frequency guarantee",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which choice reduces operational risk in this domain?",
+      "stem": "A service appears in the current AWS in-scope list. Which conclusion is justified?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "It is within the published scope, but the list does not promise a fixed number of questions for that service.",
+      "technical_resolution": "The guide describes scope and says the service list is non-exhaustive and subject to change. Exam coverage, deployment availability, and the correctness of a study explanation are separate questions.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "scope",
+        "exam",
+        "snow"
+      ],
+      "sha256": "24866bbbd5d51634045bef61b059b4d672c53065562a04cb0175eeee3095a180"
+    },
+    {
+      "id": "31-Q03",
+      "path": "31-Resources-and-Links/questions.md",
+      "number": 3,
+      "topic": "Service-specific documentation",
+      "original_answer": "B",
+      "answer": "C",
+      "original_stem": "To keep costs under control without losing technical quality, what should you do?",
+      "stem": "A study note says that every RDS Multi-AZ deployment has no readable standbys. Which source most directly resolves the claim?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Current RDS documentation distinguishing Multi-AZ DB instance deployments from Multi-AZ DB cluster deployments.",
+      "technical_resolution": "The deployment-specific documentation establishes the distinction: a DB instance standby does not serve reads, while Multi-AZ DB cluster readers can serve reads.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "rdsaz"
+      ],
+      "sha256": "1ae47c20bc4145dddfb970e5984dd99fa9241b0ed4874684959eb556870db168"
+    },
+    {
+      "id": "31-Q04",
+      "path": "31-Resources-and-Links/questions.md",
+      "number": 4,
+      "topic": "Verify live service availability",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "Which option is likely to be incorrect in an exam question on this topic?",
+      "stem": "An older learning resource recommends Snowball for a new commercial-Region deployment. What is the responsible next step?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Check current AWS availability and lifecycle notices, then select an eligible transfer approach for the actual customer and date.",
+      "technical_resolution": "Historical learning value does not guarantee present deployment availability. Current service notices must inform actual implementation decisions.",
+      "priority_inherited_conflict": true,
+      "sources": [
+        "snow",
+        "snowhistory"
+      ],
+      "sha256": "9f3b0197eb8f251cdc55fc6ee6571ac2126dcb261a86a085850fc04e1c5ca315"
+    },
+    {
+      "id": "31-Q05",
+      "path": "31-Resources-and-Links/questions.md",
+      "number": 5,
+      "topic": "Evidence-backed content correction",
+      "original_answer": "B",
+      "answer": "B",
+      "original_stem": "Which review approach improves your accuracy in this module?",
+      "stem": "A contributor finds a contradiction between a practice answer and AWS documentation. What makes the proposed correction reviewable?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Identify the exact question, define the scenario assumptions, cite applicable AWS documentation, and update the answer plus all affected explanations together.",
+      "technical_resolution": "A defensible correction aligns the stem, alternatives, answer, and explanation under explicit assumptions. Traceable references and a question identifier let reviewers evaluate the change.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "exam",
+        "rdsaz"
+      ],
+      "sha256": "aaf585a6fb36dcd3358949e0130d3ea54fd42bbce6770157e58f83ed321b68af"
+    },
+    {
+      "id": "29-M-Q01",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 1,
+      "topic": "AZ database failover",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "A scenario requires automatic failover between Availability Zones with minimal downtime.",
+      "stem": "A relational workload needs a primary and a synchronous standby in another AZ with managed failover, not a readable standby. Which RDS deployment matches?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An RDS Multi-AZ DB instance deployment.",
+      "technical_resolution": "The Multi-AZ DB instance topology supplies the specified synchronous standby and managed failover. The deployment type is explicit to avoid confusing it with a Multi-AZ DB cluster.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "rdsaz",
+        "replica"
+      ],
+      "sha256": "e573ce4ecbce895d306eb3380265373ba5965046c9bf97c5d09085ad26a5db2e"
+    },
+    {
+      "id": "29-M-Q02",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 2,
+      "topic": "Buffer burst traffic",
+      "original_answer": "A",
+      "answer": "A",
+      "original_stem": "An application with unpredictable traffic spikes must absorb load without losing requests.",
+      "stem": "A job producer can accept asynchronous processing, and workers temporarily cannot keep up with a burst. Which pattern buffers accepted work independently of worker availability?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An SQS queue with controlled worker scaling and retry-safe processing.",
+      "technical_resolution": "A queue decouples acceptance from processing. Retention, send errors, backlog age, consumer capacity, and duplicates still need explicit handling.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "sqs",
+        "scaling"
+      ],
+      "sha256": "17376ea15699080367d5f76f31080e6ed27542a8e5f51bae96eb28db2e773da8"
+    },
+    {
+      "id": "29-M-Q03",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 3,
+      "topic": "Pilot light activation",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "DR requirement with low RPO and moderate cost.",
+      "stem": "A recovery Region has replicated core data, but the application tier must be started or deployed during failover. Which pattern best describes this?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Pilot light.",
+      "technical_resolution": "Pilot light keeps core recovery components ready while additional workload components need activation. Recovery-time targets must account for that activation.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dr"
+      ],
+      "sha256": "4404fbcae021ab336469fc989a45fef841da51d56439cffe4f52da38cd512964"
+    },
+    {
+      "id": "29-M-Q04",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 4,
+      "topic": "Replication versus historical recovery",
+      "original_answer": "B",
+      "answer": "A",
+      "original_stem": "High availability for a transactional relational database.",
+      "stem": "A logical deletion has replicated from an RDS primary to its standby. Which capability can recover a valid earlier data state?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An available backup or point-in-time recovery history with tested restore procedures.",
+      "technical_resolution": "Historical recovery data protects against mistakes that replication can reproduce. Application recovery must use a retained point from before the logical error.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "dr",
+        "rdsaz"
+      ],
+      "sha256": "9a12027a5ad883d9d20c89fe9af0367a1e6687f54d01a77b2745482715399da4"
+    },
+    {
+      "id": "29-M-Q05",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 5,
+      "topic": "Global content delivery",
+      "original_answer": "A",
+      "answer": "A",
+      "original_stem": "Global distribution of static content with low latency.",
+      "stem": "A website needs edge caching for HTTP(S) static assets to reduce repeated trips to the origin. Which service directly fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Amazon CloudFront with suitable cache and origin configuration.",
+      "technical_resolution": "CloudFront distributes HTTP(S) content through edge locations. Cache behavior, origin access, viewer security, and invalidation or versioning must fit the application.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "oac",
+        "ga"
+      ],
+      "sha256": "d210c6c28ab57991cc57a789d6069b5b37f7a24ec3a5bd029981b9a84e9e58f3"
+    },
+    {
+      "id": "29-M-Q06",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 6,
+      "topic": "Columnar analytics",
+      "original_answer": "A",
+      "answer": "D",
+      "original_stem": "Heavy, repeated reads of frequently accessed session data.",
+      "stem": "Athena repeatedly queries only a few columns from a large S3 dataset. Which storage format change can reduce the data read?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Use an appropriate columnar format such as Parquet or ORC, with compression and sensible file sizes.",
+      "technical_resolution": "Columnar formats support reading the needed columns. Compression and a suitable layout help, while excessive small files can increase overhead.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "athena"
+      ],
+      "sha256": "3e7be1108093e90f6df0e0079777feb7d2151a204293d4f6438e3ed8ccd6a154"
+    },
+    {
+      "id": "29-M-Q07",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 7,
+      "topic": "Preinitialized serverless capacity",
+      "original_answer": "A",
+      "answer": "D",
+      "original_stem": "An API with variable throughput and low operational overhead.",
+      "stem": "A Lambda HTTP endpoint has a cold-start latency objective and a budget for pre-initialized environments. Which feature specifically addresses that objective?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Provisioned concurrency on a supported version or alias.",
+      "technical_resolution": "Provisioned concurrency keeps configured execution environments initialized. It has an additional cost and must be sized for the workload.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "concurrency"
+      ],
+      "sha256": "1744a063c787e08d6e286c825a8ff511c01a07d88448fac93c38eb18b7bbf836"
+    },
+    {
+      "id": "29-M-Q08",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 8,
+      "topic": "DynamoDB variable demand",
+      "original_answer": "A",
+      "answer": "D",
+      "original_stem": "DynamoDB with irregular read demand and spikes.",
+      "stem": "A DynamoDB workload has difficult-to-predict request volume and the team wants AWS to manage request-capacity scaling rather than choosing provisioned read and write capacity units. Which mode fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "On-demand capacity mode, while still accounting for quotas, partition design, and documented scaling behavior.",
+      "technical_resolution": "On-demand mode removes the need to provision read and write capacity units. It does not make limits, key distribution, or capacity behavior irrelevant.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "ddbcapacity",
+        "ddbkeys"
+      ],
+      "sha256": "7c785dc5e3a52390cf447ed14d3bb8a0867610ba9541252eb13f727a1c8cd858"
+    },
+    {
+      "id": "29-M-Q09",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 9,
+      "topic": "Managed analytics metadata",
+      "original_answer": "A",
+      "answer": "D",
+      "original_stem": "Analytical query on data in S3 without dedicated cluster.",
+      "stem": "Athena needs table metadata describing data in S3. Which component commonly supplies that metadata?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "The AWS Glue Data Catalog.",
+      "technical_resolution": "The Data Catalog stores table and schema metadata used by Athena. It does not replace the underlying S3 data or automatically perform every data transformation.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "glue",
+        "athena"
+      ],
+      "sha256": "a10101988e39aacdc0f4c5f1ead07372d9ca3560dd7b33e7ae501cc37428ce0a"
+    },
+    {
+      "id": "29-M-Q10",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 10,
+      "topic": "Private service connectivity",
+      "original_answer": "A",
+      "answer": "A",
+      "original_stem": "Private connectivity to an AWS service without using the public internet.",
+      "stem": "A VPC needs private access to a supported service exposed through interface endpoints. Which technology is designed for that service-oriented connectivity?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS PrivateLink.",
+      "technical_resolution": "PrivateLink provides supported private service connectivity through endpoints. Endpoint policies, security groups, DNS, and service permissions must be designed as applicable.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "privatelink",
+        "peering"
+      ],
+      "sha256": "d890177d0edb6b920a4005b9f8392239ed27dfbf9cdab81fd54c9f223f75af39"
+    },
+    {
+      "id": "29-M-Q11",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 11,
+      "topic": "Automatic credential rotation",
+      "original_answer": "A",
+      "answer": "B",
+      "original_stem": "Application credential with automatic rotation.",
+      "stem": "A database password must be stored centrally and rotated in both the database and the stored secret. Which service directly supports that lifecycle?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "AWS Secrets Manager with an appropriate supported rotation configuration.",
+      "technical_resolution": "Secrets Manager rotation updates the credential and its stored representation using the configured mechanism. It is different from cryptographic key-material rotation.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "secrets",
+        "rotation"
+      ],
+      "sha256": "8f2f9a427329da3d8b3151b5ba5c608130f1baf89fcfcab0b5f90b8d602d0eda"
+    },
+    {
+      "id": "29-M-Q12",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 12,
+      "topic": "Scope object permissions",
+      "original_answer": "B",
+      "answer": "D",
+      "original_stem": "Least privilege in IAM means:",
+      "stem": "A workload only reads objects under one S3 prefix. Which policy design best matches least privilege?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Allow the necessary object-read action on the specified object-prefix resources through an appropriate workload role.",
+      "technical_resolution": "Least privilege scopes actions and resources to the workload. Encryption does not justify unrelated administrative access.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "iam",
+        "policy"
+      ],
+      "sha256": "7b53976d185952247871325154e718ac0e0cff1466a3251ae1b0501477ab8f6d"
+    },
+    {
+      "id": "29-M-Q13",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 13,
+      "topic": "Capture S3 data-plane audit activity",
+      "original_answer": "A",
+      "answer": "D",
+      "original_stem": "Need for audit trail of API calls.",
+      "stem": "A security investigation needs S3 DeleteObject activity for a specific bucket. Which CloudTrail configuration must be considered?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Appropriate object data-event selectors on a trail or event data store, with log protection and cost planning.",
+      "technical_resolution": "S3 object operations are data events and are not logged by default by trails or event data stores. The intended resource and operation scope must be selected.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "trail"
+      ],
+      "sha256": "21866a2adf5a12c34b95b226aa1f5c30ef95476df364ecce01b5585a217a38bf"
+    },
+    {
+      "id": "29-M-Q14",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 14,
+      "topic": "Customer key control",
+      "original_answer": "A",
+      "answer": "D",
+      "original_stem": "Encryption at rest with a key under your control.",
+      "stem": "A workload needs customer-controlled KMS key policy management and auditable permitted key use. Which key type is appropriate?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "A customer managed KMS key configured with appropriate policies.",
+      "technical_resolution": "Customer managed keys provide customer policy and lifecycle control. IAM and KMS authorization must still permit only the intended cryptographic operations.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "kms"
+      ],
+      "sha256": "056a0b55dbb63378cc08223bdaa89f195bec7c5b1a215097460b3dc19389de64"
+    },
+    {
+      "id": "29-M-Q15",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 15,
+      "topic": "Tier-specific network access",
+      "original_answer": "A",
+      "answer": "C",
+      "original_stem": "Segment traffic between application tiers in a VPC.",
+      "stem": "A database tier should accept its database port only from the application tier security group, not from the whole internet. Which design fits?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An appropriate database security group rule referencing the application tier security group, with suitable subnet routing and no unnecessary public exposure.",
+      "technical_resolution": "Security group references can scope allowed traffic between suitable resources. Network segmentation complements authentication and encryption rather than being replaced by them.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "sg",
+        "iam"
+      ],
+      "sha256": "3ea75781a96f069ac0e4f03f0b331ec5bc6ebf0846477ab7bd9dd261047f90c0"
+    },
+    {
+      "id": "29-M-Q16",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 16,
+      "topic": "Archival retrieval cost trade-off",
+      "original_answer": "A",
+      "answer": "C",
+      "original_stem": "Rarely accessed data, long retention.",
+      "stem": "Records are retained long term, rarely retrieved, and a restore delay is acceptable. Which decision process is appropriate?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Evaluate a suitable S3 archival class using retrieval time, request and retrieval costs, minimum storage duration, and retention requirements.",
+      "technical_resolution": "Archival choices must satisfy access and retention constraints, not only storage price. S3 archival classes differ in retrieval behavior and charging dimensions.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "s3classes"
+      ],
+      "sha256": "301fced0c825fc267a444cd0f5aaf0d4bf76c293f241fcfc4d69a68175094a57"
+    },
+    {
+      "id": "29-M-Q17",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 17,
+      "topic": "Compute commitment and interruption",
+      "original_answer": "A",
+      "answer": "B",
+      "original_stem": "A predictable EC2 workload running 24x7.",
+      "stem": "A predictable EC2 baseline runs continuously and cannot tolerate arbitrary capacity interruptions. Which pricing approach is worth evaluating after rightsizing?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An appropriately sized Savings Plan or applicable Reserved Instance pricing commitment, with capacity needs assessed separately.",
+      "technical_resolution": "Pricing commitments can suit stable eligible usage. They are not a universal capacity guarantee, and Spot interruption behavior must not be ignored for this workload.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "savings",
+        "placement",
+        "spot"
+      ],
+      "sha256": "a85c601649e4365db92e7f0b33286f725b10b38a536b6f0d9d62ade0470a19c1"
+    },
+    {
+      "id": "29-M-Q18",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 18,
+      "topic": "Occasional serverless work",
+      "original_answer": "A",
+      "answer": "C",
+      "original_stem": "Short, occasional Lambda executions to reduce operational costs.",
+      "stem": "A short event-processing task runs only occasionally. What supports evaluating Lambda as a cost option rather than automatically keeping an idle server running?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Its request and execution-based charging can reduce idle compute cost, while total cost still depends on duration, memory, traffic, dependencies, and optional features.",
+      "technical_resolution": "Serverless pricing can fit intermittent work but is not universally cheapest. Compare the actual workload and applicable pricing, including pre-initialized capacity when configured.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "concurrency",
+        "pricing",
+        "free"
+      ],
+      "sha256": "de5a891fadd1d2222bae2b1959674044fc08f9929bf9cb687761e20180fe96e7"
+    },
+    {
+      "id": "29-M-Q19",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 19,
+      "topic": "S3 endpoint cost choice",
+      "original_answer": "A",
+      "answer": "A",
+      "original_stem": "Avoid unnecessary data transfer costs when accessing AWS services internally.",
+      "stem": "A same-Region VPC workload accesses S3 through a NAT gateway. Which alternative should be evaluated to remove NAT processing for that supported S3 path?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "An S3 gateway endpoint, with correct routes and access policies.",
+      "technical_resolution": "A gateway endpoint supplies the supported private S3 path without using NAT for that traffic. It does not imply all S3 or data-transfer charges disappear.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "endpoint",
+        "nat"
+      ],
+      "sha256": "1b989cae1085c44d722bbe0851195ceee0fa040288c6d1e2867b80112ab3fc05"
+    },
+    {
+      "id": "29-M-Q20",
+      "path": "29-Practice-Exams-and-Questions/mini-practice-exams-by-domain.md",
+      "number": 20,
+      "topic": "Continuous cost governance",
+      "original_answer": "A",
+      "answer": "B",
+      "original_stem": "Continuous cost review process.",
+      "stem": "Which operating practice supports ongoing cost optimization without treating a notification as a hard spending cap?",
+      "correction": "Replaced ambiguous or underspecified wording with explicit constraints; reviewed all four alternatives; provided a keyed rationale and a separate reason for every distractor.",
+      "reviewed_answer_text": "Combine Cost Explorer analysis, allocation discipline, AWS Budgets notifications, ownership, and review of measured optimization opportunities.",
+      "technical_resolution": "Cost governance combines visibility with accountable decisions and follow-through. Budgets track and notify or invoke configured actions; they are not instantaneous universal charge cutoffs.",
+      "priority_inherited_conflict": false,
+      "sources": [
+        "budgets",
+        "cost"
+      ],
+      "sha256": "c72c46617a82c1e6d681e552558dfa00b2f983c42a1b377fe5b3f62b1c20258f"
+    }
+  ]
+}

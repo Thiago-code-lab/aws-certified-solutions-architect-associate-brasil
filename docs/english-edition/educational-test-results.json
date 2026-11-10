@@ -1,0 +1,9 @@
+{
+  "suite": "educational accuracy regressions",
+  "tests_run": 10,
+  "failures": 0,
+  "errors": 0,
+  "practice_questions": 145,
+  "distractor_explanations": 435,
+  "passed": true
+}

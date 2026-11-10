@@ -1,28 +1,34 @@
 # Recommended Links
 
-## Official AWS references
+## Official AWS References
 
-- https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html
+- [AWS DMS](https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html)
+- [AWS Transform MGN](https://docs.aws.amazon.com/mgn/latest/ug/what-is-mgn.html)
+- [AWS DataSync](https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html)
+- [AWS Transfer Family](https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html)
+- [AWS Snowball availability notice](https://aws.amazon.com/snowball/)
+- [Snowball availability history](https://docs.aws.amazon.com/snowball/latest/developer-guide/doc-history.html)
+- [SAA-C03 in-scope services](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/saa-03-in-scope-services.html)
+
+## Additional Official Reading
+
 - https://docs.aws.amazon.com/mgn/latest/ug/what-is-application-migration-service.html
-- https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html
-
-## Why These Links Matter
-
-- Official documentation clarifies service behavior for exam questions.
-- Best practice guides help explain trade-offs, beyond configuration alone.
-- Whitepapers and certification pages clarify the terminology and expectations of the exam.
 
 ## Suggested Reading Order
 
-1. Overview of the service.
-2. Limits, security and costs.
-3. Best practices and architectural patterns.
+1. Check the current [exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html) for scope.
+2. Read the service-specific behavior and limitations before choosing a configuration.
+3. Check current regional availability, support notices, and pricing before provisioning.
+
+## Why These Links Matter
+
+Primary documentation establishes service behavior; the exam guide defines scope. A service appearing on an exam list does not guarantee current new-customer availability or a particular question count.
 
 ---
 
 ## ☁️ Follow CloudStudy
 
-We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+CloudStudy is an AWS certification preparation platform for structured study and practical learning.
 
 Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
