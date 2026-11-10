@@ -1,0 +1,10 @@
+{
+  "javascript_syntax": "passed",
+  "shell_syntax": "passed",
+  "migration_scenarios": 5,
+  "collision_protection": "passed",
+  "idempotence": "passed",
+  "yaml_configurations": 2,
+  "issue_template_front_matter": 3,
+  "errors": []
+}

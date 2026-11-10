@@ -1,0 +1,35 @@
+{
+  "browser": "Chromium",
+  "mode": "local checkout served through intercepted English-branch Raw URLs",
+  "modules_loaded": 31,
+  "documents_rendered": 187,
+  "checks": [
+    "search",
+    "empty state",
+    "all/pending/completed filters",
+    "progress toggling",
+    "keyboard progress controls",
+    "persistence after reload",
+    "domain progress",
+    "resource navigation",
+    "relative Markdown links",
+    "anchor navigation",
+    "image rebasing",
+    "GitHub links",
+    "HTTP error and retry",
+    "request race handling",
+    "HTML sanitization",
+    "malformed localStorage",
+    "unavailable localStorage",
+    "desktop and tablet layout"
+  ],
+  "screenshots": [
+    "portal-desktop.png",
+    "portal-tablet.png"
+  ],
+  "page_errors": [],
+  "html_parse_errors": {
+    "aws-saa-portal.html": 0,
+    "index.html": 0
+  }
+}
