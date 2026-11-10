@@ -1,113 +1,113 @@
-﻿# Cartoes de Revisao
+# Review Cards
 
 ## Card 01
 
-**Pergunta:** Qual e o foco central deste modulo?
+**Question:** What is the central focus of this module?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Dominar decisoes de Resiliencia e DR orientadas por cenarios da prova SAA-C03.
+**Answer:**
+Master decisions about resilience and DR using SAA-C03 exam scenarios.
 
 </details>
 
 ## Card 02
 
-**Pergunta:** Qual erro recorrente neste tema?
+**Question:** What mistake commonly occurs with this topic?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Aplicar resposta generica sem validar sinais especificos de resiliencia e dr no enunciado.
+**Answer:**
+Applying a generic answer without checking the scenario's specific cues for resilience and DR.
 
 </details>
 
 ## Card 03
 
-**Pergunta:** Como identificar a melhor alternativa?
+**Question:** How do you identify the best answer option?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Priorizar requisito dominante e servicos que cobrem Multi-AZ e failover com menor operacao.
+**Answer:**
+Prioritize the dominant requirement and choose services that address Multi-AZ and failover with less operational overhead.
 
 </details>
 
 ## Card 04
 
-**Pergunta:** Qual trade-off costuma aparecer?
+**Question:** Which trade-off usually appears?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Equilibrar Multi-AZ com custo, desempenho e simplicidade operacional.
+**Answer:**
+Balance Multi-AZ with cost, performance, and operational simplicity.
 
 </details>
 
 ## Card 05
 
-**Pergunta:** Que sinal de arquitetura madura aparece em questoes?
+**Question:** What sign of a mature architecture appears in exam questions?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Uso intencional de failover com observabilidade para reduzir risco operacional.
+**Answer:**
+Deliberate use of failover with observability to reduce operational risk.
 
 </details>
 
 ## Card 06
 
-**Pergunta:** Como evitar armadilha de overengineering?
+**Question:** How can you avoid overengineering?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Evitar componentes extras quando DR strategies ou RTO/RPO ja resolve o requisito.
+**Answer:**
+Avoid extra components when DR strategies or RTO/RPO already meets the requirement.
 
 </details>
 
 ## Card 07
 
-**Pergunta:** Qual ponto revisar antes do simulado?
+**Question:** What should you review before a practice exam?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Diferencas praticas entre desacoplamento e health checks.
+**Answer:**
+Practical differences between decoupling and health checks.
 
 </details>
 
 ## Card 08
 
-**Pergunta:** Qual fechamento eficiente de revisao?
+**Question:** How can you finish a review session efficiently?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Converter erros deste modulo em regras objetivas de decisao sobre resiliencia e dr.
+**Answer:**
+Turn mistakes from this module into clear decision rules for resilience and DR.
 
 </details>
 
 
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Este modulo tambem conversa com projetos de dados na nuvem; para praticar esse lado, veja a trilha complementar: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> This module also connects with cloud data projects. To practice that aspect, explore the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).

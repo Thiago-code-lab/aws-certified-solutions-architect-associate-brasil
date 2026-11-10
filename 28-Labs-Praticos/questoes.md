@@ -1,126 +1,126 @@
-# Questoes de Revisao
+# Review Questions
 
-## Questão 1
+## Question 1
 
-Um cenario exige decisao correta em Labs Praticos. Qual abordagem e mais aderente?
+A scenario requires a sound decision about hands-on labs. Which approach best meets the requirements?
 
-A) Aplicar solucao generica sem considerar teardown.
-B) Usar teardown com configuracao orientada ao requisito e operacao enxuta.
-C) Adicionar componentes sem necessidade do enunciado.
-D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+A) Apply a generic solution without considering teardown.
+B) Use teardown with a configuration that meets the requirements and minimizes operational overhead.
+C) Add components that the scenario does not require.
+D) Ignore explicit security, availability or cost requirements.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-â✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:**
-A alternativa B cobre o objetivo tecnico de labs praticos com melhor equilibrio entre requisito, risco e operacao.
+**Explanation:**
+Option B addresses the technical objective for hands-on labs with a better balance of requirements, risk, and operational effort.
 
-**Por que a alternativa A está errada:**
-Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+**Why option A is wrong:**
+It does not meet the primary requirement with the same architectural consistency.
 
 </details>
 
-## Questão 2
+## Question 2
 
-Qual escolha reduz risco operacional neste dominio?
+Which choice reduces operational risk in this domain?
 
-A) Resolver tudo manualmente durante incidente.
-B) Combinar runbook com observabilidade e automacao.
-C) Adicionar componentes sem necessidade do enunciado.
-D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+A) Resolve everything manually during the incident.
+B) Combine runbook with observability and automation.
+C) Add components that the scenario does not require.
+D) Ignore explicit security, availability or cost requirements.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-â✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:**
-A alternativa B cobre o objetivo tecnico de labs praticos com melhor equilibrio entre requisito, risco e operacao.
+**Explanation:**
+Option B addresses the technical objective for hands-on labs with a better balance of requirements, risk, and operational effort.
 
-**Por que a alternativa A está errada:**
-Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+**Why option A is wrong:**
+It does not meet the primary requirement with the same architectural consistency.
 
 </details>
 
-## Questão 3
+## Question 3
 
-Para manter custo sob controle sem perder qualidade tecnica, o que fazer?
+To keep costs under control without losing technical quality, what should you do?
 
-A) Escolher sempre a opcao mais barata sem validar requisito.
-B) Dimensionar com base no uso real e aproveitar teste de falha quando fizer sentido.
-C) Adicionar componentes sem necessidade do enunciado.
-D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+A) Always choose the cheapest option without validating the requirement.
+B) Size resources based on actual usage and use failure testing where appropriate.
+C) Add components that the scenario does not require.
+D) Ignore explicit security, availability or cost requirements.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-â✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:**
-A alternativa B cobre o objetivo tecnico de labs praticos com melhor equilibrio entre requisito, risco e operacao.
+**Explanation:**
+Option B addresses the technical objective for hands-on labs with a better balance of requirements, risk, and operational effort.
 
-**Por que a alternativa A está errada:**
-Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+**Why option A is wrong:**
+It does not meet the primary requirement with the same architectural consistency.
 
 </details>
 
-## Questão 4
+## Question 4
 
-Qual alternativa tende a ser incorreta na prova para este tema?
-A) A que atende requisito dominante com menor complexidade.
-B) A que ignora sinais de seguranca baseline e dependencias da arquitetura.
-C) Adicionar componentes sem necessidade do enunciado.
-D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+Which option is likely to be incorrect in an exam question on this topic?
+A) The one that meets the dominant requirement with less complexity.
+B) The option that ignores cues about baseline security and architectural dependencies.
+C) Add components that the scenario does not require.
+D) Ignore explicit security, availability or cost requirements.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-â✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:**
-A alternativa B cobre o objetivo tecnico de labs praticos com melhor equilibrio entre requisito, risco e operacao.
+**Explanation:**
+Option B addresses the technical objective for hands-on labs with a better balance of requirements, risk, and operational effort.
 
-**Por que a alternativa A está errada:**
-Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+**Why option A is wrong:**
+It does not meet the primary requirement with the same architectural consistency.
 
 </details>
 
-## Questão 5
+## Question 5
 
-Qual revisao aumenta acerto neste modulo?
+Which review approach improves your accuracy in this module?
 
-A) Rever apenas definicoes sem pratica de cenario.
-B) Treinar questoes focadas em seguranca baseline e DR lab com explicacao de trade-offs.
-C) Adicionar componentes sem necessidade do enunciado.
-D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+A) Review only definitions without scenario practice.
+B) Practice questions about baseline security and DR lab with explanations of the trade-offs.
+C) Add components that the scenario does not require.
+D) Ignore explicit security, availability or cost requirements.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-â✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:**
-A alternativa B cobre o objetivo tecnico de labs praticos com melhor equilibrio entre requisito, risco e operacao.
+**Explanation:**
+Option B addresses the technical objective for hands-on labs with a better balance of requirements, risk, and operational effort.
 
-**Por que a alternativa A está errada:**
-Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+**Why option A is wrong:**
+It does not meet the primary requirement with the same architectural consistency.
 
 </details>
 
 
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Este modulo tambem conversa com projetos de dados na nuvem; para praticar esse lado, veja a trilha complementar: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> This module also connects with cloud data projects. To practice that aspect, explore the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).

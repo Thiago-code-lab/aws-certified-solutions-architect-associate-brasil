@@ -1,45 +1,45 @@
-﻿# Caderno de Erros
+# Error Log
 
-## Template por questao
+## Question Review Template
 
-- Dominio:
-- Tema:
-- Alternativa marcada:
-- Alternativa correta:
-- Motivo tecnico do erro:
-- Regra de decisao para nao repetir:
+- Domain:
+- Topic:
+- Selected answer option:
+- Correct answer option:
+- Technical reason for the error:
+- Decision rule to avoid repeating the mistake:
 
-## Classificacao de erro
+## Error Classification
 
-- **Conceito:** confusao entre servicos/padroes.
-- **Leitura:** ignorou requisito-chave do enunciado.
-- **Trade-off:** escolheu opcoes corretas tecnicamente, mas piores em custo/operacao.
-- **Pressa:** respondeu sem eliminar alternativas.
+- **Concept:** confusion between services or architectural patterns.
+- **Reading:** missed a key requirement in the question.
+- **Trade-off:** selected technically valid options with higher costs or operational overhead.
+- **Rushing:** answered without eliminating options.
 
-## Rotina semanal (20 minutos)
+## Weekly Routine (20 Minutes)
 
-1. Agrupe erros por tema repetido.
-2. Releia apenas `cheatsheet.md` e `questões.md` do modulo afetado.
-3. Refaca 5 questões focadas no mesmo tipo de erro.
-4. Atualize regra objetiva de decisao.
+1. Group recurring mistakes by topic.
+2. Reread only `cheatsheet.md` and `questions.md` in the affected module.
+3. Redo 5 questions focused on the same type of error.
+4. Update your concise decision rule.
 
-## Indicador de evolucao
+## Progress Indicator
 
-- Reincidencia alta: mesmo erro em 2 ou mais simulados.
-- Reincidencia controlada: erro corrigido em ate 1 ciclo de revisao.
-- Dominio consolidado: acerto consistente acima de 80% no tema.
+- High recurrence: the same mistake in 2 or more practice exams.
+- Recurrence under control: mistake corrected within 1 review cycle.
+- Domain mastered: consistently score above 80% on that topic.
 
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Para consolidar arquitetura com projetos reais de dados na AWS, mantenha no radar a trilha complementar: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> To reinforce architecture concepts through real data projects on AWS, explore the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).

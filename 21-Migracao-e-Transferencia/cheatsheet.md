@@ -1,41 +1,42 @@
-﻿# Guia Rapido
+# Quick Guide
 
-## Tabela de decisao
+## Decision Table
 
-| Sinal do enunciado | Quando usar | Quando evitar | Armadilha de prova |
+| Scenario cue | When to use | When to avoid | Exam pitfall |
 |---|---|---|---|
-| Baixa operacao manual | Servico gerenciado com automacao nativa | Solucao autogerenciada sem necessidade | Confundir controle total com melhor custo total |
-| Pico imprevisivel | Escala horizontal e desacoplamento | Capacidade fixa e ajuste manual | Dimensionar para media e falhar no pico |
-| Requisito de seguranca forte | Menor privilegio + criptografia + auditoria | Permissao ampla por conveniencia | Achar que criptografia sozinha resolve governanca |
-| Custo como restricao explicita | Escolha por perfil de consumo e acesso | Classe unica para todo dado | Reduzir custo sem validar impacto funcional |
+| Low manual effort | A managed service with built-in automation | An unnecessary self-managed solution | Confusing full control with lower total cost |
+| Unpredictable spikes | Horizontal scaling and decoupling | Fixed capacity and manual adjustments | Sizing for average demand and failing during spikes |
+| Strong security requirement | Least privilege + encryption + auditing | Broad permission for convenience | Assuming encryption alone addresses governance |
+| Cost as an explicit constraint | Select based on usage and access patterns | One storage class for all data | Reducing costs without checking functional impact |
 
-## Sinais de servico
+## Service Selection Cues
 
-- **DMS**: priorize quando o cenario precisa de integracao nativa e menor carga operacional.
-- **Application Migration Service**: use quando houver necessidade de elasticidade controlada e comportamento previsivel em pico.
+- **DMS**: prioritize when the scenario requires native integration and lower operational overhead.
+- **Application Migration Service**: use when controlled elasticity and predictable behavior during spikes are required.
 
-## Quando usar este modulo na revisao
+## When to Use This Module During Review
 
-- Antes de simulados de arquitetura com foco em trade-offs.
-- Quando houver erro recorrente de escolha entre duas alternativas parecidas.
-- Na reta final para calibrar criterio de eliminacao de opcoes.
+- Before architecture practice exams that focus on trade-offs.
+- When you repeatedly struggle to choose between two similar options.
+- During final review, to improve how you eliminate answer options.
 
-## Armadilhas recorrentes
+## Recurring Pitfalls
 
-- Resolver disponibilidade com recurso de performance.
-- Trocar simplicidade por arquitetura superdimensionada.
-- Ignorar observabilidade ao definir desenho final.
+- Trying to meet an availability requirement with a performance feature.
+- Replacing a simple design with an oversized architecture.
+- Omitting observability from the final architecture.
+
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Para consolidar arquitetura com projetos reais de dados na AWS, mantenha no radar a trilha complementar: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> To reinforce architecture concepts through real data projects on AWS, explore the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).

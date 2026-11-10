@@ -1,269 +1,270 @@
-﻿# Mini Simulados por Dominio
+# Mini Practice Exams by Domain
 
-## Como usar
+## How to Use This Material
 
-- 4 blocos de 5 questoes (20 no total).
-- Tempo alvo: 8 a 10 minutos por bloco.
-- Corrija na hora e registre o erro no caderno.
+- 4 blocks of 5 questions (20 in total).
+- Target time: 8 to 10 minutes per block.
+- Check answers immediately and record mistakes in your error log.
 
-## Bloco A: Resiliencia
+## Block A: Resilience
 
-1. Cenario exige failover automatico entre zonas com minimo downtime.
-A) Instancia unica maior. B) Multi-AZ com monitoramento e failover nativo. C) Backup semanal manual. D) Escala vertical apenas.
+1. A scenario requires automatic failover between Availability Zones with minimal downtime.
+A) A single larger instance. B) Multi-AZ with monitoring and native failover. C) Manual weekly backups. D) Vertical scaling only.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:** Multi-AZ trata falha de AZ com troca automatica e menor indisponibilidade.
+**Explanation:** Multi-AZ handles an Availability Zone failure with automatic failover and less downtime.
 
 </details>
 
-2. Aplicacao com pico imprevisivel precisa absorver carga sem perder requisicoes.
-A) Fila desacoplada + consumidores elasticos. B) Processamento sincrono fixo. C) Retry manual no cliente. D) Bloquear requisicoes extras.
+2. An application with unpredictable traffic spikes must absorb load without losing requests.
+A) Decoupled queue + elastic consumers. B) Fixed synchronous processing. C) Manual retry on the client. D) Block extra requests.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Fila protege o produtor e permite escalar consumidores conforme backlog.
+**Explanation:** A queue protects the producer and lets consumers scale with the backlog.
 
 </details>
 
-3. Requisito de DR com RPO baixo e custo moderado.
-A) Backup anual. B) Pilot light. C) Sem replicacao. D) Apenas snapshots locais.
+3. DR requirement with low RPO and moderate cost.
+A) Annual backup. B) Pilot light. C) No replication. D) Local snapshots only.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:** Pilot light equilibra custo com recuperacao mais rapida que backup puro.
+**Explanation:** Pilot light balances cost with faster recovery than a backup-only strategy.
 
 </details>
 
-4. Alta disponibilidade de banco relacional transacional.
-A) Read replica apenas. B) Multi-AZ. C) Cache local. D) Instancia Spot.
+4. High availability for a transactional relational database.
+A) A read replica only. B) Multi-AZ. C) A local cache. D) A Spot Instance.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:** Multi-AZ prioriza continuidade de escrita com failover gerenciado.
+**Explanation:** Multi-AZ prioritizes write continuity with managed failover.
 
 </details>
 
-5. Distribuicao global de conteudo estatico com baixa latencia.
-A) CloudFront. B) EC2 unica regiao. C) NAT Gateway. D) SQS.
+5. Global distribution of static content with low latency.
+A) CloudFront. B) EC2 single region. C) NAT Gateway. D) SQS.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** CloudFront entrega conteudo no edge e reduz latencia por distancia.
+**Explanation:** CloudFront serves content at edge locations, reducing latency caused by distance.
 
 </details>
 
-## Bloco B: Performance
+## Block B: Performance
 
-6. Leitura massiva e repetitiva em dados quentes de sessao.
-A) Cache gerenciado. B) Snapshot diario. C) Log manual. D) ASG sem cache.
+6. Heavy, repeated reads of frequently accessed session data.
+A) Managed cache. B) Daily snapshot. C) Manual logging. D) ASG without cache.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Cache in-memory reduz latencia e alivia o banco de dados.
+**Explanation:** An in-memory cache reduces latency and database load.
 
 </details>
 
-7. API com throughput variavel e baixa operacao.
-A) Serverless com escala automatica. B) EC2 fixa. C) Processo cron. D) Monolito sem balanceador.
+7. An API with variable throughput and low operational overhead.
+A) Serverless with automatic scaling. B) Fixed EC2 capacity. C) A cron process. D) A monolith without a load balancer.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Serverless ajusta capacidade por demanda sem gerenciamento de servidor.
+**Explanation:** Serverless adjusts capacity on demand without server management.
 
 </details>
 
-8. DynamoDB com leitura irregular e picos.
-A) Capacity mode sob demanda. B) Provisionado estatico sem autoscaling. C) Banco local. D) Planilha CSV.
+8. DynamoDB with irregular read demand and spikes.
+A) On-demand capacity mode. B) Static provisioned capacity without auto scaling. C) A local database. D) A CSV spreadsheet.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** On-demand absorve variacao e evita throttling por subprovisionamento.
+**Explanation:** On-demand capacity handles usage variation and avoids throttling caused by underprovisioning.
 
 </details>
 
-9. Consulta analitica sobre dados em S3 sem cluster dedicado.
+9. Analytical query on data in S3 without dedicated cluster.
 A) Athena. B) NAT Gateway. C) IAM Identity Center. D) Route 53.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Athena executa SQL direto no S3 sem infraestrutura para gerenciar.
+**Explanation:** Athena runs SQL directly on S3 with no infrastructure to manage.
 
 </details>
 
-10. Conectividade privada a servico AWS sem sair para internet.
-A) VPC Endpoint. B) NAT publico. C) Bastion obrigatorio. D) VPN on-prem para tudo.
+10. Private connectivity to an AWS service without using the public internet.
+A) VPC Endpoint. B) Public NAT. C) Mandatory Bastion. D) On-prem VPN for everything.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Endpoint privado evita internet publica e reduz superficie de ataque.
+**Explanation:** A private endpoint avoids the public internet and reduces the attack surface.
 
 </details>
 
-## Bloco C: Seguranca
+## Block C: Security
 
-11. Credencial de aplicacao com rotacao automatica.
-A) Secrets Manager. B) Arquivo texto em EC2. C) Variavel fixa em pipeline. D) KMS sozinho.
+11. Application credential with automatic rotation.
+A) Secrets Manager. B) Text file in EC2. C) Fixed variable in pipeline. D) KMS alone.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Secrets Manager gerencia armazenamento, acesso e rotacao de segredo.
+**Explanation:** Secrets Manager manages secret storage, access and rotation.
 
 </details>
 
-12. Menor privilegio em IAM significa:
-A) Politica ampla para simplificar. B) Permissao minima necessaria por funcao. C) Mesmo role para tudo. D) Sem logs.
+12. Least privilege in IAM means:
+A) A broad policy for simplicity. B) The minimum permissions needed for each function. C) The same role for everything. D) No logs.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:** Least privilege reduz impacto de credencial comprometida.
+**Explanation:** Least privilege reduces the impact of compromised credentials.
 
 </details>
 
-13. Necessidade de trilha de auditoria de API calls.
+13. Need for audit trail of API calls.
 A) CloudTrail. B) CloudFront. C) EFS. D) Snowball.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** CloudTrail registra chamadas API para investigacao e compliance.
+**Explanation:** CloudTrail logs API calls for investigation and compliance.
 
 </details>
 
-14. Criptografia de dados em repouso com chave controlada.
-A) KMS com CMK. B) SG inbound. C) ASG policy. D) IAM group.
+14. Encryption at rest with a key under your control.
+A) KMS with a CMK. B) SG inbound rules. C) An ASG policy. D) An IAM group.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** KMS com CMK oferece governanca de chave e auditoria de uso.
+**Explanation:** KMS with CMK offers key governance and usage auditing.
 
 </details>
 
-15. Segmentar trafego entre camadas na VPC.
-A) Security Groups e NACLs por funcao. B) Tudo em subnet publica. C) Porta 0.0.0.0/0. D) Um unico SG amplo.
+15. Segment traffic between application tiers in a VPC.
+A) Security groups and NACLs by function. B) Everything in a public subnet. C) Open access from 0.0.0.0/0. D) A single broadly permissive SG.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Segmentacao por camada diminui blast radius e risco lateral.
+**Explanation:** Segmentation by application tier reduces the blast radius and the risk of lateral movement.
 
 </details>
 
-## Bloco D: Custo
+## Block D: Cost
 
-16. Dado raramente acessado, retencao longa.
-A) Classe de arquivamento adequada. B) Standard para tudo. C) EBS io2 para backup frio. D) Replicar sem necessidade.
+16. Rarely accessed data, long retention.
+A) An appropriate archival storage class. B) Standard for everything. C) EBS io2 for cold backups. D) Replicate unnecessarily.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Glacier/Archive reduz custo quando acesso e esporadico.
+**Explanation:** Glacier/Archive reduces costs when data is accessed infrequently.
 
 </details>
 
-17. Carga previsivel 24x7 com EC2.
-A) Compromisso de uso (Savings Plans/RI). B) Spot para banco critico unico. C) On-Demand sem analise. D) Escala manual diaria.
+17. A predictable EC2 workload running 24x7.
+A) A usage commitment (Savings Plans/RI). B) Spot for a single critical database. C) On-Demand without analysis. D) Daily manual scaling.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Consumo estavel costuma se beneficiar de desconto por compromisso.
+**Explanation:** Steady usage usually benefits from commitment-based discounts.
 
 </details>
 
-18. Lambda com execucao curta e esporadica para reduzir custo operacional.
-A) Bom encaixe serverless. B) ECS permanente obrigatorio. C) Cluster dedicado fixo. D) Banco como fila.
+18. Short, occasional Lambda executions to reduce operational costs.
+A) A good fit for serverless. B) A permanently running ECS service is mandatory. C) A fixed dedicated cluster. D) Use a database as a queue.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Pagar por invocacao evita custo fixo ocioso para carga eventual.
+**Explanation:** Paying per invocation avoids fixed costs for idle capacity when workloads run occasionally.
 
 </details>
 
-19. Evitar custo de transferencia indevida para servicos AWS internos.
-A) Endpoints privados quando aplicavel. B) NAT para tudo. C) Tunnel manual. D) S3 publico.
+19. Avoid unnecessary data transfer costs when accessing AWS services internally.
+A) Private endpoints when applicable. B) NAT for everything. C) Manual tunnel. D) public S3.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Endpoint privado remove salto desnecessario pela internet/NAT.
+**Explanation:** A private endpoint removes an unnecessary hop through the internet or a NAT gateway.
 
 </details>
 
-20. Processo de revisao de custo continuo.
-A) Budgets + alertas + revisao mensal. B) Ver fatura so no fim do ano. C) Ignorar tags. D) Sem ownership.
+20. Continuous cost review process.
+A) Budgets + alerts + monthly review. B) See invoice only at the end of the year. C) Ignore tags. D) No ownership.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-✅ **Resposta correta:** A
+✅ **Correct answer:** A
 
-**Explicação:** Governanca de custo exige monitoramento proativo e accountability.
+**Explanation:** Cost governance requires proactive monitoring and accountability.
 
 </details>
+
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Para transformar esta base de arquitetura em pratica com pipelines, dados e analytics, voce tambem pode seguir a trilha complementar: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> To apply this architecture foundation to pipelines, data, and analytics, you can also follow the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
