@@ -1,59 +1,60 @@
-# Machine Learning e IA
+# Machine Learning and AI
 
-## Visao Geral
+## Overview
 
-Este modulo cobre **Fundamentos de IA/ML aplicada na AWS** com foco no tipo de decisao que aparece no SAA-C03. A ideia central e transformar requisitos de negocio em escolhas tecnicas objetivas, equilibrando resiliencia, desempenho, seguranca e custo. Em prova, o diferencial nao e decorar servico isolado: e identificar qual restricao do cenario pesa mais e escolher o padrao que reduz risco operacional.
+This module covers **fundamentals of applied AI/ML on AWS**, focusing on the decisions tested on the SAA-C03. The goal is to turn business requirements into clear technical choices while balancing resilience, performance, security, and cost. Success on the exam depends on identifying the scenario's most important constraint and choosing a pattern that reduces operational risk, beyond memorizing individual services.
 
-## Conceitos-Chave
+## Key Concepts
 
-- Papel dos servicos: Bedrock, SageMaker, Comprehend, Textract.
-- Priorizacao por requisito dominante (latencia, disponibilidade, conformidade ou custo).
-- Integracao entre servicos com desacoplamento e observabilidade minima.
-- Escolha de arquitetura com menor complexidade viavel para o contexto.
+- Role of services: Bedrock, SageMaker, Comprehend, Textract.
+- Prioritization by dominant requirement (latency, availability, compliance or cost).
+- Integration between services with decoupling and minimal observability.
+- Choose the least complex architecture that meets the requirements.
 
-## Relevancia para o Exame
+## Exam Relevance
 
-No SAA-C03, este dominio costuma aparecer em perguntas com duas alternativas tecnicamente possiveis. O desempate normalmente vem de detalhes como: modelo de consistencia, estrategia de failover, custo de operacao recorrente, impacto de throughput e nivel de automacao exigido. Por isso, estudar este modulo significa treinar criterio de escolha, nao apenas nomenclatura.
+On the SAA-C03, questions in this domain often have two technically feasible options. Details such as the consistency model, failover strategy, recurring operating costs, throughput impact, and required automation determine the better answer. Studying this module means practicing those selection criteria as well as learning terminology.
 
-## Sinais Praticos (3 a 5)
+## Practical Cues (3 to 5)
 
-1. Quando o enunciado pede resposta elastica com pouca operacao manual, privilegie servicos gerenciados.
-2. Quando houver dependencia entre componentes, valide se existe desacoplamento para absorver pico e falha parcial.
-3. Quando houver restricao de seguranca, confirme criptografia em transito/repouso e menor privilegio.
-4. Se o custo for parte do requisito, compare classes de consumo, modo de capacidade e padrao de acesso.
-5. Se o cenario for global, valide rota de trafego, latencia e estrategia de distribuicao.
+1. When the scenario calls for elasticity with little manual work, favor managed services.
+2. When components depend on each other, check for decoupling to absorb spikes and partial failures.
+3. When security is a constraint, verify encryption in transit and at rest, along with least privilege.
+4. If cost is a requirement, compare usage classes, capacity modes, and access patterns.
+5. If the scenario is global, validate traffic route, latency and distribution strategy.
 
-## Armadilhas Comuns
+## Common Pitfalls
 
-- Escolher recurso premium sem necessidade real do cenario.
-- Confundir recurso de alta disponibilidade com recurso de escala de leitura.
-- Ignorar limites de servico e comportamento em falha.
-- Resolver requisito de seguranca com ferramenta inadequada para ciclo de vida do segredo.
+- Choosing a premium feature that the scenario does not require.
+- Confusing high availability features with read scaling features.
+- Ignoring service limits and failure behavior.
+- Addressing a security requirement with a tool unsuited to the secret lifecycle.
 
-## Proximo Passo de Revisao
+## Next Review Steps
 
-1. Revise o cheatsheet.md para consolidar sinais de decisao.
-2. Resolva questoes.md sem consulta para testar julgamento tecnico.
-3. Use flashcards.md em revisao curta diaria para fixar diferencas criticas.
+1. Review cheatsheet.md to reinforce decision-making cues.
+2. Answer questions.md without reference materials to test your technical judgment.
+3. Use flashcards.md for a brief daily review to reinforce critical distinctions.
 
-## Estudos Complementares
+## Additional Study
 
-Para reforco de fundamentos AWS antes de aprofundar cenarios arquiteturais:
+To strengthen your AWS fundamentals before studying architectural scenarios in depth:
 https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
 
-Para conectar arquitetura com IA generativa e Bedrock em trilha complementar:
+For an additional learning path connecting architecture with generative AI and Bedrock:
 https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil
+
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Para transformar esta base de arquitetura em pratica com pipelines, dados e analytics, voce tambem pode seguir a trilha complementar: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> To apply this architecture foundation to pipelines, data, and analytics, you can also follow the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).

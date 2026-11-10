@@ -1,30 +1,34 @@
-﻿# Links Recomendados
+# Recommended Links
 
-## Referencias oficiais AWS
+## Official AWS references
+
 - https://docs.aws.amazon.com/lambda/latest/dg/welcome.html
 - https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html
 - https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html
 
-## Por que estes links importam
-- Documentacao oficial reduz ambiguidade de comportamento de servico em prova.
-- Guias de boas praticas ajudam a entender trade-off, nao apenas configuracao.
-- Whitepapers e paginas de certificacao alinham terminologia e expectativa do exame.
+## Why These Links Matter
 
-## Ordem sugerida de leitura
-1. Visao geral do servico.
-2. Limites, seguranca e custos.
-3. Boas praticas e padroes de arquitetura.
+- Official documentation clarifies service behavior for exam questions.
+- Best practice guides help explain trade-offs, beyond configuration alone.
+- Whitepapers and certification pages clarify the terminology and expectations of the exam.
+
+## Suggested Reading Order
+
+1. Overview of the service.
+2. Limits, security and costs.
+3. Best practices and architectural patterns.
+
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Para consolidar arquitetura com projetos reais de dados na AWS, mantenha no radar a trilha complementar: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> To reinforce architecture concepts through real data projects on AWS, explore the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
