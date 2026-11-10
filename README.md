@@ -114,9 +114,9 @@
 
 ## 🚦 Where to start
 
-- **Beginner learning path (from scratch):** follow [Module 01](./01-Introducao-SAA-C03/README.md) → [Module 02](./02-IAM-e-Seguranca/README.md) → [Module 04](./04-Computacao-EC2/README.md) → [Module 05](./05-Alta-Disponibilidade-e-Escalabilidade/README.md) → [Module 06](./06-Amazon-S3-e-Armazenamento/README.md) → [Module 08](./08-VPC-e-Redes/README.md) → [Module 10](./10-Banco-de-Dados/README.md) and complete in order up to [Module 31](./31-Recursos-e-Links/README.md), including the corresponding labs in each week.
-- **Quick review:** review [cheatsheets](./01-Introducao-SAA-C03/cheatsheet.md), [flashcards](./01-Introducao-SAA-C03/flashcards.md) and [questions](./29-Simulados-e-Questoes/README.md), prioritizing modules with greater weight in the exam (security, resilience, performance and cost).
-- **Final review / last 14 days:** focus on [05](./05-Alta-Disponibilidade-e-Escalabilidade/README.md), [06](./06-Amazon-S3-e-Armazenamento/README.md), [08](./08-VPC-e-Redes/README.md), [10](./10-Banco-de-Dados/README.md), [13](./13-DNS-Route53-e-CloudFront/README.md), [14](./14-Desacoplamento-SQS-SNS-EventBridge/README.md), [17](./17-Serverless-Lambda-API-Gateway/README.md), [22](./22-Recuperacao-de-Desastres-e-Continuidade/README.md), [26](./26-Well-Architected-Framework/README.md) and finish with the [Module 29] hub(./29-Simulados-e-Questoes/README.md): mini practice exams, an error log, and a final review plan.
+- **Beginner learning path (from scratch):** follow [Module 01](./01-Introduction-SAA-C03/README.md) → [Module 02](./02-IAM-and-Security/README.md) → [Module 04](./04-EC2-Compute/README.md) → [Module 05](./05-High-Availability-and-Scalability/README.md) → [Module 06](./06-Amazon-S3-and-Storage/README.md) → [Module 08](./08-VPC-and-Networking/README.md) → [Module 10](./10-Databases/README.md) and complete in order up to [Module 31](./31-Resources-and-Links/README.md), including the corresponding labs in each week.
+- **Quick review:** review [cheatsheets](./01-Introduction-SAA-C03/cheatsheet.md), [flashcards](./01-Introduction-SAA-C03/flashcards.md) and [questions](./29-Practice-Exams-and-Questions/README.md), prioritizing modules with greater weight in the exam (security, resilience, performance and cost).
+- **Final review / last 14 days:** focus on [05](./05-High-Availability-and-Scalability/README.md), [06](./06-Amazon-S3-and-Storage/README.md), [08](./08-VPC-and-Networking/README.md), [10](./10-Databases/README.md), [13](./13-DNS-Route53-and-CloudFront/README.md), [14](./14-Decoupling-SQS-SNS-EventBridge/README.md), [17](./17-Serverless-Lambda-API-Gateway/README.md), [22](./22-Disaster-Recovery-and-Business-Continuity/README.md), [26](./26-Well-Architected-Framework/README.md) and finish with the [Module 29](./29-Practice-Exams-and-Questions/README.md): mini practice exams, an error log, and a final review plan.
 
 > An open English-language learning path for structured review of the AWS Certified Solutions Architect – Associate (SAA-C03) exam.
 
@@ -222,73 +222,73 @@ Open the [interactive study portal](./aws-saa-portal.html).
 
 | # | Module | Predominant domain | Status | Link |
 |---|---|---|---|---|
-| 01 | Introduction to SAA-C03 | Foundations / Strategy | Open | [README](./01-Introducao-SAA-C03/README.md) |
-| 02 | IAM and Security | Security | Open | [README](./02-IAM-e-Seguranca/README.md) |
-| 03 | IAM and Security (Labs) | Security (hands-on) | Open | [Lab](./03-IAM-e-Seguranca-Labs/lab.md) |
-| 04 | EC2 Compute | High performance | Open | [README](./04-Computacao-EC2/README.md) |
-| 05 | High Availability and Scalability | Resilience | Open | [README](./05-Alta-Disponibilidade-e-Escalabilidade/README.md) |
-| 06 | Amazon S3 and Storage | Resilience / Cost | Open | [README](./06-Amazon-S3-e-Armazenamento/README.md) |
-| 07 | Advanced S3 (Labs) | Resilience (hands-on) | Open | [Lab](./07-S3-Avancado-Labs/lab.md) |
-| 08 | VPC and Networking | Security / Resilience | Open | [README](./08-VPC-e-Redes/README.md) |
-| 09 | VPC and Networking (Labs) | Security (hands-on) | Open | [Lab](./09-VPC-e-Redes-Labs/lab.md) |
-| 10 | Databases | High performance | Open | [README](./10-Banco-de-Dados/README.md) |
-| 11 | RDS and Relational Databases (Labs) | High performance (hands-on) | Open | [Lab](./11-RDS-e-Bancos-Relacionais-Labs/lab.md) |
+| 01 | Introduction to SAA-C03 | Foundations / Strategy | Open | [README](./01-Introduction-SAA-C03/README.md) |
+| 02 | IAM and Security | Security | Open | [README](./02-IAM-and-Security/README.md) |
+| 03 | IAM and Security (Labs) | Security (hands-on) | Open | [Lab](./03-IAM-and-Security-Labs/lab.md) |
+| 04 | EC2 Compute | High performance | Open | [README](./04-EC2-Compute/README.md) |
+| 05 | High Availability and Scalability | Resilience | Open | [README](./05-High-Availability-and-Scalability/README.md) |
+| 06 | Amazon S3 and Storage | Resilience / Cost | Open | [README](./06-Amazon-S3-and-Storage/README.md) |
+| 07 | Advanced S3 (Labs) | Resilience (hands-on) | Open | [Lab](./07-Advanced-S3-Labs/lab.md) |
+| 08 | VPC and Networking | Security / Resilience | Open | [README](./08-VPC-and-Networking/README.md) |
+| 09 | VPC and Networking (Labs) | Security (hands-on) | Open | [Lab](./09-VPC-and-Networking-Labs/lab.md) |
+| 10 | Databases | High performance | Open | [README](./10-Databases/README.md) |
+| 11 | RDS and Relational Databases (Labs) | High performance (hands-on) | Open | [Lab](./11-RDS-and-Relational-Databases-Labs/lab.md) |
 | 12 | DynamoDB (Labs) | High performance (hands-on) | Open | [Lab](./12-DynamoDB/lab.md) |
-| 13 | DNS, Route 53 and CloudFront | Resilience / Performance | Open | [README](./13-DNS-Route53-e-CloudFront/README.md) |
-| 14 | Decoupling: SQS, SNS, EventBridge | Resilience | Open | [README](./14-Desacoplamento-SQS-SNS-EventBridge/README.md) |
-| 15 | SQS and SNS (Labs) | Resilience (hands-on) | Open | [Lab](./15-SQS-SNS-Mensageria-Labs/lab.md) |
+| 13 | DNS, Route 53 and CloudFront | Resilience / Performance | Open | [README](./13-DNS-Route53-and-CloudFront/README.md) |
+| 14 | Decoupling: SQS, SNS, EventBridge | Resilience | Open | [README](./14-Decoupling-SQS-SNS-EventBridge/README.md) |
+| 15 | SQS and SNS (Labs) | Resilience (hands-on) | Open | [Lab](./15-SQS-SNS-Messaging-Labs/lab.md) |
 | 16 | Containers: ECS, EKS, Fargate | High performance | Open | [README](./16-Containers-ECS-EKS-Fargate/README.md) |
 | 17 | Serverless: Lambda and API Gateway | Cost/Security | Open | [README](./17-Serverless-Lambda-API-Gateway/README.md) |
-| 18 | Data and Analytics | High performance | Open | [README](./18-Dados-e-Analytics/README.md) |
-| 19 | Machine Learning and AI | Managed Services | Open | [README](./19-Machine-Learning-e-IA/README.md) |
-| 20 | Monitoring: CloudWatch and CloudTrail | Security / Operations | Open | [README](./20-Monitoramento-CloudWatch-CloudTrail/README.md) |
-| 21 | Migration and Transfer | Resilience / Cost | Open | [README](./21-Migracao-e-Transferencia/README.md) |
-| 22 | Disaster Recovery and Business Continuity | Resilience / Security | Open | [README](./22-Recuperacao-de-Desastres-e-Continuidade/README.md) |
-| 23 | AWS Organizations, Governance and Costs | Security / Cost | Open | [README](./23-AWS-Organizations-Governanca-e-Custos/README.md) |
-| 24 | Advanced Networking and Hybrid Connectivity | Security / Performance | Open | [README](./24-Redes-Avancadas-e-Conectividade-Hibrida/README.md) |
-| 25 | Encryption, KMS, and Secrets Management | Security | Open | [README](./25-Criptografia-KMS-e-Gestao-de-Segredos/README.md) |
+| 18 | Data and Analytics | High performance | Open | [README](./18-Data-and-Analytics/README.md) |
+| 19 | Machine Learning and AI | Managed Services | Open | [README](./19-Machine-Learning-and-AI/README.md) |
+| 20 | Monitoring: CloudWatch and CloudTrail | Security / Operations | Open | [README](./20-Monitoring-CloudWatch-CloudTrail/README.md) |
+| 21 | Migration and Transfer | Resilience / Cost | Open | [README](./21-Migration-and-Transfer/README.md) |
+| 22 | Disaster Recovery and Business Continuity | Resilience / Security | Open | [README](./22-Disaster-Recovery-and-Business-Continuity/README.md) |
+| 23 | AWS Organizations, Governance and Costs | Security / Cost | Open | [README](./23-AWS-Organizations-Governance-and-Costs/README.md) |
+| 24 | Advanced Networking and Hybrid Connectivity | Security / Performance | Open | [README](./24-Advanced-Networking-and-Hybrid-Connectivity/README.md) |
+| 25 | Encryption, KMS, and Secrets Management | Security | Open | [README](./25-Encryption-KMS-and-Secrets-Management/README.md) |
 | 26 | Well-Architected Framework | All domains | Open | [README](./26-Well-Architected-Framework/README.md) |
-| 27 | Real-World Use Cases | All domains | Open | [README](./27-Casos-de-Uso-Reais/README.md) |
-| 28 | Hands-on Labs | Practice | Open | [README](./28-Labs-Praticos/README.md) |
-| 29 | Practice Exams, Questions, and Final Review | All domains | Open | [README](./29-Simulados-e-Questoes/README.md) |
-| 30 | Glossary | Review | Open | [README](./30-Glossario/README.md) |
-| 31 | Resources and Links | Review | Open | [README](./31-Recursos-e-Links/README.md) |
+| 27 | Real-World Use Cases | All domains | Open | [README](./27-Real-World-Use-Cases/README.md) |
+| 28 | Hands-on Labs | Practice | Open | [README](./28-Hands-on-Labs/README.md) |
+| 29 | Practice Exams, Questions, and Final Review | All domains | Open | [README](./29-Practice-Exams-and-Questions/README.md) |
+| 30 | Glossary | Review | Open | [README](./30-Glossary/README.md) |
+| 31 | Resources and Links | Review | Open | [README](./31-Resources-and-Links/README.md) |
 
 ## 🧩 Module Overview
 
 | Module name | Week/position | Theory (Yes/No) | Lab (Yes/No) | Cheatsheet (Yes/No) | Practice questions (Yes/No) |
 |---|---|---|---|---|---|
-| [01 - Introduction to SAA-C03](./01-Introducao-SAA-C03/README.md) | Week 1 | Yes | Yes | Yes | Yes |
-| [02 - IAM and Security](./02-IAM-e-Seguranca/README.md) | Week 1 | Yes | Yes | Yes | Yes |
-| [03 - IAM and Security (Labs)](./03-IAM-e-Seguranca-Labs/lab.md) | Week 1 | No | Yes | No | No |
-| [04 - EC2 Compute](./04-Computacao-EC2/README.md) | Week 2 | Yes | Yes | Yes | Yes |
-| [05 - High Availability and Scalability](./05-Alta-Disponibilidade-e-Escalabilidade/README.md) | Week 2 | Yes | Yes | Yes | Yes |
-| [06 - Amazon S3 and Storage](./06-Amazon-S3-e-Armazenamento/README.md) | Week 3 | Yes | No | Yes | Yes |
-| [07 - Advanced S3 (Labs)](./07-S3-Avancado-Labs/lab.md) | Week 3 | No | Yes | No | No |
-| [08 - VPC and Networking](./08-VPC-e-Redes/README.md) | Week 3 | Yes | No | Yes | Yes |
-| [09 - VPC and Networking (Labs)](./09-VPC-e-Redes-Labs/lab.md) | Week 3 | No | Yes | No | No |
-| [10 - Databases](./10-Banco-de-Dados/README.md) | Week 4 | Yes | No | Yes | Yes |
-| [11 - RDS and Relational Databases (Labs)](./11-RDS-e-Bancos-Relacionais-Labs/lab.md) | Week 4 | No | Yes | No | No |
+| [01 - Introduction to SAA-C03](./01-Introduction-SAA-C03/README.md) | Week 1 | Yes | Yes | Yes | Yes |
+| [02 - IAM and Security](./02-IAM-and-Security/README.md) | Week 1 | Yes | Yes | Yes | Yes |
+| [03 - IAM and Security (Labs)](./03-IAM-and-Security-Labs/lab.md) | Week 1 | No | Yes | No | No |
+| [04 - EC2 Compute](./04-EC2-Compute/README.md) | Week 2 | Yes | Yes | Yes | Yes |
+| [05 - High Availability and Scalability](./05-High-Availability-and-Scalability/README.md) | Week 2 | Yes | Yes | Yes | Yes |
+| [06 - Amazon S3 and Storage](./06-Amazon-S3-and-Storage/README.md) | Week 3 | Yes | No | Yes | Yes |
+| [07 - Advanced S3 (Labs)](./07-Advanced-S3-Labs/lab.md) | Week 3 | No | Yes | No | No |
+| [08 - VPC and Networking](./08-VPC-and-Networking/README.md) | Week 3 | Yes | No | Yes | Yes |
+| [09 - VPC and Networking (Labs)](./09-VPC-and-Networking-Labs/lab.md) | Week 3 | No | Yes | No | No |
+| [10 - Databases](./10-Databases/README.md) | Week 4 | Yes | No | Yes | Yes |
+| [11 - RDS and Relational Databases (Labs)](./11-RDS-and-Relational-Databases-Labs/lab.md) | Week 4 | No | Yes | No | No |
 | [12 - DynamoDB (Labs)](./12-DynamoDB/lab.md) | Week 4 | No | Yes | No | No |
-| [13 - DNS, Route 53 and CloudFront](./13-DNS-Route53-e-CloudFront/README.md) | Week 4 | Yes | No | Yes | Yes |
-| [14 - Decoupling: SQS, SNS, EventBridge](./14-Desacoplamento-SQS-SNS-EventBridge/README.md) | Week 5 | Yes | No | Yes | Yes |
-| [15 - SQS and SNS (Labs)](./15-SQS-SNS-Mensageria-Labs/lab.md) | Week 5 | No | Yes | No | No |
+| [13 - DNS, Route 53 and CloudFront](./13-DNS-Route53-and-CloudFront/README.md) | Week 4 | Yes | No | Yes | Yes |
+| [14 - Decoupling: SQS, SNS, EventBridge](./14-Decoupling-SQS-SNS-EventBridge/README.md) | Week 5 | Yes | No | Yes | Yes |
+| [15 - SQS and SNS (Labs)](./15-SQS-SNS-Messaging-Labs/lab.md) | Week 5 | No | Yes | No | No |
 | [16 - Containers: ECS, EKS, Fargate](./16-Containers-ECS-EKS-Fargate/README.md) | Week 5 | Yes | No | Yes | Yes |
 | [17 - Serverless: Lambda and API Gateway](./17-Serverless-Lambda-API-Gateway/README.md) | Week 6 | Yes | Yes | Yes | Yes |
-| [18 - Data and Analytics](./18-Dados-e-Analytics/README.md) | Week 6 | Yes | Yes | Yes | Yes |
-| [19 - Machine Learning and AI](./19-Machine-Learning-e-IA/README.md) | Week 7 | Yes | Yes | Yes | Yes |
-| [20 - Monitoring: CloudWatch and CloudTrail](./20-Monitoramento-CloudWatch-CloudTrail/README.md) | Week 7 | Yes | Yes | Yes | Yes |
-| [21 - Migration and Transfer](./21-Migracao-e-Transferencia/README.md) | Week 7 | Yes | Yes | Yes | Yes |
-| [22 - Disaster Recovery and Business Continuity](./22-Recuperacao-de-Desastres-e-Continuidade/README.md) | Week 8 | Yes | Yes | Yes | Yes |
-| [23 - AWS Organizations, Governance and Costs](./23-AWS-Organizations-Governanca-e-Custos/README.md) | Week 8 | Yes | Yes | Yes | Yes |
-| [24 - Advanced Networking and Hybrid Connectivity](./24-Redes-Avancadas-e-Conectividade-Hibrida/README.md) | Week 8 | Yes | Yes | Yes | Yes |
-| [25 - Encryption, KMS, and Secrets Management](./25-Criptografia-KMS-e-Gestao-de-Segredos/README.md) | Week 8 | Yes | Yes | Yes | Yes |
+| [18 - Data and Analytics](./18-Data-and-Analytics/README.md) | Week 6 | Yes | Yes | Yes | Yes |
+| [19 - Machine Learning and AI](./19-Machine-Learning-and-AI/README.md) | Week 7 | Yes | Yes | Yes | Yes |
+| [20 - Monitoring: CloudWatch and CloudTrail](./20-Monitoring-CloudWatch-CloudTrail/README.md) | Week 7 | Yes | Yes | Yes | Yes |
+| [21 - Migration and Transfer](./21-Migration-and-Transfer/README.md) | Week 7 | Yes | Yes | Yes | Yes |
+| [22 - Disaster Recovery and Business Continuity](./22-Disaster-Recovery-and-Business-Continuity/README.md) | Week 8 | Yes | Yes | Yes | Yes |
+| [23 - AWS Organizations, Governance and Costs](./23-AWS-Organizations-Governance-and-Costs/README.md) | Week 8 | Yes | Yes | Yes | Yes |
+| [24 - Advanced Networking and Hybrid Connectivity](./24-Advanced-Networking-and-Hybrid-Connectivity/README.md) | Week 8 | Yes | Yes | Yes | Yes |
+| [25 - Encryption, KMS, and Secrets Management](./25-Encryption-KMS-and-Secrets-Management/README.md) | Week 8 | Yes | Yes | Yes | Yes |
 | [26 - Well-Architected Framework](./26-Well-Architected-Framework/README.md) | Week 9 | Yes | Yes | Yes | Yes |
-| [27 - Real-World Use Cases](./27-Casos-de-Uso-Reais/README.md) | Week 9 | Yes | Yes | Yes | Yes |
-| [28 - Hands-on Labs](./28-Labs-Praticos/README.md) | Week 9 | Yes | Yes | Yes | Yes |
-| [29 - Practice Exams, Questions, and Final Review](./29-Simulados-e-Questoes/README.md) | Week 9 | Yes | Yes | Yes | Yes |
-| [30 - Glossary](./30-Glossario/README.md) | Week 9 | Yes | Yes | Yes | Yes |
-| [31 - Resources and Links](./31-Recursos-e-Links/README.md) | Week 9 | Yes | Yes | Yes | Yes |
+| [27 - Real-World Use Cases](./27-Real-World-Use-Cases/README.md) | Week 9 | Yes | Yes | Yes | Yes |
+| [28 - Hands-on Labs](./28-Hands-on-Labs/README.md) | Week 9 | Yes | Yes | Yes | Yes |
+| [29 - Practice Exams, Questions, and Final Review](./29-Practice-Exams-and-Questions/README.md) | Week 9 | Yes | Yes | Yes | Yes |
+| [30 - Glossary](./30-Glossary/README.md) | Week 9 | Yes | Yes | Yes | Yes |
+| [31 - Resources and Links](./31-Resources-and-Links/README.md) | Week 9 | Yes | Yes | Yes | Yes |
 
 <a id="how-to-use-this-repository"></a>
 ## 🚀 How to Use This Repository
@@ -306,7 +306,7 @@ Open the [interactive study portal](./aws-saa-portal.html).
 1. Read the module README to understand the context, services, and exam cues.
 2. Review the cheatsheet before solving questions.
 3. Solve the questions without opening the answer block.
-4. Record recurring errors in the [error log](./29-Simulados-e-Questoes/caderno-de-erros.md).
+4. Record recurring errors in the [error log](./29-Practice-Exams-and-Questions/error-log.md).
 5. Strengthen weak areas with flashcards and mini practice exams by domain.
 
 ## ✅ Short Final Review Checklist

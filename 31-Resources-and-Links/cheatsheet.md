@@ -11,7 +11,7 @@
 
 ## Service Selection Cues
 
-- **Documentacao**: prioritize when the scenario requires native integration and lower operational overhead.
+- **Documentation**: prioritize when the scenario requires native integration and lower operational overhead.
 - **Whitepapers**: use when controlled elasticity and predictable behavior during spikes are required.
 
 ## When to Use This Module During Review

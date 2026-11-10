@@ -11,7 +11,7 @@
 
 ## Service Selection Cues
 
-- **Termos AWS**: prioritize when the scenario requires native integration and lower operational overhead.
+- **AWS terms**: prioritize when the scenario requires native integration and lower operational overhead.
 - **high availability**: use when controlled elasticity and predictable behavior during spikes are required.
 
 ## When to Use This Module During Review
