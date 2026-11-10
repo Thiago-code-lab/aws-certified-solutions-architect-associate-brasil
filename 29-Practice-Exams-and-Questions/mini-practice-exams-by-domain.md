@@ -9,7 +9,14 @@
 ## Block A: Resilience
 
 1. A scenario requires automatic failover between Availability Zones with minimal downtime.
-A) A single larger instance. B) Multi-AZ with monitoring and native failover. C) Manual weekly backups. D) Vertical scaling only.
+
+A) A single larger instance.
+
+B) Multi-AZ with monitoring and native failover.
+
+C) Manual weekly backups.
+
+D) Vertical scaling only.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -21,7 +28,14 @@ A) A single larger instance. B) Multi-AZ with monitoring and native failover. C)
 </details>
 
 2. An application with unpredictable traffic spikes must absorb load without losing requests.
-A) Decoupled queue + elastic consumers. B) Fixed synchronous processing. C) Manual retry on the client. D) Block extra requests.
+
+A) Decoupled queue + elastic consumers.
+
+B) Fixed synchronous processing.
+
+C) Manual retry on the client.
+
+D) Block extra requests.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -33,7 +47,14 @@ A) Decoupled queue + elastic consumers. B) Fixed synchronous processing. C) Manu
 </details>
 
 3. DR requirement with low RPO and moderate cost.
-A) Annual backup. B) Pilot light. C) No replication. D) Local snapshots only.
+
+A) Annual backup.
+
+B) Pilot light.
+
+C) No replication.
+
+D) Local snapshots only.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -45,7 +66,14 @@ A) Annual backup. B) Pilot light. C) No replication. D) Local snapshots only.
 </details>
 
 4. High availability for a transactional relational database.
-A) A read replica only. B) Multi-AZ. C) A local cache. D) A Spot Instance.
+
+A) A read replica only.
+
+B) Multi-AZ.
+
+C) A local cache.
+
+D) A Spot Instance.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -57,7 +85,14 @@ A) A read replica only. B) Multi-AZ. C) A local cache. D) A Spot Instance.
 </details>
 
 5. Global distribution of static content with low latency.
-A) CloudFront. B) EC2 single region. C) NAT Gateway. D) SQS.
+
+A) CloudFront.
+
+B) EC2 single region.
+
+C) NAT Gateway.
+
+D) SQS.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -71,7 +106,14 @@ A) CloudFront. B) EC2 single region. C) NAT Gateway. D) SQS.
 ## Block B: Performance
 
 6. Heavy, repeated reads of frequently accessed session data.
-A) Managed cache. B) Daily snapshot. C) Manual logging. D) ASG without cache.
+
+A) Managed cache.
+
+B) Daily snapshot.
+
+C) Manual logging.
+
+D) ASG without cache.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -83,7 +125,14 @@ A) Managed cache. B) Daily snapshot. C) Manual logging. D) ASG without cache.
 </details>
 
 7. An API with variable throughput and low operational overhead.
-A) Serverless with automatic scaling. B) Fixed EC2 capacity. C) A cron process. D) A monolith without a load balancer.
+
+A) Serverless with automatic scaling.
+
+B) Fixed EC2 capacity.
+
+C) A cron process.
+
+D) A monolith without a load balancer.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -95,7 +144,14 @@ A) Serverless with automatic scaling. B) Fixed EC2 capacity. C) A cron process. 
 </details>
 
 8. DynamoDB with irregular read demand and spikes.
-A) On-demand capacity mode. B) Static provisioned capacity without auto scaling. C) A local database. D) A CSV spreadsheet.
+
+A) On-demand capacity mode.
+
+B) Static provisioned capacity without auto scaling.
+
+C) A local database.
+
+D) A CSV spreadsheet.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -107,7 +163,14 @@ A) On-demand capacity mode. B) Static provisioned capacity without auto scaling.
 </details>
 
 9. Analytical query on data in S3 without dedicated cluster.
-A) Athena. B) NAT Gateway. C) IAM Identity Center. D) Route 53.
+
+A) Athena.
+
+B) NAT Gateway.
+
+C) IAM Identity Center.
+
+D) Route 53.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -119,7 +182,14 @@ A) Athena. B) NAT Gateway. C) IAM Identity Center. D) Route 53.
 </details>
 
 10. Private connectivity to an AWS service without using the public internet.
-A) VPC Endpoint. B) Public NAT. C) Mandatory Bastion. D) On-prem VPN for everything.
+
+A) VPC Endpoint.
+
+B) Public NAT.
+
+C) Mandatory Bastion.
+
+D) On-prem VPN for everything.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -133,7 +203,14 @@ A) VPC Endpoint. B) Public NAT. C) Mandatory Bastion. D) On-prem VPN for everyth
 ## Block C: Security
 
 11. Application credential with automatic rotation.
-A) Secrets Manager. B) Text file in EC2. C) Fixed variable in pipeline. D) KMS alone.
+
+A) Secrets Manager.
+
+B) Text file in EC2.
+
+C) Fixed variable in pipeline.
+
+D) KMS alone.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -145,7 +222,14 @@ A) Secrets Manager. B) Text file in EC2. C) Fixed variable in pipeline. D) KMS a
 </details>
 
 12. Least privilege in IAM means:
-A) A broad policy for simplicity. B) The minimum permissions needed for each function. C) The same role for everything. D) No logs.
+
+A) A broad policy for simplicity.
+
+B) The minimum permissions needed for each function.
+
+C) The same role for everything.
+
+D) No logs.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -157,7 +241,14 @@ A) A broad policy for simplicity. B) The minimum permissions needed for each fun
 </details>
 
 13. Need for audit trail of API calls.
-A) CloudTrail. B) CloudFront. C) EFS. D) Snowball.
+
+A) CloudTrail.
+
+B) CloudFront.
+
+C) EFS.
+
+D) Snowball.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -169,7 +260,14 @@ A) CloudTrail. B) CloudFront. C) EFS. D) Snowball.
 </details>
 
 14. Encryption at rest with a key under your control.
-A) KMS with a CMK. B) SG inbound rules. C) An ASG policy. D) An IAM group.
+
+A) KMS with a CMK.
+
+B) SG inbound rules.
+
+C) An ASG policy.
+
+D) An IAM group.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -181,7 +279,14 @@ A) KMS with a CMK. B) SG inbound rules. C) An ASG policy. D) An IAM group.
 </details>
 
 15. Segment traffic between application tiers in a VPC.
-A) Security groups and NACLs by function. B) Everything in a public subnet. C) Open access from 0.0.0.0/0. D) A single broadly permissive SG.
+
+A) Security groups and NACLs by function.
+
+B) Everything in a public subnet.
+
+C) Open access from 0.0.0.0/0.
+
+D) A single broadly permissive SG.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -195,7 +300,14 @@ A) Security groups and NACLs by function. B) Everything in a public subnet. C) O
 ## Block D: Cost
 
 16. Rarely accessed data, long retention.
-A) An appropriate archival storage class. B) Standard for everything. C) EBS io2 for cold backups. D) Replicate unnecessarily.
+
+A) An appropriate archival storage class.
+
+B) Standard for everything.
+
+C) EBS io2 for cold backups.
+
+D) Replicate unnecessarily.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -207,7 +319,14 @@ A) An appropriate archival storage class. B) Standard for everything. C) EBS io2
 </details>
 
 17. A predictable EC2 workload running 24x7.
-A) A usage commitment (Savings Plans/RI). B) Spot for a single critical database. C) On-Demand without analysis. D) Daily manual scaling.
+
+A) A usage commitment (Savings Plans/RI).
+
+B) Spot for a single critical database.
+
+C) On-Demand without analysis.
+
+D) Daily manual scaling.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -219,7 +338,14 @@ A) A usage commitment (Savings Plans/RI). B) Spot for a single critical database
 </details>
 
 18. Short, occasional Lambda executions to reduce operational costs.
-A) A good fit for serverless. B) A permanently running ECS service is mandatory. C) A fixed dedicated cluster. D) Use a database as a queue.
+
+A) A good fit for serverless.
+
+B) A permanently running ECS service is mandatory.
+
+C) A fixed dedicated cluster.
+
+D) Use a database as a queue.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -231,7 +357,14 @@ A) A good fit for serverless. B) A permanently running ECS service is mandatory.
 </details>
 
 19. Avoid unnecessary data transfer costs when accessing AWS services internally.
-A) Private endpoints when applicable. B) NAT for everything. C) Manual tunnel. D) public S3.
+
+A) Private endpoints when applicable.
+
+B) NAT for everything.
+
+C) Manual tunnel.
+
+D) public S3.
 
 <details>
 <summary><strong>View answer</strong></summary>
@@ -243,7 +376,14 @@ A) Private endpoints when applicable. B) NAT for everything. C) Manual tunnel. D
 </details>
 
 20. Continuous cost review process.
-A) Budgets + alerts + monthly review. B) See invoice only at the end of the year. C) Ignore tags. D) No ownership.
+
+A) Budgets + alerts + monthly review.
+
+B) See invoice only at the end of the year.
+
+C) Ignore tags.
+
+D) No ownership.
 
 <details>
 <summary><strong>View answer</strong></summary>

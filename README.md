@@ -20,14 +20,14 @@
 
 <p align="center">
   <a href="https://www.cloudstudy.com.br/">
-    <img src="https://img.shields.io/badge/JOIN_THE_WAITLIST-CloudStudy-2563EB?style=for-the-badge&logo=amazonaws&logoColor=white" alt="Join the CloudStudy waitlist" />
+    <img src="https://img.shields.io/badge/JOIN_THE_WAITLIST-CloudStudy-2563EB?style=for-the-badge&amp;logo=amazonaws&amp;logoColor=white" alt="Join the CloudStudy waitlist" />
   </a>
 </p>
 
 <div align="center">
   <a href="https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9">
     <img
-      src="https://img.shields.io/badge/Udemy%20Course-A435F0?style=for-the-badge&logo=udemy&logoColor=white"
+      src="https://img.shields.io/badge/Udemy%20Course-A435F0?style=for-the-badge&amp;logo=udemy&amp;logoColor=white"
       alt="Course on Udemy"
       width="230"
       height="40"
@@ -36,7 +36,7 @@
   &nbsp;&nbsp;
   <a href="https://chat.whatsapp.com/Lsuexbkt1oELAGX8nCH2La?mode=gi_t">
     <img
-      src="https://img.shields.io/badge/CloudStudy%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"
+      src="https://img.shields.io/badge/CloudStudy%20Group-25D366?style=for-the-badge&amp;logo=whatsapp&amp;logoColor=white"
       alt="CloudStudy Group on WhatsApp"
       width="230"
       height="40"
@@ -62,7 +62,7 @@
 </a>
 
 <a href="https://www.instagram.com/cloudstudy.ai/">
-  <img src="https://img.shields.io/badge/Instagram-@cloudstudy.ai-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  <img src="https://img.shields.io/badge/Instagram-@cloudstudy.ai-E4405F?style=for-the-badge&amp;logo=instagram&amp;logoColor=white" alt="Instagram" />
 </a>
 
 </div>
@@ -72,17 +72,17 @@
 <h1 align="center">AWS Certified Solutions Architect – Associate (SAA-C03)</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=Stars&color=2563eb&labelColor=374151" alt="Stars" />
-  <img src="https://img.shields.io/github/forks/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=Forks&color=2563eb&labelColor=374151" alt="Forks" />
-  <img src="https://img.shields.io/github/license/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=License&color=0f766e&labelColor=374151" alt="License" />
+  <img src="https://img.shields.io/github/stars/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&amp;label=Stars&amp;color=2563eb&amp;labelColor=374151" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&amp;label=Forks&amp;color=2563eb&amp;labelColor=374151" alt="Forks" />
+  <img src="https://img.shields.io/github/license/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&amp;label=License&amp;color=0f766e&amp;labelColor=374151" alt="License" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/CONTENT-ENGLISH-0284c7?style=for-the-badge&labelColor=0f172a" alt="Content: English" />
-  <img src="https://img.shields.io/badge/OPEN-SOURCE-2563eb?style=for-the-badge&labelColor=0f172a" alt="Open Source" />
-  <img src="https://img.shields.io/badge/EDUCATIONAL-RESOURCE-1d4ed8?style=for-the-badge&labelColor=0f172a" alt="Educational resource" />
-  <img src="https://img.shields.io/badge/CERTIFICATION-SAA--C03-1e40af?style=for-the-badge&labelColor=0f172a" alt="Certification" />
-  <img src="https://img.shields.io/badge/CLOUD-JOURNEY-0f766e?style=for-the-badge&labelColor=0f172a" alt="Cloud Journey" />
+  <img src="https://img.shields.io/badge/CONTENT-ENGLISH-0284c7?style=for-the-badge&amp;labelColor=0f172a" alt="Content: English" />
+  <img src="https://img.shields.io/badge/OPEN-SOURCE-2563eb?style=for-the-badge&amp;labelColor=0f172a" alt="Open Source" />
+  <img src="https://img.shields.io/badge/EDUCATIONAL-RESOURCE-1d4ed8?style=for-the-badge&amp;labelColor=0f172a" alt="Educational resource" />
+  <img src="https://img.shields.io/badge/CERTIFICATION-SAA--C03-1e40af?style=for-the-badge&amp;labelColor=0f172a" alt="Certification" />
+  <img src="https://img.shields.io/badge/CLOUD-JOURNEY-0f766e?style=for-the-badge&amp;labelColor=0f172a" alt="Cloud Journey" />
 </p>
 
 <p align="center">
@@ -149,6 +149,8 @@ Open the [interactive study portal](./aws-saa-portal.html).
 
 
 ## 📊 Exam Structure and Domains
+
+> **Source-edition metadata:** The table preserves the original weights. The [official AWS SAA-C03 exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03.html) lists Security 30%, Resilience 26%, Performance 24%, and Cost Optimization 20%. Use the official weights for exam planning. See the [source-content limitations](./docs/english-edition/README.md#source-content-limitations) for details.
 
 | Domain | Weight | Topics tested | Main modules |
 |---|---:|---|---|

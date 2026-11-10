@@ -1,12 +1,17 @@
 # Review Questions
 
+> **Source-edition note:** An inherited question has an inconsistency between its stem and generic explanation. All answer choices, keyed answers, and explanations are preserved. Review the [documented source-content limitations](../docs/english-edition/README.md#source-content-limitations).
+
 ## Question 1
 
 A scenario requires a sound decision about hands-on labs. Which approach best meets the requirements?
 
 A) Apply a generic solution without considering teardown.
+
 B) Use teardown with a configuration that meets the requirements and minimizes operational overhead.
+
 C) Add components that the scenario does not require.
+
 D) Ignore explicit security, availability or cost requirements.
 
 <details>
@@ -27,8 +32,11 @@ It does not meet the primary requirement with the same architectural consistency
 Which choice reduces operational risk in this domain?
 
 A) Resolve everything manually during the incident.
+
 B) Combine runbook with observability and automation.
+
 C) Add components that the scenario does not require.
+
 D) Ignore explicit security, availability or cost requirements.
 
 <details>
@@ -49,8 +57,11 @@ It does not meet the primary requirement with the same architectural consistency
 To keep costs under control without losing technical quality, what should you do?
 
 A) Always choose the cheapest option without validating the requirement.
+
 B) Size resources based on actual usage and use failure testing where appropriate.
+
 C) Add components that the scenario does not require.
+
 D) Ignore explicit security, availability or cost requirements.
 
 <details>
@@ -69,9 +80,13 @@ It does not meet the primary requirement with the same architectural consistency
 ## Question 4
 
 Which option is likely to be incorrect in an exam question on this topic?
+
 A) The one that meets the dominant requirement with less complexity.
+
 B) The option that ignores cues about baseline security and architectural dependencies.
+
 C) Add components that the scenario does not require.
+
 D) Ignore explicit security, availability or cost requirements.
 
 <details>
@@ -92,8 +107,11 @@ It does not meet the primary requirement with the same architectural consistency
 Which review approach improves your accuracy in this module?
 
 A) Review only definitions without scenario practice.
+
 B) Practice questions about baseline security and DR lab with explanations of the trade-offs.
+
 C) Add components that the scenario does not require.
+
 D) Ignore explicit security, availability or cost requirements.
 
 <details>
@@ -108,7 +126,6 @@ Option B addresses the technical objective for hands-on labs with a better balan
 It does not meet the primary requirement with the same architectural consistency.
 
 </details>
-
 
 ---
 

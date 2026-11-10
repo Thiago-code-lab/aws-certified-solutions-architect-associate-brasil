@@ -32,9 +32,9 @@ On the SAA-C03, questions in this domain often have two technically feasible opt
 
 ## Next Review Steps
 
-1. Review cheatsheet.md to reinforce decision-making cues.
-2. Answer questions.md without reference materials to test your technical judgment.
-3. Use flashcards.md for a brief daily review to reinforce critical distinctions.
+1. Review [cheatsheet.md](./cheatsheet.md) to reinforce decision-making cues.
+2. Answer [questions.md](./questions.md) without reference materials to test your technical judgment.
+3. Use [flashcards.md](./flashcards.md) for a brief daily review to reinforce critical distinctions.
 
 ## Additional Study
 

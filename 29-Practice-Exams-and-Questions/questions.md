@@ -5,8 +5,11 @@
 A web application must remain available if an Availability Zone fails. Traffic must be distributed automatically among healthy instances. Which approach best meets these requirements?
 
 A) A single EC2 instance with daily snapshot.
+
 B) Auto Scaling Group in multiple AZs behind an Application Load Balancer.
+
 C) A larger EC2 instance on a public subnet.
+
 D) Manual backup of the AMI before each deployment.
 
 <details>
@@ -27,8 +30,11 @@ Snapshot helps recovery, but does not deliver high availability during failure.
 A company wants to reduce the cost of accessing S3 from private workloads in a VPC, without exposing traffic to the internet. Which choice is best?
 
 A) NAT Gateway for all access to S3.
+
 B) Internet Gateway associated with the private subnet.
+
 C) VPC Gateway Endpoint for S3.
+
 D) Elastic IP on each private instance.
 
 <details>
@@ -49,8 +55,11 @@ Works for egress, but adds cost and is not the most straightforward option for p
 A relational database needs automatic failover with minimal disruption. Read scaling is not the primary goal. Which feature best meets this requirement?
 
 A) RDS Multi-AZ.
+
 B) Read Replica in another region.
+
 C) Export to S3 every hour.
+
 D) EC2 with a manually installed database.
 
 <details>
@@ -71,8 +80,11 @@ A read replica supports read workloads and DR, but does not replace Multi-AZ for
 An API receives unpredictable spikes and needs to decouple producers and consumers, accepting asynchronous processing. Which service best reduces operational risk?
 
 A) Amazon SQS.
+
 B) Amazon EFS.
+
 C) AWS WAF.
+
 D) AWS Direct Connect.
 
 <details>
@@ -93,8 +105,11 @@ EFS is shared file storage, not a decoupling queue.
 During final review, a learner answers IAM questions incorrectly by choosing overly broad permissions. Which practice best addresses this pattern?
 
 A) Use managed policies with full permissions to avoid access restrictions.
+
 B) Review least privilege, scope of resources, and conditions in policies.
+
 C) Ignore IAM and focus only on networks.
+
 D) Memorize service names without analyzing allowed actions.
 
 <details>
