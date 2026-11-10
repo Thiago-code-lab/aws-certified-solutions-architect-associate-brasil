@@ -1,113 +1,113 @@
-﻿# Cartoes de Revisao
+# Review Cards
 
 ## Card 01
 
-**Pergunta:** Qual e o foco central deste modulo?
+**Question:** What is the central focus of this module?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Dominar decisoes de IAM e Seguranca orientadas por cenarios da prova SAA-C03.
+**Answer:**
+Master decisions about IAM and security using SAA-C03 exam scenarios.
 
 </details>
 
 ## Card 02
 
-**Pergunta:** Qual erro recorrente neste tema?
+**Question:** What mistake commonly occurs with this topic?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Aplicar resposta generica sem validar sinais especificos de iam e seguranca no enunciado.
+**Answer:**
+Applying a generic answer without checking the scenario's specific cues for IAM and security.
 
 </details>
 
 ## Card 03
 
-**Pergunta:** Como identificar a melhor alternativa?
+**Question:** How do you identify the best answer option?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Priorizar requisito dominante e servicos que cobrem least privilege e policies com menor operacao.
+**Answer:**
+Prioritize the dominant requirement and choose services that address least privilege and policies with less operational overhead.
 
 </details>
 
 ## Card 04
 
-**Pergunta:** Qual trade-off costuma aparecer?
+**Question:** Which trade-off usually appears?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Equilibrar least privilege com custo, desempenho e simplicidade operacional.
+**Answer:**
+Balance least privilege with cost, performance, and operational simplicity.
 
 </details>
 
 ## Card 05
 
-**Pergunta:** Que sinal de arquitetura madura aparece em questoes?
+**Question:** What sign of a mature architecture appears in exam questions?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Uso intencional de policies com observabilidade para reduzir risco operacional.
+**Answer:**
+Deliberate use of policies with observability to reduce operational risk.
 
 </details>
 
 ## Card 06
 
-**Pergunta:** Como evitar armadilha de overengineering?
+**Question:** How can you avoid overengineering?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Evitar componentes extras quando roles ou KMS ja resolve o requisito.
+**Answer:**
+Avoid extra components when roles or KMS already meets the requirement.
 
 </details>
 
 ## Card 07
 
-**Pergunta:** Qual ponto revisar antes do simulado?
+**Question:** What should you review before a practice exam?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Diferencas praticas entre CloudTrail e SCP.
+**Answer:**
+Practical differences between CloudTrail and SCP.
 
 </details>
 
 ## Card 08
 
-**Pergunta:** Qual fechamento eficiente de revisao?
+**Question:** How can you finish a review session efficiently?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Converter erros deste modulo em regras objetivas de decisao sobre iam e seguranca.
+**Answer:**
+Turn mistakes from this module into clear decision rules for IAM and security.
 
 </details>
 
 
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Para consolidar arquitetura com projetos reais de dados na AWS, mantenha no radar a trilha complementar: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> To reinforce architecture concepts through real data projects on AWS, explore the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).

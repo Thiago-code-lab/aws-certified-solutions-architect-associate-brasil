@@ -1,113 +1,113 @@
-﻿# Cartoes de Revisao
+# Review Cards
 
 ## Card 01
 
-**Pergunta:** Qual e o foco central deste modulo?
+**Question:** What is the central focus of this module?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Dominar decisoes de Alta Disponibilidade orientadas por cenarios da prova SAA-C03.
+**Answer:**
+Master decisions about high availability using SAA-C03 exam scenarios.
 
 </details>
 
 ## Card 02
 
-**Pergunta:** Qual erro recorrente neste tema?
+**Question:** What mistake commonly occurs with this topic?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Aplicar resposta generica sem validar sinais especificos de alta disponibilidade no enunciado.
+**Answer:**
+Applying a generic answer without checking the scenario's specific cues for high availability.
 
 </details>
 
 ## Card 03
 
-**Pergunta:** Como identificar a melhor alternativa?
+**Question:** How do you identify the best answer option?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Priorizar requisito dominante e servicos que cobrem Multi-AZ e health checks com menor operacao.
+**Answer:**
+Prioritize the dominant requirement and choose services that address Multi-AZ and health checks with less operational overhead.
 
 </details>
 
 ## Card 04
 
-**Pergunta:** Qual trade-off costuma aparecer?
+**Question:** Which trade-off usually appears?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Equilibrar Multi-AZ com custo, desempenho e simplicidade operacional.
+**Answer:**
+Balance Multi-AZ with cost, performance, and operational simplicity.
 
 </details>
 
 ## Card 05
 
-**Pergunta:** Que sinal de arquitetura madura aparece em questoes?
+**Question:** What sign of a mature architecture appears in exam questions?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Uso intencional de health checks com observabilidade para reduzir risco operacional.
+**Answer:**
+Deliberate use of health checks with observability to reduce operational risk.
 
 </details>
 
 ## Card 06
 
-**Pergunta:** Como evitar armadilha de overengineering?
+**Question:** How can you avoid overengineering?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Evitar componentes extras quando escalabilidade horizontal ou stateless ja resolve o requisito.
+**Answer:**
+Avoid extra components when horizontal scaling or stateless already meets the requirement.
 
 </details>
 
 ## Card 07
 
-**Pergunta:** Qual ponto revisar antes do simulado?
+**Question:** What should you review before a practice exam?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Diferencas praticas entre stateless e ASG.
+**Answer:**
+Practical differences between stateless and ASG.
 
 </details>
 
 ## Card 08
 
-**Pergunta:** Qual fechamento eficiente de revisao?
+**Question:** How can you finish a review session efficiently?
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-**Resposta:**
-Converter erros deste modulo em regras objetivas de decisao sobre alta disponibilidade.
+**Answer:**
+Turn mistakes from this module into clear decision rules for high availability.
 
 </details>
 
 
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Para transformar esta base de arquitetura em pratica com pipelines, dados e analytics, voce tambem pode seguir a trilha complementar: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> To apply this architecture foundation to pipelines, data, and analytics, you can also follow the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).

@@ -1,53 +1,54 @@
-﻿# Lab Guiado
+# Guided Lab
 
-## Objetivo
+## Objective
 
-Montar um fluxo minimo funcional que demonstre **Laboratorio de seguranca e lifecycle em S3**, com validacao clara de comportamento e custo controlado para ambiente de estudo.
+Build a minimal working workflow that demonstrates **S3 security and lifecycle management in a lab**, with clear behavioral validation and controlled costs for a study environment.
 
-## Servicos usados
+## Services Used
 
 S3, IAM.
 
-## Faixa de custo esperada
+## Expected Cost Range
 
-- Ambiente de estudo curto: baixo custo se executado por poucas horas.
-- Evite manter recursos ativos apos validacao.
-- Priorize camada gratuita quando disponivel.
+- Short study session: low cost when resources run for only a few hours.
+- Avoid keeping resources active after validation.
+- Use the Free Tier when available.
 
-## Passo a passo
+## Step-by-Step Instructions
 
-1. Crie os recursos essenciais do fluxo em uma conta de laboratorio.
-2. Configure politicas minimas de acesso e observabilidade basica.
-3. Execute carga de teste pequena para validar resposta funcional.
-4. Simule uma falha simples (interrupcao de componente) e observe recuperacao.
-5. Registre metrica-chave e ajuste uma configuracao para comparar resultado.
+1. Create the essential resources for the workflow in a lab account.
+2. Configure minimum necessary access policies and basic observability.
+3. Run a small test workload to validate functional behavior.
+4. Simulate a simple failure (component interruption) and observe recovery.
+5. Record key metrics and adjust a setting to compare results.
 
-## Validacao
+## Validation
 
-- Fluxo de ponta a ponta executa sem erro critico.
-- Logs/metricas mostram comportamento esperado.
-- Existe evidencia de decisao entre desempenho e custo.
+- End-to-end flow runs without critical error.
+- Logs/metrics show expected behavior.
+- Document evidence of a trade-off between performance and cost.
 
 ## Cleanup
 
-1. Remova recursos criados no laboratorio.
-2. Apague dados temporarios e snapshots nao necessarios.
-3. Revise faturamento no dia seguinte para confirmar encerramento.
+1. Remove the resources created for the lab.
+2. Delete temporary data and unnecessary snapshots.
+3. Check billing the following day to confirm that resource charges have stopped.
 
-## Takeaway para prova
+## Exam Takeaway
 
-O ponto principal e identificar qual servico reduz risco operacional mantendo aderencia ao requisito central do cenario.
+The key takeaway is to identify the service that reduces operational risk while meeting the scenario's central requirement.
+
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Para transformar esta base de arquitetura em pratica com pipelines, dados e analytics, voce tambem pode seguir a trilha complementar: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> To apply this architecture foundation to pipelines, data, and analytics, you can also follow the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).

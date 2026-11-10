@@ -1,126 +1,126 @@
-# Questoes de Revisao
+# Review Questions
 
-## Questão 1
+## Question 1
 
-Um cenario exige decisao correta em Alta Disponibilidade. Qual abordagem e mais aderente?
+A scenario requires a sound decision about high availability. Which approach best meets the requirements?
 
-A) Aplicar solucao generica sem considerar Multi-AZ.
-B) Usar Multi-AZ com configuracao orientada ao requisito e operacao enxuta.
-C) Adicionar componentes sem necessidade do enunciado.
-D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+A) Apply a generic solution without considering Multi-AZ.
+B) Use Multi-AZ with a configuration that meets the requirements and minimizes operational overhead.
+C) Add components that the scenario does not require.
+D) Ignore explicit security, availability or cost requirements.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-â✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:**
-A alternativa B cobre o objetivo tecnico de alta disponibilidade com melhor equilibrio entre requisito, risco e operacao.
+**Explanation:**
+Option B addresses the technical objective for high availability with a better balance of requirements, risk, and operational effort.
 
-**Por que a alternativa A está errada:**
-Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+**Why option A is wrong:**
+It does not meet the primary requirement with the same architectural consistency.
 
 </details>
 
-## Questão 2
+## Question 2
 
-Qual escolha reduz risco operacional neste dominio?
+Which choice reduces operational risk in this domain?
 
-A) Resolver tudo manualmente durante incidente.
-B) Combinar health checks com observabilidade e automacao.
-C) Adicionar componentes sem necessidade do enunciado.
-D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+A) Resolve everything manually during the incident.
+B) Combine health checks with observability and automation.
+C) Add components that the scenario does not require.
+D) Ignore explicit security, availability or cost requirements.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-â✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:**
-A alternativa B cobre o objetivo tecnico de alta disponibilidade com melhor equilibrio entre requisito, risco e operacao.
+**Explanation:**
+Option B addresses the technical objective for high availability with a better balance of requirements, risk, and operational effort.
 
-**Por que a alternativa A está errada:**
-Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+**Why option A is wrong:**
+It does not meet the primary requirement with the same architectural consistency.
 
 </details>
 
-## Questão 3
+## Question 3
 
-Para manter custo sob controle sem perder qualidade tecnica, o que fazer?
+To keep costs under control without losing technical quality, what should you do?
 
-A) Escolher sempre a opcao mais barata sem validar requisito.
-B) Dimensionar com base no uso real e aproveitar escalabilidade horizontal quando fizer sentido.
-C) Adicionar componentes sem necessidade do enunciado.
-D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+A) Always choose the cheapest option without validating the requirement.
+B) Size resources based on actual usage and use horizontal scaling where appropriate.
+C) Add components that the scenario does not require.
+D) Ignore explicit security, availability or cost requirements.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-â✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:**
-A alternativa B cobre o objetivo tecnico de alta disponibilidade com melhor equilibrio entre requisito, risco e operacao.
+**Explanation:**
+Option B addresses the technical objective for high availability with a better balance of requirements, risk, and operational effort.
 
-**Por que a alternativa A está errada:**
-Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+**Why option A is wrong:**
+It does not meet the primary requirement with the same architectural consistency.
 
 </details>
 
-## Questão 4
+## Question 4
 
-Qual alternativa tende a ser incorreta na prova para este tema?
-A) A que atende requisito dominante com menor complexidade.
-B) A que ignora sinais de stateless e dependencias da arquitetura.
-C) Adicionar componentes sem necessidade do enunciado.
-D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+Which option is likely to be incorrect in an exam question on this topic?
+A) The one that meets the dominant requirement with less complexity.
+B) The option that ignores cues about stateless and architectural dependencies.
+C) Add components that the scenario does not require.
+D) Ignore explicit security, availability or cost requirements.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-â✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:**
-A alternativa B cobre o objetivo tecnico de alta disponibilidade com melhor equilibrio entre requisito, risco e operacao.
+**Explanation:**
+Option B addresses the technical objective for high availability with a better balance of requirements, risk, and operational effort.
 
-**Por que a alternativa A está errada:**
-Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+**Why option A is wrong:**
+It does not meet the primary requirement with the same architectural consistency.
 
 </details>
 
-## Questão 5
+## Question 5
 
-Qual revisao aumenta acerto neste modulo?
+Which review approach improves your accuracy in this module?
 
-A) Rever apenas definicoes sem pratica de cenario.
-B) Treinar questoes focadas em stateless e ASG com explicacao de trade-offs.
-C) Adicionar componentes sem necessidade do enunciado.
-D) Ignorar requisito explicito de seguranca, disponibilidade ou custo.
+A) Review only definitions without scenario practice.
+B) Practice questions about stateless and ASG with explanations of the trade-offs.
+C) Add components that the scenario does not require.
+D) Ignore explicit security, availability or cost requirements.
 
 <details>
-<summary><strong>Ver resposta</strong></summary>
+<summary><strong>View answer</strong></summary>
 
-â✅ **Resposta correta:** B
+✅ **Correct answer:** B
 
-**Explicação:**
-A alternativa B cobre o objetivo tecnico de alta disponibilidade com melhor equilibrio entre requisito, risco e operacao.
+**Explanation:**
+Option B addresses the technical objective for high availability with a better balance of requirements, risk, and operational effort.
 
-**Por que a alternativa A está errada:**
-Ela nao atende o requisito principal com a mesma consistencia arquitetural.
+**Why option A is wrong:**
+It does not meet the primary requirement with the same architectural consistency.
 
 </details>
 
 
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## ☁️ Follow CloudStudy
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
 
 ---
 
-> Se o objetivo for conectar arquitetura AWS com ingestao, processamento e analytics, a trilha complementar e: [Engenharia de Dados na AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
+> To connect AWS architecture with ingestion, processing, and analytics, explore the additional learning path: [Data Engineering on AWS](https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9).
