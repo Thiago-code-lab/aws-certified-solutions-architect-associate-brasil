@@ -13,7 +13,6 @@ and original Portuguese banner artwork described below remain explicit limitatio
 - The release uses ordinary commits and pushes exclusively to the English branch;
   no merge, pull request to `main`, force-push, or Pages publication is part of this release.
 - To identify the exact checked-out release commit, run `git rev-parse HEAD`.
-  The delivery message includes the final commit SHA; it cannot be embedded in its own commit.
 
 ## Translation Coverage
 
@@ -107,6 +106,7 @@ Machine-readable evidence is checked in alongside this report:
 - [Content and link validation](./validation-results.json).
 - [Chromium portal validation](./portal-test-results.json).
 - [JavaScript, shell, YAML, and migration validation](./support-test-results.json).
+- [Published GitHub Raw and downloaded-portal verification](./live-test-results.json).
 - [Desktop screenshot](./portal-desktop.png).
 - [Tablet screenshot](./portal-tablet.png).
 
@@ -153,6 +153,14 @@ Raw URLs with the actual translated checkout, so it can run before publication.
 To preview the portal manually, run `python -m http.server 8000` at the repository
 root and open `http://localhost:8000/aws-saa-portal.html`. Its content still loads
 from the configured public English branch; an internet connection is required.
+
+After publication, all 198 original file equivalents were fetched from real English-branch
+GitHub Raw URLs and matched byte for byte against their committed Git blobs. Chromium
+also opened the downloaded/local HTML portal without request interception, loaded all
+31 modules from GitHub, and retained progress after reload. This live verification
+covered implementation commit `76e84d90f1af583902cf2fc87d53e4074e19515f`; the subsequent
+audit-only commit adds this evidence without changing any of those 198 files.
+The remote `main` and `gh-pages` refs remained unchanged.
 
 ## Source-Content Limitations
 
