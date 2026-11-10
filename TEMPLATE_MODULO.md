@@ -1,26 +1,26 @@
-﻿# Template de Modulo
+# Module Template
 
-## Objetivo
+## Objective
 
-Descreva o que o modulo ensina em uma frase.
+Describe what the module teaches in one sentence.
 
-## Conceitos-chave
+## Key concepts
 
-- Conceito 1
-- Conceito 2
-- Conceito 3
+- Concept 1
+- Concept 2
+- Concept 3
 
-## Arquitetura
+## Architecture
 
-Explique o fluxo principal em poucas linhas.
+Explain the main flow in a few lines.
 
-## Revisao
+## Review
 
-- 5 perguntas de fixacao
-- 1 laboratorio curto
-- 1 cheatsheet objetivo
+- 5 review questions
+- 1 short lab
+- 1 concise cheatsheet
 
 ---
 
-## Aprofundamento recomendado
+## Recommended Further Study
 

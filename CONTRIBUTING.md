@@ -1,38 +1,38 @@
-﻿# Como Contribuir
+# How to Contribute
 
-Obrigado por contribuir com este repositorio da comunidade AWS Brasil.
+Thank you for contributing to this AWS Brazil community repository.
 
-## Formas de contribuir
+## Ways to Contribute
 
-- Corrigir erros tecnicos ou de escrita.
-- Melhorar clareza de explicacoes e materiais de revisao.
-- Sugerir labs curtos e casos de uso relevantes para SAA-C03.
-- Atualizar links oficiais da AWS quando necessario.
+- Correct technical or writing errors.
+- Improve clarity of explanations and review materials.
+- Suggest short labs and use cases relevant to SAA-C03.
+- Update official AWS links when necessary.
 
-## Fluxo recomendado
+## Recommended Workflow
 
-1. Abra uma issue com contexto claro.
-2. Crie uma branch com nome objetivo.
-3. Faça alteracoes pequenas e focadas.
-4. Abra pull request com resumo, motivacao e arquivos alterados.
+1. Open an issue with clear context.
+2. Create a branch with a descriptive name.
+3. Make small, focused changes.
+4. Open a pull request against `saa-c03-english` with a summary, rationale, and list of changed files. Keep the English edition separate from `main`.
 
-## Padrao editorial
+## Editorial Standards
 
-- Conteudo publico em PT-BR.
-- Objetividade, precisao tecnica e foco arquitetural.
-- Evitar textos longos e redundantes.
+- Public content in American English (en-US) on this branch.
+- Objectivity, technical precision and architectural focus.
+- Avoid long and redundant texts.
 
-## Checklist antes do PR
+## Pre-PR Checklist
 
-- Markdown legivel e consistente.
-- Links funcionando.
-- Terminologia AWS coerente entre modulos.
+- Readable and consistent Markdown.
+- Links working.
+- Coherent AWS terminology between modules.
 
 ---
 
-## Referencias de contexto
+## Context References
 
-Para manter consistencia entre trilhas da comunidade:
-- Fundamentos AWS: https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
-- IA aplicada na AWS: https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil
+To maintain consistency across the community learning paths:
+- AWS Fundamentals: https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
+- Applied AI on AWS: https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil
 

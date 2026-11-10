@@ -1,28 +1,35 @@
 ---
 name: AWS update
-about: Sugerir atualização por mudança de serviço ou recurso novo da AWS
+about: Suggest update due to service change or new AWS feature
 labels: aws-update
----
-
-## Serviço AWS impactado
-Informe o serviço e, se possível, a feature específica.
-
-## O que mudou
-Descreva a mudança de comportamento, limite, nomenclatura ou recomendação.
-
-## Arquivos afetados
-Liste os links/paths dos arquivos que precisam ser atualizados.
-
-## Referências oficiais
-Adicione links para documentação oficial, release notes ou anúncios AWS.
-
-## Impacto no material
-Explique como essa mudança afeta explicações, labs, questões ou cheatsheets.
-
-## Proposta de atualização
-Descreva a alteração sugerida no conteúdo.
 
 ---
 
-## Revisao complementar
+## AWS service impacted
+
+Enter the service and, if possible, the specific feature.
+
+## What changed
+
+Describe the change in behavior, limit, nomenclature or recommendation.
+
+## Affected files
+
+List the links/paths of the files that need to be updated.
+
+## Official references
+
+Add links to official documentation, release notes, or AWS announcements.
+
+## Impact on the Learning Materials
+
+Explain how this change affects explanations, labs, questions or cheatsheets.
+
+## Update proposal
+
+Describe the suggested change to the content.
+
+---
+
+## Additional Review
 

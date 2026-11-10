@@ -1,6 +1,8 @@
 <p align="center">
-  <img src="./assets/Banner-SolutionsArchitect.png" alt="Banner AWS Solutions Architect Associate" width="100%" />
+  <img src="./assets/Banner-SolutionsArchitect.png" alt="CloudStudy AWS Solutions Architect Associate banner; original artwork contains Portuguese captions translated below" width="100%" />
 </p>
+
+<p align="center"><em>AWS architecture, scalability, and practical certification preparation. Real-world AWS architectures; security best practices; high availability and resilience; performance and scalability; cost optimization; lessons, labs, study maps, flashcards, and more. 100% free open repository.</em></p>
 
 <p align="center">
   <a href="https://www.cloudstudy.com.br/">
@@ -9,23 +11,24 @@
 </p>
 
 <p align="center">
-  <strong> Estude para a AWS Solutions Architect Associate (SAA-C03) com teoria, labs, flashcards, cheatsheets e simulados.</strong>
+  <strong> Prepare for AWS Certified Solutions Architect – Associate (SAA-C03) with lessons, labs, flashcards, cheatsheets, and practice exams.</strong>
 </p>
 
 <p align="center">
-  <strong> Entre na lista de espera da CloudStudy e receba acesso antecipado à plataforma.</strong>
+  <strong> Join the CloudStudy waitlist and receive early access to the platform.</strong>
 </p>
 
 <p align="center">
   <a href="https://www.cloudstudy.com.br/">
-    <img src="https://img.shields.io/badge/ENTRAR_NA_WAITLIST-CloudStudy-2563EB?style=for-the-badge&logo=amazonaws&logoColor=white" />
+    <img src="https://img.shields.io/badge/JOIN_THE_WAITLIST-CloudStudy-2563EB?style=for-the-badge&logo=amazonaws&logoColor=white" alt="Join the CloudStudy waitlist" />
   </a>
+</p>
 
 <div align="center">
   <a href="https://www.udemy.com/course/engenharia-de-dados-na-aws-do-zero-aos-projetos-reais/?referralCode=E28670B9116BA68E08A9">
     <img
-      src="https://img.shields.io/badge/Curso%20na%20Udemy-A435F0?style=for-the-badge&logo=udemy&logoColor=white"
-      alt="Curso na Udemy"
+      src="https://img.shields.io/badge/Udemy%20Course-A435F0?style=for-the-badge&logo=udemy&logoColor=white"
+      alt="Course on Udemy"
       width="230"
       height="40"
     />
@@ -33,18 +36,18 @@
   &nbsp;&nbsp;
   <a href="https://chat.whatsapp.com/Lsuexbkt1oELAGX8nCH2La?mode=gi_t">
     <img
-      src="https://img.shields.io/badge/Grupo%20CloudStudy-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"
-      alt="Grupo CloudStudy no WhatsApp"
+      src="https://img.shields.io/badge/CloudStudy%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"
+      alt="CloudStudy Group on WhatsApp"
       width="230"
       height="40"
     />
   </a>
 </div>
 
-## Patrocínio educacional
+## Educational sponsorship
 
 <p align="center">
-  Este projeto conta com apoio da
+  This project has the support of
   <a href="https://www.cloudstudy.com.br">CloudStudy</a>.
 </p>
 
@@ -55,302 +58,315 @@
 <div align="center">
 
 <a href="https://www.cloudstudy.com.br/">
-  <img src="https://img.shields.io/badge/🌐_CloudStudy-cloudstudy.com.br-2563EB?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/🌐_CloudStudy-cloudstudy.com.br-2563EB?style=for-the-badge" alt="CloudStudy" />
 </a>
 
 <a href="https://www.instagram.com/cloudstudy.ai/">
-  <img src="https://img.shields.io/badge/Instagram-@cloudstudy.ai-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+  <img src="https://img.shields.io/badge/Instagram-@cloudstudy.ai-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
 </a>
 
 </div>
 
 <br>
 
-<h1 align="center">AWS Solutions Architect Associate (SAA-C03)</h1>
+<h1 align="center">AWS Certified Solutions Architect – Associate (SAA-C03)</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=Stars&color=2563eb&labelColor=374151" />
-  <img src="https://img.shields.io/github/forks/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=Forks&color=2563eb&labelColor=374151" />
-  <img src="https://img.shields.io/github/license/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=License&color=0f766e&labelColor=374151" />
+  <img src="https://img.shields.io/github/stars/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=Stars&color=2563eb&labelColor=374151" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=Forks&color=2563eb&labelColor=374151" alt="Forks" />
+  <img src="https://img.shields.io/github/license/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil?style=for-the-badge&label=License&color=0f766e&labelColor=374151" alt="License" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/CONTEÚDO-PT--BR-0284c7?style=for-the-badge&labelColor=0f172a" />
-  <img src="https://img.shields.io/badge/OPEN-SOURCE-2563eb?style=for-the-badge&labelColor=0f172a" />
-  <img src="https://img.shields.io/badge/USO-EDUCACIONAL-1d4ed8?style=for-the-badge&labelColor=0f172a" />
-  <img src="https://img.shields.io/badge/CERTIFICATION-SAA--C03-1e40af?style=for-the-badge&labelColor=0f172a" />
-  <img src="https://img.shields.io/badge/CLOUD-JOURNEY-0f766e?style=for-the-badge&labelColor=0f172a" />
+  <img src="https://img.shields.io/badge/CONTENT-ENGLISH-0284c7?style=for-the-badge&labelColor=0f172a" alt="Content: English" />
+  <img src="https://img.shields.io/badge/OPEN-SOURCE-2563eb?style=for-the-badge&labelColor=0f172a" alt="Open Source" />
+  <img src="https://img.shields.io/badge/EDUCATIONAL-RESOURCE-1d4ed8?style=for-the-badge&labelColor=0f172a" alt="Educational resource" />
+  <img src="https://img.shields.io/badge/CERTIFICATION-SAA--C03-1e40af?style=for-the-badge&labelColor=0f172a" alt="Certification" />
+  <img src="https://img.shields.io/badge/CLOUD-JOURNEY-0f766e?style=for-the-badge&labelColor=0f172a" alt="Cloud Journey" />
 </p>
 
 <p align="center">
-  <a href="#como-usar-este-repositorio">Como usar</a> •
-  <a href="#fluxo-recomendado-de-estudo">Fluxo de estudo</a> •
-  <a href="#roteiro-de-estudo">Roteiro</a> •
-  <a href="#modulos">Módulos</a> •
-  <a href="./29-Simulados-e-Questoes/README.md">Simulados</a> •
-  <a href="#trilhas-complementares-aws">Trilhas AWS</a>
+  <a href="#how-to-use-this-repository">How to use</a> •
+  <a href="#recommended-study-workflow">Study workflow</a> •
+  <a href="#study-map">Study plan</a> •
+  <a href="#modules">Modules</a> •
+  <a href="./29-Practice-Exams-and-Questions/README.md">Practice exams</a> •
+  <a href="#additional-aws-learning-paths">AWS learning paths</a>
 </p>
 
-<p align="center"><sub>Material aberto por Thiago Cardoso • <a href="https://www.linkedin.com/in/analyticsthiagocardoso">LinkedIn</a></sub></p>
+<p align="center"><sub>Open educational resources by Thiago Cardoso • <a href="https://www.linkedin.com/in/analyticsthiagocardoso">LinkedIn</a></sub></p>
 
 ---
 
-## O que você vai encontrar neste repositório
+## What you will find in this repository
 
-| Tema | O que você encontra aqui |
+| Topic | What you find here |
 |---|---|
-| Arquiteturas reais da AWS | Cenários de prova, trade-offs e decisões arquiteturais com foco prático. |
-| Alta disponibilidade e resiliência | Multi-AZ, failover, desacoplamento, continuidade e estratégias de DR. |
-| Segurança e IAM | IAM, KMS, criptografia, políticas, auditoria e governança aplicada. |
-| Redes e VPC | Subnets, roteamento, endpoints, conectividade híbrida e segurança de rede. |
-| Banco de dados e armazenamento | RDS, Aurora, DynamoDB, S3, EBS, EFS e escolhas por desempenho e custo. |
-| Serverless e containers | Lambda, API Gateway, ECS, EKS, Fargate e padrões modernos de execução. |
-| Otimização de custos | Rightsizing, storage classes, automação e decisões custo-eficientes. |
-| Simulados comentados | Questões no estilo SAA-C03, revisão de alternativas e caderno de erros. |
-| Labs, mapas e flashcards | Labs guiados, roteiros por semana, cheatsheets e revisão espaçada. |
+| Real-world AWS architectures | Exam scenarios, trade-offs and architectural decisions with a practical focus. |
+| High availability and resilience | Multi-AZ, failover, decoupling, continuity and DR strategies. |
+| Security and IAM | IAM, KMS, encryption, policies, auditing and applied governance. |
+| Networking and VPC | Subnets, routing, endpoints, hybrid connectivity and network security. |
+| Databases and storage | RDS, Aurora, DynamoDB, S3, EBS, EFS and choices by performance and cost. |
+| Serverless and containers | Lambda, API Gateway, ECS, EKS, Fargate, and modern execution patterns. |
+| Cost optimization | Rightsizing, storage classes, automation and cost-efficient decisions. |
+| Practice exams with explanations | SAA-C03-style questions, answer-option reviews, and an error log. |
+| Labs, study maps, and flashcards | Guided labs, weekly study plans, cheatsheets, and spaced review. |
 
-## 🚦 Por onde começar
+## 🚦 Where to start
 
-- **Trilha para iniciantes (do zero):** siga [Módulo 01](./01-Introducao-SAA-C03/README.md) → [Módulo 02](./02-IAM-e-Seguranca/README.md) → [Módulo 04](./04-Computacao-EC2/README.md) → [Módulo 05](./05-Alta-Disponibilidade-e-Escalabilidade/README.md) → [Módulo 06](./06-Amazon-S3-e-Armazenamento/README.md) → [Módulo 08](./08-VPC-e-Redes/README.md) → [Módulo 10](./10-Banco-de-Dados/README.md) e complete na ordem até [Módulo 31](./31-Recursos-e-Links/README.md), incluindo os labs correspondentes em cada semana.
-- **Revisão rápida:** faça revisão por [cheatsheets](./01-Introducao-SAA-C03/cheatsheet.md), [flashcards](./01-Introducao-SAA-C03/flashcards.md) e [questões](./29-Simulados-e-Questoes/README.md), priorizando módulos com maior peso no exame (segurança, resiliência, performance e custo).
-- **Reta final / últimos 14 dias:** concentre em [05](./05-Alta-Disponibilidade-e-Escalabilidade/README.md), [06](./06-Amazon-S3-e-Armazenamento/README.md), [08](./08-VPC-e-Redes/README.md), [10](./10-Banco-de-Dados/README.md), [13](./13-DNS-Route53-e-CloudFront/README.md), [14](./14-Desacoplamento-SQS-SNS-EventBridge/README.md), [17](./17-Serverless-Lambda-API-Gateway/README.md), [22](./22-Recuperacao-de-Desastres-e-Continuidade/README.md), [26](./26-Well-Architected-Framework/README.md) e finalize com o hub do [Módulo 29](./29-Simulados-e-Questoes/README.md): mini-simulados, caderno de erros e plano de reta final.
+- **Beginner learning path (from scratch):** follow [Module 01](./01-Introducao-SAA-C03/README.md) → [Module 02](./02-IAM-e-Seguranca/README.md) → [Module 04](./04-Computacao-EC2/README.md) → [Module 05](./05-Alta-Disponibilidade-e-Escalabilidade/README.md) → [Module 06](./06-Amazon-S3-e-Armazenamento/README.md) → [Module 08](./08-VPC-e-Redes/README.md) → [Module 10](./10-Banco-de-Dados/README.md) and complete in order up to [Module 31](./31-Recursos-e-Links/README.md), including the corresponding labs in each week.
+- **Quick review:** review [cheatsheets](./01-Introducao-SAA-C03/cheatsheet.md), [flashcards](./01-Introducao-SAA-C03/flashcards.md) and [questions](./29-Simulados-e-Questoes/README.md), prioritizing modules with greater weight in the exam (security, resilience, performance and cost).
+- **Final review / last 14 days:** focus on [05](./05-Alta-Disponibilidade-e-Escalabilidade/README.md), [06](./06-Amazon-S3-e-Armazenamento/README.md), [08](./08-VPC-e-Redes/README.md), [10](./10-Banco-de-Dados/README.md), [13](./13-DNS-Route53-e-CloudFront/README.md), [14](./14-Desacoplamento-SQS-SNS-EventBridge/README.md), [17](./17-Serverless-Lambda-API-Gateway/README.md), [22](./22-Recuperacao-de-Desastres-e-Continuidade/README.md), [26](./26-Well-Architected-Framework/README.md) and finish with the [Module 29] hub(./29-Simulados-e-Questoes/README.md): mini practice exams, an error log, and a final review plan.
 
-> Trilha aberta em Português do Brasil para revisão estruturada do exame AWS Certified Solutions Architect Associate SAA-C03.
+> An open English-language learning path for structured review of the AWS Certified Solutions Architect – Associate (SAA-C03) exam.
 
-Repositório oficial: https://github.com/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil
+English branch: https://github.com/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil/tree/saa-c03-english
 
-## 🎯 Sobre este Repositório
+## 🎯 About this Repository
 
-Este repositório combina material open-source em Português do Brasil com foco em raciocínio arquitetural real: trade-offs, casos de uso, armadilhas de prova, labs curados para baixo custo e questões práticas no estilo do exame SAA-C03.
+This English edition provides open-source study material focused on architectural reasoning: trade-offs, use cases, exam pitfalls, labs selected for low-cost practice, and SAA-C03-style questions. The original Portuguese edition remains available on the `main` branch.
 
-Este material foi estruturado para um estudante de nível intermediário, que já usa AWS no dia a dia e já domina os fundamentos de cloud. O foco não é memorização cega: o objetivo é desenvolver o raciocínio esperado de um arquiteto de soluções, entendendo trade-offs entre resiliência, desempenho, segurança e custo.
+This material is designed for intermediate learners who already use AWS regularly and understand cloud fundamentals. It develops the reasoning expected of a solutions architect: evaluating trade-offs between resilience, performance, security, and cost, beyond memorizing facts.
 
-O repositório foi pensado para funcionar bem no GitHub. Cada módulo contém teoria, questões no estilo da prova, flashcards, cheatsheet, cenários arquiteturais, labs e curadoria de links oficiais. A ordem dos módulos acompanha os temas mais cobrados no exame e uma progressão de complexidade que faz sentido para revisão em 9 semanas.
-
-
-## 🖥️ Portal Interativo
-
-Além do GitHub Pages, o repositório inclui um portal de estudos em arquivo único (`aws-saa-portal.html`) que pode ser aberto direto no navegador — sem instalação, sem build.
-
-**O que ele faz:**
-
-- Lista os 31 módulos numa barra lateral, com busca e filtro por "Todos / Pendentes / Concluídos".
-- Carrega o conteúdo de cada módulo direto deste repositório (via GitHub raw) e renderiza como markdown formatado.
-- Marca progresso módulo a módulo — o checkmark e a barra de progresso ficam salvos no navegador (`localStorage`), sem precisar de login ou backend.
-- Mostra o progresso por domínio do exame (resiliência, performance, segurança, custo).
-- Cada módulo tem um atalho para abrir o `README.md`/`lab.md` correspondente direto no GitHub. 
-
-**Como usar:** baixe `aws-saa-portal.html` e abra localmente, ou hospede como página estática (o próprio GitHub Pages funciona).
+This repository is designed for learning on GitHub. Across the curriculum, you will find lessons, exam-style questions, flashcards, cheatsheets, architectural scenarios, labs, and curated official links. The module sequence follows frequently tested exam topics and gradually increases in complexity for a 9-week review plan. Dedicated lab modules contain labs and links.
 
 
-## 📊 Estrutura e Domínios do Exame
+## 🖥️ Interactive Portal
 
-| Domínio | Peso | O que cai na prática | Módulos principais |
+The repository includes a single-file study portal (`aws-saa-portal.html`) that can be opened directly in the browser — no installation, no build.
+
+**What it does:**
+
+- Lists the 31 modules in a sidebar, with search and "All / Pending / Completed" filters.
+- Loads the content of each module directly from this repository (via GitHub raw) and renders it as formatted Markdown.
+- Tracks progress module by module — the checkmark and progress bar are saved in the browser (`localStorage`), without needing a login or backend.
+- Shows progress by exam domain (resilience, performance, security, cost).
+- Each module has a shortcut to open the corresponding `README.md`/`lab.md` directly on GitHub.
+
+Open the [interactive study portal](./aws-saa-portal.html).
+
+**How to use it:** download `aws-saa-portal.html` and open it in your browser, or preview this branch with a local HTTP server. Keep the existing Portuguese GitHub Pages deployment unchanged.
+
+
+## 📊 Exam Structure and Domains
+
+| Domain | Weight | Topics tested | Main modules |
 |---|---:|---|---|
-| Arquiteturas resilientes (Design Resilient Architectures) | 30% | Alta disponibilidade, recuperação de desastres, desacoplamento, multi-AZ e multi-region | 05, 06, 08, 09, 13, 14, 21, 22, 24, 26 |
-| Arquiteturas de alta performance (Design High-Performing Architectures) | 28% | Seleção de compute, cache, performance de storage, redes e bancos | 04, 06, 08, 10, 11, 12, 13, 16, 18 |
-| Aplicações e arquiteturas seguras (Design Secure Applications and Architectures) | 24% | IAM, KMS, isolamento de rede, criptografia, trilhas de auditoria e governança | 02, 03, 08, 09, 14, 17, 20, 23, 24, 25 |
-| Arquiteturas otimizadas em custo (Design Cost-Optimized Architectures) | 18% | Rightsizing, classes de storage, modelos de compra, serverless e automação | 04, 06, 15, 17, 21, 23 |
+| Design Resilient Architectures | 30% | High availability, disaster recovery, decoupling, multi-AZ, and multi-Region | 05, 06, 08, 09, 13, 14, 21, 22, 24, 26 |
+| Design High-Performing Architectures | 28% | Compute selection, caching, storage performance, networking, and databases | 04, 06, 08, 10, 11, 12, 13, 16, 18 |
+| Design Secure Applications and Architectures | 24% | IAM, KMS, network isolation, encryption, audit trails, and governance | 02, 03, 08, 09, 14, 17, 20, 23, 24, 25 |
+| Design Cost-Optimized Architectures | 18% | Rightsizing, storage classes, purchasing models, serverless, and automation | 04, 06, 15, 17, 21, 23 |
 
-<a id="roteiro-de-estudo"></a>
-## 🗺️ Mapa de Estudos
+<a id="study-map"></a>
+## 🗺️ Study Map
 
-### Semana 1
-- Módulo 01: visão do exame, estratégia, pesos e serviços mais cobrados
-- Módulo 02: IAM, KMS, Organizations, Identity Center e políticas
-- Módulo 03: laboratório guiado de IAM e segurança
+### Week 1
 
-### Semana 2
-- Módulo 04: EC2, EBS, placement groups e modelos de compra
-- Módulo 05: ELB, ASG, health checks e escalabilidade
+- Module 01: exam overview, strategy, domain weights, and frequently tested services
+- Module 02: IAM, KMS, Organizations, Identity Center and policies
+- Module 03: guided IAM and security lab
 
-### Semana 3
-- Módulo 06: S3, lifecycle, replicação, classes e segurança
-- Módulo 07: laboratório avançado de S3
-- Módulo 08: VPC, subnets, endpoints, rotas e segurança de rede
-- Módulo 09: laboratório de VPC e redes
+### Week 2
 
-### Semana 4
-- Módulo 10: bancos de dados para arquitetura (RDS, Aurora, DynamoDB, ElastiCache, Redshift)
-- Módulo 11: laboratório de RDS e bancos relacionais
-- Módulo 12: modelagem e padrões com DynamoDB
-- Módulo 13: Route 53, CloudFront, OAC, WAF e Global Accelerator
+- Module 04: EC2, EBS, placement groups and purchasing models
+- Module 05: ELB, ASG, health checks and scalability
 
-### Semana 5
-- Módulo 14: SQS, SNS, EventBridge e Step Functions
-- Módulo 15: laboratório de mensageria SQS/SNS
-- Módulo 16: ECS, EKS, Fargate, ECR e App Runner
+### Week 3
 
-### Semana 6
-- Módulo 17: Lambda, API Gateway, authorizers e observabilidade serverless
-- Módulo 18: Kinesis, Firehose, Glue, Athena, EMR e analytics
+- Module 06: S3, lifecycle, replication, classes and security
+- Module 07: advanced S3 lab
+- Module 08: VPC, subnets, endpoints, routes and network security
+- Module 09: VPC and networking lab
 
-### Semana 7
-- Módulo 19: serviços gerenciados de IA e ML mais cobrados
-- Módulo 20: CloudWatch, CloudTrail, Config e X-Ray
-- Módulo 21: DMS, MGN, DataSync, Snow Family e Transfer Family
+### Week 4
 
-### Semana 8
-- Módulo 22: recuperação de desastres, continuidade, RTO/RPO e estratégias DR
-- Módulo 23: AWS Organizations, governança multi-conta e otimização de custos
-- Módulo 24: redes avançadas e conectividade híbrida (TGW, DX, VPN, PrivateLink)
-- Módulo 25: criptografia com KMS e gestão de segredos com Secrets Manager/SSM
+- Module 10: databases for architecture (RDS, Aurora, DynamoDB, ElastiCache, Redshift)
+- Module 11: RDS and relational databases lab
+- Module 12: modeling and patterns with DynamoDB
+- Module 13: Route 53, CloudFront, OAC, WAF and Global Accelerator
 
-### Semana 9
-- Módulo 26: Well-Architected Framework e DR patterns
-- Módulo 27: estudos de caso reais
-- Módulo 28: labs end-to-end
-- Módulo 29: simulados e revisões
-- Módulo 30 e 31: glossário e revisão de links oficiais
+### Week 5
 
-<a id="modulos"></a>
-## 📁 Módulos
+- Module 14: SQS, SNS, EventBridge and Step Functions
+- Module 15: SQS/SNS messaging lab
+- Module 16: ECS, EKS, Fargate, ECR and App Runner
 
-| # | Módulo | Domínio predominante | Status | Link |
+### Week 6
+
+- Module 17: Lambda, API Gateway, authorizers and serverless observability
+- Module 18: Kinesis, Firehose, Glue, Athena, EMR and analytics
+
+### Week 7
+
+- Module 19: frequently tested managed AI and ML services
+- Module 20: CloudWatch, CloudTrail, Config and X-Ray
+- Module 21: DMS, MGN, DataSync, Snow Family and Transfer Family
+
+### Week 8
+
+- Module 22: disaster recovery, continuity, RTO/RPO and DR strategies
+- Module 23: AWS Organizations, multi-account governance and cost optimization
+- Module 24: advanced networking and hybrid connectivity (TGW, DX, VPN, PrivateLink)
+- Module 25: encryption with KMS and secrets management with Secrets Manager/SSM
+
+### Week 9
+
+- Module 26: Well-Architected Framework and DR patterns
+- Module 27: real-world case studies
+- Module 28: end-to-end labs
+- Module 29: practice exams and review
+- Modules 30 and 31: glossary and official links review
+
+<a id="modules"></a>
+## 📁 Modules
+
+| # | Module | Predominant domain | Status | Link |
 |---|---|---|---|---|
-| 01 | Introdução SAA-C03 | Base / Estratégia | Aberto | [README](./01-Introducao-SAA-C03/README.md) |
-| 02 | IAM e Segurança | Segurança | Aberto | [README](./02-IAM-e-Seguranca/README.md) |
-| 03 | IAM e Segurança (Labs) | Segurança (prática) | Aberto | [Lab](./03-IAM-e-Seguranca-Labs/lab.md) |
-| 04 | Computação EC2 | Alta performance | Aberto | [README](./04-Computacao-EC2/README.md) |
-| 05 | Alta Disponibilidade e Escalabilidade | Resiliência | Aberto | [README](./05-Alta-Disponibilidade-e-Escalabilidade/README.md) |
-| 06 | Amazon S3 e Armazenamento | Resiliência / Custo | Aberto | [README](./06-Amazon-S3-e-Armazenamento/README.md) |
-| 07 | S3 Avançado (Labs) | Resiliência (prática) | Aberto | [Lab](./07-S3-Avancado-Labs/lab.md) |
-| 08 | VPC e Redes | Segurança / Resiliência | Aberto | [README](./08-VPC-e-Redes/README.md) |
-| 09 | VPC e Redes (Labs) | Segurança (prática) | Aberto | [Lab](./09-VPC-e-Redes-Labs/lab.md) |
-| 10 | Banco de Dados | Alta performance | Aberto | [README](./10-Banco-de-Dados/README.md) |
-| 11 | RDS e Bancos Relacionais (Labs) | Alta performance (prática) | Aberto | [Lab](./11-RDS-e-Bancos-Relacionais-Labs/lab.md) |
-| 12 | DynamoDB (Labs) | Alta performance (prática) | Aberto | [Lab](./12-DynamoDB/lab.md) |
-| 13 | DNS, Route 53 e CloudFront | Resiliência / Performance | Aberto | [README](./13-DNS-Route53-e-CloudFront/README.md) |
-| 14 | Desacoplamento: SQS, SNS, EventBridge | Resiliência | Aberto | [README](./14-Desacoplamento-SQS-SNS-EventBridge/README.md) |
-| 15 | SQS e SNS (Labs) | Resiliência (prática) | Aberto | [Lab](./15-SQS-SNS-Mensageria-Labs/lab.md) |
-| 16 | Containers: ECS, EKS, Fargate | Alta performance | Aberto | [README](./16-Containers-ECS-EKS-Fargate/README.md) |
-| 17 | Serverless: Lambda e API Gateway | Custo / Segurança | Aberto | [README](./17-Serverless-Lambda-API-Gateway/README.md) |
-| 18 | Dados e Analytics | Alta performance | Aberto | [README](./18-Dados-e-Analytics/README.md) |
-| 19 | Machine Learning e IA | Serviços gerenciados | Aberto | [README](./19-Machine-Learning-e-IA/README.md) |
-| 20 | Monitoramento: CloudWatch e CloudTrail | Segurança / Operações | Aberto | [README](./20-Monitoramento-CloudWatch-CloudTrail/README.md) |
-| 21 | Migração e Transferência | Resiliência / Custo | Aberto | [README](./21-Migracao-e-Transferencia/README.md) |
-| 22 | Recuperação de Desastres e Continuidade | Resiliência / Segurança | Aberto | [README](./22-Recuperacao-de-Desastres-e-Continuidade/README.md) |
-| 23 | AWS Organizations, Governança e Custos | Segurança / Custo | Aberto | [README](./23-AWS-Organizations-Governanca-e-Custos/README.md) |
-| 24 | Redes Avançadas e Conectividade Híbrida | Segurança / Performance | Aberto | [README](./24-Redes-Avancadas-e-Conectividade-Hibrida/README.md) |
-| 25 | Criptografia, KMS e Gestão de Segredos | Segurança | Aberto | [README](./25-Criptografia-KMS-e-Gestao-de-Segredos/README.md) |
-| 26 | Well-Architected Framework | Todos os domínios | Aberto | [README](./26-Well-Architected-Framework/README.md) |
-| 27 | Casos de Uso Reais | Todos os domínios | Aberto | [README](./27-Casos-de-Uso-Reais/README.md) |
-| 28 | Labs Práticos | Prática | Aberto | [README](./28-Labs-Praticos/README.md) |
-| 29 | Simulados, Questões e Reta Final | Todos os domínios | Aberto | [README](./29-Simulados-e-Questoes/README.md) |
-| 30 | Glossário | Revisão | Aberto | [README](./30-Glossario/README.md) |
-| 31 | Recursos e Links | Revisão | Aberto | [README](./31-Recursos-e-Links/README.md) |
+| 01 | Introduction to SAA-C03 | Foundations / Strategy | Open | [README](./01-Introducao-SAA-C03/README.md) |
+| 02 | IAM and Security | Security | Open | [README](./02-IAM-e-Seguranca/README.md) |
+| 03 | IAM and Security (Labs) | Security (hands-on) | Open | [Lab](./03-IAM-e-Seguranca-Labs/lab.md) |
+| 04 | EC2 Compute | High performance | Open | [README](./04-Computacao-EC2/README.md) |
+| 05 | High Availability and Scalability | Resilience | Open | [README](./05-Alta-Disponibilidade-e-Escalabilidade/README.md) |
+| 06 | Amazon S3 and Storage | Resilience / Cost | Open | [README](./06-Amazon-S3-e-Armazenamento/README.md) |
+| 07 | Advanced S3 (Labs) | Resilience (hands-on) | Open | [Lab](./07-S3-Avancado-Labs/lab.md) |
+| 08 | VPC and Networking | Security / Resilience | Open | [README](./08-VPC-e-Redes/README.md) |
+| 09 | VPC and Networking (Labs) | Security (hands-on) | Open | [Lab](./09-VPC-e-Redes-Labs/lab.md) |
+| 10 | Databases | High performance | Open | [README](./10-Banco-de-Dados/README.md) |
+| 11 | RDS and Relational Databases (Labs) | High performance (hands-on) | Open | [Lab](./11-RDS-e-Bancos-Relacionais-Labs/lab.md) |
+| 12 | DynamoDB (Labs) | High performance (hands-on) | Open | [Lab](./12-DynamoDB/lab.md) |
+| 13 | DNS, Route 53 and CloudFront | Resilience / Performance | Open | [README](./13-DNS-Route53-e-CloudFront/README.md) |
+| 14 | Decoupling: SQS, SNS, EventBridge | Resilience | Open | [README](./14-Desacoplamento-SQS-SNS-EventBridge/README.md) |
+| 15 | SQS and SNS (Labs) | Resilience (hands-on) | Open | [Lab](./15-SQS-SNS-Mensageria-Labs/lab.md) |
+| 16 | Containers: ECS, EKS, Fargate | High performance | Open | [README](./16-Containers-ECS-EKS-Fargate/README.md) |
+| 17 | Serverless: Lambda and API Gateway | Cost/Security | Open | [README](./17-Serverless-Lambda-API-Gateway/README.md) |
+| 18 | Data and Analytics | High performance | Open | [README](./18-Dados-e-Analytics/README.md) |
+| 19 | Machine Learning and AI | Managed Services | Open | [README](./19-Machine-Learning-e-IA/README.md) |
+| 20 | Monitoring: CloudWatch and CloudTrail | Security / Operations | Open | [README](./20-Monitoramento-CloudWatch-CloudTrail/README.md) |
+| 21 | Migration and Transfer | Resilience / Cost | Open | [README](./21-Migracao-e-Transferencia/README.md) |
+| 22 | Disaster Recovery and Business Continuity | Resilience / Security | Open | [README](./22-Recuperacao-de-Desastres-e-Continuidade/README.md) |
+| 23 | AWS Organizations, Governance and Costs | Security / Cost | Open | [README](./23-AWS-Organizations-Governanca-e-Custos/README.md) |
+| 24 | Advanced Networking and Hybrid Connectivity | Security / Performance | Open | [README](./24-Redes-Avancadas-e-Conectividade-Hibrida/README.md) |
+| 25 | Encryption, KMS, and Secrets Management | Security | Open | [README](./25-Criptografia-KMS-e-Gestao-de-Segredos/README.md) |
+| 26 | Well-Architected Framework | All domains | Open | [README](./26-Well-Architected-Framework/README.md) |
+| 27 | Real-World Use Cases | All domains | Open | [README](./27-Casos-de-Uso-Reais/README.md) |
+| 28 | Hands-on Labs | Practice | Open | [README](./28-Labs-Praticos/README.md) |
+| 29 | Practice Exams, Questions, and Final Review | All domains | Open | [README](./29-Simulados-e-Questoes/README.md) |
+| 30 | Glossary | Review | Open | [README](./30-Glossario/README.md) |
+| 31 | Resources and Links | Review | Open | [README](./31-Recursos-e-Links/README.md) |
 
-## 🧩 Visão geral dos módulos
+## 🧩 Module Overview
 
-| Nome do módulo | Semana / posição | Teoria (Sim/Não) | Lab (Sim/Não) | Cheatsheet (Sim/Não) | Questões práticas (Sim/Não) |
+| Module name | Week/position | Theory (Yes/No) | Lab (Yes/No) | Cheatsheet (Yes/No) | Practice questions (Yes/No) |
 |---|---|---|---|---|---|
-| [01 - Introdução SAA-C03](./01-Introducao-SAA-C03/README.md) | Semana 1 | Sim | Sim | Sim | Sim |
-| [02 - IAM e Segurança](./02-IAM-e-Seguranca/README.md) | Semana 1 | Sim | Sim | Sim | Sim |
-| [03 - IAM e Segurança (Labs)](./03-IAM-e-Seguranca-Labs/lab.md) | Semana 1 | Não | Sim | Não | Não |
-| [04 - Computação EC2](./04-Computacao-EC2/README.md) | Semana 2 | Sim | Sim | Sim | Sim |
-| [05 - Alta Disponibilidade e Escalabilidade](./05-Alta-Disponibilidade-e-Escalabilidade/README.md) | Semana 2 | Sim | Sim | Sim | Sim |
-| [06 - Amazon S3 e Armazenamento](./06-Amazon-S3-e-Armazenamento/README.md) | Semana 3 | Sim | Não | Sim | Sim |
-| [07 - S3 Avançado (Labs)](./07-S3-Avancado-Labs/lab.md) | Semana 3 | Não | Sim | Não | Não |
-| [08 - VPC e Redes](./08-VPC-e-Redes/README.md) | Semana 3 | Sim | Não | Sim | Sim |
-| [09 - VPC e Redes (Labs)](./09-VPC-e-Redes-Labs/lab.md) | Semana 3 | Não | Sim | Não | Não |
-| [10 - Banco de Dados](./10-Banco-de-Dados/README.md) | Semana 4 | Sim | Não | Sim | Sim |
-| [11 - RDS e Bancos Relacionais (Labs)](./11-RDS-e-Bancos-Relacionais-Labs/lab.md) | Semana 4 | Não | Sim | Não | Não |
-| [12 - DynamoDB (Labs)](./12-DynamoDB/lab.md) | Semana 4 | Não | Sim | Não | Não |
-| [13 - DNS, Route 53 e CloudFront](./13-DNS-Route53-e-CloudFront/README.md) | Semana 4 | Sim | Não | Sim | Sim |
-| [14 - Desacoplamento: SQS, SNS, EventBridge](./14-Desacoplamento-SQS-SNS-EventBridge/README.md) | Semana 5 | Sim | Não | Sim | Sim |
-| [15 - SQS e SNS (Labs)](./15-SQS-SNS-Mensageria-Labs/lab.md) | Semana 5 | Não | Sim | Não | Não |
-| [16 - Containers: ECS, EKS, Fargate](./16-Containers-ECS-EKS-Fargate/README.md) | Semana 5 | Sim | Não | Sim | Sim |
-| [17 - Serverless: Lambda e API Gateway](./17-Serverless-Lambda-API-Gateway/README.md) | Semana 6 | Sim | Sim | Sim | Sim |
-| [18 - Dados e Analytics](./18-Dados-e-Analytics/README.md) | Semana 6 | Sim | Sim | Sim | Sim |
-| [19 - Machine Learning e IA](./19-Machine-Learning-e-IA/README.md) | Semana 7 | Sim | Sim | Sim | Sim |
-| [20 - Monitoramento: CloudWatch e CloudTrail](./20-Monitoramento-CloudWatch-CloudTrail/README.md) | Semana 7 | Sim | Sim | Sim | Sim |
-| [21 - Migração e Transferência](./21-Migracao-e-Transferencia/README.md) | Semana 7 | Sim | Sim | Sim | Sim |
-| [22 - Recuperação de Desastres e Continuidade](./22-Recuperacao-de-Desastres-e-Continuidade/README.md) | Semana 8 | Sim | Sim | Sim | Sim |
-| [23 - AWS Organizations, Governança e Custos](./23-AWS-Organizations-Governanca-e-Custos/README.md) | Semana 8 | Sim | Sim | Sim | Sim |
-| [24 - Redes Avançadas e Conectividade Híbrida](./24-Redes-Avancadas-e-Conectividade-Hibrida/README.md) | Semana 8 | Sim | Sim | Sim | Sim |
-| [25 - Criptografia, KMS e Gestão de Segredos](./25-Criptografia-KMS-e-Gestao-de-Segredos/README.md) | Semana 8 | Sim | Sim | Sim | Sim |
-| [26 - Well-Architected Framework](./26-Well-Architected-Framework/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
-| [27 - Casos de Uso Reais](./27-Casos-de-Uso-Reais/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
-| [28 - Labs Práticos](./28-Labs-Praticos/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
-| [29 - Simulados, Questões e Reta Final](./29-Simulados-e-Questoes/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
-| [30 - Glossário](./30-Glossario/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
-| [31 - Recursos e Links](./31-Recursos-e-Links/README.md) | Semana 9 | Sim | Sim | Sim | Sim |
+| [01 - Introduction to SAA-C03](./01-Introducao-SAA-C03/README.md) | Week 1 | Yes | Yes | Yes | Yes |
+| [02 - IAM and Security](./02-IAM-e-Seguranca/README.md) | Week 1 | Yes | Yes | Yes | Yes |
+| [03 - IAM and Security (Labs)](./03-IAM-e-Seguranca-Labs/lab.md) | Week 1 | No | Yes | No | No |
+| [04 - EC2 Compute](./04-Computacao-EC2/README.md) | Week 2 | Yes | Yes | Yes | Yes |
+| [05 - High Availability and Scalability](./05-Alta-Disponibilidade-e-Escalabilidade/README.md) | Week 2 | Yes | Yes | Yes | Yes |
+| [06 - Amazon S3 and Storage](./06-Amazon-S3-e-Armazenamento/README.md) | Week 3 | Yes | No | Yes | Yes |
+| [07 - Advanced S3 (Labs)](./07-S3-Avancado-Labs/lab.md) | Week 3 | No | Yes | No | No |
+| [08 - VPC and Networking](./08-VPC-e-Redes/README.md) | Week 3 | Yes | No | Yes | Yes |
+| [09 - VPC and Networking (Labs)](./09-VPC-e-Redes-Labs/lab.md) | Week 3 | No | Yes | No | No |
+| [10 - Databases](./10-Banco-de-Dados/README.md) | Week 4 | Yes | No | Yes | Yes |
+| [11 - RDS and Relational Databases (Labs)](./11-RDS-e-Bancos-Relacionais-Labs/lab.md) | Week 4 | No | Yes | No | No |
+| [12 - DynamoDB (Labs)](./12-DynamoDB/lab.md) | Week 4 | No | Yes | No | No |
+| [13 - DNS, Route 53 and CloudFront](./13-DNS-Route53-e-CloudFront/README.md) | Week 4 | Yes | No | Yes | Yes |
+| [14 - Decoupling: SQS, SNS, EventBridge](./14-Desacoplamento-SQS-SNS-EventBridge/README.md) | Week 5 | Yes | No | Yes | Yes |
+| [15 - SQS and SNS (Labs)](./15-SQS-SNS-Mensageria-Labs/lab.md) | Week 5 | No | Yes | No | No |
+| [16 - Containers: ECS, EKS, Fargate](./16-Containers-ECS-EKS-Fargate/README.md) | Week 5 | Yes | No | Yes | Yes |
+| [17 - Serverless: Lambda and API Gateway](./17-Serverless-Lambda-API-Gateway/README.md) | Week 6 | Yes | Yes | Yes | Yes |
+| [18 - Data and Analytics](./18-Dados-e-Analytics/README.md) | Week 6 | Yes | Yes | Yes | Yes |
+| [19 - Machine Learning and AI](./19-Machine-Learning-e-IA/README.md) | Week 7 | Yes | Yes | Yes | Yes |
+| [20 - Monitoring: CloudWatch and CloudTrail](./20-Monitoramento-CloudWatch-CloudTrail/README.md) | Week 7 | Yes | Yes | Yes | Yes |
+| [21 - Migration and Transfer](./21-Migracao-e-Transferencia/README.md) | Week 7 | Yes | Yes | Yes | Yes |
+| [22 - Disaster Recovery and Business Continuity](./22-Recuperacao-de-Desastres-e-Continuidade/README.md) | Week 8 | Yes | Yes | Yes | Yes |
+| [23 - AWS Organizations, Governance and Costs](./23-AWS-Organizations-Governanca-e-Custos/README.md) | Week 8 | Yes | Yes | Yes | Yes |
+| [24 - Advanced Networking and Hybrid Connectivity](./24-Redes-Avancadas-e-Conectividade-Hibrida/README.md) | Week 8 | Yes | Yes | Yes | Yes |
+| [25 - Encryption, KMS, and Secrets Management](./25-Criptografia-KMS-e-Gestao-de-Segredos/README.md) | Week 8 | Yes | Yes | Yes | Yes |
+| [26 - Well-Architected Framework](./26-Well-Architected-Framework/README.md) | Week 9 | Yes | Yes | Yes | Yes |
+| [27 - Real-World Use Cases](./27-Casos-de-Uso-Reais/README.md) | Week 9 | Yes | Yes | Yes | Yes |
+| [28 - Hands-on Labs](./28-Labs-Praticos/README.md) | Week 9 | Yes | Yes | Yes | Yes |
+| [29 - Practice Exams, Questions, and Final Review](./29-Simulados-e-Questoes/README.md) | Week 9 | Yes | Yes | Yes | Yes |
+| [30 - Glossary](./30-Glossario/README.md) | Week 9 | Yes | Yes | Yes | Yes |
+| [31 - Resources and Links](./31-Recursos-e-Links/README.md) | Week 9 | Yes | Yes | Yes | Yes |
 
-<a id="como-usar-este-repositorio"></a>
-## 🚀 Como Usar Este Repositório
+<a id="how-to-use-this-repository"></a>
+## 🚀 How to Use This Repository
 
-1. Comece pelo módulo 01 para alinhar expectativa, pesos e estratégia.
-2. Estude os módulos 02 a 25 em ordem e use os módulos de laboratório para consolidar os temas críticos.
-3. Ao final de cada módulo, resolva as questões antes de abrir o gabarito.
-4. Use os flashcards para revisão espaçada e o cheatsheet para revisão rápida pré-simulado.
-5. Rode os labs em us-east-1 sempre que possível para manter consistência com o material.
-6. Feche a preparação com estudos de caso, labs end-to-end, simulados, caderno de erros e revisão por domínio.
+1. Start with module 01 to understand exam expectations, domain weights, and study strategy.
+2. Study modules 02 to 25 in order and use the laboratory modules to consolidate critical topics.
+3. At the end of each module, answer the questions before revealing the answer key.
+4. Use flashcards for spaced review and the cheatsheet for a quick review before a practice exam.
+5. Run the labs in us-east-1 whenever possible to maintain consistency with the material.
+6. Finish your preparation with case studies, end-to-end labs, practice exams, an error log, and domain-based review.
 
-<a id="fluxo-recomendado-de-estudo"></a>
-## 🔁 Fluxo Recomendado de Estudo
+<a id="recommended-study-workflow"></a>
+## 🔁 Recommended Study Workflow
 
-1. Leia o README do módulo para entender contexto, serviços e sinais de prova.
-2. Revise o cheatsheet antes de resolver questões.
-3. Resolva as questões sem abrir o bloco de resposta.
-4. Registre erros recorrentes no [caderno de erros](./29-Simulados-e-Questoes/caderno-de-erros.md).
-5. Reforce pontos fracos com flashcards e mini-simulados por domínio.
+1. Read the module README to understand the context, services, and exam cues.
+2. Review the cheatsheet before solving questions.
+3. Solve the questions without opening the answer block.
+4. Record recurring errors in the [error log](./29-Simulados-e-Questoes/caderno-de-erros.md).
+5. Strengthen weak areas with flashcards and mini practice exams by domain.
 
-## ✅ Checklist Curto de Revisão Final
+## ✅ Short Final Review Checklist
 
-- Diferenciar Multi-AZ, Read Replica, backup, restore e estratégias de DR.
-- Revisar IAM, KMS, Secrets Manager, políticas e menor privilégio.
-- Comparar S3, EBS, EFS, FSx e classes de armazenamento.
-- Treinar VPC, endpoints, NAT Gateway, security groups, NACLs e roteamento.
-- Refazer questões erradas antes de iniciar novos simulados.
+- Differentiate Multi-AZ, Read Replica, backup, restore and DR strategies.
+- Review IAM, KMS, Secrets Manager, policies and least privilege.
+- Compare S3, EBS, EFS, FSx and storage classes.
+- Practice VPC, endpoints, NAT Gateway, security groups, NACLs, and routing.
+- Retry questions you answered incorrectly before starting new practice exams.
 
-<a id="trilhas-complementares-aws"></a>
-## 🧭 Trilhas Complementares AWS
+<a id="additional-aws-learning-paths"></a>
+## 🧭 Additional AWS Learning Paths
 
-- [AWS Certified Cloud Practitioner Brasil](https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil): fundamentos para quem precisa reforçar base de cloud antes do SAA-C03.
-- [AWS Certified AI Practitioner Brasil](https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil): trilha complementar para conectar arquitetura AWS com serviços de IA generativa.
-- [CloudStudy](https://www.cloudstudy.com.br/): apoio complementar para estudo guiado e evolução contínua, sem substituir a proposta open-source deste repositório.
+- [AWS Certified Cloud Practitioner Brazil](https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil): foundational material for learners who need to strengthen their cloud knowledge before SAA-C03.
+- [AWS Certified AI Practitioner Brazil](https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil): an additional learning path connecting AWS architecture with generative AI services.
+- [CloudStudy](https://www.cloudstudy.com.br/): additional support for guided study and continued learning, complementing this repository's open-source resources.
 
-## ⚠️ Armadilhas comuns na prova
+## ⚠️ Common Exam Pitfalls
 
-| Confusão frequente | Quando usar cada opção | Armadilha típica de prova |
+| Common source of confusion | When to use each option | Typical exam pitfall |
 |---|---|---|
-| SNS vs SQS | SNS para fanout pub/sub; SQS para fila desacoplada com processamento assíncrono e controle de consumo. | Confundir broadcast para múltiplos consumidores com fila ponto a ponto. |
-| SQS Standard vs FIFO | Standard para throughput alto e tolerância a duplicidade/ordem eventual; FIFO para ordem estrita e deduplicação. | Escolher FIFO sem necessidade e perder escala, ou escolher Standard quando a ordem é mandatória. |
-| RDS Multi-AZ vs Read Replicas | Multi-AZ para alta disponibilidade e failover; Read Replicas para escalar leitura e relatórios. | Assumir que Multi-AZ melhora leitura ou que réplica substitui HA síncrona. |
-| NAT Gateway vs VPC Endpoint | NAT Gateway para saída privada geral à internet; VPC Endpoint para acesso privado a serviços AWS sem internet. | Usar NAT para S3/DynamoDB e pagar mais, mesmo com endpoint disponível. |
-| ALB vs NLB vs CLB | ALB para HTTP/HTTPS camada 7; NLB para TCP/UDP/TLS camada 4 e latência baixa; CLB para legado. | Ignorar requisito de protocolo e sticky/session routing. |
-| S3 Standard vs IA vs One Zone-IA vs Glacier | Standard para acesso frequente; IA para acesso esporádico; One Zone-IA para dados reproduzíveis; Glacier para arquivamento. | Escolher classe barata sem considerar latência de recuperação e mínimo de retenção. |
-| EBS vs EFS vs FSx | EBS para bloco em EC2; EFS para compartilhamento NFS multi-AZ Linux; FSx para file systems especializados (Windows, Lustre, ONTAP, OpenZFS). | Tratar EBS como compartilhado por múltiplas instâncias sem arquitetura específica. |
-| ASG vs scheduled scaling vs predictive scaling | ASG para elasticidade automática por métricas; scheduled para eventos previsíveis; predictive para padrões históricos. | Usar apenas scheduled em carga imprevisível e perder resiliência em picos. |
-| API Gateway vs ALB para Lambda | API Gateway para APIs gerenciadas com auth, throttling e versionamento; ALB para roteamento HTTP simples com integração Lambda. | Escolher ALB quando a questão pede recursos avançados de API management. |
-| KMS CMK vs Secrets Manager vs SSM Parameter Store | KMS para criptografia/chaves; Secrets Manager para rotação e segredo sensível; Parameter Store para parâmetros e segredos simples. | Achar que KMS sozinho resolve ciclo de vida de segredos. |
+| SNS vs SQS | SNS for pub/sub fanout; SQS for decoupled queue with asynchronous processing and consumption control. | Confusing broadcast to multiple consumers with point-to-point queue. |
+| SQS Standard vs FIFO | Standard for high throughput when duplicates and occasional out-of-order delivery are acceptable; FIFO for strict ordering and deduplication. | Choosing FIFO unnecessarily and limiting scale, or choosing Standard when order is mandatory. |
+| RDS Multi-AZ vs Read Replicas | Multi-AZ for high availability and failover; read replicas for read scaling and reporting. | Assuming Multi-AZ improves read performance or a read replica replaces synchronous HA. |
+| NAT Gateway vs VPC Endpoint | NAT Gateway for general private egress to the internet; VPC Endpoint for private access to AWS services without internet. | Use NAT for S3/DynamoDB and pay more, even with an available endpoint. |
+| ALB vs NLB vs CLB | ALB for HTTP/HTTPS layer 7; NLB for TCP/UDP/TLS layer 4 and low latency; CLB for legacy. | Ignore protocol requirement and sticky/session routing. |
+| S3 Standard vs IA vs One Zone-IA vs Glacier | Standard for frequent access; IA for infrequent access; One Zone-IA for reproducible data; Glacier for archiving. | Choosing a cheap class without considering retrieval latency and minimum retention. |
+| EBS vs EFS vs FSx | EBS for block storage on EC2; EFS for multi-AZ NFS file sharing on Linux; FSx for specialized file systems (Windows, Lustre, ONTAP, OpenZFS). | Treating EBS as shared storage for multiple instances without a specific architecture. |
+| ASG vs scheduled scaling vs predictive scaling | ASG for automatic elasticity by metrics; scheduled for predictable events; predictive for historical patterns. | Only use scheduled under unpredictable load and lose resilience in peaks. |
+| API Gateway vs ALB for Lambda | API Gateway for managed APIs with auth, throttling and versioning; ALB for simple HTTP routing with Lambda integration. | Choose ALB when the question asks for advanced API management features. |
+| KMS CMK vs Secrets Manager vs SSM Parameter Store | KMS for encryption and keys; Secrets Manager for rotation and sensitive secrets; Parameter Store for parameters and simple secrets. | Assuming KMS alone manages the full secret lifecycle. |
 
-## 🤝 Como contribuir
+## 🤝 How to contribute
 
-Consulte [CONTRIBUTING.md](./CONTRIBUTING.md) para abrir issues, propor labs/questões e enviar pull requests de forma padronizada e objetiva.
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidance on opening issues, proposing labs and questions, and submitting focused pull requests to `saa-c03-english`.
 
-Contribuições são bem-vindas, especialmente para:
+Contributions are welcome, especially for:
 
-- corrigir detalhes técnicos e limites de serviço
-- melhorar cenários de questões e explicações de alternativas
-- atualizar mudanças recentes dos serviços AWS
-- adicionar diagramas ASCII mais claros e labs mais econômicos
+- correct technical details and service limits
+- improve question scenarios and explanations of answer options
+- reflect recent changes to AWS services
+- add clearer ASCII diagrams and more economical labs
 
-Ao contribuir, prefira mudanças pequenas, tecnicamente justificadas e com links oficiais da AWS quando o assunto envolver comportamento específico de serviço.
+When contributing, prefer small, technically justified changes with official AWS links when the subject involves specific service behavior.
 
 ## 📦 Releases
 
-Para atualizações relevantes de conteúdo, consulte a página de Releases no GitHub e o histórico em [CHANGELOG.md](./CHANGELOG.md).
+For content updates, see [GitHub Releases](https://github.com/Thiago-code-lab/aws-certified-solutions-architect-associate-brasil/releases) and the history at [CHANGELOG.md](./CHANGELOG.md).
 
-## 📄 Licença
+## 📄 License
 
-MIT
+This repository is available under the [MIT License](./LICENSE).
 
-## ✅ Qualidade do conteúdo e última revisão
+English edition inventory, validation results, and known limitations: [release audit](./docs/english-edition/README.md).
 
-- O conteúdo é baseado em documentação oficial da AWS e whitepapers relevantes.
-- Os exemplos e labs priorizam escolhas de baixo custo para estudo prático.
-- O repositório é atualizado periodicamente conforme mudanças em serviços AWS e no blueprint do exame.
+## ✅ Content Quality and Last Review
 
-**Última revisão global:** 08/04/2026 (atualizar esta data sempre que concluírem uma revisão ampla do repositório).
+- Content is based on official AWS documentation and relevant whitepapers.
+- Examples and labs prioritize low-cost choices for practical study.
+- The repository is updated periodically according to changes in AWS services and the exam blueprint.
+
+**Last repository-wide review in the source edition:** April 8, 2026 (update this date after each comprehensive content review).
 

@@ -1,37 +1,37 @@
-﻿# Trilhas por Dominio
+# Study Paths by Domain
 
-## Trilha Base
+## Foundational Study Path
 
-- Introducao, seguranca, computacao, armazenamento, redes e bancos.
+- Introduction, security, compute, storage, networking, and databases.
 
-## Trilha Arquitetura
+## Architecture Study Path
 
-- Integracao, containers, serverless, observabilidade e governanca.
+- Integration, containers, serverless, observability and governance.
 
-## Trilha Revisao Final
+## Final Review Study Path
 
-- Simulados, glossario, casos de uso e recursos oficiais.
+- Practice exams, glossary, use cases, and official resources.
 
-## Rotina recomendada
+## Recommended routine
 
-- Estudo ativo de modulo.
-- Revisao curta no dia seguinte.
-- Simulado tematico semanal.
-
----
-
-## Navegacao de trilhas
-
-- Reforco de fundamentos AWS: https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
-- Especializacao complementar em IA na AWS: https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil
+- Active module study.
+- Short review the next day.
+- Take a topic-specific practice exam each week.
 
 ---
 
-## ☁️ Acompanhe a CloudStudy
+## Study Path Navigation
 
-Estamos construindo uma plataforma para ajudar brasileiros a estudarem AWS de forma mais prática, organizada e acessível.
+- AWS Fundamentals Reinforcement: https://github.com/Thiago-code-lab/aws-certified-cloud-practitioner-brasil
+- Additional specialization in AI on AWS: https://github.com/Thiago-code-lab/aws-certified-ai-practitioner-brasil
 
-Siga a CloudStudy para acompanhar novos materiais, atualizações e conteúdos sobre certificações AWS:
+---
+
+## ☁️ Follow CloudStudy
+
+We are building a platform to help Brazilians study AWS in a more practical, organized and accessible way.
+
+Follow CloudStudy to keep up with new materials, updates and content about AWS certifications:
 
 - Instagram: https://www.instagram.com/cloudstudy.ai/
 - LinkedIn: https://www.linkedin.com/company/cloudstudy-ai/
