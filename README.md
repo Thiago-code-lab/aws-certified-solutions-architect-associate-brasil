@@ -1,3 +1,16 @@
+<div align="center">
+
+# 📱 CloudStudy App
+
+<a href="https://apps.apple.com/br/app/cloudstudy/id6833570271">
+  <img src="https://img.shields.io/badge/Download_on_the-App_Store-black?style=for-the-badge&logo=apple" />
+</a>
+
+**The companion app for cloud certification students.**
+
+AI-powered study plans • Flashcards • Practice Exams • Progress Tracking
+
+</div>
 <img width="1672" height="941" alt="Image" src="https://github.com/user-attachments/assets/0c267031-e19d-483e-9306-786e9625d953" />
 
 <p align="center">
